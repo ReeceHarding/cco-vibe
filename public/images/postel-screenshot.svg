@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1692" height="991" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1692" height="991" fill="#f6f8f9"/>
+  <rect x="50" y="50" width="1592" height="891" rx="8" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="100" y="100" width="1492" height="60" rx="4" fill="#f3f4f6"/>
+  <rect x="100" y="200" width="400" height="200" rx="4" fill="#f9fafb"/>
+  <rect x="550" y="200" width="400" height="200" rx="4" fill="#f9fafb"/>
+  <rect x="1000" y="200" width="542" height="200" rx="4" fill="#f9fafb"/>
+  <text x="846" y="495" font-family="Arial" font-size="32" text-anchor="middle" fill="#8B5CF6">Postel Interface</text>
+</svg> 
