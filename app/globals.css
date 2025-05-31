@@ -55,6 +55,7 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
+    @reference "tailwindcss/theme.css";
   }
 }
 
