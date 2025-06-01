@@ -213,27 +213,19 @@ export default function Home() {
 
           {/* Main heading - Enhanced typography */}
           <h1 
-            className={`mx-auto mb-6 max-w-md lg:max-w-[820px] text-center font-instrument text-5xl md:text-6xl lg:text-7xl xl:text-[88px] 2xl:text-[96px] leading-[0.9] tracking-[-0.02em] text-[#27272A] transition-all duration-500 ${
+            className={`mx-auto mb-6 max-w-md lg:max-w-[700px] text-center font-instrument font-normal text-4xl md:text-5xl lg:text-6xl text-balance xl:text-[68px] leading-[1.1] text-[#27272A] transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            <span className="block font-light">Write</span>
-            <span className="block mt-2 lg:mt-3">
-              <span className="font-editorial italic font-light text-[#27272A] text-[1.1em] tracking-[0.01em] inline-block hover:text-[#3B82F6] transition-colors duration-300">
-                authentic
-              </span>
-            </span>
-            <span className="flex items-center justify-center mt-3 lg:mt-4 -ml-2">
-              <span className="inline-flex items-baseline">
-                <svg xmlns="http://www.w3.org/2000/svg" width="0.78em" height="0.78em" fill="currentColor" viewBox="0 0 256 256" className="inline-block mr-1 -mb-1 text-[#3B82F6]">
-                    <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
-                </svg>
-                <span className="font-light tracking-[-0.01em]">posts in</span>
-              </span>
-              <span className="font-medium bg-gradient-to-r from-[#3B82F6] to-[#2563EB] bg-clip-text text-transparent mx-3 text-[1.05em]">9</span>
-              <span className="font-light tracking-[-0.01em]">seconds</span>
-            </span>
+            Write{" "}
+            <span className="font-editorial italic font-light text-[#27272A]">
+              authentic
+            </span>{" "}<br />
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="lg:size-16 xl:size-18 2xl:size-20 inline-block align-middle">
+                <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
+            </svg>
+            -posts in 9 seconds
           </h1>
 
           {/* Feature pills */}
