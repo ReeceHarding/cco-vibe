@@ -136,14 +136,59 @@ export default function Home() {
             style={{ transitionDelay: "800ms" }}
           >
             <div className="relative bg-[#E5F1FF] p-2 rounded-lg shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] transform rotate-[-8.62deg] border border-[#3B82F6]/20">
-              <Image
-                alt="Decoration"
-                loading="lazy"
-                width={199}
-                height={115}
+              <svg
+                width="199"
+                height="115"
+                viewBox="0 0 199 115"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
                 className="rounded-[5px]"
-                src="/images/decoration_right_new.png"
-              />
+              >
+                {/* Background */}
+                <rect width="199" height="115" rx="8" fill="white"/>
+                
+                {/* Profile section */}
+                <g>
+                  {/* Avatar circle */}
+                  <circle cx="24" cy="24" r="12" fill="#3B82F6"/>
+                  <path d="M24 21.5C25.38 21.5 26.5 20.38 26.5 19C26.5 17.62 25.38 16.5 24 16.5C22.62 16.5 21.5 17.62 21.5 19C21.5 20.38 22.62 21.5 24 21.5Z" fill="white"/>
+                  <path d="M24 31.5C27.5 31.5 30.5 29.5 30.5 27C30.5 24.5 27.5 22.5 24 22.5C20.5 22.5 17.5 24.5 17.5 27C17.5 29.5 20.5 31.5 24 31.5Z" fill="white"/>
+                  
+                  {/* Name and handle */}
+                  <rect x="44" y="16" width="60" height="6" rx="3" fill="#E2E8F0"/>
+                  <rect x="44" y="26" width="40" height="4" rx="2" fill="#E2E8F0" opacity="0.7"/>
+                </g>
+                
+                {/* Tweet content lines */}
+                <rect x="16" y="48" width="167" height="4" rx="2" fill="#E2E8F0"/>
+                <rect x="16" y="58" width="145" height="4" rx="2" fill="#E2E8F0"/>
+                <rect x="16" y="68" width="120" height="4" rx="2" fill="#E2E8F0"/>
+                
+                {/* Interaction buttons */}
+                <g opacity="0.6">
+                  {/* Reply */}
+                  <path d="M24 88C24 86.9 24.9 86 26 86H30C31.1 86 32 86.9 32 88C32 89.1 31.1 90 30 90H28V92C28 93.1 27.1 94 26 94C24.9 94 24 93.1 24 92V88Z" fill="#64748B"/>
+                  <rect x="36" y="88" width="12" height="4" rx="2" fill="#E2E8F0"/>
+                  
+                  {/* Retweet */}
+                  <path d="M60 86L58 88H61V92H58L60 94L62 92H59V88H62L60 86Z" fill="#10B981"/>
+                  <rect x="66" y="88" width="12" height="4" rx="2" fill="#E2E8F0"/>
+                  
+                  {/* Like */}
+                  <path d="M92 87C92 85.5 93.5 84 95 84C96.5 84 98 85.5 98 87C98 91 95 93 95 93C95 93 92 91 92 87Z" fill="#EF4444"/>
+                  <rect x="102" y="88" width="12" height="4" rx="2" fill="#E2E8F0"/>
+                  
+                  {/* Share */}
+                  <path d="M130 86V90H128V92L126 94V90H124V86H130Z" fill="#64748B"/>
+                </g>
+                
+                {/* Decorative sparkles */}
+                <g opacity="0.4">
+                  <path d="M170 20L172 18L174 20L172 22L170 20Z" fill="#3B82F6"/>
+                  <path d="M180 30L181.5 28.5L183 30L181.5 31.5L180 30Z" fill="#60A5FA"/>
+                  <path d="M165 35L166 34L167 35L166 36L165 35Z" fill="#93C5FD"/>
+                </g>
+              </svg>
             </div>
           </div>
 
