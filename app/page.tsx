@@ -16,9 +16,13 @@ export default function Home() {
   }, [])
 
   const handleVideoClick = () => {
-    console.log("Video button clicked - showing demo message")
-    // In a real implementation, this would open a video modal
-    alert("Demo video would play here. This is a pixel-perfect clone of the Postel website!")
+    console.log("Video button clicked - opening Vimeo video modal")
+    setShowVideo(true)
+  }
+
+  const handleCloseVideo = () => {
+    console.log("Closing video modal")
+    setShowVideo(false)
   }
 
   const handleSignIn = () => {
@@ -131,7 +135,7 @@ export default function Home() {
             }`}
             style={{ transitionDelay: "800ms" }}
           >
-            <div className="relative bg-[#f6f8f9] p-2 rounded-lg shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] transform rotate-[-8.62deg] border border-black/[0.13]">
+            <div className="relative bg-[#E5F1FF] p-2 rounded-lg shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] transform rotate-[-8.62deg] border border-[#3B82F6]/20">
               <Image
                 alt="Decoration"
                 loading="lazy"
@@ -281,6 +285,50 @@ export default function Home() {
           {/* Bottom gradient fade - adjusted for new background */}
           <div className="pointer-events-none absolute left-1/2 right-1/2 bottom-0 h-[150px] md:h-[300px] w-screen -translate-x-1/2 bg-gradient-to-t from-background from-10% via-background/95 via-30% to-transparent"></div>
         </div>
+
+        {/* Video Modal */}
+        {showVideo && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center">
+            {/* Backdrop */}
+            <div 
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-fade-in"
+              onClick={handleCloseVideo}
+            />
+            
+            {/* Modal Content */}
+            <div className="relative z-50 w-full max-w-5xl px-4 animate-scale-in">
+              <div className="relative aspect-video rounded-lg overflow-hidden bg-black shadow-2xl">
+                {/* Close Button */}
+                <button
+                  onClick={handleCloseVideo}
+                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-colors"
+                  aria-label="Close video"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+                  </svg>
+                </button>
+                
+                {/* Vimeo Embed */}
+                <iframe
+                  src="https://player.vimeo.com/video/901751328?h=1a8e9f0d5e&autoplay=1&title=0&byline=0&portrait=0"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Postel Demo Video"
+                />
+              </div>
+              
+              {/* Optional: Video Title */}
+              <div className="mt-4 text-center">
+                <h3 className="text-white text-lg font-medium">
+                  Watch how Postel helps you write authentic posts in seconds
+                </h3>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </>
   )
