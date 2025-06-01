@@ -7,48 +7,48 @@
 
 @layer base {
   :root {
-    --background: 255 255 255;
-    --foreground: 10 10 10;
-    --card: 255 255 255;
-    --card-foreground: 10 10 10;
-    --popover: 255 255 255;
-    --popover-foreground: 10 10 10;
-    --primary: 10 10 10;
-    --primary-foreground: 250 250 250;
-    --secondary: 244 244 245;
-    --secondary-foreground: 10 10 10;
-    --muted: 244 244 245;
-    --muted-foreground: 117 117 117;
-    --accent: 244 244 245;
-    --accent-foreground: 10 10 10;
-    --destructive: 239 68 68;
-    --destructive-foreground: 250 250 250;
-    --border: 229 229 229;
-    --input: 229 229 229;
-    --ring: 10 10 10;
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+    --card: #ffffff;
+    --card-foreground: #0a0a0a;
+    --popover: #ffffff;
+    --popover-foreground: #0a0a0a;
+    --primary: #0a0a0a;
+    --primary-foreground: #fafafa;
+    --secondary: #f4f4f5;
+    --secondary-foreground: #0a0a0a;
+    --muted: #f4f4f5;
+    --muted-foreground: #757575;
+    --accent: #f4f4f5;
+    --accent-foreground: #0a0a0a;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --ring: #0a0a0a;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 10 10 10;
-    --foreground: 250 250 250;
-    --card: 10 10 10;
-    --card-foreground: 250 250 250;
-    --popover: 10 10 10;
-    --popover-foreground: 250 250 250;
-    --primary: 250 250 250;
-    --primary-foreground: 10 10 10;
-    --secondary: 41 41 41;
-    --secondary-foreground: 250 250 250;
-    --muted: 41 41 41;
-    --muted-foreground: 165 165 165;
-    --accent: 41 41 41;
-    --accent-foreground: 250 250 250;
-    --destructive: 127 29 29;
-    --destructive-foreground: 250 250 250;
-    --border: 41 41 41;
-    --input: 41 41 41;
-    --ring: 213 213 213;
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --card: #0a0a0a;
+    --card-foreground: #fafafa;
+    --popover: #0a0a0a;
+    --popover-foreground: #fafafa;
+    --primary: #fafafa;
+    --primary-foreground: #0a0a0a;
+    --secondary: #292929;
+    --secondary-foreground: #fafafa;
+    --muted: #292929;
+    --muted-foreground: #a5a5a5;
+    --accent: #292929;
+    --accent-foreground: #fafafa;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #fafafa;
+    --border: #292929;
+    --input: #292929;
+    --ring: #d5d5d5;
   }
 }
 
