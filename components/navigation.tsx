@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
+import { PostelLogo } from "@/components/logo"
 
 // Replicated Discord Icon SVG as a React component
 const DiscordIcon = () => (
@@ -22,16 +22,8 @@ export function Navigation() {
       data-test="navigation"
     >
       <div className="w-[120px] sm:w-[175px] h-[40px]">
-        <Link href="/" className="block hover:no-underline active:no-underline">
-          <Image 
-            alt="Logo"
-            width={175} 
-            height={40} 
-            src="/images/logo_navbar_lp.png"
-            className="h-[40px] w-auto max-w-full object-contain"
-            quality={100}
-            priority
-          />
+        <Link href="/" className="block hover:no-underline active:no-underline hover:scale-105 transition-transform">
+          <PostelLogo className="h-[40px] w-auto max-w-full" />
         </Link>
       </div>
 
