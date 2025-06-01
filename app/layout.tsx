@@ -30,19 +30,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={instrumentSans.variable}>
       <body className={`${instrumentSans.className} antialiased`}>
-        {/* Purple gradient background effect - matching goal site */}
+        {/* Enhanced purple gradient background effect - matching original site */}
         <div className="fixed inset-0 -z-10 h-full w-full">
-          {/* Base gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-purple-50"></div>
+          {/* Bright base gradient - more vibrant */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-white to-pink-50"></div>
           
-          {/* Purple gradient blob - top left */}
-          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-300/40 via-purple-200/30 to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+          {/* Larger, more vibrant purple gradient blob - top left */}
+          <div className="absolute -top-40 -left-40 w-[800px] h-[800px] bg-gradient-radial from-purple-400/40 via-purple-300/20 to-transparent rounded-full blur-3xl"></div>
           
           {/* Purple gradient blob - bottom right */}
-          <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-purple-300/40 via-purple-200/30 to-transparent rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+          <div className="absolute -bottom-40 -right-40 w-[1000px] h-[1000px] bg-gradient-radial from-purple-400/30 via-purple-300/15 to-transparent rounded-full blur-3xl"></div>
+          
+          {/* Additional center glow for depth */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-gradient-radial from-purple-300/20 to-transparent rounded-full blur-3xl"></div>
           
           {/* Subtle dot pattern overlay */}
-          <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1e1e1e_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
+          <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1e1e1e_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.15]"></div>
         </div>
         {children}
       </body>

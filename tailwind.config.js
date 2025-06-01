@@ -18,6 +18,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -60,8 +63,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
-        instrument: ["var(--font-instrument)"],
-        editorial: ["PP_Editorial_Old", "serif"],
+        instrument: ["'Instrument Sans'", "sans-serif"],
+        editorial: ["'Playfair Display'", "serif"],
       },
       keyframes: {
         "fade-in": {
