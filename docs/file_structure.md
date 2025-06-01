@@ -1,7 +1,7 @@
 # Postel Clone File Structure
 
 ## Project Overview
-This is a pixel-perfect clone of the Postel website (postel.app) built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+This is a pixel-perfect clone of the Postel website (postel.app) built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion. The clone features authentic design replication including gradient backgrounds, custom typography, decorative elements, and smooth animations.
 
 ## Directory Structure
 
@@ -51,11 +51,21 @@ postel-clone/
 - Uses client-side rendering for animations
 - Implements fade-in, slide-in, and scale animations
 - Responsive design for all screen sizes
+- Features:
+  - Gradient mesh background with multiple blur layers
+  - Trust badge with star icon
+  - Multi-line heading with custom typography (Inter + serif italic)
+  - Feature pills with purple dots
+  - X/Twitter sign-in button
+  - Decorative arrows and floating boxes
+  - Bottom section with user profile and content cards
 
 ### Navigation (`components/navigation.tsx`)
-- Fixed header with blur backdrop
+- Fixed header with translucent background (60% opacity)
+- Blur backdrop effect
 - Responsive navigation menu
-- Dashboard CTA button
+- Purple gradient logo
+- Dashboard CTA button with hover effects
 
 ### Button Component (`components/ui/button.tsx`)
 - Reusable button with multiple variants
@@ -73,8 +83,9 @@ postel-clone/
 ### Tailwind Configuration
 - Custom color palette matching Postel brand
 - Purple gradient colors (#8B5CF6 to #C6ACFF)
-- Custom fonts (Instrument Sans, PP Editorial Old)
+- Custom fonts (Instrument Sans, Inter, PP Editorial Old)
 - Animation utilities for staggered effects
+- Enhanced hover states and transitions
 
 ### CSS Variables
 - HSL color system for theme flexibility
@@ -84,15 +95,15 @@ postel-clone/
 ## Animation System
 
 ### Entrance Animations
-1. **Trust Badge** (100ms delay) - Fade in from bottom
-2. **Main Heading** (200ms delay) - Fade in from bottom
-3. **Feature Pills** (300ms delay) - Fade in from bottom
-4. **CTA Button** (400ms delay) - Fade in from bottom
-5. **Video Section** (500ms delay) - Fade in from bottom
-6. **Left Arrow** (600ms delay) - Slide in from left
-7. **Right Arrow** (600ms delay) - Slide in from right
-8. **"Your next post"** (700ms delay) - Scale in
-9. **Decorative Boxes** (800ms delay) - Scale in
+1. **Trust Badge** (100ms delay) - Fade in from bottom with star icon
+2. **Main Heading** (200ms delay) - Fade in with Inter font
+3. **Feature Pills** (300ms delay) - Fade in with purple dots
+4. **CTA Button** (400ms delay) - Fade in with gradient background
+5. **Bottom Section** (500ms delay) - Slide up animation
+6. **Left Arrow** (600ms delay) - Custom SVG path animation
+7. **Right Arrow** (600ms delay) - Custom SVG path animation
+8. **"Your next post"** (700ms delay) - Rotated text element
+9. **Decorative Boxes** (800ms delay) - Scale in with rotation
 
 ### Hover Effects
 - Button brightness changes
@@ -182,3 +193,22 @@ npm run lint
 - Font fallbacks configured for PP Editorial Old
 - SEO optimized with proper meta tags
 - Accessibility considered with ARIA labels 
+
+## Recent Updates
+
+### Typography Enhancements
+- Added Inter font for main headings
+- Implemented custom serif italic for "authentic" text
+- Improved font weights (extrabold for impact)
+
+### Visual Improvements
+- Enhanced gradient mesh background with multiple blur layers
+- Added subtle borders to content cards
+- Implemented hover scale effects on interactive elements
+- Improved color accuracy throughout
+
+### Component Polish
+- Navigation bar with better translucency
+- Trust badge with yellow star icon
+- Feature pills with proper spacing and dots
+- Bottom section with gradient cards 
