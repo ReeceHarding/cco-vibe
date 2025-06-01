@@ -13,12 +13,14 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Gradient mesh background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50">
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-purple-200/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-blue-200/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-br from-purple-300/20 to-blue-300/20 rounded-full blur-3xl" />
+    <div className="relative min-h-screen overflow-hidden bg-white">
+      {/* Enhanced gradient mesh background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/80 via-white to-blue-50/60" />
+        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-purple-200/25 rounded-full blur-[100px] -translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 right-0 w-[1000px] h-[1000px] bg-blue-200/25 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-purple-300/15 rounded-full blur-[80px]" />
+        <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-blue-300/15 rounded-full blur-[80px]" />
       </div>
 
       <Navigation />
@@ -39,20 +41,20 @@ export default function Home() {
 
         {/* Main heading */}
         <h1 
-          className={`text-center font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] mb-12 transition-all duration-500 ${
+          className={`text-center text-6xl md:text-7xl lg:text-8xl xl:text-[110px] leading-[0.9] mb-12 transition-all duration-500 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
-          style={{ transitionDelay: "200ms" }}
+          style={{ transitionDelay: "200ms", fontFamily: "'Inter', sans-serif" }}
         >
-          <span className="block text-gray-900">Write</span>
-          <span className="block italic text-gray-900 font-serif">authentic</span>
-          <span className="flex items-center justify-center gap-2 text-gray-900">
+          <span className="block text-gray-900 font-extrabold">Write</span>
+          <span className="block text-gray-900 font-editorial" style={{ fontSize: "1.1em" }}>authentic</span>
+          <span className="flex items-center justify-center gap-2 text-gray-900 font-extrabold">
             <svg viewBox="0 0 24 24" className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-32 xl:h-32 inline-block fill-current">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
             <span>-posts in 9</span>
           </span>
-          <span className="block text-gray-900">seconds</span>
+          <span className="block text-gray-900 font-extrabold">seconds</span>
         </h1>
 
         {/* Feature pills */}
@@ -229,28 +231,28 @@ export default function Home() {
             </div>
 
             {/* Main input section */}
-            <h2 className="text-3xl font-bold mb-8">What's on Your Mind Today?</h2>
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">What's on Your Mind Today?</h2>
 
             <div className="grid md:grid-cols-3 gap-6">
               {/* Content Inspiration */}
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 cursor-pointer hover:shadow-lg transition-all">
+              <div className="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-2xl p-6 cursor-pointer hover:shadow-xl transition-all hover:scale-[1.02] border border-purple-100">
                 <div className="text-4xl mb-3">✨</div>
-                <h3 className="font-semibold mb-2">Content Inspiration</h3>
-                <p className="text-sm text-gray-600">Get fresh post ideas and writing prompts</p>
+                <h3 className="font-semibold mb-2 text-gray-900">Content Inspiration</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">Get fresh post ideas and writing prompts</p>
               </div>
 
               {/* Refine My Idea */}
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 cursor-pointer hover:shadow-lg transition-all">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl p-6 cursor-pointer hover:shadow-xl transition-all hover:scale-[1.02] border border-blue-100">
                 <div className="text-4xl mb-3">💡</div>
-                <h3 className="font-semibold mb-2">Refine My Idea</h3>
-                <p className="text-sm text-gray-600">Turn rough ideas into polished posts. Perfect...</p>
+                <h3 className="font-semibold mb-2 text-gray-900">Refine My Idea</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">Turn rough ideas into polished posts. Perfect...</p>
               </div>
 
               {/* Repurpose Content */}
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 cursor-pointer hover:shadow-lg transition-all">
+              <div className="bg-gradient-to-br from-green-50 to-green-100/50 rounded-2xl p-6 cursor-pointer hover:shadow-xl transition-all hover:scale-[1.02] border border-green-100">
                 <div className="text-4xl mb-3">🔄</div>
-                <h3 className="font-semibold mb-2">Repurpose Content</h3>
-                <p className="text-sm text-gray-600">Transform existing content into...</p>
+                <h3 className="font-semibold mb-2 text-gray-900">Repurpose Content</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">Transform existing content into...</p>
               </div>
             </div>
           </div>
