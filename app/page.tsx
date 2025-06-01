@@ -129,15 +129,15 @@ export default function Home() {
 
           {/* Trust badge */}
           <div 
-            className={`relative mb-1 flex justify-center transition-all duration-500 ${
+            className={`relative mb-4 flex justify-center transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "100ms" }}
           >
-            <div className="mx-auto flex flex-wrap items-center justify-center rounded-full border border-zinc-200 bg-white/40 dark:bg-black/40 px-3 py-1 text-xs md:text-sm">
+            <div className="mx-auto flex flex-wrap items-center justify-center rounded-full border border-purple-200 bg-white/60 backdrop-blur-sm px-3 py-1.5 text-xs md:text-sm shadow-sm">
               <span className="flex items-center gap-1.5">
-                <span className="size-1.5 rounded-full bg-[#FDE68A]"></span>
-                <span className="text-black dark:text-neutral-50">
+                <span className="size-1.5 rounded-full bg-purple-400"></span>
+                <span className="text-gray-700">
                   Trusted by 800+ Users, try for free - no credit card
                 </span>
               </span>
@@ -146,31 +146,31 @@ export default function Home() {
 
           {/* Main heading */}
           <h1 
-            className={`mx-auto mb-6 max-w-md lg:max-w-[750px] text-center font-instrument font-medium text-5xl md:text-6xl lg:text-7xl text-balance xl:text-[80px] leading-tight text-[#27272A] transition-all duration-500 ${
+            className={`mx-auto mb-8 max-w-md lg:max-w-[850px] text-center font-instrument font-medium text-5xl md:text-6xl lg:text-7xl text-balance xl:text-[90px] leading-[1.1] text-gray-900 transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "200ms" }}
           >
             Write <span className="italic font-bold">authentic</span> <br />
-            <XIcon className="lg:size-20 xl:size-20 2xl:size-24 inline-block" />
+            <XIcon className="lg:size-20 xl:size-24 2xl:size-28 inline-block" />
             -posts in 9 seconds
           </h1>
 
           {/* Feature pills */}
           <div 
-            className={`hidden md:flex mx-auto mt-11 mb-10 w-fit flex-col justify-center items-center gap-2 sm:gap-4 transition-all duration-500 ${
+            className={`hidden md:flex mx-auto mt-8 mb-12 w-fit flex-col justify-center items-center gap-2 sm:gap-4 transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "300ms" }}
           >
-            <div className="hidden md:flex justify-center items-center px-5 py-[15px] gap-5 w-[604px] h-[46px] bg-white/45 dark:bg-black/45 backdrop-blur-[50.5px] rounded-[61px] text-foreground/60 dark:text-neutral-50">
+            <div className="hidden md:flex justify-center items-center px-6 py-3 gap-6 bg-white/60 backdrop-blur-md rounded-full text-gray-600 shadow-sm border border-purple-100">
               <span>Sounds like you</span>
               <span className="flex gap-1">
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#A78BFA]"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-purple-400"></span>
               </span>
               <span>Authentic posts</span>
               <span className="flex gap-1">
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#A78BFA]"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-purple-400"></span>
               </span>
               <span>Grows your following</span>
             </div>
@@ -178,54 +178,50 @@ export default function Home() {
 
           {/* CTA Button */}
           <div 
-            className={`flex mt-12 md:mt-0 flex-col items-center justify-center transition-all duration-500 ${
+            className={`flex mt-8 md:mt-0 flex-col items-center justify-center transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "400ms" }}
           >
-            <div className="flex flex-row mx-auto w-full max-w-lg px-4 gap-2 flex items-center justify-center">
-              <div className="hidden md:block">
-                <Button
-                  className="flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-b md:flex-1 from-[#A78BFA] to-[#4C1D95] hover:from-[#9B74FA] hover:to-[#4C1D95] border border-[#553C9A] shadow-lg text-white rounded-full font-bold"
-                  size="xl"
-                  type="button"
-                >
-                  <div className="flex font-medium flex-row items-center">
-                    Sign in with <XIcon className="size-4 ml-1" />/Twitter
-                  </div>
-                </Button>
-              </div>
+            <div className="flex flex-row mx-auto w-full max-w-lg px-4 gap-2 items-center justify-center">
+              <Button
+                className="bg-gradient-to-b from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 border-purple-600 shadow-lg text-white rounded-full font-semibold px-8 py-6 text-lg transition-all hover:scale-105"
+                type="button"
+              >
+                <div className="flex font-medium flex-row items-center">
+                  Sign in with <XIcon className="size-5 ml-2" />/Twitter
+                </div>
+              </Button>
             </div>
           </div>
 
-          {/* Video section */}
+          {/* Video section - made larger and more prominent */}
           <div 
-            className={`pointer-events-auto mt-12 md:mt-24 relative mx-auto flex w-full items-center justify-center transition-all duration-700 ${
+            className={`mt-16 md:mt-20 relative mx-auto w-full max-w-6xl px-4 transition-all duration-700 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "500ms" }}
           >
-            <div className="relative mt-16 max-w-screen-lg rounded-lg border shadow-lg">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
               <button
                 className="group relative w-full text-left cursor-pointer border-0 bg-transparent p-0"
                 aria-label="Open video"
                 type="button"
               >
                 <Image
-                  src="/images/postel-screenshot.webp"
-                  alt="Hero Video"
-                  width={1692}
-                  height={991}
-                  className="w-full rounded-md border shadow-lg transition-all duration-200 ease-out group-hover:brightness-[0.8]"
+                  src="/images/postel-dashboard.svg"
+                  alt="Postel Dashboard Preview"
+                  width={1920}
+                  height={1080}
+                  className="w-full transition-all duration-300 ease-out group-hover:scale-105 group-hover:brightness-95"
+                  quality={100}
+                  priority
                 />
-                <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100">
-                  <div className="flex size-36 items-center justify-center rounded-full bg-primary/20 shadow-md backdrop-blur-lg">
-                    <div className="relative flex size-24 scale-100 items-center justify-center rounded-full shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex size-32 items-center justify-center rounded-full bg-white/90 shadow-2xl backdrop-blur-sm transition-all duration-200 ease-out group-hover:scale-110">
+                    <div className="relative flex size-20 items-center justify-center">
                       <PlayIcon
-                        className="size-12 text-white scale-100 transition-transform duration-200 ease-out group-hover:scale-105"
-                        style={{
-                          filter: "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))"
-                        }}
+                        className="size-12 text-purple-600 transition-transform duration-200 ease-out group-hover:scale-110"
                       />
                     </div>
                   </div>
@@ -234,8 +230,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Bottom gradient fade */}
-          <div className="pointer-events-none absolute left-1/2 right-1/2 bottom-0 h-[150px] md:h-[300px] w-screen -translate-x-1/2 bg-gradient-to-t from-background from-10% via-background/95 via-30% to-transparent"></div>
+          {/* Bottom gradient fade - adjusted for new background */}
+          <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-[200px] md:h-[400px] w-full bg-gradient-to-t from-white via-white/80 to-transparent"></div>
         </div>
       </main>
     </>

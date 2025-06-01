@@ -29,10 +29,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={instrumentSans.variable}>
-      <body className={`${instrumentSans.className} antialiased bg-background`}>
-        {/* Gradient background effect */}
-        <div className="fixed inset-0 -z-10 h-full w-full bg-white dark:bg-black">
-          <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1e1e1e_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <body className={`${instrumentSans.className} antialiased`}>
+        {/* Purple gradient background effect - matching goal site */}
+        <div className="fixed inset-0 -z-10 h-full w-full">
+          {/* Base gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-purple-50"></div>
+          
+          {/* Purple gradient blob - top left */}
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-300/40 via-purple-200/30 to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+          
+          {/* Purple gradient blob - bottom right */}
+          <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-purple-300/40 via-purple-200/30 to-transparent rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+          
+          {/* Subtle dot pattern overlay */}
+          <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1e1e1e_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
         </div>
         {children}
       </body>

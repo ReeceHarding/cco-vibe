@@ -1,0 +1,91 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#FAFAFA"/>
+  
+  <!-- Header -->
+  <rect width="1920" height="80" fill="white"/>
+  <rect y="79" width="1920" height="1" fill="#E5E7EB"/>
+  
+  <!-- Logo -->
+  <rect x="40" y="24" width="32" height="32" rx="8" fill="url(#gradient)"/>
+  <text x="88" y="45" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#1F2937">Postel</text>
+  
+  <!-- Navigation -->
+  <text x="840" y="45" font-family="Arial, sans-serif" font-size="16" fill="#6B7280">Start</text>
+  <text x="920" y="45" font-family="Arial, sans-serif" font-size="16" fill="#6B7280">Posts</text>
+  <text x="1000" y="45" font-family="Arial, sans-serif" font-size="16" fill="#6B7280">Team</text>
+  
+  <!-- Profile Avatar -->
+  <circle cx="1840" cy="40" r="20" fill="#E5E7EB"/>
+  
+  <!-- Main Content Area -->
+  <rect x="40" y="120" width="1840" height="920" rx="12" fill="white"/>
+  <rect x="40" y="120" width="1840" height="920" rx="12" stroke="#E5E7EB" stroke-width="1" fill="none"/>
+  
+  <!-- Title -->
+  <text x="80" y="200" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#111827">What's on Your Mind Today?</text>
+  
+  <!-- Input Cards -->
+  <g>
+    <!-- Card 1 -->
+    <rect x="80" y="260" width="560" height="200" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect x="100" y="280" width="24" height="24" rx="12" fill="#8B5CF6"/>
+    <text x="140" y="298" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#374151">Content Inspiration</text>
+    <text x="100" y="340" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">Get fresh post ideas and creative angles</text>
+    <rect x="100" y="400" width="120" height="40" rx="20" fill="#8B5CF6"/>
+    <text x="130" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="white">Coming Soon</text>
+  </g>
+  
+  <g>
+    <!-- Card 2 -->
+    <rect x="680" y="260" width="560" height="200" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect x="700" y="280" width="24" height="24" rx="12" fill="#8B5CF6"/>
+    <text x="740" y="298" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#374151">Refine My Idea</text>
+    <text x="700" y="340" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">Turn rough ideas into polished posts. Perfect...</text>
+    <rect x="700" y="400" width="120" height="40" rx="20" fill="#8B5CF6"/>
+    <text x="730" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="white">Coming Soon</text>
+  </g>
+  
+  <g>
+    <!-- Card 3 -->
+    <rect x="1280" y="260" width="560" height="200" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect x="1300" y="280" width="24" height="24" rx="12" fill="#8B5CF6"/>
+    <text x="1340" y="298" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#374151">Repurpose Content</text>
+    <text x="1300" y="340" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">Transform existing content into...</text>
+    <rect x="1300" y="400" width="120" height="40" rx="20" fill="#8B5CF6"/>
+    <text x="1330" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="white">Coming Soon</text>
+  </g>
+  
+  <!-- Recent Posts Section -->
+  <text x="80" y="540" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#111827">Recent Posts</text>
+  
+  <!-- Post Items -->
+  <g>
+    <rect x="80" y="580" width="1760" height="80" rx="8" fill="#F9FAFB"/>
+    <circle cx="120" cy="620" r="20" fill="#E5E7EB"/>
+    <text x="160" y="610" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#374151">Just shipped a major update to our API...</text>
+    <text x="160" y="630" font-family="Arial, sans-serif" font-size="12" fill="#6B7280">2 hours ago</text>
+  </g>
+  
+  <g>
+    <rect x="80" y="680" width="1760" height="80" rx="8" fill="#F9FAFB"/>
+    <circle cx="120" cy="720" r="20" fill="#E5E7EB"/>
+    <text x="160" y="710" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#374151">Excited to announce our Series A funding...</text>
+    <text x="160" y="730" font-family="Arial, sans-serif" font-size="12" fill="#6B7280">5 hours ago</text>
+  </g>
+  
+  <g>
+    <rect x="80" y="780" width="1760" height="80" rx="8" fill="#F9FAFB"/>
+    <circle cx="120" cy="820" r="20" fill="#E5E7EB"/>
+    <text x="160" y="810" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#374151">Here's what I learned from scaling our startup...</text>
+    <text x="160" y="830" font-family="Arial, sans-serif" font-size="12" fill="#6B7280">Yesterday</text>
+  </g>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#6D28D9"/>
+    </linearGradient>
+  </defs>
+</svg> 
