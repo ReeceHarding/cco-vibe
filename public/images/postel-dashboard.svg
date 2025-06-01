@@ -29,30 +29,30 @@
   <g>
     <!-- Card 1 -->
     <rect x="80" y="260" width="560" height="200" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
-    <rect x="100" y="280" width="24" height="24" rx="12" fill="#8B5CF6"/>
+    <rect x="100" y="280" width="24" height="24" rx="12" fill="#0E5FD8"/>
     <text x="140" y="298" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#374151">Content Inspiration</text>
     <text x="100" y="340" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">Get fresh post ideas and creative angles</text>
-    <rect x="100" y="400" width="120" height="40" rx="20" fill="#8B5CF6"/>
+    <rect x="100" y="400" width="120" height="40" rx="20" fill="#0E5FD8"/>
     <text x="130" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="white">Coming Soon</text>
   </g>
   
   <g>
     <!-- Card 2 -->
     <rect x="680" y="260" width="560" height="200" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
-    <rect x="700" y="280" width="24" height="24" rx="12" fill="#8B5CF6"/>
+    <rect x="700" y="280" width="24" height="24" rx="12" fill="#0E5FD8"/>
     <text x="740" y="298" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#374151">Refine My Idea</text>
     <text x="700" y="340" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">Turn rough ideas into polished posts. Perfect...</text>
-    <rect x="700" y="400" width="120" height="40" rx="20" fill="#8B5CF6"/>
+    <rect x="700" y="400" width="120" height="40" rx="20" fill="#0E5FD8"/>
     <text x="730" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="white">Coming Soon</text>
   </g>
   
   <g>
     <!-- Card 3 -->
     <rect x="1280" y="260" width="560" height="200" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
-    <rect x="1300" y="280" width="24" height="24" rx="12" fill="#8B5CF6"/>
+    <rect x="1300" y="280" width="24" height="24" rx="12" fill="#0E5FD8"/>
     <text x="1340" y="298" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#374151">Repurpose Content</text>
     <text x="1300" y="340" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">Transform existing content into...</text>
-    <rect x="1300" y="400" width="120" height="40" rx="20" fill="#8B5CF6"/>
+    <rect x="1300" y="400" width="120" height="40" rx="20" fill="#0E5FD8"/>
     <text x="1330" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="white">Coming Soon</text>
   </g>
   
@@ -84,8 +84,8 @@
   <!-- Gradient Definition -->
   <defs>
     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8B5CF6"/>
-      <stop offset="100%" style="stop-color:#6D28D9"/>
+      <stop offset="0%" style="stop-color:#0E5FD8"/>
+      <stop offset="100%" style="stop-color:#60A5FA"/>
     </linearGradient>
   </defs>
 </svg> 

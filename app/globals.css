@@ -34,7 +34,7 @@
     
     /* Custom properties for gradients and accents */
     --gradient-primary: linear-gradient(to bottom, hsl(213 93% 38%), hsl(213 93% 28%));
-    --gradient-purple-blue: linear-gradient(to right, hsl(270 91% 65%), hsl(213 93% 38%));
+    --gradient-accent: linear-gradient(to right, hsl(213 93% 48%), hsl(213 93% 38%));
   }
 
   .dark {
