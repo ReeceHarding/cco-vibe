@@ -261,11 +261,11 @@ export default function Home() {
                 <Button
                   type="button"
                   onClick={handleSignIn}
-                  className="flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&>svg+svg]:hidden bg-transparent hover:bg-secondary/10 h-12 px-8 text-lg bg-gradient-to-b md:flex-1 from-[#3B82F6] to-[#1E40AF] hover:from-[#2563EB] hover:to-[#1E40AF] border border-[#1E3A8A] shadow-lg text-white rounded-full font-bold"
+                  className="flex items-center justify-center transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&>svg+svg]:hidden bg-transparent hover:bg-secondary/10 h-12 px-8 text-lg bg-gradient-to-b md:flex-1 from-[#3B82F6] to-[#2563EB] hover:from-[#2563EB] hover:to-[#1E40AF] border border-[#3B82F6]/20 shadow-[0_4px_14px_0_rgb(59,130,246,0.5)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.6)] text-white rounded-full font-medium"
                 >
                   <div className="flex font-medium flex-row items-center">
                     Sign in with 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4 ml-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-5 ml-1.5">
                         <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
                     </svg>
                     /Twitter
@@ -278,11 +278,11 @@ export default function Home() {
                 <Button
                   type="button"
                   onClick={handleSignIn}
-                  className="flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&>svg+svg]:hidden bg-transparent hover:bg-secondary/10 h-12 px-8 text-base bg-gradient-to-b from-[#3B82F6] to-[#1E40AF] hover:from-[#2563EB] hover:to-[#1E40AF] border border-[#1E3A8A] shadow-lg text-white rounded-full font-bold"
+                  className="flex items-center justify-center transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&>svg+svg]:hidden bg-transparent hover:bg-secondary/10 h-12 px-8 text-base bg-gradient-to-b from-[#3B82F6] to-[#2563EB] hover:from-[#2563EB] hover:to-[#1E40AF] border border-[#3B82F6]/20 shadow-[0_4px_14px_0_rgb(59,130,246,0.5)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.6)] text-white rounded-full font-medium"
                 >
                   <div className="flex font-medium flex-row items-center">
                     Sign in with 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4 ml-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-5 ml-1.5">
                         <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
                     </svg>
                     /Twitter
