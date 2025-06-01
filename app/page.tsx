@@ -8,11 +8,24 @@ import { Navigation } from "@/components/navigation"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
+  const [showVideo, setShowVideo] = useState(false)
 
   useEffect(() => {
     setMounted(true)
     console.log("Page mounted - animations starting")
   }, [])
+
+  const handleVideoClick = () => {
+    console.log("Video button clicked - showing demo message")
+    // In a real implementation, this would open a video modal
+    alert("Demo video would play here. This is a pixel-perfect clone of the Postel website!")
+  }
+
+  const handleSignIn = () => {
+    console.log("Sign in button clicked")
+    // In a real implementation, this would initiate OAuth flow
+    alert("Sign in with X/Twitter functionality would be implemented here!")
+  }
 
   return (
     <>
@@ -152,7 +165,12 @@ export default function Home() {
             style={{ transitionDelay: "200ms" }}
           >
             Write{" "}
-            <span className="font-editorial italic font-semibold">authentic</span>{" "}<br />
+            <span 
+              className="font-['Playfair_Display'] italic font-bold"
+              style={{ fontStyle: 'italic' }}
+            >
+              authentic
+            </span>{" "}<br />
             <XIcon className="lg:size-20 xl:size-24 2xl:size-28 inline-block align-middle" />
             <span className="-ml-2">-posts in 9 seconds</span>
           </h1>
@@ -188,6 +206,7 @@ export default function Home() {
               <Button
                 className="bg-gradient-to-b from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 border-purple-600 shadow-lg text-white rounded-full font-semibold px-8 py-6 text-lg transition-all hover:scale-105"
                 type="button"
+                onClick={handleSignIn}
               >
                 <div className="flex font-medium flex-row items-center">
                   Sign in with <XIcon className="size-5 ml-2" />/Twitter
@@ -208,6 +227,7 @@ export default function Home() {
                 className="group relative w-full text-left cursor-pointer border-0 bg-transparent p-0"
                 aria-label="Open video"
                 type="button"
+                onClick={handleVideoClick}
               >
                 <Image
                   src="/images/postel-dashboard.svg"
