@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${instrumentSans.variable} ${geist.variable}`}>
       <body className={`${instrumentSans.className} ${geist.className} antialiased bg-background text-foreground overscroll-none`}>
-        {/* SVG Background to match postel.app's cloudy gradient */}
+        {/* SVG Background with Leadify blue gradient theme */}
         <div className="fixed inset-0 -z-20 h-full w-full">
           <svg
             className="absolute inset-0 h-full w-full"
@@ -42,23 +42,23 @@ export default function RootLayout({
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
-              {/* Purple/pink gradient */}
+              {/* Blue gradient variations */}
               <radialGradient id="cloudGradient1" cx="30%" cy="30%">
-                <stop offset="0%" stopColor="#E9D5FF" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#DDD6FE" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#C4B5FD" stopOpacity="0.3" />
+                <stop offset="0%" stopColor="#DBEAFE" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="#BFDBFE" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#93C5FD" stopOpacity="0.3" />
               </radialGradient>
               
               <radialGradient id="cloudGradient2" cx="70%" cy="40%">
-                <stop offset="0%" stopColor="#F3E8FF" stopOpacity="0.7" />
-                <stop offset="50%" stopColor="#E9D5FF" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#DDD6FE" stopOpacity="0.2" />
+                <stop offset="0%" stopColor="#E0E7FF" stopOpacity="0.7" />
+                <stop offset="50%" stopColor="#C7D2FE" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#A5B4FC" stopOpacity="0.2" />
               </radialGradient>
               
               <radialGradient id="cloudGradient3" cx="50%" cy="70%">
-                <stop offset="0%" stopColor="#FAE8FF" stopOpacity="0.6" />
-                <stop offset="50%" stopColor="#F3E8FF" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#E9D5FF" stopOpacity="0.2" />
+                <stop offset="0%" stopColor="#EFF6FF" stopOpacity="0.6" />
+                <stop offset="50%" stopColor="#DBEAFE" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#BFDBFE" stopOpacity="0.2" />
               </radialGradient>
 
               {/* Blur filter for soft clouds */}
@@ -68,7 +68,7 @@ export default function RootLayout({
             </defs>
             
             {/* Base gradient */}
-            <rect width="100%" height="100%" fill="#FAFAFA" className="dark:fill-[#1a1a1a]" />
+            <rect width="100%" height="100%" fill="#FAFAFA" className="dark:fill-[#0a0a0a]" />
             
             {/* Cloud shapes */}
             <ellipse cx="20%" cy="40%" rx="35%" ry="25%" fill="url(#cloudGradient1)" filter="url(#cloudBlur)" transform="translate(0, 50)" />
@@ -76,14 +76,14 @@ export default function RootLayout({
             <ellipse cx="50%" cy="60%" rx="45%" ry="35%" fill="url(#cloudGradient3)" filter="url(#cloudBlur)" transform="translate(0, 100)" />
             
             {/* Additional cloud layers for depth */}
-            <ellipse cx="85%" cy="50%" rx="30%" ry="20%" fill="#E9D5FF" fillOpacity="0.3" filter="url(#cloudBlur)" transform="translate(0, 120)" />
-            <ellipse cx="15%" cy="70%" rx="35%" ry="25%" fill="#DDD6FE" fillOpacity="0.3" filter="url(#cloudBlur)" transform="translate(0, 140)" />
-            <ellipse cx="60%" cy="80%" rx="50%" ry="30%" fill="#C4B5FD" fillOpacity="0.2" filter="url(#cloudBlur)" transform="translate(0, 160)" />
+            <ellipse cx="85%" cy="50%" rx="30%" ry="20%" fill="#DBEAFE" fillOpacity="0.3" filter="url(#cloudBlur)" transform="translate(0, 120)" />
+            <ellipse cx="15%" cy="70%" rx="35%" ry="25%" fill="#BFDBFE" fillOpacity="0.3" filter="url(#cloudBlur)" transform="translate(0, 140)" />
+            <ellipse cx="60%" cy="80%" rx="50%" ry="30%" fill="#93C5FD" fillOpacity="0.2" filter="url(#cloudBlur)" transform="translate(0, 160)" />
           </svg>
         </div>
         
         {/* Enhanced gradient overlay */}
-        <div className="fixed top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-[#FAFAFB] via-[#FAFAFB]/95 via-30% to-transparent dark:from-[#1F2129] dark:via-[#1F2129]/95 -z-10"></div>
+        <div className="fixed top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-[#FAFAFB] via-[#FAFAFB]/95 via-30% to-transparent dark:from-[#0F0F0F] dark:via-[#0F0F0F]/95 -z-10"></div>
         
         {children}
       </body>

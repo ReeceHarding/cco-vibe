@@ -18,7 +18,7 @@ export function Navigation() {
 
   return (
     <nav 
-      className="fixed top-[34.77px] left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1049.95px] min-w-[320px] h-[58px] px-3 sm:px-[14px] py-[5.63px] bg-[rgba(255,255,255,0.23)] border-[0.993332px] border-solid border-[rgba(112,99,246,0.36)] shadow-[inset_0px_8.60888px_25.4624px_rgba(255,255,255,0.5)] backdrop-blur-[7px] rounded-[33.1111px] transition-all duration-200"
+      className="fixed top-[34.77px] left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1049.95px] min-w-[320px] h-[58px] px-3 sm:px-[14px] py-[5.63px] bg-[rgba(255,255,255,0.23)] border-[0.993332px] border-solid border-[rgba(14,95,216,0.36)] shadow-[inset_0px_8.60888px_25.4624px_rgba(255,255,255,0.5)] backdrop-blur-[7px] rounded-[33.1111px] transition-all duration-200"
       data-test="navigation"
     >
       <div className="w-[120px] sm:w-[175px] h-[40px]">
@@ -37,11 +37,11 @@ export function Navigation() {
 
       {/* Desktop Navigation Links */}
       <div className="hidden md:flex items-center gap-[26px]">
-        <Link href="/#pricing" className="font-geist text-base text-[#4C1D95]/75 leading-[104.3%]">Pricing</Link>
-        <Link href="/#faq" className="font-geist text-base text-[#4C1D95]/75 leading-[104.3%]">FAQ</Link>
-        <Link href="/blog" className="font-geist text-base text-[#4C1D95]/75 leading-[104.3%]">Blog</Link>
-        <Link href="/contact" className="font-geist text-base text-[#4C1D95]/75 leading-[104.3%]">Contact</Link>
-        <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-[#4C1D95]/75 hover:text-[#4C1D95]" aria-label="Join our Discord">
+        <Link href="/#pricing" className="font-geist text-base text-[#1E40AF]/75 leading-[104.3%] hover:text-[#1E40AF] transition-colors">Pricing</Link>
+        <Link href="/#faq" className="font-geist text-base text-[#1E40AF]/75 leading-[104.3%] hover:text-[#1E40AF] transition-colors">FAQ</Link>
+        <Link href="/blog" className="font-geist text-base text-[#1E40AF]/75 leading-[104.3%] hover:text-[#1E40AF] transition-colors">Blog</Link>
+        <Link href="/contact" className="font-geist text-base text-[#1E40AF]/75 leading-[104.3%] hover:text-[#1E40AF] transition-colors">Contact</Link>
+        <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-[#1E40AF]/75 hover:text-[#1E40AF] transition-colors" aria-label="Join our Discord">
           <DiscordIcon />
         </a>
         <Link href="/app" className="flex items-center justify-center font-semibold border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&>svg+svg]:hidden border-secondary hover:bg-secondary/90 shadow-[inset_0_0.5px_2px_rgba(255,255,255,0.3)] h-9 text-sm bg-[#27272A] text-white rounded-full px-5 py-2.5">
@@ -64,11 +64,11 @@ export function Navigation() {
       {/* 
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 mt-2 md:hidden bg-white/90 backdrop-blur-md shadow-lg rounded-lg p-4">
-          <Link href="/#pricing" className="block py-2 text-[#4C1D95]/75">Pricing</Link>
-          <Link href="/#faq" className="block py-2 text-[#4C1D95]/75">FAQ</Link>
-          <Link href="/blog" className="block py-2 text-[#4C1D95]/75">Blog</Link>
-          <Link href="/contact" className="block py-2 text-[#4C1D95]/75">Contact</Link>
-          <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center py-2 text-[#4C1D95]/75">
+          <Link href="/#pricing" className="block py-2 text-[#1E40AF]/75">Pricing</Link>
+          <Link href="/#faq" className="block py-2 text-[#1E40AF]/75">FAQ</Link>
+          <Link href="/blog" className="block py-2 text-[#1E40AF]/75">Blog</Link>
+          <Link href="/contact" className="block py-2 text-[#1E40AF]/75">Contact</Link>
+          <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center py-2 text-[#1E40AF]/75">
             <DiscordIcon /> <span className="ml-2">Discord</span>
           </a>
           <Button asChild className="w-full mt-2 bg-[#27272A] text-white">
