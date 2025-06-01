@@ -65,7 +65,7 @@ export default function Home() {
             style={{ transitionDelay: "800ms" }}
           >
             <div 
-              className="relative bg-white/50 dark:bg-black/50 border border-gray-200/40 rounded-md shadow-sm"
+              className="relative bg-card/50 dark:bg-card/50 border border-black/12 rounded-md shadow-sm"
               style={{
                 width: "220px",
                 height: "122px",
@@ -74,11 +74,14 @@ export default function Home() {
               }}
             >
               <div className="h-full flex flex-col items-center justify-center gap-2">
-                <h5 className="w-28 text-center font-editorial italic font-normal text-[20px] leading-[20px] tracking-[-0.006em] text-purple-600">
+                <h5 className="w-28 text-center font-editorial italic font-normal text-[20px] leading-[20px] tracking-[-0.006em] text-[#8B5CF6]">
                   Grow your brand on
                 </h5>
-                <div className="flex flex-row items-center justify-center gap-4 mt-2 text-gray-500">
-                  <XIcon className="size-7 opacity-90" />
+                <div className="flex flex-row items-center justify-center gap-4 mt-2 text-foreground/50">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-7 opacity-90">
+                      <path d="M208,216H160L48,40H96Z" opacity="0.2"></path>
+                      <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
+                  </svg>
                 </div>
               </div>
             </div>
@@ -115,7 +118,7 @@ export default function Home() {
             style={{ transitionDelay: "700ms", transformOrigin: "center center", zIndex: 1 }}
           >
             <div style={{ transform: "rotate(-8.62029deg)" }}>
-              <h5 className="text-center font-editorial italic font-normal text-[25px] leading-[20px] tracking-[-0.006em] text-purple-600">
+              <h5 className="text-center font-editorial italic font-normal text-[25px] leading-[20px] tracking-[-0.006em] text-[#8B5CF6]">
                 Your next post
               </h5>
             </div>
@@ -128,7 +131,7 @@ export default function Home() {
             }`}
             style={{ transitionDelay: "800ms" }}
           >
-            <div className="relative bg-[#f6f8f9] p-2 rounded-lg shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] transform rotate-[-8.62deg] border border-gray-200/40">
+            <div className="relative bg-[#f6f8f9] p-2 rounded-lg shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] transform rotate-[-8.62deg] border border-black/[0.13]">
               <Image
                 alt="Decoration"
                 loading="lazy"
@@ -142,15 +145,15 @@ export default function Home() {
 
           {/* Trust badge */}
           <div 
-            className={`relative mb-4 flex justify-center transition-all duration-500 ${
+            className={`relative mb-1 flex justify-center transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "100ms" }}
           >
-            <div className="mx-auto flex flex-wrap items-center justify-center rounded-full border border-purple-200 bg-white/60 backdrop-blur-sm px-3 py-1.5 text-xs md:text-sm shadow-sm">
+            <div className="mx-auto flex flex-wrap items-center justify-center rounded-full border border-zinc-200 bg-white/40 dark:bg-black/40 px-3 py-1 text-xs md:text-sm shadow-sm">
               <span className="flex items-center gap-1.5">
-                <span className="size-1.5 rounded-full bg-purple-400"></span>
-                <span className="text-gray-700">
+                <span className="size-1.5 rounded-full bg-[#FDE68A]"></span>
+                <span className="text-black dark:text-neutral-50">
                   Trusted by 800+ Users, try for free - no credit card
                 </span>
               </span>
@@ -159,37 +162,36 @@ export default function Home() {
 
           {/* Main heading - Enhanced typography */}
           <h1 
-            className={`mx-auto mb-8 max-w-md lg:max-w-[850px] text-center font-instrument font-medium text-5xl md:text-6xl lg:text-7xl text-balance xl:text-[90px] leading-[1.1] text-gray-900 transition-all duration-500 ${
+            className={`mx-auto mb-6 max-w-md lg:max-w-[750px] text-center font-instrument font-medium text-5xl md:text-6xl lg:text-7xl text-balance xl:text-[80px] leading-tight text-[#27272A] transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "200ms" }}
           >
             Write{" "}
-            <span 
-              className="font-['Playfair_Display'] italic font-bold"
-              style={{ fontStyle: 'italic' }}
-            >
+            <span className="italic font-bold font-editorial">
               authentic
             </span>{" "}<br />
-            <XIcon className="lg:size-20 xl:size-24 2xl:size-28 inline-block align-middle" />
-            <span className="-ml-2">-posts in 9 seconds</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="lg:size-20 xl:size-20 2xl:size-24 inline-block align-middle">
+                <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
+            </svg>
+            -posts in 9 seconds
           </h1>
 
           {/* Feature pills */}
           <div 
-            className={`hidden md:flex mx-auto mt-8 mb-12 w-fit flex-col justify-center items-center gap-2 sm:gap-4 transition-all duration-500 ${
+            className={`hidden md:flex mx-auto mt-11 mb-10 w-fit flex-col justify-center items-center gap-2 sm:gap-4 transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "300ms" }}
           >
-            <div className="hidden md:flex justify-center items-center px-6 py-3 gap-6 bg-white/60 backdrop-blur-md rounded-full text-gray-600 shadow-sm border border-purple-100">
+            <div className="hidden md:flex justify-center items-center px-5 py-[15px] gap-5 w-[604px] h-[46px] bg-white/45 dark:bg-black/45 backdrop-blur-[50.5px] rounded-[61px] text-foreground/60 dark:text-neutral-50 shadow-sm">
               <span>Sounds like you</span>
               <span className="flex gap-1">
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-purple-400"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#A78BFA]"></span>
               </span>
               <span>Authentic posts</span>
               <span className="flex gap-1">
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-purple-400"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#A78BFA]"></span>
               </span>
               <span>Grows your following</span>
             </div>
@@ -197,32 +199,56 @@ export default function Home() {
 
           {/* CTA Button - Enhanced styling */}
           <div 
-            className={`flex mt-8 md:mt-0 flex-col items-center justify-center transition-all duration-500 ${
+            className={`flex mt-12 md:mt-0 flex-col items-center justify-center transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "400ms" }}
           >
             <div className="flex flex-row mx-auto w-full max-w-lg px-4 gap-2 items-center justify-center">
-              <Button
-                className="bg-gradient-to-b from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 border-purple-600 shadow-lg text-white rounded-full font-semibold px-8 py-6 text-lg transition-all hover:scale-105"
-                type="button"
-                onClick={handleSignIn}
-              >
-                <div className="flex font-medium flex-row items-center">
-                  Sign in with <XIcon className="size-5 ml-2" />/Twitter
-                </div>
-              </Button>
+              {/* Desktop button */}
+              <div className="hidden md:block">
+                <Button
+                  type="button"
+                  onClick={handleSignIn}
+                  className="flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&>svg+svg]:hidden bg-transparent hover:bg-secondary/10 h-12 px-8 text-lg bg-gradient-to-b md:flex-1 from-[#A78BFA] to-[#4C1D95] hover:from-[#9B74FA] hover:to-[#4C1D95] border border-[#553C9A] shadow-lg text-white rounded-full font-bold"
+                >
+                  <div className="flex font-medium flex-row items-center">
+                    Sign in with 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4 ml-1">
+                        <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
+                    </svg>
+                    /Twitter
+                  </div>
+                </Button>
+              </div>
+              
+              {/* Mobile button */}
+              <div className="md:hidden">
+                <Button
+                  type="button"
+                  onClick={handleSignIn}
+                  className="flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&>svg+svg]:hidden bg-transparent hover:bg-secondary/10 h-12 px-8 text-base bg-gradient-to-b from-[#A78BFA] to-[#4C1D95] hover:from-[#9B74FA] hover:to-[#4C1D95] border border-[#553C9A] shadow-lg text-white rounded-full font-bold"
+                >
+                  <div className="flex font-medium flex-row items-center">
+                    Sign in with 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-4 ml-1">
+                        <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
+                    </svg>
+                    /Twitter
+                  </div>
+                </Button>
+              </div>
             </div>
           </div>
 
           {/* Video section - made larger and more prominent */}
           <div 
-            className={`mt-16 md:mt-20 relative mx-auto w-full max-w-6xl px-4 transition-all duration-700 ${
+            className={`pointer-events-auto mt-12 md:mt-24 relative mx-auto flex w-full items-center justify-center transition-all duration-700 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "500ms" }}
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+            <div className="relative mt-16 max-w-screen-lg rounded-lg border shadow-lg">
               <button
                 className="group relative w-full text-left cursor-pointer border-0 bg-transparent p-0"
                 aria-label="Open video"
@@ -230,20 +256,21 @@ export default function Home() {
                 onClick={handleVideoClick}
               >
                 <Image
-                  src="/images/postel-dashboard.svg"
-                  alt="Postel Dashboard Preview"
-                  width={1920}
-                  height={1080}
-                  className="w-full transition-all duration-300 ease-out group-hover:scale-105 group-hover:brightness-95"
-                  quality={100}
+                  src="/images/postel-screenshot.webp"
+                  alt="Hero Video"
+                  width={1692}
+                  height={991}
+                  className="w-full rounded-md border shadow-lg transition-all duration-200 ease-out group-hover:brightness-[0.8]"
+                  quality={85}
                   priority
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex size-32 items-center justify-center rounded-full bg-white/90 shadow-2xl backdrop-blur-sm transition-all duration-200 ease-out group-hover:scale-110">
-                    <div className="relative flex size-20 items-center justify-center">
-                      <PlayIcon
-                        className="size-12 text-purple-600 transition-transform duration-200 ease-out group-hover:scale-110"
-                      />
+                <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100">
+                  <div className="flex size-36 items-center justify-center rounded-full bg-primary/20 shadow-md backdrop-blur-lg">
+                    <div className="relative flex size-24 scale-100 items-center justify-center rounded-full shadow-md transition-all duration-200 ease-out group-hover:scale-[1.2]">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-12 text-white scale-100 transition-transform duration-200 ease-out group-hover:scale-105" style={{filter: "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))"}}>
+                          <path d="M228.23,134.69,84.15,222.81A8,8,0,0,1,72,216.12V39.88a8,8,0,0,1,12.15-6.69l144.08,88.12A7.82,7.82,0,0,1,228.23,134.69Z" opacity="0.2"></path>
+                          <path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -252,7 +279,7 @@ export default function Home() {
           </div>
 
           {/* Bottom gradient fade - adjusted for new background */}
-          <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-[200px] md:h-[400px] w-full bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+          <div className="pointer-events-none absolute left-1/2 right-1/2 bottom-0 h-[150px] md:h-[300px] w-screen -translate-x-1/2 bg-gradient-to-t from-background from-10% via-background/95 via-30% to-transparent"></div>
         </div>
       </main>
     </>

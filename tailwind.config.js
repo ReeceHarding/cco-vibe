@@ -65,6 +65,7 @@ module.exports = {
         sans: ["var(--font-sans)"],
         instrument: ["'Instrument Sans'", "sans-serif"],
         editorial: ["'Playfair Display'", "serif"],
+        geist: ["var(--font-geist-sans)"],
       },
       keyframes: {
         "fade-in": {
