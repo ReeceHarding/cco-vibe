@@ -7,55 +7,54 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #0a0a0a;
-    --card: #ffffff;
-    --card-foreground: #0a0a0a;
-    --popover: #ffffff;
-    --popover-foreground: #0a0a0a;
-    --primary: #0a0a0a;
-    --primary-foreground: #fafafa;
-    --secondary: #f4f4f5;
-    --secondary-foreground: #0a0a0a;
-    --muted: #f4f4f5;
-    --muted-foreground: #757575;
-    --accent: #f4f4f5;
-    --accent-foreground: #0a0a0a;
-    --destructive: #ef4444;
-    --destructive-foreground: #fafafa;
-    --border: #e5e5e5;
-    --input: #e5e5e5;
-    --ring: #0a0a0a;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 3.9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 3.9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.9%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 3.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: #0a0a0a;
-    --foreground: #fafafa;
-    --card: #0a0a0a;
-    --card-foreground: #fafafa;
-    --popover: #0a0a0a;
-    --popover-foreground: #fafafa;
-    --primary: #fafafa;
-    --primary-foreground: #0a0a0a;
-    --secondary: #292929;
-    --secondary-foreground: #fafafa;
-    --muted: #292929;
-    --muted-foreground: #a5a5a5;
-    --accent: #292929;
-    --accent-foreground: #fafafa;
-    --destructive: #7f1d1d;
-    --destructive-foreground: #fafafa;
-    --border: #292929;
-    --input: #292929;
-    --ring: #d5d5d5;
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 3.9%;
+    --secondary: 0 0% 16.1%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 16.1%;
+    --muted-foreground: 0 0% 64.7%;
+    --accent: 0 0% 16.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 16.1%;
+    --input: 0 0% 16.1%;
+    --ring: 0 0% 83.5%;
   }
 }
 
 @layer base {
   body {
     @apply bg-background text-foreground;
-    @reference "tailwindcss/theme.css";
   }
 }
 
