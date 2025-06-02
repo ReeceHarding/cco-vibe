@@ -220,6 +220,17 @@ html {
   opacity: 1;
 }
 
+/* Hide decorative elements on mobile, show on xl screens when ready */
+.decorative-element {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .decorative-element.ready {
+    display: block;
+  }
+}
+
 /* Enhanced button styles */
 .premium-button {
   position: relative;

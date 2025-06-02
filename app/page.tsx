@@ -73,8 +73,8 @@ export default function Home() {
             viewBox="0 0 96 115" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg" 
-            className={`absolute left-[17%] top-[350px] hidden xl:block transition-all duration-1000 float-animation ${
-              mounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
+            className={`absolute left-[17%] top-[350px] decorative-element transition-all duration-1000 float-animation ${
+              mounted ? "opacity-100 translate-x-0 ready" : "opacity-0 -translate-x-20"
             }`}
             aria-hidden="true"
             style={{ 
@@ -95,8 +95,8 @@ export default function Home() {
 
           {/* Left box - "Grow your brand on" with enhanced styling - ALSO THIRD TO ANIMATE */}
           <div 
-            className={`absolute left-[9%] top-[465px] hidden xl:block transition-all duration-1000 hover-lift ${
-              mounted ? "opacity-100 scale-100 translate-x-0" : "opacity-0 scale-90 -translate-x-10"
+            className={`absolute left-[9%] top-[465px] decorative-element transition-all duration-1000 hover-lift ${
+              mounted ? "opacity-100 scale-100 translate-x-0 ready" : "opacity-0 scale-90 -translate-x-10"
             }`}
             style={{ 
               transitionDelay: "700ms",
@@ -133,8 +133,8 @@ export default function Home() {
             viewBox="0 0 90 32" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg" 
-            className={`absolute right-[21%] top-[230px] hidden xl:block transition-all duration-1000 float-animation ${
-              mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
+            className={`absolute right-[21%] top-[230px] decorative-element transition-all duration-1000 float-animation ${
+              mounted ? "opacity-100 translate-x-0 ready" : "opacity-0 translate-x-20"
             }`}
             aria-hidden="true"
             style={{ 
@@ -155,8 +155,8 @@ export default function Home() {
 
           {/* Right text - "Your next post" with enhanced styling - THIRD TO ANIMATE */}
           <div 
-            className={`absolute right-[9%] top-[220px] hidden xl:block transition-all duration-1000 text-shadow-soft ${
-              mounted ? "opacity-100 scale-100 translate-x-0" : "opacity-0 scale-90 translate-x-10"
+            className={`absolute right-[9%] top-[220px] decorative-element transition-all duration-1000 text-shadow-soft ${
+              mounted ? "opacity-100 scale-100 translate-x-0 ready" : "opacity-0 scale-90 translate-x-10"
             }`}
             style={{ 
               transitionDelay: "700ms", 
@@ -174,8 +174,8 @@ export default function Home() {
 
           {/* Right decoration image with enhanced styling - FOURTH TO ANIMATE */}
           <div 
-            className={`absolute right-[5%] top-[245px] hidden xl:block transition-all duration-1000 hover-lift ${
-              mounted ? "opacity-100 scale-100 translate-x-0" : "opacity-0 scale-90 translate-x-20"
+            className={`absolute right-[5%] top-[245px] decorative-element transition-all duration-1000 hover-lift ${
+              mounted ? "opacity-100 scale-100 translate-x-0 ready" : "opacity-0 scale-90 translate-x-20"
             }`}
             style={{ 
               transitionDelay: "900ms",
