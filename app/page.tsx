@@ -213,7 +213,7 @@ export default function Home() {
 
           {/* Main heading - Enhanced typography */}
           <h1 
-            className={`mx-auto mb-6 max-w-md lg:max-w-[700px] text-center font-instrument font-normal text-4xl md:text-5xl lg:text-6xl text-balance xl:text-[68px] leading-[1.1] text-[#27272A] transition-all duration-500 ${
+            className={`mx-auto mb-6 max-w-md lg:max-w-[700px] text-center font-instrument font-medium text-4xl md:text-5xl lg:text-6xl text-balance xl:text-[68px] leading-[1.1] text-[#27272A] transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "200ms" }}
