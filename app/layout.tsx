@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${instrumentSans.variable} ${geist.variable}`}>
       <body className={`${instrumentSans.className} ${geist.className} antialiased bg-background text-foreground overscroll-none`}>
-        {/* Enhanced SVG Background with dramatic blue gradients and cloud atmosphere */}
+        {/* SVG Background with enhanced blue gradient theme */}
         <div className="fixed inset-0 -z-20 h-full w-full">
           <svg
             className="absolute inset-0 h-full w-full"
@@ -42,71 +42,62 @@ export default function RootLayout({
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
-              {/* Enhanced blue gradient variations with more sophistication */}
-              <radialGradient id="dramaticBlue1" cx="20%" cy="20%">
-                <stop offset="0%" stopColor="#1E40AF" stopOpacity="0.9" />
-                <stop offset="30%" stopColor="#3B82F6" stopOpacity="0.7" />
-                <stop offset="60%" stopColor="#60A5FA" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#DBEAFE" stopOpacity="0.2" />
+              {/* Premium blue gradient variations */}
+              <radialGradient id="premiumBlue1" cx="20%" cy="20%">
+                <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.15" />
+                <stop offset="50%" stopColor="#2563EB" stopOpacity="0.08" />
+                <stop offset="100%" stopColor="#1E40AF" stopOpacity="0.02" />
               </radialGradient>
               
-              <radialGradient id="dramaticBlue2" cx="80%" cy="30%">
-                <stop offset="0%" stopColor="#1D4ED8" stopOpacity="0.8" />
-                <stop offset="40%" stopColor="#2563EB" stopOpacity="0.6" />
-                <stop offset="70%" stopColor="#3B82F6" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#93C5FD" stopOpacity="0.2" />
+              <radialGradient id="premiumBlue2" cx="80%" cy="30%">
+                <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.12" />
+                <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.06" />
+                <stop offset="100%" stopColor="#2563EB" stopOpacity="0.01" />
               </radialGradient>
               
-              <radialGradient id="dramaticBlue3" cx="50%" cy="80%">
-                <stop offset="0%" stopColor="#2563EB" stopOpacity="0.7" />
-                <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#BFDBFE" stopOpacity="0.1" />
+              <radialGradient id="premiumBlue3" cx="50%" cy="80%">
+                <stop offset="0%" stopColor="#93C5FD" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#60A5FA" stopOpacity="0.05" />
+                <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.01" />
               </radialGradient>
 
-              <radialGradient id="accentCloud1" cx="70%" cy="60%">
-                <stop offset="0%" stopColor="#1E3A8A" stopOpacity="0.6" />
-                <stop offset="60%" stopColor="#3B82F6" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#DBEAFE" stopOpacity="0.1" />
+              <radialGradient id="accentGlow" cx="50%" cy="50%">
+                <stop offset="0%" stopColor="#1E40AF" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#1E40AF" stopOpacity="0" />
               </radialGradient>
 
-              <radialGradient id="accentCloud2" cx="30%" cy="70%">
-                <stop offset="0%" stopColor="#1E40AF" stopOpacity="0.5" />
-                <stop offset="70%" stopColor="#60A5FA" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#EFF6FF" stopOpacity="0.05" />
-              </radialGradient>
-
-              {/* Enhanced blur filter for sophisticated depth */}
-              <filter id="dramaticBlur">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="60" />
+              {/* Enhanced blur filters */}
+              <filter id="premiumBlur" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="80" />
               </filter>
-              
-              <filter id="subtleBlur">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+
+              <filter id="softGlow">
+                <feGaussianBlur stdDeviation="20" />
+                <feColorMatrix values="0 0 0 0 0.23 0 0 0 0 0.51 0 0 0 0 0.96 0 0 0 0.7 0"/>
+                <feBlend mode="screen" in2="SourceGraphic" />
               </filter>
             </defs>
             
-            {/* Rich gradient base */}
-            <rect width="100%" height="100%" fill="url(#dramaticBlue1)" className="dark:opacity-80" />
+            {/* Premium base gradient */}
+            <rect width="100%" height="100%" fill="#FAFBFF" className="dark:fill-[#030712]" />
             
-            {/* Primary dramatic cloud shapes */}
-            <ellipse cx="25%" cy="35%" rx="45%" ry="30%" fill="url(#dramaticBlue1)" filter="url(#dramaticBlur)" transform="translate(0, 40)" />
-            <ellipse cx="75%" cy="25%" rx="50%" ry="35%" fill="url(#dramaticBlue2)" filter="url(#dramaticBlur)" transform="translate(0, 60)" />
-            <ellipse cx="45%" cy="65%" rx="55%" ry="40%" fill="url(#dramaticBlue3)" filter="url(#dramaticBlur)" transform="translate(0, 80)" />
+            {/* Layered atmospheric effects */}
+            <ellipse cx="50%" cy="-20%" rx="80%" ry="50%" fill="url(#premiumBlue1)" filter="url(#premiumBlur)" opacity="0.6" />
+            <ellipse cx="20%" cy="40%" rx="60%" ry="40%" fill="url(#premiumBlue2)" filter="url(#premiumBlur)" />
+            <ellipse cx="70%" cy="60%" rx="70%" ry="50%" fill="url(#premiumBlue3)" filter="url(#premiumBlur)" />
             
-            {/* Secondary depth layers */}
-            <ellipse cx="85%" cy="55%" rx="35%" ry="25%" fill="url(#accentCloud1)" filter="url(#subtleBlur)" transform="translate(0, 100)" />
-            <ellipse cx="15%" cy="75%" rx="40%" ry="30%" fill="url(#accentCloud2)" filter="url(#subtleBlur)" transform="translate(0, 120)" />
-            <ellipse cx="60%" cy="85%" rx="60%" ry="35%" fill="url(#dramaticBlue3)" filter="url(#dramaticBlur)" transform="translate(0, 140)" />
+            {/* Accent glow spots */}
+            <circle cx="30%" cy="20%" r="150" fill="url(#accentGlow)" filter="url(#softGlow)" />
+            <circle cx="80%" cy="50%" r="200" fill="url(#accentGlow)" filter="url(#softGlow)" opacity="0.5" />
             
-            {/* Additional atmospheric layers for depth */}
-            <ellipse cx="40%" cy="20%" rx="30%" ry="20%" fill="#1E40AF" fillOpacity="0.4" filter="url(#subtleBlur)" transform="translate(0, 160)" />
-            <ellipse cx="80%" cy="80%" rx="35%" ry="25%" fill="#2563EB" fillOpacity="0.3" filter="url(#subtleBlur)" transform="translate(0, 180)" />
+            {/* Additional depth layers */}
+            <ellipse cx="90%" cy="80%" rx="40%" ry="30%" fill="#3B82F6" fillOpacity="0.03" filter="url(#premiumBlur)" />
+            <ellipse cx="10%" cy="90%" rx="50%" ry="35%" fill="#2563EB" fillOpacity="0.04" filter="url(#premiumBlur)" />
           </svg>
         </div>
         
-        {/* Enhanced multi-layer gradient overlay for sophisticated depth */}
-        <div className="fixed top-0 left-0 right-0 h-[700px] bg-gradient-to-b from-white/95 via-white/85 via-40% to-transparent dark:from-[#0F0F0F]/95 dark:via-[#0F0F0F]/85 -z-10"></div>
-        <div className="fixed top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-blue-50/60 via-blue-50/30 via-60% to-transparent dark:from-blue-950/60 dark:via-blue-950/30 -z-10"></div>
+        {/* Premium gradient overlay */}
+        <div className="fixed inset-0 bg-gradient-to-b from-transparent via-[#FAFBFF]/50 to-[#FAFBFF] dark:from-transparent dark:via-[#030712]/50 dark:to-[#030712] -z-10 pointer-events-none"></div>
         
         {children}
       </body>
