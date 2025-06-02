@@ -209,6 +209,17 @@ html {
   animation: shimmer 2s infinite;
 }
 
+/* Animation visibility helper - ensures elements are hidden until animation starts */
+.animation-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.animation-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* Enhanced button styles */
 .premium-button {
   position: relative;
