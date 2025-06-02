@@ -93,7 +93,27 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Scrolling testimonials animations */
+/* Testimonials scrolling animations */
+.testimonials-container {
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* Smooth right to left scroll */
 @keyframes scroll-right-to-left {
   0% {
     transform: translateX(0);
@@ -103,6 +123,11 @@ html {
   }
 }
 
+.animate-scroll-right-to-left {
+  animation: scroll-right-to-left 40s linear infinite;
+}
+
+/* Smooth left to right scroll */
 @keyframes scroll-left-to-right {
   0% {
     transform: translateX(-50%);
@@ -112,26 +137,37 @@ html {
   }
 }
 
-.animate-scroll-right-to-left {
-  animation: scroll-right-to-left 40s linear infinite;
-  white-space: nowrap;
-}
-
 .animate-scroll-left-to-right {
   animation: scroll-left-to-right 40s linear infinite;
-  white-space: nowrap;
 }
 
-.animate-scroll-right-to-left:hover,
-.animate-scroll-left-to-right:hover {
+/* Pause on hover */
+.testimonials-container:hover .animate-scroll-right-to-left,
+.testimonials-container:hover .animate-scroll-left-to-right {
   animation-play-state: paused;
 }
 
-/* Hide scrollbars for testimonials */
-.testimonials-container {
-  overflow: hidden;
-  mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
-  -webkit-mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+/* Mobile testimonials scroll */
+.testimonials-mobile-scroll {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.testimonials-mobile-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-card-mobile {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Hero image mask with gradient fade */
+.hero-image-mask {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 /* Custom utility classes */
@@ -201,67 +237,6 @@ html {
   font-style: italic;
 }
 
-/* Testimonials Container */
-.testimonials-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-
-.testimonials-container::before,
-.testimonials-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 120px;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.testimonials-container::before {
-  left: 0;
-  background: linear-gradient(to right, #FAFBFF, transparent);
-}
-
-.testimonials-container::after {
-  right: 0;
-  background: linear-gradient(to left, #FAFBFF, transparent);
-}
-
-/* Scrolling Animations */
-@keyframes scrollRightToLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes scrollLeftToRight {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.animate-scroll-right-to-left {
-  animation: scrollRightToLeft 40s linear infinite;
-}
-
-.animate-scroll-left-to-right {
-  animation: scrollLeftToRight 40s linear infinite;
-}
-
-/* Pause on hover */
-.testimonials-container:hover .animate-scroll-right-to-left,
-.testimonials-container:hover .animate-scroll-left-to-right {
-  animation-play-state: paused;
-}
-
 /* Fade in animation */
 @keyframes fadeIn {
   from {
@@ -292,103 +267,139 @@ html {
   animation: scaleIn 0.3s ease-out;
 }
 
-/* Infinite scroll for post examples */
-@keyframes infiniteScroll {
+/* Posts carousel */
+.posts-container {
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+
+@keyframes infinite-scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.33%);
+    transform: translateX(-33.333%);
   }
 }
 
 .animate-infinite-scroll {
-  animation: infiniteScroll 20s linear infinite;
+  animation: infinite-scroll 50s linear infinite;
 }
 
 .posts-container:hover .animate-infinite-scroll {
   animation-play-state: paused;
 }
 
-/* FAQ Accordion Chevron Animation */
+/* Avatar stack animation */
+.avatar-stack-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-width: 3px;
+}
+
+.avatar-stack-item:hover {
+  transform: translateY(-8px) scale(1.1);
+  z-index: 50 !important;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* Chevron animation */
 .chevron-rotate {
-  transition: transform 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .chevron-rotate-open {
   transform: rotate(180deg);
 }
 
-/* Canvas particle animation container */
-.particle-canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+/* Modern blur and shadow effects */
+.backdrop-blur-xl {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-/* Avatar stack hover effect */
-.avatar-stack-item {
-  transition: all 0.2s ease;
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-.avatar-stack-item:hover {
-  transform: translateY(-4px) scale(1.1);
-  z-index: 10;
+/* Improved shadow utilities */
+.shadow-\[0_2px_20px_rgba\(0\,0\,0\,0\.04\)\] {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
 }
 
-/* Feature tab indicator */
-.tab-indicator {
-  position: absolute;
-  bottom: 0;
-  height: 2px;
-  background: linear-gradient(to right, #2563EB, #1D4ED8);
-  transition: all 0.3s ease;
+.shadow-\[0_8px_30px_rgba\(0\,0\,0\,0\.08\)\] {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Pricing card recommended badge */
-.recommended-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(to right, #2563EB, #1D4ED8);
-  color: white;
-  padding: 4px 16px;
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 600;
-  white-space: nowrap;
+.shadow-\[0_4px_20px_rgba\(59\,130\,246\,0\.15\)\] {
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
 }
 
-/* Mobile scroll snap for testimonials */
-@media (max-width: 768px) {
-  .testimonials-mobile-scroll {
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  .testimonial-card-mobile {
-    scroll-snap-align: center;
-  }
+.shadow-\[0_6px_30px_rgba\(59\,130\,246\,0\.25\)\] {
+  box-shadow: 0 6px 30px rgba(59, 130, 246, 0.25);
 }
 
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+.shadow-\[0_8px_30px_rgba\(59\,130\,246\,0\.12\)\] {
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.12);
 }
 
-/* Feature video container */
+.shadow-\[0_8px_30px_rgba\(0\,0\,0\,0\.06\)\] {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-\[0_2px_10px_rgba\(0\,0\,0\,0\.08\)\] {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Border utilities */
+.border-3 {
+  border-width: 3px;
+}
+
+/* Modern gradient backgrounds */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+/* Better focus states */
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+button:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Improved transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Feature video container styles */
 .feature-video-container {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
-  background: #f8fafc;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .feature-video-container video {
@@ -416,4 +427,53 @@ html {
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Feature tab indicator */
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(to right, #2563EB, #1D4ED8);
+  transition: all 0.3s ease;
+}
+
+/* Pricing card recommended badge */
+.recommended-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #2563EB, #1D4ED8);
+  color: white;
+  padding: 4px 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Feature video container */
+.feature-video-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.feature-video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
 }

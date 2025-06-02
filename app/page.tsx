@@ -497,80 +497,83 @@ export default function Home() {
         </div>
 
         {/* Testimonials Section - Enhanced with better animations */}
-        <section className="relative py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+        <section className="relative py-32 overflow-hidden bg-gradient-to-b from-[#FAFBFF] to-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="mb-5">
-                <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-[12px] font-semibold rounded-full uppercase tracking-wider">
+            <div className="text-center mb-20">
+              <div className="mb-6">
+                <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
                   TESTIMONIALS
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
                 How our users{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">
                   boost their X growth
                 </span>
               </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Join thousands of creators who are growing their audience with authentic content
+              </p>
             </div>
 
             {/* Desktop: Scrolling testimonials */}
             <div className="hidden md:block">
               {/* First row - scrolls right to left */}
-              <div className="testimonials-container mb-6">
-                <div className="flex gap-4 animate-scroll-right-to-left">
+              <div className="testimonials-container mb-8">
+                <div className="flex gap-6 animate-scroll-right-to-left">
                   {/* Testimonial cards for first row - duplicated for seamless loop */}
                   {[...Array(2)].map((_, setIndex) => (
                     <React.Fragment key={setIndex}>
-                      <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
-                        <div className="mb-3.5">
-                          <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
+                      <div className="flex-shrink-0 w-[380px] bg-white/60 backdrop-blur-xl p-8 rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 transition-all duration-300">
+                        <div className="mb-6">
+                          <p className="text-gray-700 leading-[1.8] text-[15px]">
                             <span className="font-semibold text-gray-900">Postify has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.
                           </p>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-base shadow-lg">
                             M
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-900 text-[14px]">Methkal</div>
-                            <div className="text-[12px] text-gray-600">Indie Maker</div>
-                            <div className="text-[12px] text-blue-600 font-medium">@methkalkhalawi</div>
+                            <div className="font-semibold text-gray-900 text-[15px]">Methkal</div>
+                            <div className="text-[13px] text-gray-500">Indie Maker</div>
+                            <div className="text-[13px] text-blue-600 font-medium mt-0.5">@methkalkhalawi</div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
-                        <div className="mb-3.5">
-                          <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
-                            <span className="font-semibold text-gray-900">Postify got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy.</span> <span className="font-semibold text-blue-600">Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.
+                      <div className="flex-shrink-0 w-[380px] bg-white/60 backdrop-blur-xl p-8 rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 transition-all duration-300">
+                        <div className="mb-6">
+                          <p className="text-gray-700 leading-[1.8] text-[15px]">
+                            <span className="font-semibold text-gray-900">Postify got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy.</span> <span className="font-bold text-blue-600">Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.
                           </p>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white font-semibold text-base shadow-lg">
                             J
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-900 text-[14px]">Julia</div>
-                            <div className="text-[12px] text-gray-600">Software Engineer & Builder</div>
-                            <div className="text-[12px] text-blue-600 font-medium">@clwassy</div>
+                            <div className="font-semibold text-gray-900 text-[15px]">Julia</div>
+                            <div className="text-[13px] text-gray-500">Software Engineer & Builder</div>
+                            <div className="text-[13px] text-blue-600 font-medium mt-0.5">@clwassy</div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
-                        <div className="mb-3.5">
-                          <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
+                      <div className="flex-shrink-0 w-[380px] bg-white/60 backdrop-blur-xl p-8 rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 transition-all duration-300">
+                        <div className="mb-6">
+                          <p className="text-gray-700 leading-[1.8] text-[15px]">
                             <span className="font-semibold text-gray-900">Postify is a game changer.</span> The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="font-semibold text-gray-900">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude.</span> The voice it created is spot on.
                           </p>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center text-white font-semibold text-base shadow-lg">
                             G
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-900 text-[14px]">Grant Singleton</div>
-                            <div className="text-[12px] text-gray-600">Software Engineer & Builder</div>
-                            <div className="text-[12px] text-blue-600 font-medium">@_grantsing</div>
+                            <div className="font-semibold text-gray-900 text-[15px]">Grant Singleton</div>
+                            <div className="text-[13px] text-gray-500">Software Engineer & Builder</div>
+                            <div className="text-[13px] text-blue-600 font-medium mt-0.5">@_grantsing</div>
                           </div>
                         </div>
                       </div>
@@ -581,60 +584,60 @@ export default function Home() {
 
               {/* Second row - scrolls left to right */}
               <div className="testimonials-container">
-                <div className="flex gap-4 animate-scroll-left-to-right">
+                <div className="flex gap-6 animate-scroll-left-to-right">
                   {/* Testimonial cards for second row - duplicated for seamless loop */}
                   {[...Array(2)].map((_, setIndex) => (
                     <React.Fragment key={setIndex}>
-                      <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
-                        <div className="mb-3.5">
-                          <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
+                      <div className="flex-shrink-0 w-[380px] bg-white/60 backdrop-blur-xl p-8 rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 transition-all duration-300">
+                        <div className="mb-6">
+                          <p className="text-gray-700 leading-[1.8] text-[15px]">
                             The founders of Postify are crushing it. <span className="font-semibold text-gray-900">Been testing Postify for a while now and have started seeing awesome results. Postify helped me to push past the first 1000 followers.</span> Grab ideas from Postify and schedule them out. Now I got more time to work on my own projects and for my family.
                           </p>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-semibold text-base shadow-lg">
                             N
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-900 text-[14px]">Nemo</div>
-                            <div className="text-[12px] text-gray-600">Software Engineer & Indie Builder</div>
-                            <div className="text-[12px] text-blue-600 font-medium">@FakeUncleNemo</div>
+                            <div className="font-semibold text-gray-900 text-[15px]">Nemo</div>
+                            <div className="text-[13px] text-gray-500">Software Engineer & Indie Builder</div>
+                            <div className="text-[13px] text-blue-600 font-medium mt-0.5">@FakeUncleNemo</div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
-                        <div className="mb-3.5">
-                          <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
+                      <div className="flex-shrink-0 w-[380px] bg-white/60 backdrop-blur-xl p-8 rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 transition-all duration-300">
+                        <div className="mb-6">
+                          <p className="text-gray-700 leading-[1.8] text-[15px]">
                             <span className="font-semibold text-gray-900">It feels like you created your own digital self to create content for you!!</span> Postify is something where you don't feel the guilt of generating AI content.
                           </p>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white font-semibold text-base shadow-lg">
                             K
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-900 text-[14px]">Kavuru Sarath</div>
-                            <div className="text-[12px] text-gray-600">Indie Maker</div>
-                            <div className="text-[12px] text-blue-600 font-medium">@KavuruSarath</div>
+                            <div className="font-semibold text-gray-900 text-[15px]">Kavuru Sarath</div>
+                            <div className="text-[13px] text-gray-500">Indie Maker</div>
+                            <div className="text-[13px] text-blue-600 font-medium mt-0.5">@KavuruSarath</div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
-                        <div className="mb-3.5">
-                          <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
-                            <span className="font-semibold text-gray-900">I just got like 100 followers in 2000 followers</span> because of Postify advice of the founders.
+                      <div className="flex-shrink-0 w-[380px] bg-white/60 backdrop-blur-xl p-8 rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 transition-all duration-300">
+                        <div className="mb-6">
+                          <p className="text-gray-700 leading-[1.8] text-[15px]">
+                            <span className="font-semibold text-gray-900">I just got like 100 followers in 2 days</span> because of Postify advice of the founders.
                           </p>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold text-base shadow-lg">
                             A
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-900 text-[14px]">Adam Bartas</div>
-                            <div className="text-[12px] text-gray-600">Designer</div>
-                            <div className="text-[12px] text-blue-600 font-medium">@AdamBartas</div>
+                            <div className="font-semibold text-gray-900 text-[15px]">Adam Bartas</div>
+                            <div className="text-[13px] text-gray-500">Designer</div>
+                            <div className="text-[13px] text-blue-600 font-medium mt-0.5">@AdamBartas</div>
                           </div>
                         </div>
                       </div>
@@ -647,55 +650,55 @@ export default function Home() {
             {/* Mobile: Horizontal scroll with snap */}
             <div className="md:hidden overflow-x-auto testimonials-mobile-scroll pb-4">
               <div className="flex gap-4 px-4" style={{ width: "max-content" }}>
-                <div className="flex-shrink-0 w-[300px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm border border-gray-100 testimonial-card-mobile">
-                  <div className="mb-3.5">
-                    <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
+                <div className="flex-shrink-0 w-[320px] bg-white/60 backdrop-blur-xl p-6 rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-gray-100/50 testimonial-card-mobile">
+                  <div className="mb-5">
+                    <p className="text-gray-700 leading-[1.8] text-[15px]">
                       <span className="font-semibold text-gray-900">Postify has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-medium text-sm shadow-lg">
                       M
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900 text-[14px]">Methkal</div>
-                      <div className="text-[12px] text-gray-600">Indie Maker</div>
+                      <div className="text-[12px] text-gray-500">Indie Maker</div>
                       <div className="text-[12px] text-blue-600 font-medium">@methkalkhalawi</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex-shrink-0 w-[300px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm border border-gray-100 testimonial-card-mobile">
-                  <div className="mb-3.5">
-                    <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
-                      <span className="font-semibold text-gray-900">Postify got me back in the flow with tweet ideas that actually match my vibe and timeline.</span> <span className="font-semibold text-blue-600">Almost +100 followers in 2 days.</span>
+                <div className="flex-shrink-0 w-[320px] bg-white/60 backdrop-blur-xl p-6 rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-gray-100/50 testimonial-card-mobile">
+                  <div className="mb-5">
+                    <p className="text-gray-700 leading-[1.8] text-[15px]">
+                      <span className="font-semibold text-gray-900">Postify got me back in the flow with tweet ideas that actually match my vibe and timeline.</span> <span className="font-bold text-blue-600">Almost +100 followers in 2 days.</span>
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
+                    <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow-lg">
                       J
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900 text-[14px]">Julia</div>
-                      <div className="text-[12px] text-gray-600">Software Engineer & Builder</div>
+                      <div className="text-[12px] text-gray-500">Software Engineer & Builder</div>
                       <div className="text-[12px] text-blue-600 font-medium">@clwassy</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex-shrink-0 w-[300px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm border border-gray-100 testimonial-card-mobile">
-                  <div className="mb-3.5">
-                    <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
+                <div className="flex-shrink-0 w-[320px] bg-white/60 backdrop-blur-xl p-6 rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-gray-100/50 testimonial-card-mobile">
+                  <div className="mb-5">
+                    <p className="text-gray-700 leading-[1.8] text-[15px]">
                       <span className="font-semibold text-gray-900">Postify is a game changer.</span> The best feature is the "Topics", they help me get fresh ideas for specific themes.
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
+                    <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow-lg">
                       G
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900 text-[14px]">Grant Singleton</div>
-                      <div className="text-[12px] text-gray-600">Software Engineer & Builder</div>
+                      <div className="text-[12px] text-gray-500">Software Engineer & Builder</div>
                       <div className="text-[12px] text-blue-600 font-medium">@_grantsing</div>
                     </div>
                   </div>
@@ -706,119 +709,185 @@ export default function Home() {
         </section>
 
         {/* Benefits Grid Section */}
-        <section ref={benefitsRef} className="relative py-20 px-4 bg-white">
+        <section ref={benefitsRef} className="relative py-32 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="mb-5">
-                <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-[12px] font-semibold rounded-full uppercase tracking-wider">
+            <div className="text-center mb-20">
+              <div className="mb-6">
+                <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
                   BENEFITS
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
                 Grow with authentic content the{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">
                   algorithm loves
                 </span>
               </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Create content that resonates with your audience and drives real engagement
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* No generic AI content */}
-              <div className={`bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "100ms" }}>
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg border-2 border-white mb-6">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              <div className={`group bg-gradient-to-b from-white to-gray-50/50 rounded-3xl border border-gray-200/60 p-10 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "100ms" }}>
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-gray-900 text-xl mb-3">No Expertise Required</h3>
-                <p className="text-gray-600 text-[14px] leading-relaxed">
+                <h3 className="font-semibold text-gray-900 text-[22px] mb-4">No generic AI content</h3>
+                <p className="text-gray-600 text-[15px] leading-[1.7]">
                   Imagine working with an experienced Content Creator that knows you inside out and will guide you to your next perfect post.
                 </p>
               </div>
 
               {/* Turn thoughts into posts */}
-              <div className={`bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "200ms" }}>
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg border-2 border-white mb-6">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              <div className={`group bg-gradient-to-b from-white to-gray-50/50 rounded-3xl border border-gray-200/60 p-10 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "200ms" }}>
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-gray-900 text-xl mb-3">Turn your thoughts into 6 perfect ready-to-publish posts</h3>
-                <p className="text-gray-600 text-[14px] leading-relaxed">
+                <h3 className="font-semibold text-gray-900 text-[22px] mb-4">Turn your thoughts into 6 perfect ready-to-publish posts</h3>
+                <p className="text-gray-600 text-[15px] leading-[1.7]">
                   Tell Postify what's on your mind or write down your thoughts. Postify unites them with your background and expertise to craft personalized content that sounds exactly like you.
                 </p>
+                {/* Audio waveform visualization */}
+                <div className="mt-8 h-20 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl flex items-center justify-center overflow-hidden">
+                  <div className="flex items-center gap-1">
+                    {[...Array(24)].map((_, i) => (
+                      <div 
+                        key={i} 
+                        className="w-1 bg-gradient-to-t from-blue-400 to-blue-600 rounded-full animate-pulse"
+                        style={{ 
+                          height: `${Math.sin(i * 0.5) * 30 + 35}px`,
+                          animationDelay: `${i * 0.05}s`,
+                          opacity: 0.8
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* Personalized post ideas */}
-              <div className={`bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "300ms" }}>
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg border-2 border-white mb-6">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              <div className={`group bg-gradient-to-b from-white to-gray-50/50 rounded-3xl border border-gray-200/60 p-10 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "300ms" }}>
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-gray-900 text-xl mb-3">Personalized post ideas in 9 seconds</h3>
-                <p className="text-gray-600 text-[14px] leading-relaxed">
+                <h3 className="font-semibold text-gray-900 text-[22px] mb-4">Personalized post ideas in 9 seconds</h3>
+                <p className="text-gray-600 text-[15px] leading-[1.7]">
                   Create 6 post ideas with one click with proven hooks and formats.
                 </p>
+                <div className="mt-8 bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-2xl p-6 border border-gray-200/50">
+                  <p className="text-[13px] text-gray-500 mb-3 font-medium uppercase tracking-wider">Input</p>
+                  <p className="text-[14px] text-gray-600 mb-4">built my first site out of pure frustration with my job</p>
+                  <p className="text-[13px] text-gray-500 mb-3 font-medium uppercase tracking-wider">Output</p>
+                  <p className="text-[15px] text-gray-800 font-medium">most people overthink their first post</p>
+                </div>
               </div>
 
               {/* Grow faster with proven formats */}
-              <div className={`bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "400ms" }}>
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg border-2 border-white mb-6">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              <div className={`group bg-gradient-to-b from-white to-gray-50/50 rounded-3xl border border-gray-200/60 p-10 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "400ms" }}>
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-gray-900 text-xl mb-3">Grow faster with proven post formats</h3>
-                <p className="text-gray-600 text-[14px] leading-relaxed">
+                <h3 className="font-semibold text-gray-900 text-[22px] mb-4">Grow faster with proven post formats</h3>
+                <p className="text-gray-600 text-[15px] leading-[1.7]">
                   Anything you create will be optimized for X by using our proven post formats which we derived from the best performing content on X.
                 </p>
+                {/* Chart placeholder */}
+                <div className="mt-8 h-40 relative bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6">
+                  <svg className="w-full h-full" viewBox="0 0 200 100">
+                    <defs>
+                      <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.3"/>
+                        <stop offset="100%" stopColor="#3B82F6" stopOpacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M 0 80 Q 50 70 100 40 T 200 10" stroke="#3B82F6" strokeWidth="3" fill="none" />
+                    <path d="M 0 80 Q 50 70 100 40 T 200 10 L 200 100 L 0 100 Z" fill="url(#chartGradient)" />
+                    <circle cx="100" cy="40" r="4" fill="#3B82F6" />
+                    <text x="105" y="35" className="text-[12px] font-medium fill-blue-600">+97 Followers</text>
+                  </svg>
+                </div>
               </div>
 
               {/* Don't waste time */}
-              <div className={`bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "500ms" }}>
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg border-2 border-white mb-6">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              <div className={`group bg-gradient-to-b from-white to-gray-50/50 rounded-3xl border border-gray-200/60 p-10 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "500ms" }}>
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-gray-900 text-xl mb-3">Don't waste time coming up with your next post idea</h3>
-                <p className="text-gray-600 text-[14px] leading-relaxed">
+                <h3 className="font-semibold text-gray-900 text-[22px] mb-4">Don't waste time coming up with your next post idea</h3>
+                <p className="text-gray-600 text-[15px] leading-[1.7]">
                   Never be inconsistent with your content again. Turn YouTube videos or any information in your knowledge base into content that is authentic to you with one click.
                 </p>
+                {/* YouTube thumbnails */}
+                <div className="mt-8 grid grid-cols-2 gap-3">
+                  <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-xl aspect-video relative overflow-hidden group cursor-pointer">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200" />
+                  </div>
+                  <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-xl aspect-video relative overflow-hidden group cursor-pointer">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section className="relative py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+        <section className="relative py-32 px-4 bg-gradient-to-b from-white to-gray-50/50">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="mb-5">
-                <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-[12px] font-semibold rounded-full uppercase tracking-wider">
+            <div className="text-center mb-20">
+              <div className="mb-6">
+                <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
                   FEATURES
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
                 <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">Supercharge</span> your content creation
               </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Everything you need to create engaging content that grows your audience
+              </p>
             </div>
 
             {/* Feature tabs */}
-            <div className="max-w-3xl mx-auto mb-12">
-              <div className="flex flex-wrap justify-center gap-4 relative">
+            <div className="max-w-4xl mx-auto mb-16">
+              <div className="flex flex-wrap justify-center gap-3 p-2 bg-gray-100/50 backdrop-blur-xl rounded-2xl">
                 {features.map((feature) => (
                   <button
                     key={feature.id}
                     onClick={() => setActiveFeatureTab(feature.id)}
-                    className={`px-6 py-3 rounded-full font-medium text-[14px] transition-all duration-200 ${
+                    className={`px-6 py-3.5 rounded-xl font-medium text-[15px] transition-all duration-200 ${
                       activeFeatureTab === feature.id
-                        ? "bg-blue-600 text-white shadow-md"
-                        : "bg-white text-gray-700 hover:bg-gray-50"
+                        ? "bg-white text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
+                        : "text-gray-600 hover:text-gray-900"
                     }`}
                   >
-                    <span className="mr-2">{feature.icon}</span>
+                    <span className="mr-2.5 text-[18px]">{feature.icon}</span>
                     {feature.title}
                   </button>
                 ))}
@@ -833,22 +902,30 @@ export default function Home() {
                   activeFeatureTab === feature.id ? "block" : "hidden"
                 }`}
               >
-                <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="grid md:grid-cols-2 gap-16 items-center">
                   <div>
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
-                    <p className="text-gray-600 text-[16px] leading-relaxed mb-8">
+                    <h3 className="text-3xl font-semibold text-gray-900 mb-6">{feature.title}</h3>
+                    <p className="text-gray-600 text-[17px] leading-[1.8] mb-10">
                       {feature.description}
                     </p>
                     <Button
                       onClick={handleSignIn}
-                      className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl px-6 py-3 font-medium shadow-md hover:shadow-lg transition-all duration-200"
+                      className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)] transition-all duration-200"
                     >
-                      Get Started Free
+                      Get Started Free →
                     </Button>
                   </div>
-                  <div className="feature-video-container shadow-xl">
-                    <div className="aspect-video bg-gray-100 rounded-xl flex items-center justify-center">
-                      <p className="text-gray-500">Feature video placeholder</p>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-3xl transform rotate-3"></div>
+                    <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden aspect-[4/3]">
+                      <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                            <span className="text-3xl">{feature.icon}</span>
+                          </div>
+                          <p className="text-gray-500 font-medium">Feature Demo</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -858,115 +935,142 @@ export default function Home() {
         </section>
 
         {/* Post Examples Carousel */}
-        <section className="relative py-20 px-4 bg-gray-50 overflow-hidden">
-          <div className="max-w-7xl mx-auto mb-12">
+        <section className="relative py-32 px-4 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto mb-20">
             <div className="text-center">
-              <div className="mb-5">
-                <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-[12px] font-semibold rounded-full uppercase tracking-wider">
+              <div className="mb-6">
+                <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
                   POSTS CREATED WITH POSTIFY
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
                 Create human-quality posts{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">
                   that sound like you
                 </span>
               </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                See how our users create authentic, engaging content
+              </p>
             </div>
+          </div>
 
-            {/* Posts carousel */}
-            <div className="posts-container">
-              <div className="flex gap-6 animate-infinite-scroll">
-                {/* Triple the posts for seamless infinite scroll */}
-                {[...Array(3)].map((_, setIndex) => (
-                  <React.Fragment key={setIndex}>
-                    {/* Example posts */}
-                    <div className="flex-shrink-0 w-[320px]">
-                      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold">
-                            J
-                          </div>
-                          <div>
-                            <div className="font-semibold text-gray-900">Julia</div>
-                            <div className="text-[12px] text-gray-600">Indie Maker</div>
-                            <div className="text-[12px] text-blue-600 font-medium">@clwassy</div>
-                          </div>
+          {/* Posts carousel */}
+          <div className="posts-container">
+            <div className="flex gap-8 animate-infinite-scroll">
+              {/* Triple the posts for seamless infinite scroll */}
+              {[...Array(3)].map((_, setIndex) => (
+                <React.Fragment key={setIndex}>
+                  {/* Example posts */}
+                  <div className="flex-shrink-0 w-[360px]">
+                    <div className="bg-white rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 p-8 transition-all duration-300">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                          J
                         </div>
-                        <p className="text-gray-800 text-[14px] leading-relaxed mb-4">
+                        <div>
+                          <div className="font-semibold text-gray-900 text-[16px]">Julia</div>
+                          <div className="text-[13px] text-gray-500">@clwassy</div>
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <p className="text-gray-800 text-[16px] leading-[1.7]">
                           Owning your time = owning any fancy title.
                         </p>
-                        <p className="text-gray-800 text-[14px] leading-relaxed mb-4">
+                        <p className="text-gray-800 text-[16px] leading-[1.7]">
                           I left my dev job to wake up and own my schedule.
                         </p>
-                        <p className="text-gray-600 text-[14px]">
+                        <p className="text-gray-600 text-[16px] leading-[1.7]">
                           Don't think I'm missing out 👀
                         </p>
                       </div>
-                    </div>
-
-                    <div className="flex-shrink-0 w-[320px]">
-                      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-semibold">
-                            A
-                          </div>
-                          <div>
-                            <div className="font-semibold text-gray-900">Adam Barta</div>
-                            <div className="text-[12px] text-gray-600">Designer</div>
-                            <div className="text-[12px] text-blue-600 font-medium">@AdamBartas</div>
-                          </div>
+                      <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between text-gray-500">
+                        <div className="flex items-center gap-4">
+                          <span className="text-[13px]">💙 127</span>
+                          <span className="text-[13px]">↩️ 23</span>
                         </div>
-                        <p className="text-gray-800 text-[14px] leading-relaxed mb-4">
+                        <span className="text-[13px]">2:34 PM</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex-shrink-0 w-[360px]">
+                    <div className="bg-white rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 p-8 transition-all duration-300">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                          A
+                        </div>
+                        <div>
+                          <div className="font-semibold text-gray-900 text-[16px]">Adam Barta</div>
+                          <div className="text-[13px] text-gray-500">@AdamBartas</div>
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <p className="text-gray-800 text-[16px] leading-[1.7]">
                           This completely blows my mind
                         </p>
-                        <p className="text-gray-800 text-[14px] leading-relaxed mb-4">
+                        <p className="text-gray-800 text-[16px] leading-[1.7]">
                           two months ago, I quit my dev job to start a design agency
                         </p>
-                        <p className="text-gray-600 text-[14px]">
+                        <p className="text-gray-600 text-[16px] leading-[1.7]">
                           set myself a 12 week plan to have solid goals
                         </p>
                       </div>
-                    </div>
-
-                    <div className="flex-shrink-0 w-[320px]">
-                      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
-                            J
-                          </div>
-                          <div>
-                            <div className="font-semibold text-gray-900">Joscha Bulets</div>
-                            <div className="text-[12px] text-gray-600">Indie Maker</div>
-                            <div className="text-[12px] text-blue-600 font-medium">@JoschuaBulets</div>
-                          </div>
+                      <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between text-gray-500">
+                        <div className="flex items-center gap-4">
+                          <span className="text-[13px]">💙 89</span>
+                          <span className="text-[13px]">↩️ 15</span>
                         </div>
-                        <p className="text-gray-800 text-[14px] leading-relaxed mb-4">
+                        <span className="text-[13px]">11:20 AM</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex-shrink-0 w-[360px]">
+                    <div className="bg-white rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 p-8 transition-all duration-300">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                          J
+                        </div>
+                        <div>
+                          <div className="font-semibold text-gray-900 text-[16px]">Joscha Bulets</div>
+                          <div className="text-[13px] text-gray-500">@JoschuaBulets</div>
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <p className="text-gray-800 text-[16px] leading-[1.7]">
                           I started 6 months ago with:
                         </p>
-                        <p className="text-gray-800 text-[14px] leading-relaxed mb-2">
+                        <p className="text-gray-800 text-[16px] leading-[1.7]">
                           0 followers<br />
                           0 skills
                         </p>
-                        <p className="text-gray-800 text-[14px] leading-relaxed">
+                        <p className="text-gray-800 text-[16px] leading-[1.7]">
                           Finally committing was life changing.
                         </p>
                       </div>
+                      <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between text-gray-500">
+                        <div className="flex items-center gap-4">
+                          <span className="text-[13px]">💙 234</span>
+                          <span className="text-[13px]">↩️ 42</span>
+                        </div>
+                        <span className="text-[13px]">9:15 AM</span>
+                      </div>
                     </div>
-                  </React.Fragment>
-                ))}
-              </div>
+                  </div>
+                </React.Fragment>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Avatar Stack Section */}
-        <section className="py-12 px-4 bg-white">
+        <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50/50">
           <div className="max-w-7xl mx-auto text-center">
-            <p className="text-gray-600 mb-6 text-[16px]">
+            <p className="text-gray-600 mb-8 text-[17px]">
               Used by Freelancers, Creators and Founders to grow their personal brands
             </p>
-            <div className="flex justify-center items-center -space-x-4">
+            <div className="flex justify-center items-center -space-x-5">
               {[
                 { bg: "from-blue-500 to-blue-600", initial: "A" },
                 { bg: "from-green-500 to-green-600", initial: "B" },
@@ -981,7 +1085,7 @@ export default function Home() {
               ].map((avatar, index) => (
                 <div
                   key={index}
-                  className={`relative w-12 h-12 bg-gradient-to-br ${avatar.bg} rounded-full flex items-center justify-center text-white font-semibold shadow-lg border-2 border-white avatar-stack-item cursor-pointer`}
+                  className={`relative w-14 h-14 bg-gradient-to-br ${avatar.bg} rounded-full flex items-center justify-center text-white font-semibold shadow-xl border-3 border-white avatar-stack-item cursor-pointer text-lg`}
                   style={{ zIndex: 10 - index }}
                 >
                   {avatar.initial}
@@ -992,39 +1096,39 @@ export default function Home() {
         </section>
 
         {/* Pricing Section */}
-        <section id="pricing" className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <section id="pricing" className="relative py-32 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-4 tracking-tight">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
                 Pricing
               </h2>
-              <p className="text-gray-600 text-[16px] mb-8">
+              <p className="text-gray-600 text-[17px] mb-10">
                 The yearly plan includes a growth strategy call with the founders
               </p>
-              <div className="inline-flex items-center justify-center bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-[14px] font-medium">
-                �� 50% off with code: EARLY100
+              <div className="inline-flex items-center justify-center bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 px-6 py-3 rounded-full text-[15px] font-medium border border-purple-200/50">
+                💜 50% off with code: EARLY100
               </div>
             </div>
 
             {/* Billing toggle */}
-            <div className="flex justify-center mb-12">
-              <div className="bg-white rounded-full p-1 shadow-sm border border-gray-200">
+            <div className="flex justify-center mb-16">
+              <div className="bg-gray-100/50 rounded-2xl p-1.5 shadow-inner">
                 <button
                   onClick={() => setBillingPeriod("monthly")}
-                  className={`px-6 py-2 rounded-full text-[14px] font-medium transition-all duration-200 ${
+                  className={`px-8 py-3 rounded-xl text-[15px] font-medium transition-all duration-200 ${
                     billingPeriod === "monthly"
-                      ? "bg-blue-600 text-white"
-                      : "text-gray-700 hover:text-gray-900"
+                      ? "bg-white text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
+                      : "text-gray-600 hover:text-gray-900"
                   }`}
                 >
                   Monthly
                 </button>
                 <button
                   onClick={() => setBillingPeriod("yearly")}
-                  className={`px-6 py-2 rounded-full text-[14px] font-medium transition-all duration-200 ${
+                  className={`px-8 py-3 rounded-xl text-[15px] font-medium transition-all duration-200 ${
                     billingPeriod === "yearly"
-                      ? "bg-blue-600 text-white"
-                      : "text-gray-700 hover:text-gray-900"
+                      ? "bg-white text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
+                      : "text-gray-600 hover:text-gray-900"
                   }`}
                 >
                   Yearly
@@ -1033,52 +1137,54 @@ export default function Home() {
             </div>
 
             {/* Pricing cards */}
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {pricingPlans.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`relative bg-white rounded-2xl shadow-sm border transition-all duration-300 hover:shadow-lg ${
+                  className={`relative bg-white rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border transition-all duration-300 ${
                     plan.recommended
-                      ? "border-blue-600 scale-105"
-                      : "border-gray-200"
+                      ? "border-blue-500 scale-105 shadow-[0_8px_30px_rgba(59,130,246,0.12)]"
+                      : "border-gray-200/60"
                   }`}
                 >
                   {plan.recommended && (
-                    <div className="recommended-badge">Recommended</div>
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2 rounded-full text-[13px] font-semibold shadow-lg">
+                      RECOMMENDED
+                    </div>
                   )}
-                  <div className="p-8">
-                    <h3 className="font-semibold text-xl text-gray-900 mb-2">
+                  <div className="p-10">
+                    <h3 className="font-semibold text-2xl text-gray-900 mb-3">
                       {plan.name}
                     </h3>
-                    <p className="text-gray-600 text-[14px] mb-6">
+                    <p className="text-gray-600 text-[15px] mb-8">
                       {plan.description}
                     </p>
-                    <div className="mb-8">
-                      <span className="text-4xl font-bold text-gray-900">
+                    <div className="mb-10">
+                      <span className="text-5xl font-bold text-gray-900">
                         ${billingPeriod === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
                       </span>
-                      <span className="text-gray-600 text-[14px]">
-                        /{billingPeriod === "monthly" ? "month" : "month"}
+                      <span className="text-gray-600 text-[15px] ml-2">
+                        /month
                       </span>
                       {billingPeriod === "yearly" && (
-                        <div className="text-gray-500 text-[12px] line-through mt-1">
+                        <div className="text-gray-500 text-[14px] line-through mt-2">
                           ${plan.monthlyPrice}/month
                         </div>
                       )}
                     </div>
-                    <ul className="space-y-3 mb-8">
+                    <ul className="space-y-4 mb-10">
                       {plan.features.map((feature, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 text-[14px]">{feature}</span>
+                          <span className="text-gray-700 text-[15px]">{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <Button
                       onClick={handleSignIn}
-                      className={`w-full rounded-xl py-3 font-medium transition-all duration-200 ${
+                      className={`w-full rounded-2xl py-4 font-medium text-[16px] transition-all duration-200 ${
                         plan.recommended
-                          ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-md hover:shadow-lg"
+                          ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)]"
                           : "bg-gray-900 hover:bg-gray-800 text-white"
                       }`}
                     >
@@ -1092,15 +1198,15 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className="relative py-20 px-4 bg-white">
+        <section id="faq" className="relative py-32 px-4 bg-gradient-to-b from-white to-gray-50/50">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="mb-5">
-                <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-[12px] font-semibold rounded-full uppercase tracking-wider">
+            <div className="text-center mb-20">
+              <div className="mb-6">
+                <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
                   FAQ
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 tracking-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 tracking-tight">
                 Frequently asked questions
               </h2>
             </div>
@@ -1109,13 +1215,13 @@ export default function Home() {
               {faqItems.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white rounded-xl border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md"
+                  className="bg-white rounded-2xl border border-gray-200/60 overflow-hidden transition-all duration-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
                 >
                   <button
                     onClick={() => setOpenFaqItem(openFaqItem === item.id ? null : item.id)}
-                    className="w-full px-6 py-4 text-left flex items-center justify-between gap-4"
+                    className="w-full px-8 py-6 text-left flex items-center justify-between gap-4"
                   >
-                    <h3 className="font-medium text-gray-900 text-[16px]">{item.question}</h3>
+                    <h3 className="font-medium text-gray-900 text-[17px]">{item.question}</h3>
                     <ChevronDown
                       className={`w-5 h-5 text-gray-500 flex-shrink-0 chevron-rotate ${
                         openFaqItem === item.id ? "chevron-rotate-open" : ""
@@ -1123,11 +1229,11 @@ export default function Home() {
                     />
                   </button>
                   <div
-                    className={`px-6 pb-4 transition-all duration-200 ${
+                    className={`px-8 pb-6 transition-all duration-200 ${
                       openFaqItem === item.id ? "block" : "hidden"
                     }`}
                   >
-                    <p className="text-gray-600 text-[14px] leading-relaxed">{item.answer}</p>
+                    <p className="text-gray-600 text-[15px] leading-[1.8]">{item.answer}</p>
                   </div>
                 </div>
               ))}
@@ -1136,14 +1242,14 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <section className="relative py-32 px-4 bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
           <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className="mb-5">
-              <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-[12px] font-semibold rounded-full uppercase tracking-wider">
+            <div className="mb-6">
+              <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
                 CONTENT CREATION
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-8 tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-10 tracking-tight">
               Finally unlock your{" "}
               <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">
                 content creation
@@ -1152,24 +1258,30 @@ export default function Home() {
               by saying what's on your mind
             </h2>
             
-            <div className="flex flex-wrap justify-center gap-6 mb-12">
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-blue-600" />
-                <span className="text-gray-700">No Expertise Required</span>
+            <div className="flex flex-wrap justify-center gap-8 mb-12">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <Check className="w-5 h-5 text-blue-600" />
+                </div>
+                <span className="text-gray-700 text-[16px]">No Expertise Required</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-blue-600" />
-                <span className="text-gray-700">Authentic Posts In Seconds</span>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <Check className="w-5 h-5 text-blue-600" />
+                </div>
+                <span className="text-gray-700 text-[16px]">Authentic Posts In Seconds</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-blue-600" />
-                <span className="text-gray-700">No Generic AI Fluff</span>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <Check className="w-5 h-5 text-blue-600" />
+                </div>
+                <span className="text-gray-700 text-[16px]">No Generic AI Fluff</span>
               </div>
             </div>
 
             <Button
               onClick={handleSignIn}
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-10 py-5 font-medium text-[17px] shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)] transform hover:-translate-y-0.5 transition-all duration-200"
             >
               Start For Free →
             </Button>
@@ -1177,59 +1289,80 @@ export default function Home() {
 
           {/* Background decoration */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-20 left-10 w-64 h-64 bg-blue-100/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-100/20 rounded-full blur-3xl" />
+            <div className="absolute top-20 left-10 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
+            <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-indigo-100/30 rounded-full blur-3xl" />
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="bg-gray-50 border-t border-gray-200 py-12 px-4">
+        <footer className="bg-white border-t border-gray-200/60 py-16 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
               {/* Logo column */}
               <div className="col-span-1">
-                <div className="flex items-center gap-2 mb-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                    </svg>
+                  </div>
                   <span className="font-semibold text-xl text-gray-900">Postify</span>
                 </div>
-                <p className="text-gray-600 text-[14px]">
+                <p className="text-gray-600 text-[15px]">
                   © 2025 Postify. All rights reserved.
                 </p>
               </div>
 
               {/* Blog column */}
               <div>
-                <h4 className="font-medium text-gray-900 mb-4">Blog</h4>
-                <ul className="space-y-2">
+                <h4 className="font-medium text-gray-900 mb-5 text-[16px]">Community</h4>
+                <ul className="space-y-3">
                   <li>
-                    <a href="#" className="text-gray-600 text-[14px] hover:text-blue-600 transition-colors">
+                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
                       Join our Discord
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
+                      Twitter
                     </a>
                   </li>
                 </ul>
               </div>
 
-              {/* Imprint column */}
+              {/* Legal column */}
               <div>
-                <h4 className="font-medium text-gray-900 mb-4">Imprint</h4>
-                <ul className="space-y-2">
+                <h4 className="font-medium text-gray-900 mb-5 text-[16px]">Legal</h4>
+                <ul className="space-y-3">
                   <li>
-                    <a href="#" className="text-gray-600 text-[14px] hover:text-blue-600 transition-colors">
+                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
                       Privacy policy
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 text-[14px] hover:text-blue-600 transition-colors">
+                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
                       Terms and conditions
                     </a>
                   </li>
                 </ul>
               </div>
 
-              {/* Empty column for spacing */}
-              <div></div>
+              {/* Resources column */}
+              <div>
+                <h4 className="font-medium text-gray-900 mb-5 text-[16px]">Resources</h4>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
+                      Support
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </footer>
