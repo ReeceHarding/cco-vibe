@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 import { PostelLogo } from "@/components/logo"
+import { useEffect, useState } from "react"
 
 // Replicated Discord Icon SVG as a React component
 const DiscordIcon = () => (
@@ -13,12 +14,32 @@ const DiscordIcon = () => (
 )
 
 export function Navigation() {
-  // Placeholder for mobile menu state
-  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Add console log for debugging
+      console.log("Scroll position:", window.scrollY)
+      setScrolled(window.scrollY > 20)
+    }
+
+    // Set initial state
+    handleScroll()
+
+    // Add scroll listener
+    window.addEventListener("scroll", handleScroll)
+
+    // Cleanup
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <nav 
-      className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1100px] min-w-[320px] h-[60px] px-5 sm:px-7 py-2 bg-white/70 dark:bg-gray-900/70 border border-gray-200/20 dark:border-gray-800/20 shadow-[0_2px_20px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150 rounded-2xl transition-all duration-200"
+      className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1100px] h-[60px] px-5 sm:px-7 py-2 backdrop-blur-2xl backdrop-saturate-150 rounded-2xl transition-all duration-300 ${
+        scrolled 
+          ? "bg-white/50 dark:bg-gray-900/50 border-gray-200/10 dark:border-gray-800/10 shadow-[0_2px_20px_rgba(0,0,0,0.02)]" 
+          : "bg-white/70 dark:bg-gray-900/70 border-gray-200/20 dark:border-gray-800/20 shadow-[0_2px_20px_rgba(0,0,0,0.04)]"
+      } border`}
       data-test="navigation"
     >
       <div className="w-[120px] sm:w-[140px] h-[40px]">
