@@ -7,6 +7,29 @@ import { XIcon, PlayIcon } from "@/components/icons"
 import { Navigation } from "@/components/navigation"
 import { PostelLogo } from "@/components/logo"
 
+// Custom hook for scroll-triggered animations
+const useScrollAnimation = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    const elements = document.querySelectorAll('.scroll-animate')
+    elements.forEach((el) => observer.observe(el))
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el))
+    }
+  }, [])
+}
+
 // Replicated Discord Icon SVG as a React component
 const DiscordIcon = () => (
   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="size-5">
@@ -17,6 +40,56 @@ const DiscordIcon = () => (
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [showVideo, setShowVideo] = useState(false)
+  const [activeFeatureTab, setActiveFeatureTab] = useState(0)
+  const [activeFAQ, setActiveFAQ] = useState(0)
+  const [isYearlyBilling, setIsYearlyBilling] = useState(false)
+
+  const featureTabs = [
+    {
+      name: "Voice Training",
+      title: "Train AI on your unique voice",
+      description: "Import your best performing tweets and let our AI analyze your writing patterns, tone, and style. The more you use Postify, the better it gets at creating content that sounds authentically you.",
+      features: [
+        "Analyzes your vocabulary and sentence structure",
+        "Learns your humor and personality",
+        "Adapts to your audience's preferences",
+        "Improves with every post you write"
+      ]
+    },
+    {
+      name: "Content Ideas",
+      title: "Never run out of ideas",
+      description: "Get unlimited content suggestions tailored to your niche and audience. Our AI generates relevant topics, trending angles, and engaging hooks that align with your brand voice.",
+      features: [
+        "Topic suggestions based on your niche",
+        "Trending hashtags and keywords",
+        "Engagement-optimized post formats",
+        "Content calendar recommendations"
+      ]
+    },
+    {
+      name: "Analytics",
+      title: "Track what works",
+      description: "Understand your audience with detailed analytics. See which posts drive the most engagement, when your followers are most active, and how your growth trends over time.",
+      features: [
+        "Real-time engagement metrics",
+        "Audience growth tracking",
+        "Best posting time analysis",
+        "Content performance insights"
+      ]
+    },
+    {
+      name: "Scheduling",
+      title: "Post at the perfect time",
+      description: "Schedule your content when your audience is most active. Our AI analyzes your followers' behavior to recommend optimal posting times for maximum reach and engagement.",
+      features: [
+        "Smart scheduling recommendations",
+        "Bulk upload and queue management",
+        "Time zone optimization",
+        "Auto-posting with approval workflow"
+      ]
+    }
+  ]
 
   useEffect(() => {
     setMounted(true)
@@ -38,6 +111,8 @@ export default function Home() {
     // In a real implementation, this would initiate OAuth flow
     alert("Sign in with X/Twitter functionality would be implemented here!")
   }
+
+  useScrollAnimation()
 
   return (
     <>
@@ -615,7 +690,7 @@ export default function Home() {
         {/* Benefits Grid Section */}
         <section className="relative py-20 px-4 overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 scroll-animate">
               <div className="mb-5">
                 <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-[12px] font-semibold rounded-full uppercase tracking-wider">
                   BENEFITS
@@ -746,16 +821,17 @@ export default function Home() {
 
             {/* Tab Navigation */}
             <div className="flex flex-wrap justify-center gap-2 mb-12">
-              {["Voice Training", "Content Ideas", "Analytics", "Scheduling"].map((tab, index) => (
+              {featureTabs.map((tab, index) => (
                 <button
-                  key={tab}
+                  key={tab.name}
+                  onClick={() => setActiveFeatureTab(index)}
                   className={`px-6 py-3 rounded-xl text-[14px] font-medium transition-all duration-200 ${
-                    index === 0 
+                    index === activeFeatureTab 
                       ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-[0_2px_8px_rgba(59,130,246,0.25)]" 
                       : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
                   }`}
                 >
-                  {tab}
+                  {tab.name}
                 </button>
               ))}
             </div>
@@ -764,18 +840,13 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Train AI on your unique voice
+                  {featureTabs[activeFeatureTab].title}
                 </h3>
                 <p className="text-gray-600 text-[16px] leading-relaxed mb-6">
-                  Import your best performing tweets and let our AI analyze your writing patterns, tone, and style. The more you use Postify, the better it gets at creating content that sounds authentically you.
+                  {featureTabs[activeFeatureTab].description}
                 </p>
                 <ul className="space-y-3">
-                  {[
-                    "Analyzes your vocabulary and sentence structure",
-                    "Learns your humor and personality",
-                    "Adapts to your audience's preferences",
-                    "Improves with every post you write"
-                  ].map((feature, index) => (
+                  {featureTabs[activeFeatureTab].features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg className="w-3 h-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -794,7 +865,7 @@ export default function Home() {
                     {/* Placeholder for feature visualization */}
                     <div className="bg-white rounded-xl p-6 shadow-sm">
                       <div className="h-48 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg flex items-center justify-center">
-                        <span className="text-gray-400">Voice Training Visualization</span>
+                        <span className="text-gray-400">{featureTabs[activeFeatureTab].name} Visualization</span>
                       </div>
                     </div>
                   </div>
@@ -992,11 +1063,14 @@ export default function Home() {
 
               {/* Billing Toggle */}
               <div className="flex items-center justify-center gap-4">
-                <span className="text-gray-700 font-medium">Monthly</span>
-                <button className="relative w-14 h-7 bg-gray-200 rounded-full transition-colors duration-200 hover:bg-gray-300">
-                  <span className="absolute left-1 top-1 w-5 h-5 bg-white rounded-full shadow-sm transition-transform duration-200"></span>
+                <span className={`font-medium transition-colors duration-200 ${!isYearlyBilling ? 'text-gray-900' : 'text-gray-500'}`}>Monthly</span>
+                <button 
+                  onClick={() => setIsYearlyBilling(!isYearlyBilling)}
+                  className="relative w-14 h-7 bg-gray-200 rounded-full transition-colors duration-200 hover:bg-gray-300"
+                >
+                  <span className={`absolute top-1 w-5 h-5 bg-white rounded-full shadow-sm transition-transform duration-200 ${isYearlyBilling ? 'translate-x-7' : 'left-1'}`}></span>
                 </button>
-                <span className="text-gray-700 font-medium">
+                <span className={`font-medium transition-colors duration-200 ${isYearlyBilling ? 'text-gray-900' : 'text-gray-500'}`}>
                   Yearly
                   <span className="ml-2 inline-block px-2 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">
                     Save 20%
@@ -1047,8 +1121,9 @@ export default function Home() {
                   <p className="text-blue-100 text-[14px]">For serious creators</p>
                 </div>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold text-white">$29</span>
+                  <span className="text-4xl font-bold text-white">{isYearlyBilling ? '$23' : '$29'}</span>
                   <span className="text-blue-100 text-[14px]">/month</span>
+                  {isYearlyBilling && <span className="text-blue-100 text-[12px] block">billed annually</span>}
                 </div>
                 <ul className="space-y-3 mb-8">
                   {[
@@ -1149,10 +1224,13 @@ export default function Home() {
                   key={index} 
                   className="bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-sm"
                 >
-                  <button className="w-full px-6 py-4 text-left flex items-center justify-between gap-4 group">
+                  <button 
+                    className="w-full px-6 py-4 text-left flex items-center justify-between gap-4 group"
+                    onClick={() => setActiveFAQ(activeFAQ === index ? -1 : index)}
+                  >
                     <h3 className="text-[16px] font-semibold text-gray-900">{faq.question}</h3>
                     <svg 
-                      className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200 ${index === 0 ? 'rotate-180' : ''}`}
+                      className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200 ${activeFAQ === index ? 'rotate-180' : ''}`}
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -1160,7 +1238,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className={`overflow-hidden transition-all duration-300 ${index === 0 ? 'max-h-96' : 'max-h-0'}`}>
+                  <div className={`overflow-hidden transition-all duration-300 ${activeFAQ === index ? 'max-h-96' : 'max-h-0'}`}>
                     <p className="px-6 pb-4 text-gray-600 text-[14px] leading-relaxed">
                       {faq.answer}
                     </p>
