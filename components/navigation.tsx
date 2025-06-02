@@ -18,34 +18,36 @@ export function Navigation() {
 
   return (
     <nav 
-      className="fixed top-[34.77px] left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1049.95px] min-w-[320px] h-[58px] px-3 sm:px-[14px] py-[5.63px] bg-[rgba(255,255,255,0.23)] border-[0.993332px] border-solid border-[rgba(14,95,216,0.36)] shadow-[inset_0px_8.60888px_25.4624px_rgba(255,255,255,0.5)] backdrop-blur-[7px] rounded-[33.1111px] transition-all duration-200"
+      className="fixed top-[34.77px] left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1049.95px] min-w-[320px] h-[58px] px-3 sm:px-[14px] py-[5.63px] bg-gradient-to-r from-white/80 via-white/90 to-white/80 dark:from-black/70 dark:via-black/80 dark:to-black/70 border border-blue-200/40 dark:border-blue-800/40 shadow-xl backdrop-blur-xl rounded-[33.1111px] transition-all duration-200 hover:shadow-2xl hover:border-blue-300/50 dark:hover:border-blue-700/50"
       data-test="navigation"
     >
       <div className="w-[120px] sm:w-[175px] h-[40px]">
-        <Link href="/" className="block hover:no-underline active:no-underline hover:scale-105 transition-transform">
+        <Link href="/" className="block hover:no-underline active:no-underline hover:scale-105 transition-transform duration-200">
           <PostelLogo className="h-[40px] w-auto max-w-full" />
         </Link>
       </div>
 
-      {/* Desktop Navigation Links */}
+      {/* Enhanced Desktop Navigation Links */}
       <div className="hidden md:flex items-center gap-[26px]">
-        <Link href="/#pricing" className="font-geist text-base text-[#1E40AF]/75 leading-[104.3%] hover:text-[#1E40AF] transition-colors">Pricing</Link>
-        <Link href="/#faq" className="font-geist text-base text-[#1E40AF]/75 leading-[104.3%] hover:text-[#1E40AF] transition-colors">FAQ</Link>
-        <Link href="/blog" className="font-geist text-base text-[#1E40AF]/75 leading-[104.3%] hover:text-[#1E40AF] transition-colors">Blog</Link>
-        <Link href="/contact" className="font-geist text-base text-[#1E40AF]/75 leading-[104.3%] hover:text-[#1E40AF] transition-colors">Contact</Link>
-        <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-[#1E40AF]/75 hover:text-[#1E40AF] transition-colors" aria-label="Join our Discord">
+        <Link href="/#pricing" className="font-geist text-base text-blue-700/80 hover:text-blue-800 dark:text-blue-300/80 dark:hover:text-blue-200 leading-[104.3%] transition-all duration-200 hover:scale-105 font-medium">Pricing</Link>
+        <Link href="/#faq" className="font-geist text-base text-blue-700/80 hover:text-blue-800 dark:text-blue-300/80 dark:hover:text-blue-200 leading-[104.3%] transition-all duration-200 hover:scale-105 font-medium">FAQ</Link>
+        <Link href="/blog" className="font-geist text-base text-blue-700/80 hover:text-blue-800 dark:text-blue-300/80 dark:hover:text-blue-200 leading-[104.3%] transition-all duration-200 hover:scale-105 font-medium">Blog</Link>
+        <Link href="/contact" className="font-geist text-base text-blue-700/80 hover:text-blue-800 dark:text-blue-300/80 dark:hover:text-blue-200 leading-[104.3%] transition-all duration-200 hover:scale-105 font-medium">Contact</Link>
+        <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-blue-700/80 hover:text-blue-800 dark:text-blue-300/80 dark:hover:text-blue-200 transition-all duration-200 hover:scale-110" aria-label="Join our Discord">
           <DiscordIcon />
         </a>
-        <Link href="/app" className="flex items-center justify-center font-semibold border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&>svg+svg]:hidden border-secondary hover:bg-secondary/90 shadow-[inset_0_0.5px_2px_rgba(255,255,255,0.3)] h-9 text-sm bg-[#27272A] text-white rounded-full px-5 py-2.5">
-            <span className="font-geist font-normal text-base leading-5">Dashboard</span>
+        <Link href="/app" className="group relative flex items-center justify-center font-semibold border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-br from-blue-800 via-blue-900 to-blue-950 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 border-blue-600/20 shadow-lg hover:shadow-xl h-9 text-sm text-white rounded-full px-5 py-2.5 transform hover:scale-105 overflow-hidden">
+            {/* Enhanced gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span className="relative font-geist font-semibold text-base leading-5">Dashboard</span>
         </Link>
       </div>
 
-      {/* Mobile Menu Button */}
+      {/* Enhanced Mobile Menu Button */}
       <Button 
         variant="outline"
         size="icon"
-        className="flex items-center justify-center font-semibold border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&>svg+svg]:hidden border-secondary/15 bg-transparent text-secondary hover:bg-secondary/10 size-9 rounded-md md:hidden"
+        className="flex items-center justify-center font-semibold border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 border-blue-200/60 bg-white/60 hover:bg-blue-50/80 dark:bg-black/60 dark:hover:bg-blue-950/80 text-blue-700 hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-200 size-9 rounded-md md:hidden shadow-md hover:shadow-lg"
         aria-label="Menu"
         // onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} // Add state management for this
       >
@@ -56,14 +58,14 @@ export function Navigation() {
       {/* 
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 mt-2 md:hidden bg-white/90 backdrop-blur-md shadow-lg rounded-lg p-4">
-          <Link href="/#pricing" className="block py-2 text-[#1E40AF]/75">Pricing</Link>
-          <Link href="/#faq" className="block py-2 text-[#1E40AF]/75">FAQ</Link>
-          <Link href="/blog" className="block py-2 text-[#1E40AF]/75">Blog</Link>
-          <Link href="/contact" className="block py-2 text-[#1E40AF]/75">Contact</Link>
-          <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center py-2 text-[#1E40AF]/75">
+          <Link href="/#pricing" className="block py-2 text-blue-700/80">Pricing</Link>
+          <Link href="/#faq" className="block py-2 text-blue-700/80">FAQ</Link>
+          <Link href="/blog" className="block py-2 text-blue-700/80">Blog</Link>
+          <Link href="/contact" className="block py-2 text-blue-700/80">Contact</Link>
+          <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center py-2 text-blue-700/80">
             <DiscordIcon /> <span className="ml-2">Discord</span>
           </a>
-          <Button asChild className="w-full mt-2 bg-[#27272A] text-white">
+          <Button asChild className="w-full mt-2 bg-gradient-to-br from-blue-800 to-blue-900 text-white">
             <Link href="/app">Dashboard</Link>
           </Button>
         </div>
