@@ -161,3 +161,21 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Slow scroll animation for post examples */
+@keyframes scroll-right-to-left-slow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-right-to-left-slow {
+  animation: scroll-right-to-left-slow 60s linear infinite;
+}
+
+.animate-scroll-right-to-left-slow:hover {
+  animation-play-state: paused;
+}
