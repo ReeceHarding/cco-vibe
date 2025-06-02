@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
 import { GeistSans } from 'geist/font/sans';
 import "./globals.css";
+import { Footer } from "@/components/footer";
 
 // Configure Instrument Sans font
 const instrumentSans = Instrument_Sans({ 
@@ -81,6 +82,7 @@ export default function RootLayout({
         <div className="fixed inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FAFBFD]/30 dark:to-[#030712]/30 -z-10 pointer-events-none"></div>
         
         {children}
+        <Footer />
       </body>
     </html>
   );
