@@ -371,131 +371,131 @@ export default function Home() {
           <div className="pointer-events-none absolute left-1/2 right-1/2 bottom-0 h-[150px] md:h-[300px] w-screen -translate-x-1/2 bg-gradient-to-t from-background from-10% via-background/95 via-30% to-transparent"></div>
         </div>
 
-        {/* Testimonials Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="max-w-7xl mx-auto text-center mb-16">
-            <div className="mb-4">
-              <span className="inline-block px-4 py-2 bg-purple-100 text-purple-600 text-sm font-medium rounded-full uppercase tracking-wider">
+        {/* Enhanced Testimonials Section with blue theme */}
+        <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-b from-transparent via-blue-50/30 to-transparent">
+          <div className="max-w-7xl mx-auto text-center mb-20">
+            <div className="mb-6">
+              <span className="inline-block px-5 py-2.5 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700 text-sm font-semibold rounded-full uppercase tracking-wider shadow-sm">
                 TESTIMONIALS
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-8 text-shadow-soft">
               How our users{" "}
-              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="text-gradient-blue font-bold">
                 boost their X growth
               </span>
             </h2>
           </div>
 
           {/* First row - scrolls right to left */}
-          <div className="testimonials-container mb-8">
+          <div className="testimonials-container mb-10">
             <div className="flex gap-6 animate-scroll-right-to-left">
               {/* Testimonial cards for first row */}
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    <span className="font-semibold">Postify has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.
+                    <span className="font-semibold text-gray-800">Postify has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     M
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Methkal</div>
                     <div className="text-sm text-gray-500">Indie Maker</div>
-                    <div className="text-sm text-purple-600">@methkalkhalawi</div>
+                    <div className="text-sm text-blue-600 font-medium">@methkalkhalawi</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    <span className="font-semibold">Postify got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy.</span> <span className="font-semibold text-purple-600">Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.
+                    <span className="font-semibold text-gray-800">Postify got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy.</span> <span className="font-semibold text-blue-600">Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     J
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Julia</div>
                     <div className="text-sm text-gray-500">Software Engineer & Builder</div>
-                    <div className="text-sm text-purple-600">@clwassy</div>
+                    <div className="text-sm text-blue-600 font-medium">@clwassy</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    <span className="font-semibold">Postify is a game changer.</span> The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="font-semibold">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude.</span> The voice it created is spot on.
+                    <span className="font-semibold text-gray-800">Postify is a game changer.</span> The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="font-semibold text-gray-800">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude.</span> The voice it created is spot on.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     G
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Grant Singleton</div>
                     <div className="text-sm text-gray-500">Software Engineer & Builder</div>
-                    <div className="text-sm text-purple-600">@_grantsing</div>
+                    <div className="text-sm text-blue-600 font-medium">@_grantsing</div>
                   </div>
                 </div>
               </div>
 
               {/* Duplicate cards for infinite scroll effect */}
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    <span className="font-semibold">Postify has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.
+                    <span className="font-semibold text-gray-800">Postify has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     M
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Methkal</div>
                     <div className="text-sm text-gray-500">Indie Maker</div>
-                    <div className="text-sm text-purple-600">@methkalkhalawi</div>
+                    <div className="text-sm text-blue-600 font-medium">@methkalkhalawi</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    <span className="font-semibold">Postify got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy.</span> <span className="font-semibold text-purple-600">Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.
+                    <span className="font-semibold text-gray-800">Postify got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy.</span> <span className="font-semibold text-blue-600">Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     J
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Julia</div>
                     <div className="text-sm text-gray-500">Software Engineer & Builder</div>
-                    <div className="text-sm text-purple-600">@clwassy</div>
+                    <div className="text-sm text-blue-600 font-medium">@clwassy</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    <span className="font-semibold">Postify is a game changer.</span> The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="font-semibold">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude.</span> The voice it created is spot on.
+                    <span className="font-semibold text-gray-800">Postify is a game changer.</span> The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="font-semibold text-gray-800">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude.</span> The voice it created is spot on.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     G
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Grant Singleton</div>
                     <div className="text-sm text-gray-500">Software Engineer & Builder</div>
-                    <div className="text-sm text-purple-600">@_grantsing</div>
+                    <div className="text-sm text-blue-600 font-medium">@_grantsing</div>
                   </div>
                 </div>
               </div>
@@ -506,111 +506,111 @@ export default function Home() {
           <div className="testimonials-container">
             <div className="flex gap-6 animate-scroll-left-to-right">
               {/* Testimonial cards for second row */}
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    The founders of Postify are crushing it. <span className="font-semibold">Been testing Postify for a while now and have started seeing awesome results. Postify helped me to push past the first 1000 followers.</span> Grab ideas from Postify and schedule them out. Now I got more time to work on my own projects and for my family.
+                    The founders of Postify are crushing it. <span className="font-semibold text-gray-800">Been testing Postify for a while now and have started seeing awesome results. Postify helped me to push past the first 1000 followers.</span> Grab ideas from Postify and schedule them out. Now I got more time to work on my own projects and for my family.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     N
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Nemo</div>
                     <div className="text-sm text-gray-500">Software Engineer & Indie Builder</div>
-                    <div className="text-sm text-purple-600">@FakeUncleNemo</div>
+                    <div className="text-sm text-blue-600 font-medium">@FakeUncleNemo</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    <span className="font-semibold">It feels like you created your own digital self to create content for you!!</span> Postify is something where you don't feel the guilt of generating AI content.
+                    <span className="font-semibold text-gray-800">It feels like you created your own digital self to create content for you!!</span> Postify is something where you don't feel the guilt of generating AI content.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     K
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Kavuru Sarath</div>
                     <div className="text-sm text-gray-500">Indie Maker</div>
-                    <div className="text-sm text-purple-600">@KavuruSarath</div>
+                    <div className="text-sm text-blue-600 font-medium">@KavuruSarath</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    <span className="font-semibold">I just got like 100 followers in 2000 followers</span> because of Postify advice of the founders.
+                    <span className="font-semibold text-blue-600">I just got like 100 followers in 2000 followers</span> because of Postify advice of the founders.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     A
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Adam Bartas</div>
                     <div className="text-sm text-gray-500">Designer</div>
-                    <div className="text-sm text-purple-600">@AdamBartas</div>
+                    <div className="text-sm text-blue-600 font-medium">@AdamBartas</div>
                   </div>
                 </div>
               </div>
 
               {/* Duplicate cards for infinite scroll effect */}
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    The founders of Postify are crushing it. <span className="font-semibold">Been testing Postify for a while now and have started seeing awesome results. Postify helped me to push past the first 1000 followers.</span> Grab ideas from Postify and schedule them out. Now I got more time to work on my own projects and for my family.
+                    The founders of Postify are crushing it. <span className="font-semibold text-gray-800">Been testing Postify for a while now and have started seeing awesome results. Postify helped me to push past the first 1000 followers.</span> Grab ideas from Postify and schedule them out. Now I got more time to work on my own projects and for my family.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     N
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Nemo</div>
                     <div className="text-sm text-gray-500">Software Engineer & Indie Builder</div>
-                    <div className="text-sm text-purple-600">@FakeUncleNemo</div>
+                    <div className="text-sm text-blue-600 font-medium">@FakeUncleNemo</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    <span className="font-semibold">It feels like you created your own digital self to create content for you!!</span> Postify is something where you don't feel the guilt of generating AI content.
+                    <span className="font-semibold text-gray-800">It feels like you created your own digital self to create content for you!!</span> Postify is something where you don't feel the guilt of generating AI content.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     K
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Kavuru Sarath</div>
                     <div className="text-sm text-gray-500">Indie Maker</div>
-                    <div className="text-sm text-purple-600">@KavuruSarath</div>
+                    <div className="text-sm text-blue-600 font-medium">@KavuruSarath</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="flex-shrink-0 w-80 bg-gradient-to-br from-white via-white to-blue-50/50 p-6 rounded-xl shadow-depth-2 border border-blue-100/60 hover-lift backdrop-blur-sm">
                 <div className="mb-4">
                   <p className="text-gray-700 leading-relaxed whitespace-normal">
-                    <span className="font-semibold">I just got like 100 followers in 2000 followers</span> because of Postify advice of the founders.
+                    <span className="font-semibold text-blue-600">I just got like 100 followers in 2000 followers</span> because of Postify advice of the founders.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold shadow-sm">
                     A
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Adam Bartas</div>
                     <div className="text-sm text-gray-500">Designer</div>
-                    <div className="text-sm text-purple-600">@AdamBartas</div>
+                    <div className="text-sm text-blue-600 font-medium">@AdamBartas</div>
                   </div>
                 </div>
               </div>
