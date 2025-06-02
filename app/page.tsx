@@ -69,20 +69,20 @@ export default function Home() {
             style={{ transitionDelay: "800ms" }}
           >
             <div 
-              className="relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-blue-200/30 rounded-xl shadow-[0_8px_32px_rgba(59,130,246,0.12)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.2)] transition-all duration-300"
+              className="relative bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-gray-200/20 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300"
               style={{
-                width: "220px",
-                height: "122px",
+                width: "200px",
+                height: "110px",
                 transform: "rotate(5.65deg)",
                 transformOrigin: "top left"
               }}
             >
               <div className="h-full flex flex-col items-center justify-center gap-2">
-                <h5 className="w-28 text-center font-editorial italic font-semibold text-[20px] leading-[20px] tracking-[-0.006em] bg-gradient-to-br from-blue-600 to-blue-700 bg-clip-text text-transparent">
+                <h5 className="w-28 text-center font-editorial italic font-semibold text-[18px] leading-[18px] tracking-tight bg-gradient-to-br from-blue-600 to-blue-700 bg-clip-text text-transparent">
                   Grow your brand on
                 </h5>
-                <div className="flex flex-row items-center justify-center gap-4 mt-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-7 opacity-90 text-blue-600">
+                <div className="flex flex-row items-center justify-center gap-4 mt-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-6 opacity-80 text-blue-600">
                       <path d="M208,216H160L48,40H96Z" opacity="0.2"></path>
                       <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
                   </svg>
@@ -122,7 +122,7 @@ export default function Home() {
             style={{ transitionDelay: "700ms", transformOrigin: "center center", zIndex: 1 }}
           >
             <div style={{ transform: "rotate(-8.62029deg)" }}>
-              <h5 className="text-center font-editorial italic font-semibold text-[25px] leading-[20px] tracking-[-0.006em] bg-gradient-to-br from-blue-600 to-blue-700 bg-clip-text text-transparent">
+              <h5 className="text-center font-editorial italic font-semibold text-[22px] leading-[18px] tracking-tight bg-gradient-to-br from-blue-600 to-blue-700 bg-clip-text text-transparent">
                 Your next post
               </h5>
             </div>
@@ -135,60 +135,54 @@ export default function Home() {
             }`}
             style={{ transitionDelay: "800ms" }}
           >
-            <div className="relative bg-white/95 dark:bg-gray-900/95 p-3 rounded-2xl shadow-[0_20px_50px_rgba(59,130,246,0.15)] transform rotate-[-8.62deg] border border-blue-100/50 dark:border-blue-900/50 backdrop-blur-lg hover:shadow-[0_25px_60px_rgba(59,130,246,0.2)] transition-all duration-300">
+            <div className="relative bg-white/90 dark:bg-gray-900/90 p-2.5 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.06)] transform rotate-[-8.62deg] border border-gray-200/20 dark:border-gray-800/20 backdrop-blur-lg hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-300">
               <svg
-                width="240"
-                height="140"
-                viewBox="0 0 240 140"
+                width="220"
+                height="128"
+                viewBox="0 0 220 128"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="rounded-xl"
+                className="rounded-lg"
               >
                 {/* Background */}
-                <rect width="240" height="140" rx="12" fill="#FAFBFF"/>
+                <rect width="220" height="128" rx="8" fill="#FAFBFC"/>
                 
                 {/* Header section */}
-                <rect width="240" height="32" fill="#F8FAFC"/>
-                <rect x="12" y="10" width="40" height="12" rx="6" fill="url(#logoGradient)"/>
-                <text x="16" y="19" fill="white" fontSize="9" fontWeight="700">Postify</text>
-                
-                {/* Header icons */}
-                <circle cx="204" cy="16" r="3" fill="#E2E8F0"/>
-                <circle cx="216" cy="16" r="3" fill="#E2E8F0"/>
-                <circle cx="228" cy="16" r="3" fill="#E2E8F0"/>
+                <rect width="220" height="28" fill="#F8FAFC"/>
+                <rect x="10" y="9" width="36" height="10" rx="5" fill="url(#logoGradient)"/>
+                <text x="13" y="17" fill="white" fontSize="8" fontWeight="600">Postify</text>
                 
                 {/* Profile section */}
-                <g transform="translate(12, 44)">
-                  <circle cx="20" cy="20" r="20" fill="url(#avatarGradient)"/>
-                  <text x="10" y="26" fill="white" fontSize="16" fontWeight="700">J</text>
+                <g transform="translate(10, 40)">
+                  <circle cx="18" cy="18" r="18" fill="url(#avatarGradient)"/>
+                  <text x="9" y="24" fill="white" fontSize="14" fontWeight="600">J</text>
                 </g>
                 
-                <rect x="60" y="48" width="80" height="6" rx="3" fill="#E2E8F0"/>
-                <rect x="60" y="58" width="50" height="4" rx="2" fill="#E2E8F0" opacity="0.7"/>
+                <rect x="54" y="44" width="72" height="5" rx="2.5" fill="#E2E8F0"/>
+                <rect x="54" y="53" width="44" height="3" rx="1.5" fill="#E2E8F0" opacity="0.6"/>
                 
-                {/* Stats with enhanced styling */}
-                <g transform="translate(12, 96)">
-                  <rect width="64" height="32" rx="8" fill="#EFF6FF" stroke="#DBEAFE" strokeWidth="1"/>
-                  <text x="8" y="15" fill="#3B82F6" fontSize="8" fontWeight="600">Content Score</text>
-                  <text x="8" y="26" fill="#1E40AF" fontSize="11" fontWeight="700">92%</text>
+                {/* Stats with clean styling */}
+                <g transform="translate(10, 86)">
+                  <rect width="60" height="28" rx="6" fill="#EFF6FF"/>
+                  <text x="6" y="13" fill="#3B82F6" fontSize="7" fontWeight="500">Score</text>
+                  <text x="6" y="23" fill="#1E40AF" fontSize="10" fontWeight="600">92%</text>
                 </g>
                 
-                <g transform="translate(84, 96)">
-                  <rect width="64" height="32" rx="8" fill="#F0FDF4" stroke="#D1FAE5" strokeWidth="1"/>
-                  <text x="8" y="15" fill="#10B981" fontSize="8" fontWeight="600">Engagement</text>
-                  <text x="8" y="26" fill="#059669" fontSize="11" fontWeight="700">+47%</text>
+                <g transform="translate(78, 86)">
+                  <rect width="60" height="28" rx="6" fill="#F0FDF4"/>
+                  <text x="6" y="13" fill="#10B981" fontSize="7" fontWeight="500">Growth</text>
+                  <text x="6" y="23" fill="#059669" fontSize="10" fontWeight="600">+47%</text>
                 </g>
                 
-                <g transform="translate(156, 96)">
-                  <rect width="64" height="32" rx="8" fill="#FEF3C7" stroke="#FDE68A" strokeWidth="1"/>
-                  <text x="8" y="15" fill="#F59E0B" fontSize="8" fontWeight="600">Reach</text>
-                  <text x="8" y="26" fill="#D97706" fontSize="11" fontWeight="700">12.3K</text>
+                <g transform="translate(146, 86)">
+                  <rect width="60" height="28" rx="6" fill="#FEF3C7"/>
+                  <text x="6" y="13" fill="#F59E0B" fontSize="7" fontWeight="500">Reach</text>
+                  <text x="6" y="23" fill="#D97706" fontSize="10" fontWeight="600">12.3K</text>
                 </g>
                 
-                {/* Compose area hint */}
-                <rect x="160" y="48" width="68" height="36" rx="8" fill="url(#composeGradient)" opacity="0.1"/>
-                <rect x="168" y="56" width="52" height="20" rx="4" fill="url(#composeGradient)"/>
-                <text x="176" y="69" fill="white" fontSize="8" fontWeight="600">New Post</text>
+                {/* Compose button */}
+                <rect x="150" y="44" width="56" height="28" rx="6" fill="url(#composeGradient)"/>
+                <text x="166" y="61" fill="white" fontSize="8" fontWeight="500">New Post</text>
                 
                 {/* Gradient definitions */}
                 <defs>
@@ -211,18 +205,18 @@ export default function Home() {
 
           {/* Trust badge */}
           <div 
-            className={`relative mb-8 flex justify-center transition-all duration-500 ${
+            className={`relative mb-6 flex justify-center transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "100ms" }}
           >
-            <div className="mx-auto flex flex-wrap items-center justify-center gap-2 rounded-full border border-blue-200/50 bg-gradient-to-b from-white/80 to-blue-50/40 dark:from-gray-900/80 dark:to-blue-950/40 px-4 py-2 text-sm backdrop-blur-sm shadow-[0_2px_10px_rgba(59,130,246,0.1)]">
+            <div className="mx-auto flex flex-wrap items-center justify-center gap-2 rounded-full border border-gray-200/40 bg-white/60 dark:bg-gray-900/60 px-3.5 py-1.5 text-[13px] backdrop-blur-md shadow-sm">
               <span className="flex items-center gap-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-600"></span>
                 </span>
-                <span className="text-gray-700 dark:text-gray-300 font-medium">
+                <span className="text-gray-700 dark:text-gray-300 font-medium tracking-tight">
                   Trusted by 800+ Users, try for free - no credit card
                 </span>
               </span>
@@ -231,7 +225,7 @@ export default function Home() {
 
           {/* Main heading - Enhanced typography */}
           <h1 
-            className={`mx-auto mb-8 max-w-md lg:max-w-[740px] text-center font-serif font-normal text-4xl md:text-5xl lg:text-6xl text-balance xl:text-[72px] leading-[1.1] text-gray-900 dark:text-white transition-all duration-500 ${
+            className={`mx-auto mb-6 max-w-md lg:max-w-[720px] text-center font-serif font-normal text-4xl md:text-5xl lg:text-6xl text-balance xl:text-[68px] leading-[1.05] text-gray-900 dark:text-white transition-all duration-500 tracking-tight ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "200ms" }}
@@ -240,7 +234,7 @@ export default function Home() {
             <span className="font-editorial italic font-extrabold bg-gradient-to-br from-blue-600 to-blue-700 bg-clip-text text-transparent">
               authentic
             </span>{" "}<br />
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="lg:size-16 xl:size-18 2xl:size-20 inline-block align-middle text-blue-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="lg:size-[60px] xl:size-[68px] 2xl:size-[76px] inline-block align-middle text-blue-600">
                 <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
             </svg>
             -posts in 9 seconds
@@ -248,30 +242,30 @@ export default function Home() {
 
           {/* Feature pills */}
           <div 
-            className={`hidden md:flex mx-auto mt-12 mb-12 w-fit flex-col justify-center items-center gap-2 sm:gap-4 transition-all duration-500 ${
+            className={`hidden md:flex mx-auto mt-10 mb-10 w-fit flex-col justify-center items-center gap-2 sm:gap-4 transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "300ms" }}
           >
-            <div className="hidden md:flex justify-center items-center px-6 py-3 gap-8 bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl shadow-[0_8px_32px_rgba(59,130,246,0.06)] rounded-full border border-blue-100/50 dark:border-blue-900/50">
-              <span className="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-medium">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gradient-to-br from-blue-500 to-blue-600"></span>
+            <div className="hidden md:flex justify-center items-center px-5 py-2.5 gap-6 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl shadow-sm rounded-2xl border border-gray-200/20 dark:border-gray-800/20">
+              <span className="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-medium text-[14px] tracking-tight">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-br from-blue-600 to-blue-700"></span>
                 </span>
                 Sounds like you
               </span>
-              <span className="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-medium">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gradient-to-br from-blue-500 to-blue-600"></span>
+              <span className="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-medium text-[14px] tracking-tight">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-br from-blue-600 to-blue-700"></span>
                 </span>
                 Authentic posts
               </span>
-              <span className="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-medium">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gradient-to-br from-blue-500 to-blue-600"></span>
+              <span className="flex items-center gap-2 text-gray-700 dark:text-gray-300 font-medium text-[14px] tracking-tight">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gradient-to-br from-blue-600 to-blue-700"></span>
                 </span>
                 Grows your following
               </span>
@@ -280,7 +274,7 @@ export default function Home() {
 
           {/* CTA Button - Enhanced styling */}
           <div 
-            className={`flex mt-12 md:mt-0 flex-col items-center justify-center transition-all duration-500 ${
+            className={`flex mt-10 md:mt-0 flex-col items-center justify-center transition-all duration-500 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "400ms" }}
@@ -291,10 +285,9 @@ export default function Home() {
                 <Button
                   type="button"
                   onClick={handleSignIn}
-                  className="group relative flex items-center justify-center h-14 px-10 text-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-full font-semibold shadow-[0_8px_24px_rgba(59,130,246,0.3)] hover:shadow-[0_12px_32px_rgba(59,130,246,0.4)] transform hover:scale-105 transition-all duration-200 border border-blue-500/20"
+                  className="flex items-center justify-center h-12 px-8 text-[16px] bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl font-medium shadow-[0_4px_14px_rgba(59,130,246,0.2)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.25)] transform hover:-translate-y-0.5 transition-all duration-200 tracking-tight"
                 >
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-blue-600/20 blur-xl group-hover:blur-2xl transition-all duration-200"></div>
-                  <div className="relative flex font-medium flex-row items-center gap-2">
+                  <div className="flex font-medium flex-row items-center gap-2">
                     Sign in with 
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-5">
                         <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
@@ -309,10 +302,9 @@ export default function Home() {
                 <Button
                   type="button"
                   onClick={handleSignIn}
-                  className="group relative flex items-center justify-center h-12 px-8 text-base bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-full font-semibold shadow-[0_8px_24px_rgba(59,130,246,0.3)] hover:shadow-[0_12px_32px_rgba(59,130,246,0.4)] transform hover:scale-105 transition-all duration-200 border border-blue-500/20"
+                  className="flex items-center justify-center h-11 px-6 text-[15px] bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl font-medium shadow-[0_4px_14px_rgba(59,130,246,0.2)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.25)] transform hover:-translate-y-0.5 transition-all duration-200 tracking-tight"
                 >
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-blue-600/20 blur-xl group-hover:blur-2xl transition-all duration-200"></div>
-                  <div className="relative flex font-medium flex-row items-center gap-2">
+                  <div className="flex font-medium flex-row items-center gap-2">
                     Sign in with 
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-5">
                         <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
@@ -326,14 +318,14 @@ export default function Home() {
 
           {/* Video section - made larger and more prominent */}
           <div 
-            className={`pointer-events-auto mt-16 md:mt-24 relative mx-auto flex w-full items-center justify-center transition-all duration-700 ${
+            className={`pointer-events-auto mt-14 md:mt-20 relative mx-auto flex w-full items-center justify-center transition-all duration-700 ${
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "500ms" }}
           >
-            <div className="relative mt-16 max-w-screen-lg rounded-2xl border border-blue-200/30 shadow-[0_20px_80px_rgba(59,130,246,0.15)] hover:shadow-[0_30px_100px_rgba(59,130,246,0.2)] transition-all duration-300 group">
+            <div className="relative mt-14 max-w-screen-lg rounded-xl border border-gray-200/20 shadow-[0_8px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_50px_rgba(0,0,0,0.06)] transition-all duration-300 group overflow-hidden">
               <button
-                className="group relative w-full text-left cursor-pointer border-0 bg-transparent p-0 rounded-2xl overflow-hidden"
+                className="group relative w-full text-left cursor-pointer border-0 bg-transparent p-0"
                 aria-label="Open video"
                 type="button"
                 onClick={handleVideoClick}
@@ -343,16 +335,15 @@ export default function Home() {
                   alt="Postify Dashboard Preview"
                   width={1920}
                   height={1080}
-                  className="w-full rounded-2xl transition-all duration-300 ease-out group-hover:scale-105"
+                  className="w-full transition-all duration-500 ease-out group-hover:scale-105"
                   quality={100}
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100">
-                  <div className="flex size-32 items-center justify-center rounded-full bg-white/10 shadow-2xl backdrop-blur-lg group-hover:bg-white/20 transition-all duration-300">
-                    <div className="relative flex size-20 scale-100 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg transition-all duration-200 ease-out group-hover:scale-[1.1]">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-10 text-white scale-100 transition-transform duration-200 ease-out group-hover:scale-105" style={{filter: "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))"}}>
-                          <path d="M228.23,134.69,84.15,222.81A8,8,0,0,1,72,216.12V39.88a8,8,0,0,1,12.15-6.69l144.08,88.12A7.82,7.82,0,0,1,228.23,134.69Z" opacity="0.2"></path>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex size-28 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/30">
+                    <div className="relative flex size-16 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-300 group-hover:scale-110">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="size-8 text-blue-600 ml-1">
                           <path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path>
                       </svg>
                     </div>
@@ -363,134 +354,134 @@ export default function Home() {
           </div>
 
           {/* Bottom gradient fade - adjusted for new background */}
-          <div className="pointer-events-none absolute left-1/2 right-1/2 bottom-0 h-[200px] md:h-[400px] w-screen -translate-x-1/2 bg-gradient-to-t from-[#FAFBFF] from-20% via-[#FAFBFF]/80 via-50% to-transparent"></div>
+          <div className="pointer-events-none absolute left-1/2 right-1/2 bottom-0 h-[180px] md:h-[350px] w-screen -translate-x-1/2 bg-gradient-to-t from-[#FAFBFF] via-[#FAFBFF]/70 to-transparent"></div>
         </div>
 
         {/* Testimonials Section */}
-        <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-b from-[#FAFBFF] to-white">
-          <div className="max-w-7xl mx-auto text-center mb-20">
-            <div className="mb-6">
-              <span className="inline-block px-5 py-2.5 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-700 text-sm font-semibold rounded-full uppercase tracking-wider shadow-sm">
+        <section className="relative py-20 px-4 overflow-hidden bg-gradient-to-b from-[#FAFBFF] to-white">
+          <div className="max-w-7xl mx-auto text-center mb-16">
+            <div className="mb-5">
+              <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-[12px] font-semibold rounded-full uppercase tracking-wider">
                 TESTIMONIALS
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
               How our users{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-bold">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">
                 boost their X growth
               </span>
             </h2>
           </div>
 
           {/* First row - scrolls right to left */}
-          <div className="testimonials-container mb-8">
-            <div className="flex gap-6 animate-scroll-right-to-left">
+          <div className="testimonials-container mb-6">
+            <div className="flex gap-4 animate-scroll-right-to-left">
               {/* Testimonial cards for first row */}
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     <span className="font-semibold text-gray-900">Postify has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     M
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Methkal</div>
-                    <div className="text-sm text-gray-600">Indie Maker</div>
-                    <div className="text-sm text-blue-600 font-medium">@methkalkhalawi</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Methkal</div>
+                    <div className="text-[12px] text-gray-600">Indie Maker</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@methkalkhalawi</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     <span className="font-semibold text-gray-900">Postify got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy.</span> <span className="font-semibold text-blue-600">Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     J
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Julia</div>
-                    <div className="text-sm text-gray-600">Software Engineer & Builder</div>
-                    <div className="text-sm text-blue-600 font-medium">@clwassy</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Julia</div>
+                    <div className="text-[12px] text-gray-600">Software Engineer & Builder</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@clwassy</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     <span className="font-semibold text-gray-900">Postify is a game changer.</span> The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="font-semibold text-gray-900">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude.</span> The voice it created is spot on.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     G
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Grant Singleton</div>
-                    <div className="text-sm text-gray-600">Software Engineer & Builder</div>
-                    <div className="text-sm text-blue-600 font-medium">@_grantsing</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Grant Singleton</div>
+                    <div className="text-[12px] text-gray-600">Software Engineer & Builder</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@_grantsing</div>
                   </div>
                 </div>
               </div>
 
               {/* Duplicate cards for infinite scroll effect */}
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     <span className="font-semibold text-gray-900">Postify has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     M
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Methkal</div>
-                    <div className="text-sm text-gray-600">Indie Maker</div>
-                    <div className="text-sm text-blue-600 font-medium">@methkalkhalawi</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Methkal</div>
+                    <div className="text-[12px] text-gray-600">Indie Maker</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@methkalkhalawi</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     <span className="font-semibold text-gray-900">Postify got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy.</span> <span className="font-semibold text-blue-600">Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     J
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Julia</div>
-                    <div className="text-sm text-gray-600">Software Engineer & Builder</div>
-                    <div className="text-sm text-blue-600 font-medium">@clwassy</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Julia</div>
+                    <div className="text-[12px] text-gray-600">Software Engineer & Builder</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@clwassy</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     <span className="font-semibold text-gray-900">Postify is a game changer.</span> The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="font-semibold text-gray-900">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude.</span> The voice it created is spot on.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     G
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Grant Singleton</div>
-                    <div className="text-sm text-gray-600">Software Engineer & Builder</div>
-                    <div className="text-sm text-blue-600 font-medium">@_grantsing</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Grant Singleton</div>
+                    <div className="text-[12px] text-gray-600">Software Engineer & Builder</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@_grantsing</div>
                   </div>
                 </div>
               </div>
@@ -499,113 +490,113 @@ export default function Home() {
 
           {/* Second row - scrolls left to right */}
           <div className="testimonials-container">
-            <div className="flex gap-6 animate-scroll-left-to-right">
+            <div className="flex gap-4 animate-scroll-left-to-right">
               {/* Testimonial cards for second row */}
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     The founders of Postify are crushing it. <span className="font-semibold text-gray-900">Been testing Postify for a while now and have started seeing awesome results. Postify helped me to push past the first 1000 followers.</span> Grab ideas from Postify and schedule them out. Now I got more time to work on my own projects and for my family.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     N
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Nemo</div>
-                    <div className="text-sm text-gray-600">Software Engineer & Indie Builder</div>
-                    <div className="text-sm text-blue-600 font-medium">@FakeUncleNemo</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Nemo</div>
+                    <div className="text-[12px] text-gray-600">Software Engineer & Indie Builder</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@FakeUncleNemo</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     <span className="font-semibold text-gray-900">It feels like you created your own digital self to create content for you!!</span> Postify is something where you don't feel the guilt of generating AI content.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     K
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Kavuru Sarath</div>
-                    <div className="text-sm text-gray-600">Indie Maker</div>
-                    <div className="text-sm text-blue-600 font-medium">@KavuruSarath</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Kavuru Sarath</div>
+                    <div className="text-[12px] text-gray-600">Indie Maker</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@KavuruSarath</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     <span className="font-semibold text-gray-900">I just got like 100 followers in 2000 followers</span> because of Postify advice of the founders.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     A
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Adam Bartas</div>
-                    <div className="text-sm text-gray-600">Designer</div>
-                    <div className="text-sm text-blue-600 font-medium">@AdamBartas</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Adam Bartas</div>
+                    <div className="text-[12px] text-gray-600">Designer</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@AdamBartas</div>
                   </div>
                 </div>
               </div>
 
               {/* Duplicate cards for infinite scroll effect */}
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     The founders of Postify are crushing it. <span className="font-semibold text-gray-900">Been testing Postify for a while now and have started seeing awesome results. Postify helped me to push past the first 1000 followers.</span> Grab ideas from Postify and schedule them out. Now I got more time to work on my own projects and for my family.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     N
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Nemo</div>
-                    <div className="text-sm text-gray-600">Software Engineer & Indie Builder</div>
-                    <div className="text-sm text-blue-600 font-medium">@FakeUncleNemo</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Nemo</div>
+                    <div className="text-[12px] text-gray-600">Software Engineer & Indie Builder</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@FakeUncleNemo</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     <span className="font-semibold text-gray-900">It feels like you created your own digital self to create content for you!!</span> Postify is something where you don't feel the guilt of generating AI content.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     K
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Kavuru Sarath</div>
-                    <div className="text-sm text-gray-600">Indie Maker</div>
-                    <div className="text-sm text-blue-600 font-medium">@KavuruSarath</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Kavuru Sarath</div>
+                    <div className="text-[12px] text-gray-600">Indie Maker</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@KavuruSarath</div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex-shrink-0 w-80 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(59,130,246,0.08)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.12)] border border-blue-100/50 transition-all duration-300 hover:scale-105">
-                <div className="mb-4">
-                  <p className="text-gray-700 leading-relaxed whitespace-normal">
+              <div className="flex-shrink-0 w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+                <div className="mb-3.5">
+                  <p className="text-gray-700 leading-relaxed whitespace-normal text-[14px]">
                     <span className="font-semibold text-gray-900">I just got like 100 followers in 2000 followers</span> because of Postify advice of the founders.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
+                  <div className="w-9 h-9 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full flex items-center justify-center text-white font-medium text-sm shadow">
                     A
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Adam Bartas</div>
-                    <div className="text-sm text-gray-600">Designer</div>
-                    <div className="text-sm text-blue-600 font-medium">@AdamBartas</div>
+                    <div className="font-semibold text-gray-900 text-[14px]">Adam Bartas</div>
+                    <div className="text-[12px] text-gray-600">Designer</div>
+                    <div className="text-[12px] text-blue-600 font-medium">@AdamBartas</div>
                   </div>
                 </div>
               </div>

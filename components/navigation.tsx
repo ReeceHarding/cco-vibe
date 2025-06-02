@@ -18,25 +18,25 @@ export function Navigation() {
 
   return (
     <nav 
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1080px] min-w-[320px] h-[64px] px-4 sm:px-6 py-2 bg-white/80 dark:bg-gray-900/80 border border-white/20 dark:border-gray-800/20 shadow-[0_8px_32px_rgba(59,130,246,0.08)] backdrop-blur-xl backdrop-saturate-150 rounded-full transition-all duration-200"
+      className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1100px] min-w-[320px] h-[60px] px-5 sm:px-7 py-2 bg-white/70 dark:bg-gray-900/70 border border-gray-200/20 dark:border-gray-800/20 shadow-[0_2px_20px_rgba(0,0,0,0.04)] backdrop-blur-2xl backdrop-saturate-150 rounded-2xl transition-all duration-200"
       data-test="navigation"
     >
-      <div className="w-[130px] sm:w-[150px] h-[45px]">
-        <Link href="/" className="block hover:no-underline active:no-underline hover:scale-105 transition-all duration-200">
-          <PostelLogo className="h-[45px] w-auto max-w-full" />
+      <div className="w-[120px] sm:w-[140px] h-[40px]">
+        <Link href="/" className="block hover:no-underline active:no-underline hover:opacity-80 transition-opacity duration-200">
+          <PostelLogo className="h-[40px] w-auto max-w-full" />
         </Link>
       </div>
 
       {/* Desktop Navigation Links */}
-      <div className="hidden md:flex items-center gap-7">
-        <Link href="/#pricing" className="font-geist text-[15px] font-medium text-gray-600 hover:text-blue-600 transition-colors duration-200">Pricing</Link>
-        <Link href="/#faq" className="font-geist text-[15px] font-medium text-gray-600 hover:text-blue-600 transition-colors duration-200">FAQ</Link>
-        <Link href="/blog" className="font-geist text-[15px] font-medium text-gray-600 hover:text-blue-600 transition-colors duration-200">Blog</Link>
-        <Link href="/contact" className="font-geist text-[15px] font-medium text-gray-600 hover:text-blue-600 transition-colors duration-200">Contact</Link>
-        <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-gray-600 hover:text-blue-600 transition-all duration-200 hover:scale-110" aria-label="Join our Discord">
+      <div className="hidden md:flex items-center gap-8">
+        <Link href="/#pricing" className="font-geist text-[14px] font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 tracking-tight">Pricing</Link>
+        <Link href="/#faq" className="font-geist text-[14px] font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 tracking-tight">FAQ</Link>
+        <Link href="/blog" className="font-geist text-[14px] font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 tracking-tight">Blog</Link>
+        <Link href="/contact" className="font-geist text-[14px] font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 tracking-tight">Contact</Link>
+        <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-gray-700 hover:text-blue-600 transition-all duration-200" aria-label="Join our Discord">
           <DiscordIcon />
         </a>
-        <Link href="/app" className="group relative flex items-center justify-center h-10 px-6 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium text-[15px] rounded-full shadow-[0_4px_14px_rgba(59,130,246,0.4)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.5)] transition-all duration-200 hover:scale-105">
+        <Link href="/app" className="group relative flex items-center justify-center h-9 px-5 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium text-[14px] rounded-xl shadow-[0_2px_8px_rgba(59,130,246,0.25)] hover:shadow-[0_4px_12px_rgba(59,130,246,0.3)] transition-all duration-200 tracking-tight">
           <span className="relative z-10">Dashboard</span>
         </Link>
       </div>
@@ -45,10 +45,10 @@ export function Navigation() {
       <Button 
         variant="ghost"
         size="icon"
-        className="flex items-center justify-center md:hidden w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+        className="flex items-center justify-center md:hidden w-9 h-9 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
         aria-label="Menu"
       >
-        <Menu className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+        <Menu className="w-4 h-4 text-gray-700 dark:text-gray-300" />
       </Button>
 
       {/* Mobile Menu (Actual implementation would require state and conditional rendering) */}
