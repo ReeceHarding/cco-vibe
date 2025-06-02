@@ -895,42 +895,151 @@ export default function Home() {
             </div>
 
             {/* Feature content */}
-            {features.map((feature) => (
-              <div
-                key={feature.id}
-                className={`transition-all duration-300 ${
-                  activeFeatureTab === feature.id ? "block" : "hidden"
-                }`}
-              >
-                <div className="grid md:grid-cols-2 gap-16 items-center">
-                  <div>
-                    <h3 className="text-3xl font-semibold text-gray-900 mb-6">{feature.title}</h3>
-                    <p className="text-gray-600 text-[17px] leading-[1.8] mb-10">
-                      {feature.description}
-                    </p>
-                    <Button
-                      onClick={handleSignIn}
-                      className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)] transition-all duration-200"
-                    >
-                      Get Started Free →
-                    </Button>
-                  </div>
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-3xl transform rotate-3"></div>
-                    <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden aspect-[4/3]">
-                      <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl flex items-center justify-center mx-auto mb-4">
-                            <span className="text-3xl">{feature.icon}</span>
+            <div className="max-w-6xl mx-auto">
+              {features.map((feature) => (
+                <div
+                  key={feature.id}
+                  className={`transition-all duration-300 ${
+                    activeFeatureTab === feature.id ? "block" : "hidden"
+                  }`}
+                >
+                  <div className="grid md:grid-cols-2 gap-16 items-start">
+                    <div className="space-y-8">
+                      <div>
+                        <h3 className="text-3xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
+                        <p className="text-gray-600 text-[17px] leading-[1.8]">
+                          {feature.id === "youtube" 
+                            ? "Transform your existing content into optimized posts for each social platform."
+                            : feature.description
+                          }
+                        </p>
+                      </div>
+
+                      {/* Input field for YouTube feature */}
+                      {feature.id === "youtube" && (
+                        <div className="space-y-6">
+                          <div className="relative">
+                            <input
+                              type="text"
+                              placeholder="Paste the Youtube Video URL here..."
+                              className="w-full px-6 py-4 text-[16px] bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
+                            />
+                            <svg 
+                              className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" 
+                              fill="none" 
+                              stroke="currentColor" 
+                              strokeWidth="2" 
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
                           </div>
-                          <p className="text-gray-500 font-medium">Feature Demo</p>
+                          <Button
+                            onClick={handleSignIn}
+                            className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-[0_4px_20px_rgba(147,51,234,0.15)] hover:shadow-[0_6px_30px_rgba(147,51,234,0.25)] transition-all duration-200"
+                          >
+                            Generate complete post
+                          </Button>
+                        </div>
+                      )}
+
+                      {/* Voice input for Voice feature */}
+                      {feature.id === "voice" && (
+                        <div className="space-y-6">
+                          <div className="relative">
+                            <textarea
+                              placeholder="Speak your thoughts or write them down..."
+                              className="w-full px-6 py-4 text-[16px] bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 min-h-[120px] resize-none"
+                            />
+                            <button className="absolute right-4 top-4 p-2 bg-blue-100 rounded-lg hover:bg-blue-200 transition-colors">
+                              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                              </svg>
+                            </button>
+                          </div>
+                          <Button
+                            onClick={handleSignIn}
+                            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)] transition-all duration-200"
+                          >
+                            Turn into posts
+                          </Button>
+                        </div>
+                      )}
+
+                      {/* Ideas generation for Create Post Ideas */}
+                      {feature.id === "ideas" && (
+                        <div className="space-y-6">
+                          <div className="relative">
+                            <input
+                              type="text"
+                              placeholder="What's on your mind? Share your thoughts..."
+                              className="w-full px-6 py-4 text-[16px] bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
+                            />
+                          </div>
+                          <Button
+                            onClick={handleSignIn}
+                            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)] transition-all duration-200"
+                          >
+                            Generate post ideas
+                          </Button>
+                        </div>
+                      )}
+
+                      {/* Knowledge base for Build your Knowledge Base */}
+                      {feature.id === "knowledge" && (
+                        <div className="space-y-6">
+                          <div className="grid grid-cols-2 gap-4">
+                            <button className="p-4 bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 transition-colors text-left">
+                              <svg className="w-6 h-6 text-blue-600 mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                              </svg>
+                              <p className="text-sm font-medium text-gray-900">Add new entry</p>
+                            </button>
+                            <button className="p-4 bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 transition-colors text-left">
+                              <svg className="w-6 h-6 text-blue-600 mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                              </svg>
+                              <p className="text-sm font-medium text-gray-900">Import content</p>
+                            </button>
+                          </div>
+                          <Button
+                            onClick={handleSignIn}
+                            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)] transition-all duration-200"
+                          >
+                            Get Started Free →
+                          </Button>
+                        </div>
+                      )}
+                    </div>
+                    
+                    {/* Right side - Video/Demo area */}
+                    <div className="relative">
+                      <div className="relative bg-gray-100 rounded-3xl overflow-hidden aspect-[4/3] shadow-inner">
+                        {/* Video placeholder - in production, this would be actual video */}
+                        <div className="w-full h-full flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="w-20 h-20 bg-white/50 rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                              <span className="text-3xl">{feature.icon}</span>
+                            </div>
+                            <p className="text-gray-500 font-medium">Feature Video Demo</p>
+                            <p className="text-gray-400 text-sm mt-2">Coming soon</p>
+                          </div>
+                        </div>
+                        
+                        {/* Play button overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/10">
+                          <button className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
+                            <svg className="w-6 h-6 text-blue-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z"/>
+                            </svg>
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
