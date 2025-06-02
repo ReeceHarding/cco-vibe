@@ -219,7 +219,7 @@ export default function Home() {
             style={{ transitionDelay: "200ms" }}
           >
             Write{" "}
-            <span className="font-editorial italic font-light text-[#27272A]">
+            <span className="font-editorial italic font-normal text-[#27272A]">
               authentic
             </span>{" "}<br />
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="lg:size-16 xl:size-18 2xl:size-20 inline-block align-middle">
