@@ -5,6 +5,186 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { XIcon, PlayIcon, ChevronDown, Check, X, WandSparkles, Mic, Youtube, BrainCircuit, UserRoundPen, AudioLines, Rocket, Heart, MessageCircle, Repeat2, Share, Bookmark, MoreHorizontal, Verified } from "lucide-react"
 import { Navigation } from "@/components/navigation"
+import { PostelLogo } from "@/components/logo"
+
+// Audio Timer Component
+const AudioTimer = () => {
+  const [time, setTime] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  
+  useEffect(() => {
+    let interval: NodeJS.Timeout | null = null
+    
+    if (isHovered) {
+      interval = setInterval(() => {
+        setTime(prev => prev + 1)
+      }, 1000)
+    } else {
+      setTime(0)
+    }
+    
+    return () => {
+      if (interval) clearInterval(interval)
+    }
+  }, [isHovered])
+  
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60)
+    const secs = seconds % 60
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
+  }
+  
+  return (
+    <div 
+      className="font-medium text-purple-500 text-lg shrink-0 z-10"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {formatTime(time)}
+    </div>
+  )
+}
+
+// Follower Growth Card Component  
+const FollowerGrowthCard = () => {
+  const [isHovered, setIsHovered] = useState(false)
+  const [followerCount, setFollowerCount] = useState(97)
+  
+  useEffect(() => {
+    if (isHovered) {
+      const timer = setTimeout(() => {
+        setFollowerCount(342)
+      }, 300)
+      return () => clearTimeout(timer)
+    } else {
+      setFollowerCount(97)
+    }
+  }, [isHovered])
+  
+  return (
+    <div 
+      className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex flex-col h-full">
+        <h3 className="text-xl font-semibold mb-3 text-foreground">Grow faster with proven post formats</h3>
+        <p className="text-muted-foreground mb-8">Anything you create with will be optimized for X by using our proven post formats which we derived from the best performing content on X.</p>
+        
+        {/* Follower count */}
+        <div className="flex flex-col mb-2">
+          <div className="flex flex-row text-xl font-medium items-baseline gap-2">
+            <p>+</p>
+            <p className="transition-all duration-500 transform" style={{ fontSize: isHovered ? '28px' : '20px' }}>
+              {followerCount}
+            </p>
+            {isHovered && (
+              <span className="text-sm text-purple-600 font-medium animate-fadeIn">
+                with Postify
+              </span>
+            )}
+          </div>
+          <p className="text-muted-foreground text-sm">
+            {isHovered ? 'Average growth per month' : 'Followers'}
+          </p>
+        </div>
+
+        {/* Chart */}
+        <div className="h-32 w-full sm:h-40 mt-2 relative">
+          <svg className="h-full w-full" viewBox="0 0 596 256" preserveAspectRatio="none">
+            <title>Performance Chart</title>
+            <desc>Follower growth chart showing upward trend</desc>
+            
+            {/* Grid lines */}
+            <g className="recharts-cartesian-grid">
+              <g className="recharts-cartesian-grid-horizontal">
+                <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="49" x2="596" y2="49"></line>
+                <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="100.75" x2="596" y2="100.75"></line>
+                <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="152.5" x2="596" y2="152.5"></line>
+                <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="204.25" x2="596" y2="204.25"></line>
+                <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="256" x2="596" y2="256"></line>
+              </g>
+            </g>
+            
+            {/* Gradients */}
+            <defs>
+              <linearGradient id="indigo" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#8b5cf6" stopOpacity="0.4"></stop>
+                <stop offset="95%" stopColor="#8b5cf6" stopOpacity="0"></stop>
+              </linearGradient>
+              <linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#a855f7" stopOpacity="0.4"></stop>
+                <stop offset="95%" stopColor="#a855f7" stopOpacity="0"></stop>
+              </linearGradient>
+            </defs>
+            
+            {/* Area charts */}
+            <g className="recharts-layer recharts-area stroke-indigo-500">
+              <g className="recharts-layer">
+                <path 
+                  className="recharts-curve recharts-area-area transition-all duration-700" 
+                  fill="url(#indigo)" 
+                  stroke="none" 
+                  fillOpacity="0.6" 
+                  d={isHovered 
+                    ? "M0,120C39.733,118,79.467,115,119.2,110C158.933,105,198.667,95,238.4,85C278.133,75,317.867,65,357.6,55C397.333,45,437.067,35,476.8,30C516.533,25,556.267,20,596,15L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"
+                    : "M0,173.2C39.733,173.2,79.467,173.2,119.2,173.2C158.933,173.2,198.667,167.738,238.4,159.4C278.133,151.063,317.867,126.625,357.6,123.175C397.333,119.725,437.067,121.45,476.8,118C516.533,114.55,556.267,81.775,596,49L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"
+                  }
+                ></path>
+                <path 
+                  className="recharts-curve recharts-area-curve transition-all duration-700" 
+                  stroke="#8b5cf6" 
+                  fill="none" 
+                  strokeWidth="2" 
+                  strokeLinejoin="round" 
+                  strokeLinecap="round" 
+                  d={isHovered 
+                    ? "M0,120C39.733,118,79.467,115,119.2,110C158.933,105,198.667,95,238.4,85C278.133,75,317.867,65,357.6,55C397.333,45,437.067,35,476.8,30C516.533,25,556.267,20,596,15"
+                    : "M0,173.2C39.733,173.2,79.467,173.2,119.2,173.2C158.933,173.2,198.667,167.738,238.4,159.4C278.133,151.063,317.867,126.625,357.6,123.175C397.333,119.725,437.067,121.45,476.8,118C516.533,114.55,556.267,81.775,596,49"
+                  }
+                ></path>
+              </g>
+            </g>
+            <g className="recharts-layer recharts-area stroke-purple-500">
+              <g className="recharts-layer">
+                <path 
+                  className="recharts-curve recharts-area-area transition-all duration-700" 
+                  fill="url(#cyan)" 
+                  stroke="none" 
+                  fillOpacity="0.6" 
+                  d={isHovered
+                    ? "M0,140C39.733,135,79.467,130,119.2,125C158.933,120,198.667,110,238.4,100C278.133,90,317.867,80,357.6,70C397.333,60,437.067,50,476.8,40C516.533,30,556.267,25,596,20L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"
+                    : "M0,166.3C39.733,166.3,79.467,166.3,119.2,166.3C158.933,166.3,198.667,158.825,238.4,155.95C278.133,153.075,317.867,153.075,357.6,149.05C397.333,145.025,437.067,142.725,476.8,131.8C516.533,120.875,556.267,102.188,596,83.5L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"
+                  }
+                ></path>
+                <path 
+                  className="recharts-curve recharts-area-curve transition-all duration-700" 
+                  stroke="#a855f7" 
+                  fill="none" 
+                  strokeWidth="2" 
+                  strokeLinejoin="round" 
+                  strokeLinecap="round" 
+                  d={isHovered
+                    ? "M0,140C39.733,135,79.467,130,119.2,125C158.933,120,198.667,110,238.4,100C278.133,90,317.867,80,357.6,70C397.333,60,437.067,50,476.8,40C516.533,30,556.267,25,596,20"
+                    : "M0,166.3C39.733,166.3,79.467,166.3,119.2,166.3C158.933,166.3,198.667,158.825,238.4,155.95C278.133,153.075,317.867,153.075,357.6,149.05C397.333,145.025,437.067,142.725,476.8,131.8C516.533,120.875,556.267,102.188,596,83.5"
+                  }
+                ></path>
+              </g>
+            </g>
+            
+            {/* Comparison labels */}
+            {isHovered && (
+              <>
+                <text x="100" y="180" fill="#9ca3af" fontSize="12" className="animate-fadeIn">Without Postify</text>
+                <text x="400" y="40" fill="#a855f7" fontSize="12" fontWeight="600" className="animate-fadeIn">With Postify</text>
+              </>
+            )}
+          </svg>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -1202,16 +1382,29 @@ export default function Home() {
                               <stop offset="1" stopColor="#EC4899"></stop>
                             </linearGradient>
                           </defs>
-                  </svg>
-                </div>
-                          </div>
-                        </div>
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">No generic AI content</h3>
-                  <p className="text-muted-foreground">Imagine working with an experienced Content Creator that knows you inside out and will guide you to your next perfect post.</p>
+                        </svg>
                       </div>
+                      {/* Animated AI sparkles on hover */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <WandSparkles className="w-6 h-6 text-purple-500 absolute top-4 right-4 animate-pulse" />
+                        <WandSparkles className="w-4 h-4 text-purple-400 absolute bottom-6 left-6 animate-pulse" style={{ animationDelay: "0.3s" }} />
+                        <WandSparkles className="w-5 h-5 text-purple-600 absolute top-8 left-4 animate-pulse" style={{ animationDelay: "0.6s" }} />
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">No generic AI content</h3>
+                  <p className="text-muted-foreground relative">
+                    <span className="block transition-opacity duration-300 group-hover:opacity-0">
+                      Imagine working with an experienced Content Creator that knows you inside out and will guide you to your next perfect post.
+                    </span>
+                    <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="typewriter-text">Your personal content expert...</span>
+                    </span>
+                  </p>
+                </div>
               </div>
 
-              {/* Turn your thoughts into posts - 5 columns */}
+              {/* Turn your thoughts into posts - 5 columns with functional audio player */}
               <div className="md:col-span-5 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/card">
                 <div className="flex flex-col">
                   <h3 className="text-xl font-semibold mb-3 text-foreground">Turn your thoughts into<br />6 perfect ready-to-publish posts</h3>
@@ -1222,15 +1415,20 @@ export default function Home() {
                     <div className="absolute -inset-1 rounded-full opacity-15 blur-md bg-purple-600/30"></div>
                     <div className="relative flex h-16 flex-row items-center justify-between rounded-full bg-white px-4 py-3 shadow-lg border border-purple-400/30 transition-all duration-300 overflow-hidden">
                       {/* Play button */}
-                      <div className="w-10 h-10 rounded-full border border-purple-500 flex items-center justify-center bg-transparent z-10 transition-all duration-300 hover:bg-purple-50 cursor-pointer">
+                      <div 
+                        className="w-10 h-10 rounded-full border border-purple-500 flex items-center justify-center bg-transparent z-10 transition-all duration-300 hover:bg-purple-50 cursor-pointer group/play"
+                        onClick={() => {
+                          console.log("Audio player clicked")
+                        }}
+                      >
                         <div className="relative w-6 h-6 flex items-center justify-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-purple-500 ml-0.5 transition-opacity duration-300 absolute opacity-100" aria-label="Play">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-purple-500 ml-0.5 transition-opacity duration-300 absolute group-hover/card:opacity-0" aria-label="Play">
                             <title>Play audio</title>
                             <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd"></path>
-                  </svg>
-                          <div className="w-4 h-4 rounded-sm bg-purple-500 transition-opacity duration-300 absolute opacity-0" aria-label="Stop"></div>
-                </div>
-            </div>
+                          </svg>
+                          <div className="w-4 h-4 rounded-sm bg-purple-500 transition-opacity duration-300 absolute opacity-0 group-hover/card:opacity-100" aria-label="Stop"></div>
+                        </div>
+                      </div>
 
                       {/* Waveform visualization */}
                       <div className="absolute inset-0 flex items-center justify-center -mt-9">
@@ -1238,117 +1436,59 @@ export default function Home() {
                           <div className="flex h-12 items-end space-x-[2px] w-full px-2">
                             {/* Generate random heights for waveform bars */}
                             {[9,5,6,7,4,9,8,7,6,7,5,5,4,5,7,4,4,7,7,5,7,5,4,6,6,9,4,6,7,6,5,7,9,7,8,8,4,6,5,7,8,9,4,7,5,9,5,9,5,9,8,4,7,9,9,5,9,6,4,5].map((height, i) => (
-                      <div 
-                        key={i} 
+                              <div 
+                                key={i} 
                                 className="w-[2px] rounded-full transition-all duration-150 bg-gray-400/70 group-hover/card:bg-purple-400 group-hover/card:animate-pulse" 
-                        style={{ 
+                                style={{ 
                                   height: `${height}px`,
                                   animationDelay: `${i * 50}ms`
-                        }}
+                                }}
                               ></div>
-                    ))}
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Time display */}
+                      <AudioTimer />
+                    </div>
                   </div>
                 </div>
               </div>
 
-                      {/* Time display */}
-                      <div className="font-medium text-purple-500 text-lg shrink-0 z-10">00:00</div>
-                </div>
-                    </div>
-                </div>
-              </div>
-
               {/* Personalized post ideas - 3 columns */}
-              <div className="md:col-span-3 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
+              <div className="md:col-span-3 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/ideas">
                 <div className="flex flex-col h-full">
                   <h3 className="text-xl font-semibold mb-3 text-foreground text-center">Personalized post ideas in 9 seconds</h3>
                   <p className="text-muted-foreground text-center mb-6">Create 6 post ideas with one click with proven hooks and formats.</p>
                   
                   {/* Example posts */}
                   <div className="mt-auto flex flex-col gap-3 relative">
-                    <div className="transition-all duration-300 opacity-100">
+                    {/* Default posts */}
+                    <div className="transition-all duration-300 group-hover/ideas:opacity-0">
                       <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3">
                         <p className="text-sm text-foreground">built my first site out of pure frustration with my job</p>
-                </div>
+                      </div>
                       <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3">
                         <p className="text-sm text-foreground">most people overthink their first post</p>
-                    </div>
+                      </div>
                     </div>
                     
-                    {/* Hidden alternate posts for hover effect */}
-                    <div className="transition-all duration-300 opacity-0 absolute inset-0">
-                      <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3 transform transition-all duration-300" style={{ transitionDelay: "0ms", transform: "translateY(10px) scale(0.95)", opacity: 0 }}>
+                    {/* Hover posts with stagger animation */}
+                    <div className="transition-all duration-300 opacity-0 group-hover/ideas:opacity-100 absolute inset-0">
+                      <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3 transform transition-all duration-300 group-hover/ideas:translate-y-0 group-hover/ideas:scale-100 group-hover/ideas:opacity-100" style={{ transitionDelay: "0ms", transform: "translateY(10px) scale(0.95)", opacity: 0 }}>
                         <p className="text-sm text-foreground">how i landed 10+ clients with basically zero audience:</p>
-                  </div>
-                      <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3 transform transition-all duration-300" style={{ transitionDelay: "100ms", transform: "translateY(10px) scale(0.95)", opacity: 0 }}>
+                      </div>
+                      <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3 transform transition-all duration-300 group-hover/ideas:translate-y-0 group-hover/ideas:scale-100 group-hover/ideas:opacity-100" style={{ transitionDelay: "100ms", transform: "translateY(10px) scale(0.95)", opacity: 0 }}>
                         <p className="text-sm text-foreground">nobody cares if you mess up. literally no one</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-            </div>
 
               {/* Grow faster with proven post formats - 6 columns */}
-              <div className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
-                <div className="flex flex-col h-full">
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Grow faster with proven post formats</h3>
-                  <p className="text-muted-foreground mb-8">Anything you create with will be optimized for X by using our proven post formats which we derived from the best performing content on X.</p>
-                  
-                  {/* Follower count */}
-                  <div className="flex flex-col mb-2">
-                    <div className="flex flex-row text-xl font-medium">
-                      <p>+</p>
-                      <p>97</p>
-                </div>
-                    <p className="text-muted-foreground text-sm">Followers</p>
-              </div>
-
-                  {/* Chart */}
-                  <div className="h-32 w-full sm:h-40 mt-2 relative">
-                    <svg className="h-full w-full" viewBox="0 0 596 256" preserveAspectRatio="none">
-                      <title>Performance Chart</title>
-                      <desc>Follower growth chart showing upward trend</desc>
-                      
-                      {/* Grid lines */}
-                      <g className="recharts-cartesian-grid">
-                        <g className="recharts-cartesian-grid-horizontal">
-                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="49" x2="596" y2="49"></line>
-                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="100.75" x2="596" y2="100.75"></line>
-                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="152.5" x2="596" y2="152.5"></line>
-                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="204.25" x2="596" y2="204.25"></line>
-                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="256" x2="596" y2="256"></line>
-                        </g>
-                      </g>
-                      
-                      {/* Gradients */}
-                    <defs>
-                        <linearGradient id="indigo" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#8b5cf6" stopOpacity="0.4"></stop>
-                          <stop offset="95%" stopColor="#8b5cf6" stopOpacity="0"></stop>
-                        </linearGradient>
-                        <linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#a855f7" stopOpacity="0.4"></stop>
-                          <stop offset="95%" stopColor="#a855f7" stopOpacity="0"></stop>
-                      </linearGradient>
-                    </defs>
-                      
-                      {/* Area charts */}
-                      <g className="recharts-layer recharts-area stroke-indigo-500">
-                        <g className="recharts-layer">
-                          <path className="recharts-curve recharts-area-area" fill="url(#indigo)" stroke="none" fillOpacity="0.6" d="M0,173.2C39.733,173.2,79.467,173.2,119.2,173.2C158.933,173.2,198.667,167.738,238.4,159.4C278.133,151.063,317.867,126.625,357.6,123.175C397.333,119.725,437.067,121.45,476.8,118C516.533,114.55,556.267,81.775,596,49L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"></path>
-                          <path className="recharts-curve recharts-area-curve" stroke="#8b5cf6" fill="none" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" d="M0,173.2C39.733,173.2,79.467,173.2,119.2,173.2C158.933,173.2,198.667,167.738,238.4,159.4C278.133,151.063,317.867,126.625,357.6,123.175C397.333,119.725,437.067,121.45,476.8,118C516.533,114.55,556.267,81.775,596,49"></path>
-                        </g>
-                      </g>
-                      <g className="recharts-layer recharts-area stroke-purple-500">
-                        <g className="recharts-layer">
-                          <path className="recharts-curve recharts-area-area" fill="url(#cyan)" stroke="none" fillOpacity="0.6" d="M0,166.3C39.733,166.3,79.467,166.3,119.2,166.3C158.933,166.3,198.667,158.825,238.4,155.95C278.133,153.075,317.867,153.075,357.6,149.05C397.333,145.025,437.067,142.725,476.8,131.8C516.533,120.875,556.267,102.188,596,83.5L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"></path>
-                          <path className="recharts-curve recharts-area-curve" stroke="#a855f7" fill="none" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" d="M0,166.3C39.733,166.3,79.467,166.3,119.2,166.3C158.933,166.3,198.667,158.825,238.4,155.95C278.133,153.075,317.867,153.075,357.6,149.05C397.333,145.025,437.067,142.725,476.8,131.8C516.533,120.875,556.267,102.188,596,83.5"></path>
-                        </g>
-                      </g>
-                  </svg>
-                  </div>
-                </div>
-              </div>
+              <FollowerGrowthCard />
 
               {/* Don't waste time - 6 columns */}
               <div className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group">
@@ -1361,24 +1501,40 @@ export default function Home() {
                     <div className="rounded-xl overflow-hidden relative group/thumb transition-all duration-300 hover:scale-105">
                       <div className="absolute bottom-3 left-3 z-10">
                         <p className="text-xs bg-black/60 text-white px-2 py-1 rounded">Works with long podcasts and normal videos</p>
-                </div>
-                      <div className="relative aspect-video w-full overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:opacity-0">
-                        <img src="/images/thumbnail_1.jpg" alt="Postel usage guide" className="w-full h-full object-cover" />
                       </div>
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <img src="/images/thumbnail_3.jpg" alt="Postel usage results" className="w-full h-full object-cover" />
+                      <div className="relative aspect-video w-full overflow-hidden">
+                        <div className="absolute inset-0 transition-all duration-500 group-hover/thumb:scale-105 group-hover/thumb:opacity-0">
+                          <img src="/images/thumbnail_1.jpg" alt="Postel usage guide" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="absolute inset-0 opacity-0 group-hover/thumb:opacity-100 transition-all duration-500">
+                          <img src="/images/thumbnail_3.jpg" alt="Postel usage results" className="w-full h-full object-cover" />
+                        </div>
+                        {/* Play button overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/thumb:opacity-100 transition-all duration-300">
+                          <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg transform scale-0 group-hover/thumb:scale-100 transition-transform duration-300">
+                            <PlayIcon className="w-8 h-8 text-gray-900 ml-1" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
                     
                     <div className="rounded-xl overflow-hidden relative group/thumb transition-all duration-300 hover:scale-105">
                       <div className="absolute bottom-3 left-3 z-10">
                         <p className="text-xs bg-black/60 text-white px-2 py-1 rounded">Transform your favourite YouTube videos into content</p>
                       </div>
-                      <div className="relative aspect-video w-full overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:opacity-0">
-                        <img src="/images/thumbnail_2.jpg" alt="Team using Postel" className="w-full h-full object-cover" />
-                    </div>
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <img src="/images/thumbnail_4.jpg" alt="Team results with Postel" className="w-full h-full object-cover" />
+                      <div className="relative aspect-video w-full overflow-hidden">
+                        <div className="absolute inset-0 transition-all duration-500 group-hover/thumb:scale-105 group-hover/thumb:opacity-0">
+                          <img src="/images/thumbnail_2.jpg" alt="Team using Postel" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="absolute inset-0 opacity-0 group-hover/thumb:opacity-100 transition-all duration-500">
+                          <img src="/images/thumbnail_4.jpg" alt="Team results with Postel" className="w-full h-full object-cover" />
+                        </div>
+                        {/* Play button overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/thumb:opacity-100 transition-all duration-300">
+                          <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg transform scale-0 group-hover/thumb:scale-100 transition-transform duration-300">
+                            <PlayIcon className="w-8 h-8 text-gray-900 ml-1" />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

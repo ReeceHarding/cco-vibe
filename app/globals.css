@@ -251,6 +251,10 @@ html {
   animation: fadeIn 0.3s ease-out;
 }
 
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
 /* Scale in animation */
 @keyframes scaleIn {
   from {
@@ -265,6 +269,22 @@ html {
 
 .animate-scale-in {
   animation: scaleIn 0.3s ease-out;
+}
+
+/* Typewriter effect */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typewriter-text {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 2s steps(30, end) infinite alternate;
 }
 
 /* Posts carousel */
