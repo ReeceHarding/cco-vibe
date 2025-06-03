@@ -15,7 +15,6 @@ const DiscordIcon = () => (
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,8 +37,8 @@ export function Navigation() {
     <nav 
       className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1100px] h-[60px] px-5 sm:px-7 py-2 backdrop-blur-2xl backdrop-saturate-150 rounded-2xl transition-all duration-300 ${
         scrolled 
-          ? "bg-white/50 dark:bg-gray-900/50 border-purple-200/10 dark:border-purple-800/10 shadow-[0_2px_20px_rgba(168,85,247,0.02)]" 
-          : "bg-white/70 dark:bg-gray-900/70 border-purple-200/20 dark:border-purple-800/20 shadow-[0_2px_20px_rgba(168,85,247,0.04)]"
+          ? "bg-white/50 dark:bg-gray-900/50 border-gray-200/10 dark:border-gray-800/10 shadow-[0_2px_20px_rgba(0,0,0,0.02)]" 
+          : "bg-white/70 dark:bg-gray-900/70 border-gray-200/20 dark:border-gray-800/20 shadow-[0_2px_20px_rgba(0,0,0,0.04)]"
       } border`}
       data-test="navigation"
     >
@@ -51,14 +50,14 @@ export function Navigation() {
 
       {/* Desktop Navigation Links */}
       <div className="hidden md:flex items-center gap-8">
-        <Link href="/#pricing" className="font-geist text-[14px] font-medium text-gray-700 hover:text-primary transition-colors duration-200 tracking-tight">Pricing</Link>
-        <Link href="/#faq" className="font-geist text-[14px] font-medium text-gray-700 hover:text-primary transition-colors duration-200 tracking-tight">FAQ</Link>
-        <Link href="/blog" className="font-geist text-[14px] font-medium text-gray-700 hover:text-primary transition-colors duration-200 tracking-tight">Blog</Link>
-        <Link href="/contact" className="font-geist text-[14px] font-medium text-gray-700 hover:text-primary transition-colors duration-200 tracking-tight">Contact</Link>
-        <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-gray-700 hover:text-primary transition-all duration-200" aria-label="Join our Discord">
+        <Link href="/#pricing" className="font-geist text-[14px] font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200 tracking-tight">Pricing</Link>
+        <Link href="/#faq" className="font-geist text-[14px] font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200 tracking-tight">FAQ</Link>
+        <Link href="/blog" className="font-geist text-[14px] font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200 tracking-tight">Blog</Link>
+        <Link href="/contact" className="font-geist text-[14px] font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200 tracking-tight">Contact</Link>
+        <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-gray-700 hover:text-purple-600 transition-all duration-200" aria-label="Join our Discord">
           <DiscordIcon />
         </a>
-        <Link href="/app" className="group relative flex items-center justify-center h-9 px-5 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white font-medium text-[14px] rounded-xl shadow-[0_2px_8px_rgba(168,85,247,0.25)] hover:shadow-[0_4px_12px_rgba(168,85,247,0.3)] transition-all duration-200 tracking-tight">
+        <Link href="/app" className="group relative flex items-center justify-center h-9 px-5 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white font-medium text-[14px] rounded-xl shadow-[0_2px_8px_rgba(147,51,234,0.25)] hover:shadow-[0_4px_12px_rgba(147,51,234,0.3)] transition-all duration-200 tracking-tight">
           <span className="relative z-10">Dashboard</span>
         </Link>
       </div>
@@ -67,63 +66,29 @@ export function Navigation() {
       <Button 
         variant="ghost"
         size="icon"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="flex items-center justify-center md:hidden w-9 h-9 rounded-xl bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors duration-200"
+        className="flex items-center justify-center md:hidden w-9 h-9 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
         aria-label="Menu"
       >
-        <Menu className="w-4 h-4 text-purple-700 dark:text-purple-300" />
+        <Menu className="w-4 h-4 text-gray-700 dark:text-gray-300" />
       </Button>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg rounded-2xl p-4 mx-4 border border-purple-200/20 dark:border-purple-800/20">
-          <Link 
-            href="/#pricing" 
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5 rounded-xl transition-colors"
-          >
-            Pricing
-          </Link>
-          <Link 
-            href="/#faq" 
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5 rounded-xl transition-colors"
-          >
-            FAQ
-          </Link>
-          <Link 
-            href="/blog" 
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5 rounded-xl transition-colors"
-          >
-            Blog
-          </Link>
-          <Link 
-            href="/contact" 
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-3 px-4 text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5 rounded-xl transition-colors"
-          >
-            Contact
-          </Link>
-          <a 
-            href="https://discord.gg/vXUvyuPfBH" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center py-3 px-4 text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5 rounded-xl transition-colors gap-3"
-          >
-            <DiscordIcon /> 
-            <span>Discord</span>
+      {/* Mobile Menu (Actual implementation would require state and conditional rendering) */}
+      {/* 
+      {isMobileMenuOpen && (
+        <div className="absolute top-full left-0 right-0 mt-2 md:hidden bg-white/90 backdrop-blur-md shadow-lg rounded-lg p-4">
+          <Link href="/#pricing" className="block py-2 text-purple-700/75">Pricing</Link>
+          <Link href="/#faq" className="block py-2 text-purple-700/75">FAQ</Link>
+          <Link href="/blog" className="block py-2 text-purple-700/75">Blog</Link>
+          <Link href="/contact" className="block py-2 text-purple-700/75">Contact</Link>
+          <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center py-2 text-purple-700/75">
+            <DiscordIcon /> <span className="ml-2">Discord</span>
           </a>
-          <Link 
-            href="/app" 
-            onClick={() => setMobileMenuOpen(false)}
-            className="block w-full mt-3 py-3 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white text-center font-medium rounded-xl transition-all duration-200"
-          >
-            Dashboard
-          </Link>
+          <Button asChild className="w-full mt-2 bg-gradient-to-r from-purple-600 to-purple-500 text-white">
+            <Link href="/app">Dashboard</Link>
+          </Button>
         </div>
       )}
+      */}
     </nav>
   )
 } 

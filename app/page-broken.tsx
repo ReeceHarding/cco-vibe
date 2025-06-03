@@ -149,356 +149,752 @@ export default function Home() {
     <>
       <Navigation />
       <main className="relative min-h-screen overflow-hidden">
-        {/* Hero Section - Redesigned for sleek modern look */}
-        <div className="container relative z-10 pt-32 md:pt-40 pb-20 md:pb-32">
-          {/* Simplified decorative elements */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute top-40 right-[15%] w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
+        {/* Hero Section - Polished for premium feel */}
+        <div className="relative">
+          {/* Sophisticated background gradients */}
+          <div className="absolute inset-0 -z-10 overflow-hidden">
+            <div className="absolute -top-[40%] -left-[10%] w-[500px] h-[500px] rounded-full bg-purple-200/30 blur-[120px] animate-pulse" />
+            <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] rounded-full bg-purple-300/20 blur-[120px] animate-pulse" style={{ animationDelay: "2s" }} />
+            <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-purple-100/20 blur-[100px]" />
           </div>
 
-          <div className="max-w-5xl mx-auto text-center px-4">
-            {/* Trust signal - made more subtle */}
-            <div 
-              className={`inline-flex items-center gap-2 mb-8 transition-all duration-500 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-full border border-purple-200/30">
-                <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full animate-pulse" />
-                <span className="text-sm font-medium text-muted-foreground">
-                  800+ creators growing on X
-                </span>
-            </div>
-          </div>
-
-            {/* Main heading - Cleaner typography */}
-            <h1 
-              className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "100ms" }}
-            >
-              Write{" "}
-              <span className="relative">
-                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-                  authentic
-                </span>
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" stroke="url(#paint0_linear)" strokeWidth="4" strokeLinecap="round"/>
-                <defs>
-                    <linearGradient id="paint0_linear" x1="2" y1="9" x2="298" y2="9" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#9333EA"/>
-                      <stop offset="1" stopColor="#A855F7"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              </span>{" "}
-              posts
-              <br />
-              <span className="text-muted-foreground">that grow your audience</span>
-            </h1>
-
-            {/* Subheading - More prominent */}
-            <p 
-              className={`text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-700 ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-            style={{ transitionDelay: "200ms" }}
-          >
-              AI that learns your voice, understands your expertise, and creates posts that sound exactly like you—in 9 seconds.
-            </p>
-
-            {/* Feature pills - Redesigned */}
-            <div 
-              className={`flex flex-wrap justify-center gap-4 mb-10 transition-all duration-700 ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-            style={{ transitionDelay: "300ms" }}
-          >
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">No generic AI content</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Matches your writing style</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Proven viral formats</span>
-            </div>
-          </div>
-
-            {/* CTA Section - More prominent */}
-          <div 
-              className={`transition-all duration-700 ${
-              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-            style={{ transitionDelay: "400ms" }}
-          >
-                <Button
-                  onClick={handleSignIn}
-                className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group"
+          <div className="container relative z-10 pt-28 md:pt-36 pb-20 md:pb-28">
+            <div className="max-w-5xl mx-auto">
+              {/* Enhanced trust badge */}
+              <div 
+                className={`flex justify-center mb-8 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+                }`}
               >
-                <span className="flex items-center gap-3">
-                  Start creating for free
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                </span>
-                </Button>
-              <p className="text-sm text-muted-foreground mt-4">
-                No credit card required • 7-day free trial
-              </p>
-              </div>
-              
-            {/* Social proof avatars */}
-            <div 
-              className={`flex items-center justify-center gap-6 mt-16 transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "500ms" }}
-            >
-              <div className="flex -space-x-3">
-                {[
-                  "https://unavatar.io/twitter/CalebSmithXM",
-                  "https://unavatar.io/twitter/zalkazemi",
-                  "https://unavatar.io/twitter/methkalkhalawi",
-                  "https://unavatar.io/twitter/clivassy",
-                  "https://unavatar.io/twitter/_grantsing"
-                ].map((avatar, i) => (
-                  <img
-                    key={i}
-                    src={avatar}
-                    alt="User avatar"
-                    className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
-                  />
-                ))}
-              </div>
-              <div className="text-left">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+                <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-full border border-purple-200/30 shadow-[0_2px_20px_rgba(147,51,234,0.1)]">
+                  <div className="flex items-center -space-x-2">
+                    {["CalebSmithXM", "zalkazemi", "methkalkhalawi"].map((user, i) => (
+                      <img
+                        key={i}
+                        src={`https://unavatar.io/twitter/${user}`}
+                        alt={`${user} avatar`}
+                        className="w-6 h-6 rounded-full border-2 border-white"
+                        style={{ zIndex: 3 - i }}
+                      />
+                    ))}
                   </div>
-                <p className="text-sm text-muted-foreground">
-                  Loved by 800+ creators
-                </p>
-              </div>
-              </div>
-            </div>
-          </div>
-
-        {/* Video section - Simplified and integrated better */}
-        <div className="relative pb-32">
-          <div className="container max-w-6xl mx-auto px-4">
-          <div 
-              className={`relative rounded-2xl overflow-hidden shadow-2xl border border-purple-200/20 transition-all duration-700 ${
-                mounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
-            }`}
-              style={{ transitionDelay: "600ms" }}
-          >
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent z-10 pointer-events-none" />
-              <button
-                onClick={handleVideoClick}
-                className="relative w-full group"
-                aria-label="Play demo video"
-              >
-                <Image
-                  src="/images/postel-dashboard.svg"
-                  alt="Postify Dashboard"
-                  width={1920}
-                  height={1080}
-                  className="w-full h-auto"
-                  quality={100}
-                  priority
-                />
-                <div className="absolute inset-0 flex items-center justify-center z-20">
-                  <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
-                    <PlayIcon className="w-8 h-8 text-purple-600 ml-1" />
+                  <div className="h-4 w-px bg-purple-200" />
+                  <span className="text-sm font-medium text-foreground/80">
+                    Join 800+ creators growing on X
+                  </span>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-3 h-3 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
                   </div>
                 </div>
-              </button>
-            </div>
-          </div>
+              </div>
 
-          {/* Fade to next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+              {/* Refined heading with better animations */}
+              <div className="text-center px-4">
+                <h1 
+                  className={`text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-bold tracking-tight leading-[1.05] mb-6 transition-all duration-700 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ transitionDelay: "100ms" }}
+                >
+                  <span className="block">Write posts that</span>
+                  <span className="block mt-2">
+                    <span className="relative inline-block">
+                      <span className="relative z-10 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                        actually get seen
+                      </span>
+                      <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" stroke="url(#gradient-underline)" strokeWidth="3" strokeLinecap="round" className="animate-draw"/>
+                        <defs>
+                          <linearGradient id="gradient-underline" x1="2" y1="9" x2="298" y2="9" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#9333EA" stopOpacity="0.8"/>
+                            <stop offset="0.5" stopColor="#A855F7"/>
+                            <stop offset="1" stopColor="#9333EA" stopOpacity="0.8"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </span>
+                  </span>
+                </h1>
+
+                {/* Enhanced subheading */}
+                <p 
+                  className={`text-xl md:text-2xl lg:text-[26px] text-muted-foreground/90 mb-10 max-w-3xl mx-auto leading-relaxed font-light transition-all duration-700 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
+                  style={{ transitionDelay: "200ms" }}
+                >
+                  AI that learns your voice and creates authentic X posts that grow your audience.
+                  <span className="block mt-2 text-lg md:text-xl text-muted-foreground/70">
+                    No generic content. Just you, amplified.
+                  </span>
+                </p>
+
+                {/* Interactive feature cards */}
+                <div 
+                  className={`grid grid-cols-1 md:grid-cols-3 gap-3 max-w-2xl mx-auto mb-10 transition-all duration-700 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
+                  style={{ transitionDelay: "300ms" }}
+                >
+                  {[
+                    { icon: "⚡", text: "9-second creation", highlight: "Fast" },
+                    { icon: "🎯", text: "Matches your style", highlight: "Authentic" },
+                    { icon: "📈", text: "Proven to grow", highlight: "Effective" }
+                  ].map((feature, i) => (
+                    <div 
+                      key={i}
+                      className="group relative bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-4 border border-purple-100/20 hover:border-purple-300/40 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(147,51,234,0.15)]"
+                      style={{ transitionDelay: `${300 + i * 50}ms` }}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">{feature.icon}</span>
+                        <div className="text-left">
+                          <span className="text-xs font-semibold text-purple-600 uppercase tracking-wider">
+                            {feature.highlight}
+                          </span>
+                          <p className="text-sm font-medium text-foreground/80">
+                            {feature.text}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Premium CTA section */}
+                <div 
+                  className={`transition-all duration-700 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
+                  style={{ transitionDelay: "400ms" }}
+                >
+                  <div className="relative inline-block group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+                    <Button
+                      onClick={handleSignIn}
+                      className="relative bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-10 py-6 text-lg font-medium shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 transition-all duration-200 group"
+                    >
+                      <span className="flex items-center gap-3">
+                        Start writing better posts
+                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </span>
+                    </Button>
+                  </div>
+                  
+                  <div className="mt-5 flex items-center justify-center gap-6 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-purple-600" />
+                      <span>No credit card</span>
+                    </div>
+                    <div className="h-4 w-px bg-border" />
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-purple-600" />
+                      <span>7-day free trial</span>
+                    </div>
+                    <div className="h-4 w-px bg-border" />
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-purple-600" />
+                      <span>Cancel anytime</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Enhanced social proof */}
+                <div 
+                  className={`mt-20 transition-all duration-700 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
+                  style={{ transitionDelay: "500ms" }}
+                >
+                  <p className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider">
+                    Trusted by creators at
+                  </p>
+                  <div className="flex items-center justify-center gap-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+                    {/* Company logos placeholder - would be actual logos in production */}
+                    <div className="text-2xl font-bold text-muted-foreground/50">Meta</div>
+                    <div className="text-2xl font-bold text-muted-foreground/50">Google</div>
+                    <div className="text-2xl font-bold text-muted-foreground/50">Netflix</div>
+                    <div className="text-2xl font-bold text-muted-foreground/50">Stripe</div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
 
-        {/* Video Testimonials Section */}
+        {/* Testimonials Section */}
         <section className="pt-12 lg:py-24" id="testimonials">
           <div className="text-center">
-            <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Video Testimonials</h2>
+            <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Testimonials</h2>
             <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
-              Hear what our users{" "}
-              <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">have to say</span>
+                How our users{" "}
+              <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">boost their X growth</span>
             </h3>
-            <p className="text-muted-foreground text-lg mt-4">
-              Real stories from real creators who transformed their content strategy
-            </p>
-          </div>
+            </div>
 
-          <div className="relative mt-12 max-w-7xl mx-auto px-4">
-            {/* Video Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Video Testimonial 1 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-1-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+          <div className="relative mt-8 flex h-fit w-full flex-col items-center justify-center overflow-hidden">
+            {/* Desktop: Two scrolling rows */}
+            <div className="group overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row hidden [--duration:80s] md:flex">
+              {/* First row - scrolls left to right */}
+              <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                {/* First set of testimonials */}
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">If you want to understand what makes a good tweet, this is the tool. Great for generating new and original content.</span> The team at Postel studied what goes viral and made it their Sunday chore.</p>
+                        </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/CalebSmithXM" alt="Caleb Smith's profile" className="h-full w-full object-cover" />
+                        </div>
+                          </div>
+                          <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Caleb Smith</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Coach & Indie Founder</p>
+                        <a href="https://x.com/CalebSmithXM" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@CalebSmithXM</a>
+                      </div>
+                          </div>
+                        </div>
+                      </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel gives you ideas for bangers using your own content or any YT video (can be yours or not).</span> It's the shortcut. Repurposing just one banger can save you time and a headache every day.</p>
+                        </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/zalkazemi" alt="Zaid Al Kazemi's profile" className="h-full w-full object-cover" />
+                        </div>
+                          </div>
+                          <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Zaid Al Kazemi</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300"><a href="https://www.zalkazemi.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Founder & Podcast Host</a></p>
+                        <a href="https://x.com/zalkazemi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@zalkazemi</a>
+                      </div>
+                          </div>
+                        </div>
+                      </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.</p>
+                        </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/methkalkhalawi" alt="Methkal's profile" className="h-full w-full object-cover" />
+                        </div>
+                          </div>
+                          <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Methkal</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Indie Maker</p>
+                        <a href="https://x.com/methkalkhalawi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@methkalkhalawi</a>
+                          </div>
+                        </div>
+                      </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Caleb Smith</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Coach & Indie Founder</p>
-                  <p className="text-sm text-muted-foreground/80">"If you want to understand what makes a good tweet, this is the tool."</p>
-                  <a href="https://x.com/CalebSmithXM" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @CalebSmithXM
-                  </a>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy. Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/clivassy" alt="Julia's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Julia</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Engineer & Builder</p>
+                        <a href="https://x.com/clivassy" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@clivassy</a>
+                      </div>
+                    </div>
                 </div>
               </div>
 
-              {/* Video Testimonial 2 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-2-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-2.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-                </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Zaid Al Kazemi</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Founder & Podcast Host</p>
-                  <p className="text-sm text-muted-foreground/80">"Postel gives you ideas for bangers using your own content or any YT video."</p>
-                  <a href="https://x.com/zalkazemi" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @zalkazemi
-                  </a>
-                </div>
-              </div>
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p>Postel is a game changer. The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude. The voice it created is spot on.</span></p>
+                        </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/_grantsing" alt="Grant Singleton's profile" className="h-full w-full object-cover" />
+                        </div>
+                          </div>
+                          <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Grant Singleton</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Engineer & Builder</p>
+                        <a href="https://x.com/_grantsing" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@_grantsing</a>
+                      </div>
+                    </div>
+                          </div>
+                        </div>
+                      </div>
 
-              {/* Video Testimonial 3 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-3-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-3.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-                </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Julia</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Software Engineer & Builder</p>
-                  <p className="text-sm text-muted-foreground/80">"Almost +100 followers in 2 days. The team's actually there to help."</p>
-                  <a href="https://x.com/clivassy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @clivassy
-                  </a>
-                </div>
-              </div>
+              {/* Duplicate for seamless loop */}
+              <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                {/* Repeat all testimonials for seamless scrolling */}
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">If you want to understand what makes a good tweet, this is the tool. Great for generating new and original content.</span> The team at Postel studied what goes viral and made it their Sunday chore.</p>
+                        </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/CalebSmithXM" alt="Caleb Smith's profile" className="h-full w-full object-cover" />
+                        </div>
+                          </div>
+                          <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Caleb Smith</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Coach & Indie Founder</p>
+                        <a href="https://x.com/CalebSmithXM" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@CalebSmithXM</a>
+                      </div>
+                          </div>
+                        </div>
+                      </div>
 
-              {/* Video Testimonial 4 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-4-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-4.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-                </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Grant Singleton</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Software Engineer & Builder</p>
-                  <p className="text-sm text-muted-foreground/80">"The post ideas were better than anything I've used before."</p>
-                  <a href="https://x.com/_grantsing" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @_grantsing
-                  </a>
-                </div>
-              </div>
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel gives you ideas for bangers using your own content or any YT video (can be yours or not).</span> It's the shortcut. Repurposing just one banger can save you time and a headache every day.</p>
+                        </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/zalkazemi" alt="Zaid Al Kazemi's profile" className="h-full w-full object-cover" />
+                        </div>
+                          </div>
+                          <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Zaid Al Kazemi</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300"><a href="https://www.zalkazemi.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Founder & Podcast Host</a></p>
+                        <a href="https://x.com/zalkazemi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@zalkazemi</a>
+                      </div>
+                          </div>
+                        </div>
+                      </div>
 
-              {/* Video Testimonial 5 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-5-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-5.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/methkalkhalawi" alt="Methkal's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Methkal</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Indie Maker</p>
+                        <a href="https://x.com/methkalkhalawi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@methkalkhalawi</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Omar</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Founder</p>
-                  <p className="text-sm text-muted-foreground/80">"I can create posts that fit my brand in seconds."</p>
-                  <a href="https://x.com/notomarsol" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @notomarsol
-                  </a>
-                </div>
-              </div>
 
-              {/* Video Testimonial 6 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-6-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-6.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy. Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/clivassy" alt="Julia's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Julia</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Engineer & Builder</p>
+                        <a href="https://x.com/clivassy" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@clivassy</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Nemo</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Software Engineer & Indie Builder</p>
-                  <p className="text-sm text-muted-foreground/80">"Postel helped me to push past the first 1000 followers."</p>
-                  <a href="https://x.com/FakeUncleNemo" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @FakeUncleNemo
-                  </a>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p>Postel is a game changer. The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude. The voice it created is spot on.</span></p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/_grantsing" alt="Grant Singleton's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Grant Singleton</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Engineer & Builder</p>
+                        <a href="https://x.com/_grantsing" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@_grantsing</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Optional: Add a play icon overlay that disappears on hover */}
-            <style jsx>{`
-              video::-webkit-media-controls-overlay-play-button {
-                display: none;
-              }
-              video::-webkit-media-controls-play-button {
-                display: none;
-              }
-            `}</style>
+            {/* Second row - scrolls right (reverse direction) */}
+            <div className="group overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row hidden [--duration:100s] md:flex">
+              <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused] [animation-direction:reverse]">
+                {/* Second row testimonials */}
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p>Postel makes social media posting easy and quick. <br /><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">I can create posts that fit my brand in seconds, and the suggestions help me stay consistent.</span> It's been a great help in keeping my content fresh without spending too much time.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/notomarsol" alt="Omar's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Omar</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Founder</p>
+                        <a href="https://x.com/notomarsol" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@notomarsol</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p>The founders of Postel are crushing it.<span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Been testing Postel for a while now and have started seeing awesome results. Postel helped me to push past the first 1000 followers.</span> Grab Ideas from Postel and schedule them out. Now I got more time to work on my own projects and for my family.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/FakeUncleNemo" alt="Nemo's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Nemo</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300"><a href="https://nemo.foo" target="_blank" rel="noopener noreferrer" className="hover:underline">Software Engineer & Indie Builder</a></p>
+                        <a href="https://x.com/FakeUncleNemo" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@FakeUncleNemo</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">It feels like you created your own digital self to create content for you!!</span> Postel is something where you don't feel the guilt of generating AI content.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/KavuruSarath" alt="Kavuru Sarath's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Kavuru Sarath</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Indie Maker</p>
+                        <a href="https://x.com/KavuruSarath" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@KavuruSarath</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">I just got like 100 followers in two days.</span> Reached 2000 followers because of Postel's hooks and advice of the founders.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/AdamBartas" alt="Adam Bartas's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Adam Bartas</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Designer</p>
+                        <a href="https://x.com/AdamBartas" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@AdamBartas</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p>I don't even know what to post about or get fresh ideas to start to post on X.<span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel has been a great help for me and the guidance from Joshua and Robin. My profile looks better and it's getting traction!</span></p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/cardotrejos" alt="Ricardo Trejos's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Ricardo Trejos</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Developer</p>
+                        <a href="https://x.com/cardotrejos" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@cardotrejos</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Duplicate for seamless loop */}
+              <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused] [animation-direction:reverse]">
+                {/* Repeat all second row testimonials for seamless scrolling */}
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p>Postel makes social media posting easy and quick. <br /><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">I can create posts that fit my brand in seconds, and the suggestions help me stay consistent.</span> It's been a great help in keeping my content fresh without spending too much time.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/notomarsol" alt="Omar's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Omar</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Founder</p>
+                        <a href="https://x.com/notomarsol" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@notomarsol</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p>The founders of Postel are crushing it.<span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Been testing Postel for a while now and have started seeing awesome results. Postel helped me to push past the first 1000 followers.</span> Grab Ideas from Postel and schedule them out. Now I got more time to work on my own projects and for my family.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/FakeUncleNemo" alt="Nemo's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Nemo</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300"><a href="https://nemo.foo" target="_blank" rel="noopener noreferrer" className="hover:underline">Software Engineer & Indie Builder</a></p>
+                        <a href="https://x.com/FakeUncleNemo" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@FakeUncleNemo</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">It feels like you created your own digital self to create content for you!!</span> Postel is something where you don't feel the guilt of generating AI content.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/KavuruSarath" alt="Kavuru Sarath's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Kavuru Sarath</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Indie Maker</p>
+                        <a href="https://x.com/KavuruSarath" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@KavuruSarath</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">I just got like 100 followers in two days.</span> Reached 2000 followers because of Postel's hooks and advice of the founders.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/AdamBartas" alt="Adam Bartas's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Adam Bartas</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Designer</p>
+                        <a href="https://x.com/AdamBartas" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@AdamBartas</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p>I don't even know what to post about or get fresh ideas to start to post on X.<span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel has been a great help for me and the guidance from Joshua and Robin. My profile looks better and it's getting traction!</span></p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/cardotrejos" alt="Ricardo Trejos's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Ricardo Trejos</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Developer</p>
+                        <a href="https://x.com/cardotrejos" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@cardotrejos</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile: Horizontal scroll with snap */}
+            <div className="flex w-full snap-x snap-mandatory flex-row gap-6 overflow-x-auto py-14 md:hidden [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div className="size-72 shrink-0 md:h-60 md:min-w-96"></div>
+              
+              {/* Mobile testimonials */}
+              <div className="bg-card text-card-foreground mb-2 break-inside-avoid items-center border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg flex w-72 h-[380px] shrink-0 cursor-pointer snap-center snap-always flex-col justify-between rounded-xl p-4 shadow-black/[0.1] shadow-xl lg:min-w-96">
+                <div className="flex flex-col justify-between w-full h-full">
+                  <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                    <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">If you want to understand what makes a good tweet, this is the tool. Great for generating new and original content.</span> The team at Postel studied what goes viral and made it their Sunday chore.</p>
+                  </div>
+                  <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                    <div className="relative h-14 w-14 flex-shrink-0">
+                      <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                      <div className="h-full w-full rounded-full overflow-hidden">
+                        <img src="https://unavatar.io/twitter/CalebSmithXM" alt="Caleb Smith's profile" className="h-full w-full object-cover" />
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-500 dark:text-neutral-200">Caleb Smith</p>
+                      <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Coach & Indie Founder</p>
+                      <a href="https://x.com/CalebSmithXM" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@CalebSmithXM</a>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+              <div className="bg-card text-card-foreground mb-2 break-inside-avoid items-center border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg flex w-72 h-[380px] shrink-0 cursor-pointer snap-center snap-always flex-col justify-between rounded-xl p-4 shadow-black/[0.1] shadow-xl lg:min-w-96">
+                <div className="flex flex-col justify-between w-full h-full">
+                  <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                    <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel gives you ideas for bangers using your own content or any YT video (can be yours or not).</span> It's the shortcut. Repurposing just one banger can save you time and a headache every day.</p>
+                  </div>
+                  <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                    <div className="relative h-14 w-14 flex-shrink-0">
+                      <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                      <div className="h-full w-full rounded-full overflow-hidden">
+                        <img src="https://unavatar.io/twitter/zalkazemi" alt="Zaid Al Kazemi's profile" className="h-full w-full object-cover" />
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-500 dark:text-neutral-200">Zaid Al Kazemi</p>
+                      <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300"><a href="https://www.zalkazemi.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Founder & Podcast Host</a></p>
+                      <a href="https://x.com/zalkazemi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@zalkazemi</a>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+              <div className="bg-card text-card-foreground mb-2 break-inside-avoid items-center border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg flex w-72 h-[380px] shrink-0 cursor-pointer snap-center snap-always flex-col justify-between rounded-xl p-4 shadow-black/[0.1] shadow-xl lg:min-w-96">
+                <div className="flex flex-col justify-between w-full h-full">
+                  <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                    <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.</p>
+                  </div>
+                  <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                    <div className="relative h-14 w-14 flex-shrink-0">
+                      <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                      <div className="h-full w-full rounded-full overflow-hidden">
+                        <img src="https://unavatar.io/twitter/methkalkhalawi" alt="Methkal's profile" className="h-full w-full object-cover" />
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-500 dark:text-neutral-200">Methkal</p>
+                      <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Indie Maker</p>
+                      <a href="https://x.com/methkalkhalawi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@methkalkhalawi</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-card text-card-foreground mb-2 break-inside-avoid items-center border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg flex w-72 h-[380px] shrink-0 cursor-pointer snap-center snap-always flex-col justify-between rounded-xl p-4 shadow-black/[0.1] shadow-xl lg:min-w-96">
+                <div className="flex flex-col justify-between w-full h-full">
+                  <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                    <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy. Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.</p>
+            </div>
+                  <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                    <div className="relative h-14 w-14 flex-shrink-0">
+                      <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                      <div className="h-full w-full rounded-full overflow-hidden">
+                        <img src="https://unavatar.io/twitter/clivassy" alt="Julia's profile" className="h-full w-full object-cover" />
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-500 dark:text-neutral-200">Julia</p>
+                      <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Engineer & Builder</p>
+                      <a href="https://x.com/clivassy" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@clivassy</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-card text-card-foreground mb-2 break-inside-avoid items-center border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg flex w-72 h-[380px] shrink-0 cursor-pointer snap-center snap-always flex-col justify-between rounded-xl p-4 shadow-black/[0.1] shadow-xl lg:min-w-96">
+                <div className="flex flex-col justify-between w-full h-full">
+                  <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                    <p>Postel is a game changer. The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude. The voice it created is spot on.</span></p>
+                  </div>
+                  <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                    <div className="relative h-14 w-14 flex-shrink-0">
+                      <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                      <div className="h-full w-full rounded-full overflow-hidden">
+                        <img src="https://unavatar.io/twitter/_grantsing" alt="Grant Singleton's profile" className="h-full w-full object-cover" />
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-500 dark:text-neutral-200">Grant Singleton</p>
+                      <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Engineer & Builder</p>
+                      <a href="https://x.com/_grantsing" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@_grantsing</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="size-72 shrink-0 md:h-60 md:min-w-96"></div>
+            </div>
+
+            {/* Gradient overlays */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-background/50 md:w-1/5"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-background/50 md:w-1/5"></div>
           </div>
         </section>
 
@@ -1499,6 +1895,60 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        {/* Premium video section */}
+        <div className="relative pb-32">
+          <div className="container max-w-6xl mx-auto px-4">
+            <div 
+              className={`relative group transition-all duration-700 ${
+                mounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
+              }`}
+              style={{ transitionDelay: "600ms" }}
+            >
+              {/* Glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 to-purple-400/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-purple-200/20 bg-white/5 backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-transparent to-transparent z-10 pointer-events-none" />
+                <button
+                  onClick={handleVideoClick}
+                  className="relative w-full group/play"
+                  aria-label="Watch how Postify works"
+                >
+                  <Image
+                    src="/images/postel-dashboard.svg"
+                    alt="Postify Dashboard"
+                    width={1920}
+                    height={1080}
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
+                    quality={100}
+                    priority
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center z-20">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-white rounded-full blur-xl opacity-50 scale-[1.5] group-hover/play:scale-[2] transition-transform duration-500" />
+                      <div className="relative w-24 h-24 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl group-hover/play:scale-110 transition-transform duration-300">
+                        <PlayIcon className="w-10 h-10 text-purple-600 ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                </button>
+                
+                {/* Video caption */}
+                <div className="absolute bottom-6 left-6 right-6 z-20">
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-4 border border-white/10">
+                    <p className="text-white/90 font-medium text-sm md:text-base">
+                      See how creators write viral posts in under 9 seconds
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Smooth fade to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/50 to-transparent" />
+        </div>
       </main>
     </>
   )
