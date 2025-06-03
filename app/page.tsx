@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { XIcon, PlayIcon, ChevronDown, Check, X, WandSparkles, Mic, Youtube, BrainCircuit } from "lucide-react"
+import { XIcon, PlayIcon, ChevronDown, Check, X, WandSparkles, Mic, Youtube, BrainCircuit, UserRoundPen, AudioLines, Rocket } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 
 export default function Home() {
@@ -966,131 +966,283 @@ export default function Home() {
         </section>
 
         {/* Post Examples Carousel */}
-        <section className="relative py-32 px-4 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto mb-20">
-            <div className="text-center">
-              <div className="mb-6">
-                <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
-                  POSTS CREATED WITH POSTIFY
-                </span>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
+        <section id="examples" className="scroll-my-12 py-16 md:py-24 bg-background">
+          <div className="container max-w-7xl">
+            <div className="text-center mx-auto mb-12">
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Posts Created with Postel</h2>
+              <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
                 Create human-quality posts{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">
-                  that sound like you
-                </span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                See how our users create authentic, engaging content
-              </p>
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">that sound like you</span>
+              </h3>
             </div>
-          </div>
 
-          {/* Posts carousel */}
-          <div className="posts-container">
-            <div className="flex gap-8 animate-infinite-scroll">
-              {/* Triple the posts for seamless infinite scroll */}
-              {[...Array(3)].map((_, setIndex) => (
-                <React.Fragment key={setIndex}>
-                  {/* Example posts */}
-                  <div className="flex-shrink-0 w-[360px]">
-                    <div className="bg-white rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 p-8 transition-all duration-300">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
-                          J
-                        </div>
-                        <div>
-                          <div className="font-semibold text-gray-900 text-[16px]">Julia</div>
-                          <div className="text-[13px] text-gray-500">@clwassy</div>
-                        </div>
-                      </div>
-                      <div className="space-y-4">
-                        <p className="text-gray-800 text-[16px] leading-[1.7]">
-                          Owning your time = owning any fancy title.
-                        </p>
-                        <p className="text-gray-800 text-[16px] leading-[1.7]">
-                          I left my dev job to wake up and own my schedule.
-                        </p>
-                        <p className="text-gray-600 text-[16px] leading-[1.7]">
-                          Don't think I'm missing out 👀
-                        </p>
-                      </div>
-                      <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between text-gray-500">
-                        <div className="flex items-center gap-4">
-                          <span className="text-[13px]">💙 127</span>
-                          <span className="text-[13px]">↩️ 23</span>
-                        </div>
-                        <span className="text-[13px]">2:34 PM</span>
-                      </div>
+            {/* Feature buttons */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16">
+              <button 
+                type="button" 
+                className="w-full text-left px-6 rounded-xl border transition-all duration-200 relative border-primary bg-primary/5 py-6 min-h-[160px]"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
+                      <UserRoundPen className="h-5 w-5 text-primary" />
                     </div>
                   </div>
-
-                  <div className="flex-shrink-0 w-[360px]">
-                    <div className="bg-white rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 p-8 transition-all duration-300">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
-                          A
-                        </div>
-                        <div>
-                          <div className="font-semibold text-gray-900 text-[16px]">Adam Barta</div>
-                          <div className="text-[13px] text-gray-500">@AdamBartas</div>
-                        </div>
-                      </div>
-                      <div className="space-y-4">
-                        <p className="text-gray-800 text-[16px] leading-[1.7]">
-                          This completely blows my mind
-                        </p>
-                        <p className="text-gray-800 text-[16px] leading-[1.7]">
-                          two months ago, I quit my dev job to start a design agency
-                        </p>
-                        <p className="text-gray-600 text-[16px] leading-[1.7]">
-                          set myself a 12 week plan to have solid goals
-                        </p>
-                      </div>
-                      <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between text-gray-500">
-                        <div className="flex items-center gap-4">
-                          <span className="text-[13px]">💙 89</span>
-                          <span className="text-[13px]">↩️ 15</span>
-                        </div>
-                        <span className="text-[13px]">11:20 AM</span>
-                      </div>
+                  <div className="flex-1 max-w-[calc(100%-80px)]">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="font-semibold block">Posts that are authentic to you</span>
+                    </div>
+                    <div className="text-sm text-muted-foreground leading-relaxed">
+                      Posts will be aligned with your background, story and brand by using information from your knowledge base
                     </div>
                   </div>
+                </div>
+              </button>
 
-                  <div className="flex-shrink-0 w-[360px]">
-                    <div className="bg-white rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100/50 p-8 transition-all duration-300">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold shadow-lg">
-                          J
-                        </div>
-                        <div>
-                          <div className="font-semibold text-gray-900 text-[16px]">Joscha Bulets</div>
-                          <div className="text-[13px] text-gray-500">@JoschuaBulets</div>
-                        </div>
-                      </div>
-                      <div className="space-y-4">
-                        <p className="text-gray-800 text-[16px] leading-[1.7]">
-                          I started 6 months ago with:
-                        </p>
-                        <p className="text-gray-800 text-[16px] leading-[1.7]">
-                          0 followers<br />
-                          0 skills
-                        </p>
-                        <p className="text-gray-800 text-[16px] leading-[1.7]">
-                          Finally committing was life changing.
-                        </p>
-                      </div>
-                      <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between text-gray-500">
-                        <div className="flex items-center gap-4">
-                          <span className="text-[13px]">💙 234</span>
-                          <span className="text-[13px]">↩️ 42</span>
-                        </div>
-                        <span className="text-[13px]">9:15 AM</span>
-                      </div>
+              <button 
+                type="button" 
+                className="w-full text-left px-6 rounded-xl border transition-all duration-200 relative border-border/40 hover:border-primary/30 bg-white/50 md:min-h-[160px] py-4 md:py-6"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
+                      <AudioLines className="h-5 w-5 text-primary" />
                     </div>
                   </div>
-                </React.Fragment>
-              ))}
+                  <div className="flex-1 max-w-[calc(100%-80px)]">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="font-semibold block">Posts that sound exactly like you</span>
+                      <ChevronDown className="h-4 w-4 text-muted-foreground md:hidden transition-transform" />
+                    </div>
+                    <div className="text-sm text-muted-foreground leading-relaxed hidden md:block">
+                      Postel will analyze your recent posts to create posts that sound exactly like you and are aligned to your background
+                    </div>
+                  </div>
+                </div>
+              </button>
+
+              <button 
+                type="button" 
+                className="w-full text-left px-6 rounded-xl border transition-all duration-200 relative border-border/40 hover:border-primary/30 bg-white/50 md:min-h-[160px] py-4 md:py-6"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
+                      <Rocket className="h-5 w-5 text-primary" />
+                    </div>
+                  </div>
+                  <div className="flex-1 max-w-[calc(100%-80px)]">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="font-semibold block">Posts based on proven formats</span>
+                      <ChevronDown className="h-4 w-4 text-muted-foreground md:hidden transition-transform" />
+                    </div>
+                    <div className="text-sm text-muted-foreground leading-relaxed hidden md:block">
+                      Any post will be optimized for engagement by using proven formats of the best performing posts on X
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </div>
+
+            {/* Marquee carousel */}
+            <div className="relative">
+              <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:60s]">
+                <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                  {/* First set of posts */}
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 1" 
+                        src="/images/posts/story1.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 2" 
+                        src="/images/posts/story2.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 3" 
+                        src="/images/posts/story3.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 4" 
+                        src="/images/posts/story4.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Duplicate sets for seamless scrolling */}
+                <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 1" 
+                        src="/images/posts/story1.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 2" 
+                        src="/images/posts/story2.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 3" 
+                        src="/images/posts/story3.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 4" 
+                        src="/images/posts/story4.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Third duplicate for extra smooth scrolling */}
+                <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 1" 
+                        src="/images/posts/story1.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 2" 
+                        src="/images/posts/story2.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 3" 
+                        src="/images/posts/story3.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 4" 
+                        src="/images/posts/story4.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Fourth duplicate for smooth continuous scrolling */}
+                <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 1" 
+                        src="/images/posts/story1.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 2" 
+                        src="/images/posts/story2.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 3" 
+                        src="/images/posts/story3.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
+                    <div className="relative w-full" style={{ height: "700px" }}>
+                      <Image 
+                        alt="Post example 4" 
+                        src="/images/posts/story4.png"
+                        fill
+                        className="w-full h-full object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Gradient overlays */}
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
             </div>
           </div>
         </section>

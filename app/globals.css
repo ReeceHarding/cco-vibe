@@ -477,3 +477,23 @@ button:focus {
   height: auto;
   display: block;
 }
+
+/* Marquee animation for posts carousel */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+/* Custom tailwind utilities for marquee */
+.scroll-my-12 {
+  scroll-margin-top: 3rem;
+  scroll-margin-bottom: 3rem;
+}
