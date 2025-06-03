@@ -149,205 +149,182 @@ export default function Home() {
     <>
       <Navigation />
       <main className="relative min-h-screen overflow-hidden">
-        {/* Hero Section - Ultra Modern Design */}
+        {/* Hero Section - Polished for premium feel */}
         <div className="relative">
-          {/* Subtle gradient orbs */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -top-40 -right-40 w-[800px] h-[800px] rounded-full bg-purple-200/10 blur-[120px]" />
-            <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-purple-300/10 blur-[120px]" />
+          {/* Sophisticated background gradients */}
+          <div className="absolute inset-0 -z-10 overflow-hidden">
+            <div className="absolute -top-[40%] -left-[10%] w-[500px] h-[500px] rounded-full bg-purple-200/30 blur-[120px] animate-pulse" />
+            <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] rounded-full bg-purple-300/20 blur-[120px] animate-pulse" style={{ animationDelay: "2s" }} />
+            <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-purple-100/20 blur-[100px]" />
           </div>
 
-          {/* Grid pattern overlay */}
-          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] pointer-events-none opacity-[0.02]" />
-
-          <div className="container relative z-10 pt-32 md:pt-40 lg:pt-48 pb-24 md:pb-32">
+          <div className="container relative z-10 pt-28 md:pt-36 pb-20 md:pb-28">
             <div className="max-w-5xl mx-auto">
-              {/* Minimal trust badge */}
+              {/* Enhanced trust badge */}
               <div 
-                className={`flex justify-center mb-12 transition-all duration-1000 ${
+                className={`flex justify-center mb-8 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
                 }`}
               >
-                <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  <span className="font-medium">Trusted by 800+ creators</span>
+                <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-full border border-purple-200/30 shadow-[0_2px_20px_rgba(147,51,234,0.1)]">
+                  <div className="flex items-center -space-x-2">
+                    {["CalebSmithXM", "zalkazemi", "methkalkhalawi"].map((user, i) => (
+                      <img
+                        key={i}
+                        src={`https://unavatar.io/twitter/${user}`}
+                        alt={`${user} avatar`}
+                        className="w-6 h-6 rounded-full border-2 border-white"
+                        style={{ zIndex: 3 - i }}
+                      />
+                    ))}
+                  </div>
+                  <div className="h-4 w-px bg-purple-200" />
+                  <span className="text-sm font-medium text-foreground/80">
+                    Join 800+ creators growing on X
+                  </span>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-3 h-3 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* Main content */}
+              {/* Refined heading with better animations */}
               <div className="text-center px-4">
-                {/* Headline with modern typography */}
                 <h1 
-                  className={`text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.9] transition-all duration-1000 ${
+                  className={`text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-bold tracking-tight leading-[1.05] mb-6 transition-all duration-700 ${
                     mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: "100ms" }}
                 >
-                  <span className="block text-foreground">Write</span>
-                  <span className="block mt-2 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
-                    authentic
+                  <span className="block">Write posts that</span>
+                  <span className="block mt-2">
+                    <span className="relative inline-block">
+                      <span className="relative z-10 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                        actually get seen
+                      </span>
+                      <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" stroke="url(#gradient-underline)" strokeWidth="3" strokeLinecap="round" className="animate-draw"/>
+                        <defs>
+                          <linearGradient id="gradient-underline" x1="2" y1="9" x2="298" y2="9" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#9333EA" stopOpacity="0.8"/>
+                            <stop offset="0.5" stopColor="#A855F7"/>
+                            <stop offset="1" stopColor="#9333EA" stopOpacity="0.8"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </span>
                   </span>
-                  <span className="block mt-2 text-foreground">X posts</span>
                 </h1>
 
-                {/* Subheading */}
+                {/* Enhanced subheading */}
                 <p 
-                  className={`mt-8 text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light transition-all duration-1000 ${
-                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`text-xl md:text-2xl lg:text-[26px] text-muted-foreground/90 mb-10 max-w-3xl mx-auto leading-relaxed font-light transition-all duration-700 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: "200ms" }}
                 >
-                  AI that understands your voice, matches your style,
-                  <br className="hidden md:block" />
-                  and creates posts in 9 seconds.
+                  AI that learns your voice and creates authentic X posts that grow your audience.
+                  <span className="block mt-2 text-lg md:text-xl text-muted-foreground/70">
+                    No generic content. Just you, amplified.
+                  </span>
                 </p>
 
-                {/* CTA Section */}
+                {/* Interactive feature cards */}
                 <div 
-                  className={`mt-12 md:mt-16 transition-all duration-1000 ${
-                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`grid grid-cols-1 md:grid-cols-3 gap-3 max-w-2xl mx-auto mb-10 transition-all duration-700 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: "300ms" }}
                 >
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <Button
-                      onClick={handleSignIn}
-                      className="group relative px-8 py-6 text-lg font-medium bg-foreground text-background hover:bg-foreground/90 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl overflow-hidden"
+                  {[
+                    { icon: "⚡", text: "9-second creation", highlight: "Fast" },
+                    { icon: "🎯", text: "Matches your style", highlight: "Authentic" },
+                    { icon: "📈", text: "Proven to grow", highlight: "Effective" }
+                  ].map((feature, i) => (
+                    <div 
+                      key={i}
+                      className="group relative bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-4 border border-purple-100/20 hover:border-purple-300/40 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(147,51,234,0.15)]"
+                      style={{ transitionDelay: `${300 + i * 50}ms` }}
                     >
-                      <span className="relative z-10 flex items-center gap-3">
-                        Get started free
-                        <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </Button>
-
-                    <button 
-                      onClick={handleVideoClick}
-                      className="group flex items-center gap-3 px-6 py-4 text-foreground/80 hover:text-foreground transition-all duration-300"
-                    >
-                      <div className="w-12 h-12 rounded-full border-2 border-current flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <PlayIcon className="w-5 h-5 ml-1" />
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">{feature.icon}</span>
+                        <div className="text-left">
+                          <span className="text-xs font-semibold text-purple-600 uppercase tracking-wider">
+                            {feature.highlight}
+                          </span>
+                          <p className="text-sm font-medium text-foreground/80">
+                            {feature.text}
+                          </p>
+                        </div>
                       </div>
-                      <span className="font-medium">Watch demo</span>
-                    </button>
-                  </div>
-
-                  <p className="mt-6 text-sm text-muted-foreground">
-                    No credit card required · 7-day free trial
-                  </p>
+                    </div>
+                  ))}
                 </div>
 
-                {/* Social proof - minimalist approach */}
+                {/* Premium CTA section */}
                 <div 
-                  className={`mt-16 md:mt-20 flex items-center justify-center gap-8 transition-all duration-1000 ${
-                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`transition-all duration-700 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: "400ms" }}
                 >
-                  <div className="flex -space-x-2">
-                    {[
-                      "https://unavatar.io/twitter/CalebSmithXM",
-                      "https://unavatar.io/twitter/zalkazemi", 
-                      "https://unavatar.io/twitter/methkalkhalawi",
-                      "https://unavatar.io/twitter/clivassy"
-                    ].map((avatar, i) => (
-                      <div key={i} className="relative group">
-                        <img
-                          src={avatar}
-                          alt=""
-                          className="w-10 h-10 rounded-full border-2 border-background shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:z-10"
-                        />
-                      </div>
-                    ))}
-                    <div className="w-10 h-10 rounded-full bg-muted border-2 border-background shadow-sm flex items-center justify-center text-xs font-medium text-muted-foreground">
-                      +96
-                    </div>
+                  <div className="relative inline-block group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+                    <Button
+                      onClick={handleSignIn}
+                      className="relative bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-10 py-6 text-lg font-medium shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 transition-all duration-200 group"
+                    >
+                      <span className="flex items-center gap-3">
+                        Start writing better posts
+                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </span>
+                    </Button>
                   </div>
                   
-                  <div className="h-8 w-px bg-border" />
-                  
-                  <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                    <div>
-                      <span className="font-semibold text-foreground">50K+</span> posts created
+                  <div className="mt-5 flex items-center justify-center gap-6 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-purple-600" />
+                      <span>No credit card</span>
                     </div>
-                    <div>
-                      <span className="font-semibold text-foreground">92%</span> engagement rate
+                    <div className="h-4 w-px bg-border" />
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-purple-600" />
+                      <span>7-day free trial</span>
                     </div>
+                    <div className="h-4 w-px bg-border" />
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-purple-600" />
+                      <span>Cancel anytime</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Enhanced social proof */}
+                <div 
+                  className={`mt-20 transition-all duration-700 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
+                  style={{ transitionDelay: "500ms" }}
+                >
+                  <p className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider">
+                    Trusted by creators at
+                  </p>
+                  <div className="flex items-center justify-center gap-8 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+                    {/* Company logos placeholder - would be actual logos in production */}
+                    <div className="text-2xl font-bold text-muted-foreground/50">Meta</div>
+                    <div className="text-2xl font-bold text-muted-foreground/50">Google</div>
+                    <div className="text-2xl font-bold text-muted-foreground/50">Netflix</div>
+                    <div className="text-2xl font-bold text-muted-foreground/50">Stripe</div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Floating dashboard preview */}
-          <div className="relative pb-32">
-            <div className="container max-w-6xl mx-auto px-4">
-              <div 
-                className={`relative transition-all duration-1000 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                }`}
-                style={{ transitionDelay: "500ms" }}
-              >
-                {/* Glow effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-purple-400/20 to-purple-500/20 rounded-3xl blur-2xl opacity-50 animate-pulse" />
-                
-                {/* Dashboard image */}
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-purple-400/10 pointer-events-none" />
-                  <Image
-                    src="/images/postel-dashboard.svg"
-                    alt="Postify Dashboard"
-                    width={1920}
-                    height={1080}
-                    className="w-full h-auto relative z-10"
-                    quality={100}
-                    priority
-                  />
-                  
-                  {/* Floating play button */}
-                  <button
-                    onClick={handleVideoClick}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group"
-                    aria-label="Play demo video"
-                  >
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-white rounded-full blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
-                      <div className="relative w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:scale-110">
-                        <PlayIcon className="w-8 h-8 text-purple-600 ml-1" />
-                      </div>
-                    </div>
-                  </button>
-                </div>
-
-                {/* Floating feature badges */}
-                <div className="absolute -top-6 -right-6 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-xl border border-white/20 hidden lg:block animate-float">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-                      <Check className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Success rate</p>
-                      <p className="text-sm font-semibold">99.8%</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-xl border border-white/20 hidden lg:block animate-float" style={{ animationDelay: "1s" }}>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
-                      <WandSparkles className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Posts created</p>
-                      <p className="text-sm font-semibold">50,000+</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Testimonials Section */}
@@ -355,11 +332,11 @@ export default function Home() {
           <div className="text-center">
             <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Testimonials</h2>
             <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
-              How our users{" "}
+                How our users{" "}
               <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">boost their X growth</span>
             </h3>
-          </div>
-          
+            </div>
+
           <div className="relative mt-8 flex h-fit w-full flex-col items-center justify-center overflow-hidden">
             {/* Desktop: Two scrolling rows */}
             <div className="group overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row hidden [--duration:80s] md:flex">
@@ -370,63 +347,63 @@ export default function Home() {
                   <div className="flex flex-col justify-between w-full h-full">
                     <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
                       <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">If you want to understand what makes a good tweet, this is the tool. Great for generating new and original content.</span> The team at Postel studied what goes viral and made it their Sunday chore.</p>
-                    </div>
+                        </div>
                     <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
                       <div className="relative h-14 w-14 flex-shrink-0">
                         <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
                         <div className="h-full w-full rounded-full overflow-hidden">
                           <img src="https://unavatar.io/twitter/CalebSmithXM" alt="Caleb Smith's profile" className="h-full w-full object-cover" />
                         </div>
-                      </div>
-                      <div>
+                          </div>
+                          <div>
                         <p className="font-medium text-neutral-500 dark:text-neutral-200">Caleb Smith</p>
                         <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Coach & Indie Founder</p>
                         <a href="https://x.com/CalebSmithXM" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@CalebSmithXM</a>
                       </div>
-                    </div>
-                  </div>
-                </div>
+                          </div>
+                        </div>
+                      </div>
 
                 <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
                   <div className="flex flex-col justify-between w-full h-full">
                     <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
                       <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel gives you ideas for bangers using your own content or any YT video (can be yours or not).</span> It's the shortcut. Repurposing just one banger can save you time and a headache every day.</p>
-                    </div>
+                        </div>
                     <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
                       <div className="relative h-14 w-14 flex-shrink-0">
                         <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
                         <div className="h-full w-full rounded-full overflow-hidden">
                           <img src="https://unavatar.io/twitter/zalkazemi" alt="Zaid Al Kazemi's profile" className="h-full w-full object-cover" />
                         </div>
-                      </div>
-                      <div>
+                          </div>
+                          <div>
                         <p className="font-medium text-neutral-500 dark:text-neutral-200">Zaid Al Kazemi</p>
                         <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300"><a href="https://www.zalkazemi.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Founder & Podcast Host</a></p>
                         <a href="https://x.com/zalkazemi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@zalkazemi</a>
                       </div>
-                    </div>
-                  </div>
-                </div>
+                          </div>
+                        </div>
+                      </div>
 
                 <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
                   <div className="flex flex-col justify-between w-full h-full">
                     <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
                       <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.</p>
-                    </div>
+                        </div>
                     <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
                       <div className="relative h-14 w-14 flex-shrink-0">
                         <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
                         <div className="h-full w-full rounded-full overflow-hidden">
                           <img src="https://unavatar.io/twitter/methkalkhalawi" alt="Methkal's profile" className="h-full w-full object-cover" />
                         </div>
-                      </div>
-                      <div>
+                          </div>
+                          <div>
                         <p className="font-medium text-neutral-500 dark:text-neutral-200">Methkal</p>
                         <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Indie Maker</p>
                         <a href="https://x.com/methkalkhalawi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@methkalkhalawi</a>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
@@ -447,30 +424,30 @@ export default function Home() {
                         <a href="https://x.com/clivassy" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@clivassy</a>
                       </div>
                     </div>
-                  </div>
                 </div>
+              </div>
 
                 <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
                   <div className="flex flex-col justify-between w-full h-full">
                     <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
                       <p>Postel is a game changer. The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude. The voice it created is spot on.</span></p>
-                    </div>
+                        </div>
                     <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
                       <div className="relative h-14 w-14 flex-shrink-0">
                         <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
                         <div className="h-full w-full rounded-full overflow-hidden">
                           <img src="https://unavatar.io/twitter/_grantsing" alt="Grant Singleton's profile" className="h-full w-full object-cover" />
                         </div>
-                      </div>
-                      <div>
+                          </div>
+                          <div>
                         <p className="font-medium text-neutral-500 dark:text-neutral-200">Grant Singleton</p>
                         <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Engineer & Builder</p>
                         <a href="https://x.com/_grantsing" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@_grantsing</a>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
+                          </div>
+                        </div>
+                      </div>
 
               {/* Duplicate for seamless loop */}
               <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
@@ -479,43 +456,43 @@ export default function Home() {
                   <div className="flex flex-col justify-between w-full h-full">
                     <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
                       <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">If you want to understand what makes a good tweet, this is the tool. Great for generating new and original content.</span> The team at Postel studied what goes viral and made it their Sunday chore.</p>
-                    </div>
+                        </div>
                     <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
                       <div className="relative h-14 w-14 flex-shrink-0">
                         <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
                         <div className="h-full w-full rounded-full overflow-hidden">
                           <img src="https://unavatar.io/twitter/CalebSmithXM" alt="Caleb Smith's profile" className="h-full w-full object-cover" />
                         </div>
-                      </div>
-                      <div>
+                          </div>
+                          <div>
                         <p className="font-medium text-neutral-500 dark:text-neutral-200">Caleb Smith</p>
                         <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Coach & Indie Founder</p>
                         <a href="https://x.com/CalebSmithXM" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@CalebSmithXM</a>
                       </div>
-                    </div>
-                  </div>
-                </div>
+                          </div>
+                        </div>
+                      </div>
 
                 <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
                   <div className="flex flex-col justify-between w-full h-full">
                     <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
                       <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel gives you ideas for bangers using your own content or any YT video (can be yours or not).</span> It's the shortcut. Repurposing just one banger can save you time and a headache every day.</p>
-                    </div>
+                        </div>
                     <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
                       <div className="relative h-14 w-14 flex-shrink-0">
                         <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
                         <div className="h-full w-full rounded-full overflow-hidden">
                           <img src="https://unavatar.io/twitter/zalkazemi" alt="Zaid Al Kazemi's profile" className="h-full w-full object-cover" />
                         </div>
-                      </div>
-                      <div>
+                          </div>
+                          <div>
                         <p className="font-medium text-neutral-500 dark:text-neutral-200">Zaid Al Kazemi</p>
                         <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300"><a href="https://www.zalkazemi.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Founder & Podcast Host</a></p>
                         <a href="https://x.com/zalkazemi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@zalkazemi</a>
                       </div>
-                    </div>
-                  </div>
-                </div>
+                          </div>
+                        </div>
+                      </div>
 
                 <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
                   <div className="flex flex-col justify-between w-full h-full">
@@ -824,9 +801,9 @@ export default function Home() {
                       <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Coach & Indie Founder</p>
                       <a href="https://x.com/CalebSmithXM" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@CalebSmithXM</a>
                     </div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
               <div className="bg-card text-card-foreground mb-2 break-inside-avoid items-center border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg flex w-72 h-[380px] shrink-0 cursor-pointer snap-center snap-always flex-col justify-between rounded-xl p-4 shadow-black/[0.1] shadow-xl lg:min-w-96">
                 <div className="flex flex-col justify-between w-full h-full">
@@ -845,9 +822,9 @@ export default function Home() {
                       <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300"><a href="https://www.zalkazemi.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Founder & Podcast Host</a></p>
                       <a href="https://x.com/zalkazemi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@zalkazemi</a>
                     </div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
               <div className="bg-card text-card-foreground mb-2 break-inside-avoid items-center border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg flex w-72 h-[380px] shrink-0 cursor-pointer snap-center snap-always flex-col justify-between rounded-xl p-4 shadow-black/[0.1] shadow-xl lg:min-w-96">
                 <div className="flex flex-col justify-between w-full h-full">
@@ -874,7 +851,7 @@ export default function Home() {
                 <div className="flex flex-col justify-between w-full h-full">
                   <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
                     <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy. Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.</p>
-                  </div>
+            </div>
                   <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
                     <div className="relative h-14 w-14 flex-shrink-0">
                       <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
@@ -955,8 +932,8 @@ export default function Home() {
                               <stop offset="1" stopColor="#EC4899"></stop>
                             </linearGradient>
                           </defs>
-                        </svg>
-                      </div>
+                  </svg>
+                </div>
                     </div>
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-foreground">No generic AI content</h3>
@@ -980,9 +957,9 @@ export default function Home() {
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-purple-500 ml-0.5 transition-opacity duration-300 absolute opacity-100" aria-label="Play">
                             <title>Play audio</title>
                             <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd"></path>
-                          </svg>
+                  </svg>
                           <div className="w-4 h-4 rounded-sm bg-purple-500 transition-opacity duration-300 absolute opacity-0" aria-label="Stop"></div>
-                        </div>
+                </div>
                       </div>
                       
                       {/* Waveform visualization */}
@@ -991,22 +968,22 @@ export default function Home() {
                           <div className="flex h-12 items-end space-x-[2px] w-full px-2">
                             {/* Generate random heights for waveform bars */}
                             {[9,5,6,7,4,9,8,7,6,7,5,5,4,5,7,4,4,7,7,5,7,5,4,6,6,9,4,6,7,6,5,7,9,7,8,8,4,6,5,7,8,9,4,7,5,9,5,9,5,9,8,4,7,9,9,5,9,6,4,5].map((height, i) => (
-                              <div 
-                                key={i} 
+                      <div 
+                        key={i} 
                                 className="w-[2px] rounded-full transition-all duration-150 bg-gray-400/70 group-hover/card:bg-purple-400 group-hover/card:animate-pulse" 
-                                style={{
+                        style={{ 
                                   height: `${height}px`,
                                   animationDelay: `${i * 50}ms`
-                                }}
+                        }}
                               ></div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                      
+                    ))}
+                  </div>
+                </div>
+              </div>
+
                       {/* Time display */}
                       <div className="font-medium text-purple-500 text-lg shrink-0 z-10">00:00</div>
-                    </div>
+                </div>
                   </div>
                 </div>
               </div>
@@ -1022,7 +999,7 @@ export default function Home() {
                     <div className="transition-all duration-300 opacity-100">
                       <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3">
                         <p className="text-sm text-foreground">built my first site out of pure frustration with my job</p>
-                      </div>
+                </div>
                       <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3">
                         <p className="text-sm text-foreground">most people overthink their first post</p>
                       </div>
@@ -1074,7 +1051,7 @@ export default function Home() {
                       </g>
                       
                       {/* Gradients */}
-                      <defs>
+                    <defs>
                         <linearGradient id="indigo" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="5%" stopColor="#8b5cf6" stopOpacity="0.4"></stop>
                           <stop offset="95%" stopColor="#8b5cf6" stopOpacity="0"></stop>
@@ -1082,8 +1059,8 @@ export default function Home() {
                         <linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1">
                           <stop offset="5%" stopColor="#a855f7" stopOpacity="0.4"></stop>
                           <stop offset="95%" stopColor="#a855f7" stopOpacity="0"></stop>
-                        </linearGradient>
-                      </defs>
+                      </linearGradient>
+                    </defs>
                       
                       {/* Area charts */}
                       <g className="recharts-layer recharts-area stroke-indigo-500">
@@ -1098,7 +1075,7 @@ export default function Home() {
                           <path className="recharts-curve recharts-area-curve" stroke="#a855f7" fill="none" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" d="M0,166.3C39.733,166.3,79.467,166.3,119.2,166.3C158.933,166.3,198.667,158.825,238.4,155.95C278.133,153.075,317.867,153.075,357.6,149.05C397.333,145.025,437.067,142.725,476.8,131.8C516.533,120.875,556.267,102.188,596,83.5"></path>
                         </g>
                       </g>
-                    </svg>
+                  </svg>
                   </div>
                 </div>
               </div>
@@ -1114,14 +1091,14 @@ export default function Home() {
                     <div className="rounded-xl overflow-hidden relative group/thumb transition-all duration-300 hover:scale-105">
                       <div className="absolute bottom-3 left-3 z-10">
                         <p className="text-xs bg-black/60 text-white px-2 py-1 rounded">Works with long podcasts and normal videos</p>
-                      </div>
+                </div>
                       <div className="relative aspect-video w-full overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:opacity-0">
                         <img src="/images/thumbnail_1.jpg" alt="Postel usage guide" className="w-full h-full object-cover" />
                       </div>
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                         <img src="/images/thumbnail_3.jpg" alt="Postel usage results" className="w-full h-full object-cover" />
-                      </div>
                     </div>
+                  </div>
                     
                     <div className="rounded-xl overflow-hidden relative group/thumb transition-all duration-300 hover:scale-105">
                       <div className="absolute bottom-3 left-3 z-10">
@@ -1129,7 +1106,7 @@ export default function Home() {
                       </div>
                       <div className="relative aspect-video w-full overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:opacity-0">
                         <img src="/images/thumbnail_2.jpg" alt="Team using Postel" className="w-full h-full object-cover" />
-                      </div>
+                    </div>
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                         <img src="/images/thumbnail_4.jpg" alt="Team results with Postel" className="w-full h-full object-cover" />
                       </div>
@@ -1154,16 +1131,16 @@ export default function Home() {
 
             {/* Desktop feature tabs */}
             <div className="hidden md:flex flex-wrap justify-center gap-8 mb-24">
-              {features.map((feature) => (
-                <button
-                  key={feature.id}
+                {features.map((feature) => (
+                  <button
+                    key={feature.id}
                   type="button"
                   onClick={() => {
                     setActiveFeatureTab(feature.id)
                     console.log(`Feature tab clicked: ${feature.title}`)
                   }}
                   className={`flex flex-1 flex-col items-center transition-colors pb-6 border-b-2 ${
-                    activeFeatureTab === feature.id
+                      activeFeatureTab === feature.id
                       ? "border-primary"
                       : "border-transparent"
                   }`}
@@ -1185,14 +1162,14 @@ export default function Home() {
                         ? "text-primary"
                         : "text-muted-foreground"
                     }`}>
-                      {feature.title}
+                    {feature.title}
                     </p>
                     <p className="text-sm text-muted-foreground text-balance mt-2 mx-auto">
                       {feature.description}
                     </p>
                   </div>
-                </button>
-              ))}
+                  </button>
+                ))}
             </div>
 
             {/* Desktop video display */}
@@ -1214,9 +1191,9 @@ export default function Home() {
                     muted
                     playsInline
                   />
-                </div>
+                          </div>
               ))}
-            </div>
+                        </div>
 
             {/* Mobile feature layout */}
             <div className="md:hidden space-y-16">
@@ -1225,14 +1202,14 @@ export default function Home() {
                   <div className="flex flex-col items-center">
                     <div className="flex items-center justify-center w-20 h-20 mb-4 rounded-full bg-primary/10">
                       <feature.icon className="h-10 w-10 text-primary" />
-                    </div>
+                          </div>
                     <h3 className="text-xl font-semibold text-primary text-center">
                       {feature.title}
                     </h3>
                     <p className="text-sm text-muted-foreground text-balance mt-2 text-center max-w-md mx-auto">
                       {feature.description}
                     </p>
-                  </div>
+                        </div>
                   <div className="relative rounded-xl overflow-hidden border shadow-lg aspect-video max-w-md mx-auto">
                     <video
                       className="w-full h-full object-cover"
@@ -1241,9 +1218,9 @@ export default function Home() {
                       loop
                       muted
                       playsInline
-                    />
-                  </div>
-                </div>
+                            />
+                          </div>
+                        </div>
               ))}
             </div>
           </div>
@@ -1258,7 +1235,7 @@ export default function Home() {
                 Create human-quality posts{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">that sound like you</span>
               </h3>
-            </div>
+                          </div>
 
             {/* Feature buttons */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16">
@@ -1270,16 +1247,16 @@ export default function Home() {
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
                       <UserRoundPen className="h-5 w-5 text-primary" />
+                        </div>
                     </div>
-                  </div>
                   <div className="flex-1 max-w-[calc(100%-80px)]">
                     <div className="mb-2 flex items-center justify-between">
                       <span className="font-semibold block">Posts that are authentic to you</span>
-                    </div>
+                            </div>
                     <div className="text-sm text-muted-foreground leading-relaxed">
                       Posts will be aligned with your background, story and brand by using information from your knowledge base
-                    </div>
-                  </div>
+                          </div>
+                        </div>
                 </div>
               </button>
 
@@ -1303,7 +1280,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </button>
+                          </button>
 
               <button 
                 type="button" 
@@ -1313,8 +1290,8 @@ export default function Home() {
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
                       <Rocket className="h-5 w-5 text-primary" />
-                    </div>
-                  </div>
+                        </div>
+                      </div>
                   <div className="flex-1 max-w-[calc(100%-80px)]">
                     <div className="mb-2 flex items-center justify-between">
                       <span className="font-semibold block">Posts based on proven formats</span>
@@ -1322,11 +1299,11 @@ export default function Home() {
                     </div>
                     <div className="text-sm text-muted-foreground leading-relaxed hidden md:block">
                       Any post will be optimized for engagement by using proven formats of the best performing posts on X
-                    </div>
                   </div>
                 </div>
-              </button>
             </div>
+              </button>
+          </div>
 
             {/* Marquee carousel */}
             <div className="relative">
@@ -1342,7 +1319,7 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
-                    </div>
+              </div>
                   </div>
                   <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
                     <div className="relative w-full" style={{ height: "700px" }}>
@@ -1376,8 +1353,8 @@ export default function Home() {
                         sizes="400px"
                       />
                     </div>
-                  </div>
-                </div>
+            </div>
+          </div>
 
                 {/* Duplicate sets for seamless scrolling */}
                 <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
@@ -1390,8 +1367,8 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
-                    </div>
-                  </div>
+                        </div>
+                        </div>
                   <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
                     <div className="relative w-full" style={{ height: "700px" }}>
                       <Image 
@@ -1401,8 +1378,8 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
-                    </div>
-                  </div>
+                      </div>
+                      </div>
                   <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
                     <div className="relative w-full" style={{ height: "700px" }}>
                       <Image 
@@ -1412,7 +1389,7 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
-                    </div>
+                        </div>
                   </div>
                   <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
                     <div className="relative w-full" style={{ height: "700px" }}>
@@ -1423,9 +1400,9 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
+                      </div>
                     </div>
                   </div>
-                </div>
 
                 {/* Third duplicate for extra smooth scrolling */}
                 <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
@@ -1438,8 +1415,8 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
-                    </div>
-                  </div>
+                        </div>
+                        </div>
                   <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
                     <div className="relative w-full" style={{ height: "700px" }}>
                       <Image 
@@ -1449,8 +1426,8 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
-                    </div>
-                  </div>
+                      </div>
+                      </div>
                   <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
                     <div className="relative w-full" style={{ height: "700px" }}>
                       <Image 
@@ -1460,7 +1437,7 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
-                    </div>
+                        </div>
                   </div>
                   <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
                     <div className="relative w-full" style={{ height: "700px" }}>
@@ -1471,9 +1448,9 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
+                      </div>
                     </div>
                   </div>
-                </div>
 
                 {/* Fourth duplicate for smooth continuous scrolling */}
                 <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
@@ -1486,8 +1463,8 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
-                    </div>
-                  </div>
+                        </div>
+                        </div>
                   <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
                     <div className="relative w-full" style={{ height: "700px" }}>
                       <Image 
@@ -1497,8 +1474,8 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
-                    </div>
-                  </div>
+                      </div>
+                      </div>
                   <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
                     <div className="relative w-full" style={{ height: "700px" }}>
                       <Image 
@@ -1508,8 +1485,8 @@ export default function Home() {
                         className="w-full h-full object-contain"
                         sizes="400px"
                       />
-                    </div>
-                  </div>
+                        </div>
+                      </div>
                   <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
                     <div className="relative w-full" style={{ height: "700px" }}>
                       <Image 
@@ -1918,6 +1895,60 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        {/* Premium video section */}
+        <div className="relative pb-32">
+          <div className="container max-w-6xl mx-auto px-4">
+            <div 
+              className={`relative group transition-all duration-700 ${
+                mounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
+              }`}
+              style={{ transitionDelay: "600ms" }}
+            >
+              {/* Glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 to-purple-400/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-purple-200/20 bg-white/5 backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-transparent to-transparent z-10 pointer-events-none" />
+                <button
+                  onClick={handleVideoClick}
+                  className="relative w-full group/play"
+                  aria-label="Watch how Postify works"
+                >
+                  <Image
+                    src="/images/postel-dashboard.svg"
+                    alt="Postify Dashboard"
+                    width={1920}
+                    height={1080}
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
+                    quality={100}
+                    priority
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center z-20">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-white rounded-full blur-xl opacity-50 scale-[1.5] group-hover/play:scale-[2] transition-transform duration-500" />
+                      <div className="relative w-24 h-24 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl group-hover/play:scale-110 transition-transform duration-300">
+                        <PlayIcon className="w-10 h-10 text-purple-600 ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                </button>
+                
+                {/* Video caption */}
+                <div className="absolute bottom-6 left-6 right-6 z-20">
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-4 border border-white/10">
+                    <p className="text-white/90 font-medium text-sm md:text-base">
+                      See how creators write viral posts in under 9 seconds
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Smooth fade to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/50 to-transparent" />
+        </div>
       </main>
     </>
   )
