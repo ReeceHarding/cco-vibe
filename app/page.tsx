@@ -149,184 +149,205 @@ export default function Home() {
     <>
       <Navigation />
       <main className="relative min-h-screen overflow-hidden">
-        {/* Hero Section - Redesigned for sleek modern look */}
-        <div className="container relative z-10 pt-32 md:pt-40 pb-20 md:pb-32">
-          {/* Simplified decorative elements */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute top-40 right-[15%] w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
+        {/* Hero Section - Ultra Modern Design */}
+        <div className="relative">
+          {/* Subtle gradient orbs */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-40 -right-40 w-[800px] h-[800px] rounded-full bg-purple-200/10 blur-[120px]" />
+            <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-purple-300/10 blur-[120px]" />
           </div>
 
-          <div className="max-w-5xl mx-auto text-center px-4">
-            {/* Trust signal - made more subtle */}
-            <div 
-              className={`inline-flex items-center gap-2 mb-8 transition-all duration-500 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-full border border-purple-200/30">
-                <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full animate-pulse" />
-                <span className="text-sm font-medium text-muted-foreground">
-                  800+ creators growing on X
-                </span>
-              </div>
-            </div>
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] pointer-events-none opacity-[0.02]" />
 
-            {/* Main heading - Cleaner typography */}
-            <h1 
-              className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "100ms" }}
-            >
-              Write{" "}
-              <span className="relative">
-                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-                  authentic
-                </span>
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" stroke="url(#paint0_linear)" strokeWidth="4" strokeLinecap="round"/>
-                  <defs>
-                    <linearGradient id="paint0_linear" x1="2" y1="9" x2="298" y2="9" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#9333EA"/>
-                      <stop offset="1" stopColor="#A855F7"/>
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </span>{" "}
-              posts
-              <br />
-              <span className="text-muted-foreground">that grow your audience</span>
-            </h1>
-
-            {/* Subheading - More prominent */}
-            <p 
-              className={`text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "200ms" }}
-            >
-              AI that learns your voice, understands your expertise, and creates posts that sound exactly like you—in 9 seconds.
-            </p>
-
-            {/* Feature pills - Redesigned */}
-            <div 
-              className={`flex flex-wrap justify-center gap-4 mb-10 transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "300ms" }}
-            >
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">No generic AI content</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Matches your writing style</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Proven viral formats</span>
-              </div>
-            </div>
-
-            {/* CTA Section - More prominent */}
-            <div 
-              className={`transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "400ms" }}
-            >
-              <Button
-                onClick={handleSignIn}
-                className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group"
+          <div className="container relative z-10 pt-32 md:pt-40 lg:pt-48 pb-24 md:pb-32">
+            <div className="max-w-5xl mx-auto">
+              {/* Minimal trust badge */}
+              <div 
+                className={`flex justify-center mb-12 transition-all duration-1000 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+                }`}
               >
-                <span className="flex items-center gap-3">
-                  Start creating for free
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-              </Button>
-              <p className="text-sm text-muted-foreground mt-4">
-                No credit card required • 7-day free trial
-              </p>
-            </div>
-
-            {/* Social proof avatars */}
-            <div 
-              className={`flex items-center justify-center gap-6 mt-16 transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "500ms" }}
-            >
-              <div className="flex -space-x-3">
-                {[
-                  "https://unavatar.io/twitter/CalebSmithXM",
-                  "https://unavatar.io/twitter/zalkazemi",
-                  "https://unavatar.io/twitter/methkalkhalawi",
-                  "https://unavatar.io/twitter/clivassy",
-                  "https://unavatar.io/twitter/_grantsing"
-                ].map((avatar, i) => (
-                  <img
-                    key={i}
-                    src={avatar}
-                    alt="User avatar"
-                    className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
-                  />
-                ))}
-              </div>
-              <div className="text-left">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+                <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  <span className="font-medium">Trusted by 800+ creators</span>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  Loved by 800+ creators
-                </p>
               </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Video section - Simplified and integrated better */}
-        <div className="relative pb-32">
-          <div className="container max-w-6xl mx-auto px-4">
-            <div 
-              className={`relative rounded-2xl overflow-hidden shadow-2xl border border-purple-200/20 transition-all duration-700 ${
-                mounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
-              }`}
-              style={{ transitionDelay: "600ms" }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent z-10 pointer-events-none" />
-              <button
-                onClick={handleVideoClick}
-                className="relative w-full group"
-                aria-label="Play demo video"
-              >
-                <Image
-                  src="/images/postel-dashboard.svg"
-                  alt="Postify Dashboard"
-                  width={1920}
-                  height={1080}
-                  className="w-full h-auto"
-                  quality={100}
-                  priority
-                />
-                <div className="absolute inset-0 flex items-center justify-center z-20">
-                  <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
-                    <PlayIcon className="w-8 h-8 text-purple-600 ml-1" />
+              {/* Main content */}
+              <div className="text-center px-4">
+                {/* Headline with modern typography */}
+                <h1 
+                  className={`text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.9] transition-all duration-1000 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ transitionDelay: "100ms" }}
+                >
+                  <span className="block text-foreground">Write</span>
+                  <span className="block mt-2 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+                    authentic
+                  </span>
+                  <span className="block mt-2 text-foreground">X posts</span>
+                </h1>
+
+                {/* Subheading */}
+                <p 
+                  className={`mt-8 text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light transition-all duration-1000 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ transitionDelay: "200ms" }}
+                >
+                  AI that understands your voice, matches your style,
+                  <br className="hidden md:block" />
+                  and creates posts in 9 seconds.
+                </p>
+
+                {/* CTA Section */}
+                <div 
+                  className={`mt-12 md:mt-16 transition-all duration-1000 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ transitionDelay: "300ms" }}
+                >
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <Button
+                      onClick={handleSignIn}
+                      className="group relative px-8 py-6 text-lg font-medium bg-foreground text-background hover:bg-foreground/90 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl overflow-hidden"
+                    >
+                      <span className="relative z-10 flex items-center gap-3">
+                        Get started free
+                        <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </Button>
+
+                    <button 
+                      onClick={handleVideoClick}
+                      className="group flex items-center gap-3 px-6 py-4 text-foreground/80 hover:text-foreground transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 rounded-full border-2 border-current flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <PlayIcon className="w-5 h-5 ml-1" />
+                      </div>
+                      <span className="font-medium">Watch demo</span>
+                    </button>
+                  </div>
+
+                  <p className="mt-6 text-sm text-muted-foreground">
+                    No credit card required · 7-day free trial
+                  </p>
+                </div>
+
+                {/* Social proof - minimalist approach */}
+                <div 
+                  className={`mt-16 md:mt-20 flex items-center justify-center gap-8 transition-all duration-1000 ${
+                    mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ transitionDelay: "400ms" }}
+                >
+                  <div className="flex -space-x-2">
+                    {[
+                      "https://unavatar.io/twitter/CalebSmithXM",
+                      "https://unavatar.io/twitter/zalkazemi", 
+                      "https://unavatar.io/twitter/methkalkhalawi",
+                      "https://unavatar.io/twitter/clivassy"
+                    ].map((avatar, i) => (
+                      <div key={i} className="relative group">
+                        <img
+                          src={avatar}
+                          alt=""
+                          className="w-10 h-10 rounded-full border-2 border-background shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:z-10"
+                        />
+                      </div>
+                    ))}
+                    <div className="w-10 h-10 rounded-full bg-muted border-2 border-background shadow-sm flex items-center justify-center text-xs font-medium text-muted-foreground">
+                      +96
+                    </div>
+                  </div>
+                  
+                  <div className="h-8 w-px bg-border" />
+                  
+                  <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                    <div>
+                      <span className="font-semibold text-foreground">50K+</span> posts created
+                    </div>
+                    <div>
+                      <span className="font-semibold text-foreground">92%</span> engagement rate
+                    </div>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
           </div>
 
-          {/* Fade to next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+          {/* Floating dashboard preview */}
+          <div className="relative pb-32">
+            <div className="container max-w-6xl mx-auto px-4">
+              <div 
+                className={`relative transition-all duration-1000 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                }`}
+                style={{ transitionDelay: "500ms" }}
+              >
+                {/* Glow effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-purple-400/20 to-purple-500/20 rounded-3xl blur-2xl opacity-50 animate-pulse" />
+                
+                {/* Dashboard image */}
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-purple-400/10 pointer-events-none" />
+                  <Image
+                    src="/images/postel-dashboard.svg"
+                    alt="Postify Dashboard"
+                    width={1920}
+                    height={1080}
+                    className="w-full h-auto relative z-10"
+                    quality={100}
+                    priority
+                  />
+                  
+                  {/* Floating play button */}
+                  <button
+                    onClick={handleVideoClick}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group"
+                    aria-label="Play demo video"
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-white rounded-full blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
+                      <div className="relative w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:scale-110">
+                        <PlayIcon className="w-8 h-8 text-purple-600 ml-1" />
+                      </div>
+                    </div>
+                  </button>
+                </div>
+
+                {/* Floating feature badges */}
+                <div className="absolute -top-6 -right-6 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-xl border border-white/20 hidden lg:block animate-float">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                      <Check className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Success rate</p>
+                      <p className="text-sm font-semibold">99.8%</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-xl border border-white/20 hidden lg:block animate-float" style={{ animationDelay: "1s" }}>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                      <WandSparkles className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Posts created</p>
+                      <p className="text-sm font-semibold">50,000+</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Testimonials Section */}
