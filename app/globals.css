@@ -17,7 +17,7 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 271 51% 53%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -29,7 +29,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 271 51% 53%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -38,8 +38,8 @@
     --chart-5: 27 87% 67%;
     
     /* Custom properties for gradients and accents */
-    --gradient-primary: linear-gradient(to bottom, hsl(213 93% 38%), hsl(213 93% 28%));
-    --gradient-accent: linear-gradient(to right, hsl(213 93% 48%), hsl(213 93% 38%));
+    --gradient-primary: linear-gradient(to bottom, hsl(271 51% 53%), hsl(271 51% 43%));
+    --gradient-accent: linear-gradient(to right, hsl(271 51% 63%), hsl(271 51% 53%));
   }
 
   .dark {

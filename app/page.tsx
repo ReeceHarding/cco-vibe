@@ -3,13 +3,13 @@
 import React, { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { XIcon, PlayIcon, ChevronDown, Check, X } from "lucide-react"
+import { XIcon, PlayIcon, ChevronDown, Check, X, WandSparkles, Mic, Youtube, BrainCircuit } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [showVideo, setShowVideo] = useState(false)
-  const [activeFeatureTab, setActiveFeatureTab] = useState("ideas")
+  const [activeFeatureTab, setActiveFeatureTab] = useState("youtube")
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("yearly")
   const [openFaqItem, setOpenFaqItem] = useState<string | null>(null)
   const [isInView, setIsInView] = useState(false)
@@ -59,35 +59,35 @@ export default function Home() {
     window.open("https://twitter.com/i/flow/login", "_blank")
   }
 
-  // Features data
+  // Features data with proper icons
   const features = [
     {
       id: "ideas",
       title: "Create Post Ideas",
       description: "Create post ideas that are authentic to your brand and writing style. Based on the best performing formats on X.",
-      icon: "✏️",
-      video: "/videos/feature-ideas.mp4"
+      icon: WandSparkles,
+      video: "/images/feature_videos/post-ideas-lq.mp4"
     },
     {
       id: "voice",
       title: "Voice to Post",
-      description: "Speak your thoughts or write them down and Postify will turn your ideas into 6 optimized posts ready to share on X.",
-      icon: "🎙️",
-      video: "/videos/feature-voice.mp4"
+      description: "Speak your thoughts or write them down and Postel will turn your ideas into 6 optimized posts ready to share on X.",
+      icon: Mic,
+      video: "/images/feature_videos/speech-to-post-lq.mp4"
     },
     {
       id: "youtube",
       title: "Youtube Video to Posts",
-      description: "Paste any YouTube link and Postify will turn it into 6 optimized posts that match your voice and be authentic to you.",
-      icon: "📹",
-      video: "/videos/feature-youtube.mp4"
+      description: "Paste any YouTube link and Postel will turn it into 6 optimized posts that match your voice and be authentic to you.",
+      icon: Youtube,
+      video: "/images/feature_videos/youtube-to-post-lq.mp4"
     },
     {
       id: "knowledge",
       title: "Build your Knowledge Base",
       description: "Create and store any information in your knowledge base and turn it into valuable content that will grow your audience.",
-      icon: "🧠",
-      video: "/videos/feature-knowledge.mp4"
+      icon: BrainCircuit,
+      video: "/images/feature_videos/knowledge-base-lq.mp4"
     }
   ]
 
@@ -858,184 +858,106 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="relative py-32 px-4 bg-gradient-to-b from-white to-gray-50/50">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <div className="mb-6">
-                <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
-                  FEATURES
-                </span>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
-                <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">Supercharge</span> your content creation
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Everything you need to create engaging content that grows your audience
-              </p>
+        <section id="features" className="py-12 md:py-24 bg-background">
+          <div className="container max-w-7xl">
+            <div className="text-center mx-auto mb-20">
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Features</h2>
+              <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">Supercharge</span>{" "}
+                your content creation
+              </h3>
             </div>
 
-            {/* Feature tabs */}
-            <div className="max-w-4xl mx-auto mb-16">
-              <div className="flex flex-wrap justify-center gap-3 p-2 bg-gray-100/50 backdrop-blur-xl rounded-2xl">
-                {features.map((feature) => (
-                  <button
-                    key={feature.id}
-                    onClick={() => setActiveFeatureTab(feature.id)}
-                    className={`px-6 py-3.5 rounded-xl font-medium text-[15px] transition-all duration-200 ${
+            {/* Desktop feature tabs */}
+            <div className="hidden md:flex flex-wrap justify-center gap-8 mb-24">
+              {features.map((feature) => (
+                <button
+                  key={feature.id}
+                  type="button"
+                  onClick={() => {
+                    setActiveFeatureTab(feature.id)
+                    console.log(`Feature tab clicked: ${feature.title}`)
+                  }}
+                  className={`flex flex-1 flex-col items-center transition-colors pb-6 border-b-2 ${
+                    activeFeatureTab === feature.id
+                      ? "border-primary"
+                      : "border-transparent"
+                  }`}
+                >
+                  <div className={`flex items-center justify-center w-20 h-20 mb-4 rounded-full transition-colors ${
+                    activeFeatureTab === feature.id
+                      ? "bg-primary/10"
+                      : "bg-muted"
+                  }`}>
+                    <feature.icon className={`h-10 w-10 transition-colors ${
                       activeFeatureTab === feature.id
-                        ? "bg-white text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
-                        : "text-gray-600 hover:text-gray-900"
-                    }`}
-                  >
-                    <span className="mr-2.5 text-[18px]">{feature.icon}</span>
-                    {feature.title}
-                  </button>
-                ))}
-              </div>
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    }`} />
+                  </div>
+                  <div className="text-center">
+                    <p className={`font-semibold text-lg ${
+                      activeFeatureTab === feature.id
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    }`}>
+                      {feature.title}
+                    </p>
+                    <p className="text-sm text-muted-foreground text-balance mt-2 mx-auto">
+                      {feature.description}
+                    </p>
+                  </div>
+                </button>
+              ))}
             </div>
 
-            {/* Feature content */}
-            <div className="max-w-6xl mx-auto">
+            {/* Desktop video display */}
+            <div className="hidden md:block relative rounded-xl overflow-hidden border shadow-lg aspect-video max-w-5xl mx-auto">
               {features.map((feature) => (
                 <div
                   key={feature.id}
-                  className={`transition-all duration-300 ${
-                    activeFeatureTab === feature.id ? "block" : "hidden"
+                  className={`w-full h-full absolute inset-0 transition-opacity duration-300 ${
+                    activeFeatureTab === feature.id
+                      ? "opacity-100"
+                      : "opacity-0 pointer-events-none"
                   }`}
                 >
-                  <div className="grid md:grid-cols-2 gap-16 items-start">
-                    <div className="space-y-8">
-                      <div>
-                        <h3 className="text-3xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
-                        <p className="text-gray-600 text-[17px] leading-[1.8]">
-                          {feature.id === "youtube" 
-                            ? "Transform your existing content into optimized posts for each social platform."
-                            : feature.description
-                          }
-                        </p>
-                      </div>
+                  <video
+                    className="w-full h-full object-cover"
+                    src={feature.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                </div>
+              ))}
+            </div>
 
-                      {/* Input field for YouTube feature */}
-                      {feature.id === "youtube" && (
-                        <div className="space-y-6">
-                          <div className="relative">
-                            <input
-                              type="text"
-                              placeholder="Paste the Youtube Video URL here..."
-                              className="w-full px-6 py-4 text-[16px] bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
-                            />
-                            <svg 
-                              className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" 
-                              fill="none" 
-                              stroke="currentColor" 
-                              strokeWidth="2" 
-                              viewBox="0 0 24 24"
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                            </svg>
-                          </div>
-                          <Button
-                            onClick={handleSignIn}
-                            className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-[0_4px_20px_rgba(147,51,234,0.15)] hover:shadow-[0_6px_30px_rgba(147,51,234,0.25)] transition-all duration-200"
-                          >
-                            Generate complete post
-                          </Button>
-                        </div>
-                      )}
-
-                      {/* Voice input for Voice feature */}
-                      {feature.id === "voice" && (
-                        <div className="space-y-6">
-                          <div className="relative">
-                            <textarea
-                              placeholder="Speak your thoughts or write them down..."
-                              className="w-full px-6 py-4 text-[16px] bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400 min-h-[120px] resize-none"
-                            />
-                            <button className="absolute right-4 top-4 p-2 bg-blue-100 rounded-lg hover:bg-blue-200 transition-colors">
-                              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                              </svg>
-                            </button>
-                          </div>
-                          <Button
-                            onClick={handleSignIn}
-                            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)] transition-all duration-200"
-                          >
-                            Turn into posts
-                          </Button>
-                        </div>
-                      )}
-
-                      {/* Ideas generation for Create Post Ideas */}
-                      {feature.id === "ideas" && (
-                        <div className="space-y-6">
-                          <div className="relative">
-                            <input
-                              type="text"
-                              placeholder="What's on your mind? Share your thoughts..."
-                              className="w-full px-6 py-4 text-[16px] bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
-                            />
-                          </div>
-                          <Button
-                            onClick={handleSignIn}
-                            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)] transition-all duration-200"
-                          >
-                            Generate post ideas
-                          </Button>
-                        </div>
-                      )}
-
-                      {/* Knowledge base for Build your Knowledge Base */}
-                      {feature.id === "knowledge" && (
-                        <div className="space-y-6">
-                          <div className="grid grid-cols-2 gap-4">
-                            <button className="p-4 bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 transition-colors text-left">
-                              <svg className="w-6 h-6 text-blue-600 mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                              </svg>
-                              <p className="text-sm font-medium text-gray-900">Add new entry</p>
-                            </button>
-                            <button className="p-4 bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 transition-colors text-left">
-                              <svg className="w-6 h-6 text-blue-600 mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                              </svg>
-                              <p className="text-sm font-medium text-gray-900">Import content</p>
-                            </button>
-                          </div>
-                          <Button
-                            onClick={handleSignIn}
-                            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-8 py-4 font-medium text-[16px] shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)] transition-all duration-200"
-                          >
-                            Get Started Free →
-                          </Button>
-                        </div>
-                      )}
+            {/* Mobile feature layout */}
+            <div className="md:hidden space-y-16">
+              {features.map((feature) => (
+                <div key={feature.id} className="space-y-6">
+                  <div className="flex flex-col items-center">
+                    <div className="flex items-center justify-center w-20 h-20 mb-4 rounded-full bg-primary/10">
+                      <feature.icon className="h-10 w-10 text-primary" />
                     </div>
-                    
-                    {/* Right side - Video/Demo area */}
-                    <div className="relative">
-                      <div className="relative bg-gray-100 rounded-3xl overflow-hidden aspect-[4/3] shadow-inner">
-                        {/* Video placeholder - in production, this would be actual video */}
-                        <div className="w-full h-full flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="w-20 h-20 bg-white/50 rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                              <span className="text-3xl">{feature.icon}</span>
-                            </div>
-                            <p className="text-gray-500 font-medium">Feature Video Demo</p>
-                            <p className="text-gray-400 text-sm mt-2">Coming soon</p>
-                          </div>
-                        </div>
-                        
-                        {/* Play button overlay */}
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/10">
-                          <button className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
-                            <svg className="w-6 h-6 text-blue-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M8 5v14l11-7z"/>
-                            </svg>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+                    <h3 className="text-xl font-semibold text-primary text-center">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground text-balance mt-2 text-center max-w-md mx-auto">
+                      {feature.description}
+                    </p>
+                  </div>
+                  <div className="relative rounded-xl overflow-hidden border shadow-lg aspect-video max-w-md mx-auto">
+                    <video
+                      className="w-full h-full object-cover"
+                      src={feature.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
                   </div>
                 </div>
               ))}
