@@ -327,6 +327,60 @@ export default function Home() {
             </div>
         </div>
 
+        {/* Premium video section */}
+        <div className="relative pb-32">
+          <div className="container max-w-6xl mx-auto px-4">
+            <div 
+              className={`relative group transition-all duration-700 ${
+                mounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
+              }`}
+              style={{ transitionDelay: "600ms" }}
+            >
+              {/* Glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 to-purple-400/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-purple-200/20 bg-white/5 backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-transparent to-transparent z-10 pointer-events-none" />
+                <button
+                  onClick={handleVideoClick}
+                  className="relative w-full group/play"
+                  aria-label="Watch how Postify works"
+                >
+                  <Image
+                    src="/images/postel-dashboard.svg"
+                    alt="Postify Dashboard"
+                    width={1920}
+                    height={1080}
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
+                    quality={100}
+                    priority
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center z-20">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-white rounded-full blur-xl opacity-50 scale-[1.5] group-hover/play:scale-[2] transition-transform duration-500" />
+                      <div className="relative w-24 h-24 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl group-hover/play:scale-110 transition-transform duration-300">
+                        <PlayIcon className="w-10 h-10 text-purple-600 ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                </button>
+                
+                {/* Video caption */}
+                <div className="absolute bottom-6 left-6 right-6 z-20">
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-4 border border-white/10">
+                    <p className="text-white/90 font-medium text-sm md:text-base">
+                      See how creators write viral posts in under 9 seconds
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Smooth fade to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/50 to-transparent" />
+        </div>
+
         {/* Testimonials Section */}
         <section className="pt-12 lg:py-24" id="testimonials">
           <div className="text-center">
@@ -440,6 +494,115 @@ export default function Home() {
                         </div>
                           </div>
                           <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Grant Singleton</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Engineer & Builder</p>
+                        <a href="https://x.com/_grantsing" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@_grantsing</a>
+                      </div>
+                    </div>
+                          </div>
+                        </div>
+                      </div>
+
+              {/* Duplicate for seamless loop */}
+              <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                {/* Repeat all testimonials for seamless scrolling */}
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">If you want to understand what makes a good tweet, this is the tool. Great for generating new and original content.</span> The team at Postel studied what goes viral and made it their Sunday chore.</p>
+                        </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/CalebSmithXM" alt="Caleb Smith's profile" className="h-full w-full object-cover" />
+                        </div>
+                          </div>
+                          <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Caleb Smith</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Coach & Indie Founder</p>
+                        <a href="https://x.com/CalebSmithXM" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@CalebSmithXM</a>
+                      </div>
+                          </div>
+                        </div>
+                      </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel gives you ideas for bangers using your own content or any YT video (can be yours or not).</span> It's the shortcut. Repurposing just one banger can save you time and a headache every day.</p>
+                        </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/zalkazemi" alt="Zaid Al Kazemi's profile" className="h-full w-full object-cover" />
+                        </div>
+                          </div>
+                          <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Zaid Al Kazemi</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300"><a href="https://www.zalkazemi.com" target="_blank" rel="noopener noreferrer" className="hover:underline">Founder & Podcast Host</a></p>
+                        <a href="https://x.com/zalkazemi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@zalkazemi</a>
+                      </div>
+                          </div>
+                        </div>
+                      </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel has really good Tweet Ideas. I don't struggle with new post ideas anymore.</span> The founders did a great job.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/methkalkhalawi" alt="Methkal's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Methkal</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Indie Maker</p>
+                        <a href="https://x.com/methkalkhalawi" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@methkalkhalawi</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p><span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">Postel got me back in the flow with tweet ideas that actually match my vibe and timeline, not random generic stuff. Last week went crazy. Almost +100 followers in 2 days.</span> And the founders are not just shipping a tool, the team's actually there to help. 100% worth trying.</p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/clivassy" alt="Julia's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-neutral-500 dark:text-neutral-200">Julia</p>
+                        <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Engineer & Builder</p>
+                        <a href="https://x.com/clivassy" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@clivassy</a>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+                <div className="bg-card text-card-foreground shadow-sm mb-2 flex w-[450px] cursor-pointer break-inside-avoid flex-col items-center rounded-xl p-6 border border-primary/60 dark:border-primary/20 transition-all hover:scale-[1.02] hover:shadow-lg h-[280px]">
+                  <div className="flex flex-col justify-between w-full h-full">
+                    <div className="select-none font-normal text-neutral-700 text-base dark:text-neutral-200">
+                      <p>Postel is a game changer. The best feature is the "Topics", they help me get fresh ideas for specific themes. <span className="bg-primary/30 p-1 py-0.5 font-semibold text-neutral-900 dark:text-neutral-200">The post ideas were better than anything I've used before. Better than just using ChatGPT or Claude. The voice it created is spot on.</span></p>
+                    </div>
+                    <div className="flex w-full select-none items-center gap-4 pt-6 mt-auto">
+                      <div className="relative h-14 w-14 flex-shrink-0">
+                        <div className="absolute inset-0 rounded-full border-[3px] border-purple-200"></div>
+                        <div className="h-full w-full rounded-full overflow-hidden">
+                          <img src="https://unavatar.io/twitter/_grantsing" alt="Grant Singleton's profile" className="h-full w-full object-cover" />
+                        </div>
+                      </div>
+                      <div>
                         <p className="font-medium text-neutral-500 dark:text-neutral-200">Grant Singleton</p>
                         <p className="font-normal text-neutral-400 text-xs dark:text-neutral-300">Software Engineer & Builder</p>
                         <a href="https://x.com/_grantsing" target="_blank" rel="noopener noreferrer" className="font-normal text-primary hover:underline text-xs inline-flex items-center gap-1">@_grantsing</a>
@@ -1895,56 +2058,6 @@ export default function Home() {
             </div>
           </div>
         )}
-
-        {/* Premium video section */}
-        <div className="relative pb-32">
-          <div className="container max-w-6xl mx-auto px-4">
-            <div 
-              className={`relative group transition-all duration-700 ${
-                mounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
-              }`}
-              style={{ transitionDelay: "600ms" }}
-            >
-              {/* Glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/20 to-purple-400/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-purple-200/20 bg-white/5 backdrop-blur-sm">
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-transparent to-transparent z-10 pointer-events-none" />
-                <button
-                  onClick={handleVideoClick}
-                  className="relative w-full group/play"
-                  aria-label="Watch how Postify works"
-                >
-                  <Image
-                    src="/images/postel-dashboard.svg"
-                    alt="Postify Dashboard"
-                    width={1920}
-                    height={1080}
-                    className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
-                    quality={100}
-                    priority
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center z-20">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-white rounded-full blur-xl opacity-50 scale-[1.5] group-hover/play:scale-[2] transition-transform duration-500" />
-                      <div className="relative w-24 h-24 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center shadow-2xl group-hover/play:scale-110 transition-transform duration-300">
-                        <PlayIcon className="w-10 h-10 text-purple-600 ml-1" />
-                      </div>
-                    </div>
-                  </div>
-                </button>
-                
-                {/* Video caption */}
-                <div className="absolute bottom-6 left-6 right-6 z-20">
-                  <div className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-4 border border-white/10">
-                    <p className="text-white/90 font-medium text-sm md:text-base">
-                      See how creators write viral posts in under 9 seconds
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Smooth fade to next section */}
           <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/50 to-transparent" />
