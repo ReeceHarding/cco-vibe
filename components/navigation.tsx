@@ -52,14 +52,9 @@ export function Navigation() {
       <div className="hidden md:flex items-center gap-7">
         <Link href="/#pricing" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">Pricing</Link>
         <Link href="/#faq" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">FAQ</Link>
-        <Link href="/blog" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">Blog</Link>
-        <Link href="/contact" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">Contact</Link>
         <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-purple-700/80 hover:text-purple-700 transition-all duration-200" aria-label="Join our Discord">
           <DiscordIcon />
         </a>
-        <Link href="/app" className="flex items-center justify-center h-9 px-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium text-[14px] rounded-full shadow-[inset_0_0.5px_2px_rgba(255,255,255,0.2),0_2px_8px_rgba(0,0,0,0.15)] hover:shadow-[inset_0_0.5px_2px_rgba(255,255,255,0.3),0_4px_12px_rgba(0,0,0,0.2)] hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-200">
-          <span className="font-geist">Dashboard</span>
-        </Link>
       </div>
 
       {/* Mobile Menu Button */}

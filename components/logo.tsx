@@ -20,13 +20,16 @@ export const PostelLogo = ({ className = "", ...props }: React.SVGProps<SVGSVGEl
       </linearGradient>
     </defs>
     
-    {/* Shield icon - matching the footer design */}
-    <g>
-      <path d="M16 4L8 8.5V17.5C8 21.915 10.768 25.83 14.8 27C18.832 25.83 21.6 21.915 21.6 17.5V8.5L16 4Z" fill="url(#postifyLogoGradient)"/>
+    {/* Twitter bird icon - purple gradient */}
+    <g transform="translate(4, 4)">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" 
+        fill="url(#postifyLogoGradient)" 
+        transform="scale(0.9)"
+      />
     </g>
     
-    {/* Text: Postify */}
-    <text x="30" y="22" fill="#1F2937" fontSize="18" fontWeight="600" fontFamily="system-ui, -apple-system, sans-serif">
+    {/* Text: Postify using font-geist */}
+    <text x="30" y="22" fill="#1F2937" fontSize="18" fontWeight="600" className="font-geist" style={{ fontFamily: 'var(--font-geist-sans), system-ui, -apple-system, sans-serif' }}>
       Postify
     </text>
   </svg>
