@@ -15,8 +15,8 @@ const geist = GeistSans;
 
 // Metadata configuration
 export const metadata: Metadata = {
-  title: "Postel - Write authentic X posts in 9 seconds",
-  description: "AI-powered tool to create authentic X/Twitter posts that sound like you. Trusted by 800+ users, try for free - no credit card required.",
+  title: "Postify - AI-Powered Content Creation for X/Twitter",
+  description: "AI-powered tool to create authentic X/Twitter posts that sound like you. Trusted by 800+ users. 7-day free trial with no questions asked money back guarantee.",
   keywords: ["AI", "Twitter", "X", "social media", "content creation", "posts"],
   authors: [{ name: "Postel" }],
   openGraph: {
