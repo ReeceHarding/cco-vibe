@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Firebase credentials - NEVER commit these!
+ai-video-430de-firebase-adminsdk-fbsvc-858ede978e.json
+*firebase-adminsdk*.json
+*service-account*.json
