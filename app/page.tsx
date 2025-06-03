@@ -12,35 +12,10 @@ export default function Home() {
   const [activeFeatureTab, setActiveFeatureTab] = useState("youtube")
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("yearly")
   const [openFaqItem, setOpenFaqItem] = useState<string | null>(null)
-  const [isInView, setIsInView] = useState(false)
-  const benefitsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setMounted(true)
     console.log("Page mounted - animations starting")
-  }, [])
-
-  // Intersection Observer for Benefits Section
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true)
-          console.log("Benefits section in view - triggering animations")
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (benefitsRef.current) {
-      observer.observe(benefitsRef.current)
-    }
-
-    return () => {
-      if (benefitsRef.current) {
-        observer.unobserve(benefitsRef.current)
-      }
-    }
   }, [])
 
   const handleVideoClick = () => {
@@ -709,147 +684,218 @@ export default function Home() {
         </section>
 
         {/* Benefits Grid Section */}
-        <section ref={benefitsRef} className="relative py-32 px-4 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <div className="mb-6">
-                <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
-                  BENEFITS
-                </span>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
+        <section className="py-12 md:py-24 bg-background">
+          <div className="container max-w-7xl">
+            <div className="text-center mx-auto mb-20">
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Benefits</h2>
+              <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
                 Grow with authentic content the{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">
-                  algorithm loves
-                </span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Create content that resonates with your audience and drives real engagement
-              </p>
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">algorithm loves</span>
+              </h3>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* No generic AI content */}
-              <div className={`group bg-gradient-to-b from-white to-gray-50/50 rounded-3xl border border-gray-200/60 p-10 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "100ms" }}>
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+            {/* Benefits grid with custom layout */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+              {/* No generic AI content - 4 columns */}
+              <div className="md:col-span-4 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group">
+                <div className="flex flex-col items-center text-center">
+                  <div className="mb-6 w-32 h-32 relative">
+                    <div className="absolute inset-0 rounded-full blur-lg bg-purple-500/40 transform scale-110 transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
+                    <div className="absolute inset-0 rounded-full blur-md bg-purple-400/50 transform scale-100 transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
+                    <div className="absolute inset-0 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center overflow-hidden transition-all duration-300">
+                      <div className="w-24 h-24 rounded-full bg-white/80 flex items-center justify-center relative z-10">
+                        <svg viewBox="0 0 24 24" className="w-12 h-12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="url(#paint0_linear)" strokeWidth="1.5"></path>
+                          <path d="M19.9671 20C19.9671 16.6863 16.4183 14 12.0001 14C7.58187 14 4.03308 16.6863 4.03308 20" stroke="url(#paint1_linear)" strokeWidth="1.5"></path>
+                          <defs>
+                            <linearGradient id="paint0_linear" x1="8" y1="4" x2="16" y2="12" gradientUnits="userSpaceOnUse">
+                              <stop stopColor="#A855F7"></stop>
+                              <stop offset="1" stopColor="#EC4899"></stop>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear" x1="4" y1="14" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                              <stop stopColor="#A855F7"></stop>
+                              <stop offset="1" stopColor="#EC4899"></stop>
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">No generic AI content</h3>
+                  <p className="text-muted-foreground">Imagine working with an experienced Content Creator that knows you inside out and will guide you to your next perfect post.</p>
                 </div>
-                <h3 className="font-semibold text-gray-900 text-[22px] mb-4">No generic AI content</h3>
-                <p className="text-gray-600 text-[15px] leading-[1.7]">
-                  Imagine working with an experienced Content Creator that knows you inside out and will guide you to your next perfect post.
-                </p>
               </div>
 
-              {/* Turn thoughts into posts */}
-              <div className={`group bg-gradient-to-b from-white to-gray-50/50 rounded-3xl border border-gray-200/60 p-10 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "200ms" }}>
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 text-[22px] mb-4">Turn your thoughts into 6 perfect ready-to-publish posts</h3>
-                <p className="text-gray-600 text-[15px] leading-[1.7]">
-                  Tell Postify what's on your mind or write down your thoughts. Postify unites them with your background and expertise to craft personalized content that sounds exactly like you.
-                </p>
-                {/* Audio waveform visualization */}
-                <div className="mt-8 h-20 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl flex items-center justify-center overflow-hidden">
-                  <div className="flex items-center gap-1">
-                    {[...Array(24)].map((_, i) => (
-                      <div 
-                        key={i} 
-                        className="w-1 bg-gradient-to-t from-blue-400 to-blue-600 rounded-full animate-pulse"
-                        style={{ 
-                          height: `${Math.sin(i * 0.5) * 30 + 35}px`,
-                          animationDelay: `${i * 0.05}s`,
-                          opacity: 0.8
-                        }}
-                      />
-                    ))}
+              {/* Turn your thoughts into posts - 5 columns */}
+              <div className="md:col-span-5 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/card">
+                <div className="flex flex-col">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Turn your thoughts into<br />6 perfect ready-to-publish posts</h3>
+                  <p className="text-muted-foreground mb-6">Tell Postel what's on your mind or write down your thoughts. Postel unites them with your background and expertise to craft personalized content that sounds exactly like you.</p>
+                  
+                  {/* Audio player visualization */}
+                  <div className="mt-auto mx-auto w-full max-w-xl pt-6 relative">
+                    <div className="absolute -inset-1 rounded-full opacity-15 blur-md bg-purple-600/30"></div>
+                    <div className="relative flex h-16 flex-row items-center justify-between rounded-full bg-white px-4 py-3 shadow-lg border border-purple-400/30 transition-all duration-300 overflow-hidden">
+                      {/* Play button */}
+                      <div className="w-10 h-10 rounded-full border border-purple-500 flex items-center justify-center bg-transparent z-10 transition-all duration-300 hover:bg-purple-50 cursor-pointer">
+                        <div className="relative w-6 h-6 flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-purple-500 ml-0.5 transition-opacity duration-300 absolute opacity-100" aria-label="Play">
+                            <title>Play audio</title>
+                            <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd"></path>
+                          </svg>
+                          <div className="w-4 h-4 rounded-sm bg-purple-500 transition-opacity duration-300 absolute opacity-0" aria-label="Stop"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Waveform visualization */}
+                      <div className="absolute inset-0 flex items-center justify-center -mt-9">
+                        <div className="w-[60%] mx-auto">
+                          <div className="flex h-12 items-end space-x-[2px] w-full px-2">
+                            {/* Generate random heights for waveform bars */}
+                            {[9,5,6,7,4,9,8,7,6,7,5,5,4,5,7,4,4,7,7,5,7,5,4,6,6,9,4,6,7,6,5,7,9,7,8,8,4,6,5,7,8,9,4,7,5,9,5,9,5,9,8,4,7,9,9,5,9,6,4,5].map((height, i) => (
+                              <div 
+                                key={i} 
+                                className="w-[2px] rounded-full transition-all duration-150 bg-gray-400/70 group-hover/card:bg-purple-400 group-hover/card:animate-pulse" 
+                                style={{
+                                  height: `${height}px`,
+                                  animationDelay: `${i * 50}ms`
+                                }}
+                              ></div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Time display */}
+                      <div className="font-medium text-purple-500 text-lg shrink-0 z-10">00:00</div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Personalized post ideas */}
-              <div className={`group bg-gradient-to-b from-white to-gray-50/50 rounded-3xl border border-gray-200/60 p-10 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "300ms" }}>
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 text-[22px] mb-4">Personalized post ideas in 9 seconds</h3>
-                <p className="text-gray-600 text-[15px] leading-[1.7]">
-                  Create 6 post ideas with one click with proven hooks and formats.
-                </p>
-                <div className="mt-8 bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-2xl p-6 border border-gray-200/50">
-                  <p className="text-[13px] text-gray-500 mb-3 font-medium uppercase tracking-wider">Input</p>
-                  <p className="text-[14px] text-gray-600 mb-4">built my first site out of pure frustration with my job</p>
-                  <p className="text-[13px] text-gray-500 mb-3 font-medium uppercase tracking-wider">Output</p>
-                  <p className="text-[15px] text-gray-800 font-medium">most people overthink their first post</p>
-                </div>
-              </div>
-
-              {/* Grow faster with proven formats */}
-              <div className={`group bg-gradient-to-b from-white to-gray-50/50 rounded-3xl border border-gray-200/60 p-10 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "400ms" }}>
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 text-[22px] mb-4">Grow faster with proven post formats</h3>
-                <p className="text-gray-600 text-[15px] leading-[1.7]">
-                  Anything you create will be optimized for X by using our proven post formats which we derived from the best performing content on X.
-                </p>
-                {/* Chart placeholder */}
-                <div className="mt-8 h-40 relative bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6">
-                  <svg className="w-full h-full" viewBox="0 0 200 100">
-                    <defs>
-                      <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.3"/>
-                        <stop offset="100%" stopColor="#3B82F6" stopOpacity="0"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M 0 80 Q 50 70 100 40 T 200 10" stroke="#3B82F6" strokeWidth="3" fill="none" />
-                    <path d="M 0 80 Q 50 70 100 40 T 200 10 L 200 100 L 0 100 Z" fill="url(#chartGradient)" />
-                    <circle cx="100" cy="40" r="4" fill="#3B82F6" />
-                    <text x="105" y="35" className="text-[12px] font-medium fill-blue-600">+97 Followers</text>
-                  </svg>
-                </div>
-              </div>
-
-              {/* Don't waste time */}
-              <div className={`group bg-gradient-to-b from-white to-gray-50/50 rounded-3xl border border-gray-200/60 p-10 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{ transitionDelay: "500ms" }}>
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-gray-900 text-[22px] mb-4">Don't waste time coming up with your next post idea</h3>
-                <p className="text-gray-600 text-[15px] leading-[1.7]">
-                  Never be inconsistent with your content again. Turn YouTube videos or any information in your knowledge base into content that is authentic to you with one click.
-                </p>
-                {/* YouTube thumbnails */}
-                <div className="mt-8 grid grid-cols-2 gap-3">
-                  <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-xl aspect-video relative overflow-hidden group cursor-pointer">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z"/>
-                        </svg>
+              {/* Personalized post ideas - 3 columns */}
+              <div className="md:col-span-3 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
+                <div className="flex flex-col h-full">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground text-center">Personalized post ideas in 9 seconds</h3>
+                  <p className="text-muted-foreground text-center mb-6">Create 6 post ideas with one click with proven hooks and formats.</p>
+                  
+                  {/* Example posts */}
+                  <div className="mt-auto flex flex-col gap-3 relative">
+                    <div className="transition-all duration-300 opacity-100">
+                      <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3">
+                        <p className="text-sm text-foreground">built my first site out of pure frustration with my job</p>
+                      </div>
+                      <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3">
+                        <p className="text-sm text-foreground">most people overthink their first post</p>
                       </div>
                     </div>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200" />
+                    
+                    {/* Hidden alternate posts for hover effect */}
+                    <div className="transition-all duration-300 opacity-0 absolute inset-0">
+                      <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3 transform transition-all duration-300" style={{ transitionDelay: "0ms", transform: "translateY(10px) scale(0.95)", opacity: 0 }}>
+                        <p className="text-sm text-foreground">how i landed 10+ clients with basically zero audience:</p>
+                      </div>
+                      <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3 transform transition-all duration-300" style={{ transitionDelay: "100ms", transform: "translateY(10px) scale(0.95)", opacity: 0 }}>
+                        <p className="text-sm text-foreground">nobody cares if you mess up. literally no one</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-xl aspect-video relative overflow-hidden group cursor-pointer">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z"/>
-                        </svg>
+                </div>
+              </div>
+
+              {/* Grow faster with proven post formats - 6 columns */}
+              <div className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
+                <div className="flex flex-col h-full">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Grow faster with proven post formats</h3>
+                  <p className="text-muted-foreground mb-8">Anything you create with will be optimized for X by using our proven post formats which we derived from the best performing content on X.</p>
+                  
+                  {/* Follower count */}
+                  <div className="flex flex-col mb-2">
+                    <div className="flex flex-row text-xl font-medium">
+                      <p>+</p>
+                      <p>97</p>
+                    </div>
+                    <p className="text-muted-foreground text-sm">Followers</p>
+                  </div>
+                  
+                  {/* Chart */}
+                  <div className="h-32 w-full sm:h-40 mt-2 relative">
+                    <svg className="h-full w-full" viewBox="0 0 596 256" preserveAspectRatio="none">
+                      <title>Performance Chart</title>
+                      <desc>Follower growth chart showing upward trend</desc>
+                      
+                      {/* Grid lines */}
+                      <g className="recharts-cartesian-grid">
+                        <g className="recharts-cartesian-grid-horizontal">
+                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="49" x2="596" y2="49"></line>
+                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="100.75" x2="596" y2="100.75"></line>
+                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="152.5" x2="596" y2="152.5"></line>
+                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="204.25" x2="596" y2="204.25"></line>
+                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="256" x2="596" y2="256"></line>
+                        </g>
+                      </g>
+                      
+                      {/* Gradients */}
+                      <defs>
+                        <linearGradient id="indigo" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#8b5cf6" stopOpacity="0.4"></stop>
+                          <stop offset="95%" stopColor="#8b5cf6" stopOpacity="0"></stop>
+                        </linearGradient>
+                        <linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#a855f7" stopOpacity="0.4"></stop>
+                          <stop offset="95%" stopColor="#a855f7" stopOpacity="0"></stop>
+                        </linearGradient>
+                      </defs>
+                      
+                      {/* Area charts */}
+                      <g className="recharts-layer recharts-area stroke-indigo-500">
+                        <g className="recharts-layer">
+                          <path className="recharts-curve recharts-area-area" fill="url(#indigo)" stroke="none" fillOpacity="0.6" d="M0,173.2C39.733,173.2,79.467,173.2,119.2,173.2C158.933,173.2,198.667,167.738,238.4,159.4C278.133,151.063,317.867,126.625,357.6,123.175C397.333,119.725,437.067,121.45,476.8,118C516.533,114.55,556.267,81.775,596,49L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"></path>
+                          <path className="recharts-curve recharts-area-curve" stroke="#8b5cf6" fill="none" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" d="M0,173.2C39.733,173.2,79.467,173.2,119.2,173.2C158.933,173.2,198.667,167.738,238.4,159.4C278.133,151.063,317.867,126.625,357.6,123.175C397.333,119.725,437.067,121.45,476.8,118C516.533,114.55,556.267,81.775,596,49"></path>
+                        </g>
+                      </g>
+                      <g className="recharts-layer recharts-area stroke-purple-500">
+                        <g className="recharts-layer">
+                          <path className="recharts-curve recharts-area-area" fill="url(#cyan)" stroke="none" fillOpacity="0.6" d="M0,166.3C39.733,166.3,79.467,166.3,119.2,166.3C158.933,166.3,198.667,158.825,238.4,155.95C278.133,153.075,317.867,153.075,357.6,149.05C397.333,145.025,437.067,142.725,476.8,131.8C516.533,120.875,556.267,102.188,596,83.5L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"></path>
+                          <path className="recharts-curve recharts-area-curve" stroke="#a855f7" fill="none" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" d="M0,166.3C39.733,166.3,79.467,166.3,119.2,166.3C158.933,166.3,198.667,158.825,238.4,155.95C278.133,153.075,317.867,153.075,357.6,149.05C397.333,145.025,437.067,142.725,476.8,131.8C516.533,120.875,556.267,102.188,596,83.5"></path>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Don't waste time - 6 columns */}
+              <div className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group">
+                <div className="flex flex-col h-full">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Don't waste time coming up with your next post idea</h3>
+                  <p className="text-muted-foreground mb-6">Never be inconsistent with your content again. Turn youtube videos or any information in your knowledge base into content that is authentic to you with one click.</p>
+                  
+                  {/* YouTube video thumbnails */}
+                  <div className="mt-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="rounded-xl overflow-hidden relative group/thumb transition-all duration-300 hover:scale-105">
+                      <div className="absolute bottom-3 left-3 z-10">
+                        <p className="text-xs bg-black/60 text-white px-2 py-1 rounded">Works with long podcasts and normal videos</p>
+                      </div>
+                      <div className="relative aspect-video w-full overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:opacity-0">
+                        <img src="/images/thumbnail_1.jpg" alt="Postel usage guide" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        <img src="/images/thumbnail_3.jpg" alt="Postel usage results" className="w-full h-full object-cover" />
                       </div>
                     </div>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-200" />
+                    
+                    <div className="rounded-xl overflow-hidden relative group/thumb transition-all duration-300 hover:scale-105">
+                      <div className="absolute bottom-3 left-3 z-10">
+                        <p className="text-xs bg-black/60 text-white px-2 py-1 rounded">Transform your favourite YouTube videos into content</p>
+                      </div>
+                      <div className="relative aspect-video w-full overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:opacity-0">
+                        <img src="/images/thumbnail_2.jpg" alt="Team using Postel" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        <img src="/images/thumbnail_4.jpg" alt="Team results with Postel" className="w-full h-full object-cover" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
