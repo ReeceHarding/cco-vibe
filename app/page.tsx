@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { XIcon, PlayIcon, ChevronDown, Check, X, WandSparkles, Mic, Youtube, BrainCircuit, UserRoundPen, AudioLines, Rocket } from "lucide-react"
+import { XIcon, PlayIcon, ChevronDown, Check, X, WandSparkles, Mic, Youtube, BrainCircuit, UserRoundPen, AudioLines, Rocket, Heart, MessageCircle, Repeat2, Share, Bookmark, MoreHorizontal, Verified } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 
 export default function Home() {
@@ -331,175 +331,444 @@ export default function Home() {
         </div>
 
         {/* Video Testimonials Section */}
-        <section className="pt-12 lg:py-24" id="testimonials">
-          <div className="text-center">
-            <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Video Testimonials</h2>
+        <section className="pt-12 lg:py-24 bg-gray-50/50" id="testimonials">
+          <div className="text-center mb-12">
+            <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Real Reviews</h2>
             <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
-              Hear what our users{" "}
-              <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">have to say</span>
+              What creators are{" "}
+              <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">saying on X</span>
             </h3>
             <p className="text-muted-foreground text-lg mt-4">
-              Real stories from real creators who transformed their content strategy
+              Authentic testimonials from our community
             </p>
           </div>
 
-          <div className="relative mt-12 max-w-7xl mx-auto px-4">
-            {/* Video Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Video Testimonial 1 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-1-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-1.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+          {/* Twitter-like feed container */}
+          <div className="max-w-2xl mx-auto px-4">
+            <div className="space-y-0 divide-y divide-gray-200 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+              
+              {/* Tweet 1 - Caleb Smith */}
+              <article className="px-4 py-3 hover:bg-gray-50/50 transition-colors cursor-pointer">
+                <div className="flex gap-3">
+                  {/* Avatar */}
+                  <div className="flex-shrink-0">
+                    <img 
+                      src="https://unavatar.io/twitter/CalebSmithXM" 
+                      alt="Caleb Smith" 
+                      className="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  
+                  {/* Tweet content */}
+                  <div className="flex-1 min-w-0">
+                    {/* Header */}
+                    <div className="flex items-center gap-1 flex-wrap">
+                      <span className="font-bold text-gray-900 hover:underline">Caleb Smith</span>
+                      <Verified className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                      <span className="text-gray-500">@CalebSmithXM</span>
+                      <span className="text-gray-500">·</span>
+                      <span className="text-gray-500 hover:underline">2d</span>
+                      <div className="ml-auto">
+                        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                          <MoreHorizontal className="w-5 h-5 text-gray-500" />
+                        </button>
+                      </div>
+                    </div>
+                    
+                    {/* Tweet text */}
+                    <div className="mt-1 text-gray-900 text-[15px] leading-normal">
+                      If you want to understand what makes a good tweet, this is the tool. Great for generating new and original content.
+                    </div>
+                    
+                    {/* Video attachment */}
+                    <div className="mt-3 rounded-2xl overflow-hidden border border-gray-200 relative">
+                      <video 
+                        className="w-full aspect-video object-cover"
+                        poster="/images/testimonials/testimonial-1-poster.jpg"
+                        controls
+                        preload="metadata"
+                      >
+                        <source src="/videos/testimonials/testimonial-1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    
+                    {/* Engagement buttons */}
+                    <div className="flex items-center justify-between mt-3 -ml-2">
+                      <button className="flex items-center gap-2 p-2 hover:bg-purple-50 rounded-full transition-colors group">
+                        <MessageCircle className="w-5 h-5 text-gray-500 group-hover:text-purple-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-purple-600">24</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-green-50 rounded-full transition-colors group">
+                        <Repeat2 className="w-5 h-5 text-gray-500 group-hover:text-green-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-green-600">136</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-red-50 rounded-full transition-colors group">
+                        <Heart className="w-5 h-5 text-gray-500 group-hover:text-red-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-red-600">892</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Share className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                      <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Caleb Smith</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Coach & Indie Founder</p>
-                  <p className="text-sm text-muted-foreground/80">"If you want to understand what makes a good tweet, this is the tool."</p>
-                  <a href="https://x.com/CalebSmithXM" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @CalebSmithXM
-                  </a>
-                </div>
-              </div>
+              </article>
 
-              {/* Video Testimonial 2 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-2-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-2.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              {/* Tweet 2 - Zaid Al Kazemi */}
+              <article className="px-4 py-3 hover:bg-gray-50/50 transition-colors cursor-pointer">
+                <div className="flex gap-3">
+                  {/* Avatar */}
+                  <div className="flex-shrink-0">
+                    <img 
+                      src="https://unavatar.io/twitter/zalkazemi" 
+                      alt="Zaid Al Kazemi" 
+                      className="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  
+                  {/* Tweet content */}
+                  <div className="flex-1 min-w-0">
+                    {/* Header */}
+                    <div className="flex items-center gap-1 flex-wrap">
+                      <span className="font-bold text-gray-900 hover:underline">Zaid Al Kazemi</span>
+                      <span className="text-gray-500">@zalkazemi</span>
+                      <span className="text-gray-500">·</span>
+                      <span className="text-gray-500 hover:underline">3d</span>
+                      <div className="ml-auto">
+                        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                          <MoreHorizontal className="w-5 h-5 text-gray-500" />
+                        </button>
+                      </div>
+                    </div>
+                    
+                    {/* Tweet text */}
+                    <div className="mt-1 text-gray-900 text-[15px] leading-normal">
+                      Postel gives you ideas for bangers using your own content or any YT video (can be yours or not). It's the shortcut. Repurposing just one banger can save you time and a headache every day.
+                    </div>
+                    
+                    {/* Video attachment */}
+                    <div className="mt-3 rounded-2xl overflow-hidden border border-gray-200 relative">
+                      <video 
+                        className="w-full aspect-video object-cover"
+                        poster="/images/testimonials/testimonial-2-poster.jpg"
+                        controls
+                        preload="metadata"
+                      >
+                        <source src="/videos/testimonials/testimonial-2.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    
+                    {/* Engagement buttons */}
+                    <div className="flex items-center justify-between mt-3 -ml-2">
+                      <button className="flex items-center gap-2 p-2 hover:bg-purple-50 rounded-full transition-colors group">
+                        <MessageCircle className="w-5 h-5 text-gray-500 group-hover:text-purple-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-purple-600">18</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-green-50 rounded-full transition-colors group">
+                        <Repeat2 className="w-5 h-5 text-gray-500 group-hover:text-green-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-green-600">97</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-red-50 rounded-full transition-colors group">
+                        <Heart className="w-5 h-5 text-gray-500 group-hover:text-red-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-red-600">523</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Share className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                      <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Zaid Al Kazemi</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Founder & Podcast Host</p>
-                  <p className="text-sm text-muted-foreground/80">"Postel gives you ideas for bangers using your own content or any YT video."</p>
-                  <a href="https://x.com/zalkazemi" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @zalkazemi
-                  </a>
-                </div>
-              </div>
+              </article>
 
-              {/* Video Testimonial 3 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-3-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-3.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              {/* Tweet 3 - Julia */}
+              <article className="px-4 py-3 hover:bg-gray-50/50 transition-colors cursor-pointer">
+                <div className="flex gap-3">
+                  {/* Avatar */}
+                  <div className="flex-shrink-0">
+                    <img 
+                      src="https://unavatar.io/twitter/clivassy" 
+                      alt="Julia" 
+                      className="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  
+                  {/* Tweet content */}
+                  <div className="flex-1 min-w-0">
+                    {/* Header */}
+                    <div className="flex items-center gap-1 flex-wrap">
+                      <span className="font-bold text-gray-900 hover:underline">Julia</span>
+                      <span className="text-gray-500">@clivassy</span>
+                      <span className="text-gray-500">·</span>
+                      <span className="text-gray-500 hover:underline">5d</span>
+                      <div className="ml-auto">
+                        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                          <MoreHorizontal className="w-5 h-5 text-gray-500" />
+                        </button>
+                      </div>
+                    </div>
+                    
+                    {/* Tweet text */}
+                    <div className="mt-1 text-gray-900 text-[15px] leading-normal">
+                      Almost +100 followers in 2 days. The team's actually there to help. The tool is solid, especially for those that don't know where to start.
+                    </div>
+                    
+                    {/* Video attachment */}
+                    <div className="mt-3 rounded-2xl overflow-hidden border border-gray-200 relative">
+                      <video 
+                        className="w-full aspect-video object-cover"
+                        poster="/images/testimonials/testimonial-3-poster.jpg"
+                        controls
+                        preload="metadata"
+                      >
+                        <source src="/videos/testimonials/testimonial-3.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    
+                    {/* Engagement buttons */}
+                    <div className="flex items-center justify-between mt-3 -ml-2">
+                      <button className="flex items-center gap-2 p-2 hover:bg-purple-50 rounded-full transition-colors group">
+                        <MessageCircle className="w-5 h-5 text-gray-500 group-hover:text-purple-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-purple-600">42</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-green-50 rounded-full transition-colors group">
+                        <Repeat2 className="w-5 h-5 text-gray-500 group-hover:text-green-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-green-600">215</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-red-50 rounded-full transition-colors group">
+                        <Heart className="w-5 h-5 text-gray-500 group-hover:text-red-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-red-600">1,247</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Share className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                      <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Julia</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Software Engineer & Builder</p>
-                  <p className="text-sm text-muted-foreground/80">"Almost +100 followers in 2 days. The team's actually there to help."</p>
-                  <a href="https://x.com/clivassy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @clivassy
-                  </a>
-                </div>
-              </div>
+              </article>
 
-              {/* Video Testimonial 4 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-4-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-4.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              {/* Tweet 4 - Grant Singleton */}
+              <article className="px-4 py-3 hover:bg-gray-50/50 transition-colors cursor-pointer">
+                <div className="flex gap-3">
+                  {/* Avatar */}
+                  <div className="flex-shrink-0">
+                    <img 
+                      src="https://unavatar.io/twitter/_grantsing" 
+                      alt="Grant Singleton" 
+                      className="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  
+                  {/* Tweet content */}
+                  <div className="flex-1 min-w-0">
+                    {/* Header */}
+                    <div className="flex items-center gap-1 flex-wrap">
+                      <span className="font-bold text-gray-900 hover:underline">Grant Singleton</span>
+                      <span className="text-gray-500">@_grantsing</span>
+                      <span className="text-gray-500">·</span>
+                      <span className="text-gray-500 hover:underline">1w</span>
+                      <div className="ml-auto">
+                        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                          <MoreHorizontal className="w-5 h-5 text-gray-500" />
+                        </button>
+                      </div>
+                    </div>
+                    
+                    {/* Tweet text */}
+                    <div className="mt-1 text-gray-900 text-[15px] leading-normal">
+                      The post ideas were better than anything I've used before. And I've tried them all. This actually understands context and what makes content work.
+                    </div>
+                    
+                    {/* Video attachment */}
+                    <div className="mt-3 rounded-2xl overflow-hidden border border-gray-200 relative">
+                      <video 
+                        className="w-full aspect-video object-cover"
+                        poster="/images/testimonials/testimonial-4-poster.jpg"
+                        controls
+                        preload="metadata"
+                      >
+                        <source src="/videos/testimonials/testimonial-4.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    
+                    {/* Engagement buttons */}
+                    <div className="flex items-center justify-between mt-3 -ml-2">
+                      <button className="flex items-center gap-2 p-2 hover:bg-purple-50 rounded-full transition-colors group">
+                        <MessageCircle className="w-5 h-5 text-gray-500 group-hover:text-purple-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-purple-600">31</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-green-50 rounded-full transition-colors group">
+                        <Repeat2 className="w-5 h-5 text-gray-500 group-hover:text-green-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-green-600">189</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-red-50 rounded-full transition-colors group">
+                        <Heart className="w-5 h-5 text-gray-500 group-hover:text-red-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-red-600">756</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Share className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                      <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Grant Singleton</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Software Engineer & Builder</p>
-                  <p className="text-sm text-muted-foreground/80">"The post ideas were better than anything I've used before."</p>
-                  <a href="https://x.com/_grantsing" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @_grantsing
-                  </a>
-                </div>
-              </div>
+              </article>
 
-              {/* Video Testimonial 5 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-5-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-5.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              {/* Tweet 5 - Omar */}
+              <article className="px-4 py-3 hover:bg-gray-50/50 transition-colors cursor-pointer">
+                <div className="flex gap-3">
+                  {/* Avatar */}
+                  <div className="flex-shrink-0">
+                    <img 
+                      src="https://unavatar.io/twitter/notomarsol" 
+                      alt="Omar" 
+                      className="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  
+                  {/* Tweet content */}
+                  <div className="flex-1 min-w-0">
+                    {/* Header */}
+                    <div className="flex items-center gap-1 flex-wrap">
+                      <span className="font-bold text-gray-900 hover:underline">Omar</span>
+                      <Verified className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                      <span className="text-gray-500">@notomarsol</span>
+                      <span className="text-gray-500">·</span>
+                      <span className="text-gray-500 hover:underline">1w</span>
+                      <div className="ml-auto">
+                        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                          <MoreHorizontal className="w-5 h-5 text-gray-500" />
+                        </button>
+                      </div>
+                    </div>
+                    
+                    {/* Tweet text */}
+                    <div className="mt-1 text-gray-900 text-[15px] leading-normal">
+                      I can create posts that fit my brand in seconds. The AI actually gets my voice and doesn't make me sound like a robot. Game changer for busy founders.
+                    </div>
+                    
+                    {/* Video attachment */}
+                    <div className="mt-3 rounded-2xl overflow-hidden border border-gray-200 relative">
+                      <video 
+                        className="w-full aspect-video object-cover"
+                        poster="/images/testimonials/testimonial-5-poster.jpg"
+                        controls
+                        preload="metadata"
+                      >
+                        <source src="/videos/testimonials/testimonial-5.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    
+                    {/* Engagement buttons */}
+                    <div className="flex items-center justify-between mt-3 -ml-2">
+                      <button className="flex items-center gap-2 p-2 hover:bg-purple-50 rounded-full transition-colors group">
+                        <MessageCircle className="w-5 h-5 text-gray-500 group-hover:text-purple-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-purple-600">56</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-green-50 rounded-full transition-colors group">
+                        <Repeat2 className="w-5 h-5 text-gray-500 group-hover:text-green-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-green-600">342</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-red-50 rounded-full transition-colors group">
+                        <Heart className="w-5 h-5 text-gray-500 group-hover:text-red-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-red-600">2,134</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Share className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                      <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Omar</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Founder</p>
-                  <p className="text-sm text-muted-foreground/80">"I can create posts that fit my brand in seconds."</p>
-                  <a href="https://x.com/notomarsol" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @notomarsol
-                  </a>
-                </div>
-              </div>
+              </article>
 
-              {/* Video Testimonial 6 */}
-              <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-purple-200/30 hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <div className="relative aspect-video bg-gradient-to-br from-purple-100 to-purple-50">
-                  <video 
-                    className="w-full h-full object-cover"
-                    poster="/images/testimonials/testimonial-6-poster.jpg"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/videos/testimonials/testimonial-6.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              {/* Tweet 6 - Nemo */}
+              <article className="px-4 py-3 hover:bg-gray-50/50 transition-colors cursor-pointer">
+                <div className="flex gap-3">
+                  {/* Avatar */}
+                  <div className="flex-shrink-0">
+                    <img 
+                      src="https://unavatar.io/twitter/FakeUncleNemo" 
+                      alt="Nemo" 
+                      className="w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  
+                  {/* Tweet content */}
+                  <div className="flex-1 min-w-0">
+                    {/* Header */}
+                    <div className="flex items-center gap-1 flex-wrap">
+                      <span className="font-bold text-gray-900 hover:underline">Nemo</span>
+                      <span className="text-gray-500">@FakeUncleNemo</span>
+                      <span className="text-gray-500">·</span>
+                      <span className="text-gray-500 hover:underline">2w</span>
+                      <div className="ml-auto">
+                        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                          <MoreHorizontal className="w-5 h-5 text-gray-500" />
+                        </button>
+                      </div>
+                    </div>
+                    
+                    {/* Tweet text */}
+                    <div className="mt-1 text-gray-900 text-[15px] leading-normal">
+                      Postel helped me to push past the first 1000 followers. The content quality is insane and it actually sounds like me. Here's proof 👇
+                    </div>
+                    
+                    {/* Video attachment */}
+                    <div className="mt-3 rounded-2xl overflow-hidden border border-gray-200 relative">
+                      <video 
+                        className="w-full aspect-video object-cover"
+                        poster="/images/testimonials/testimonial-6-poster.jpg"
+                        controls
+                        preload="metadata"
+                      >
+                        <source src="/videos/testimonials/testimonial-6.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    
+                    {/* Engagement buttons */}
+                    <div className="flex items-center justify-between mt-3 -ml-2">
+                      <button className="flex items-center gap-2 p-2 hover:bg-purple-50 rounded-full transition-colors group">
+                        <MessageCircle className="w-5 h-5 text-gray-500 group-hover:text-purple-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-purple-600">73</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-green-50 rounded-full transition-colors group">
+                        <Repeat2 className="w-5 h-5 text-gray-500 group-hover:text-green-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-green-600">428</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-red-50 rounded-full transition-colors group">
+                        <Heart className="w-5 h-5 text-gray-500 group-hover:text-red-600" />
+                        <span className="text-sm text-gray-500 group-hover:text-red-600">3,892</span>
+                      </button>
+                      <button className="flex items-center gap-2 p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Share className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                      <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
+                        <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-semibold text-lg mb-2">Nemo</h4>
-                  <p className="text-muted-foreground text-sm mb-3">Software Engineer & Indie Builder</p>
-                  <p className="text-sm text-muted-foreground/80">"Postel helped me to push past the first 1000 followers."</p>
-                  <a href="https://x.com/FakeUncleNemo" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm inline-flex items-center gap-1 mt-3">
-                    @FakeUncleNemo
-                  </a>
-                </div>
-              </div>
+              </article>
             </div>
-
-            {/* Optional: Add a play icon overlay that disappears on hover */}
-            <style jsx>{`
-              video::-webkit-media-controls-overlay-play-button {
-                display: none;
-              }
-              video::-webkit-media-controls-play-button {
-                display: none;
-              }
-            `}</style>
           </div>
         </section>
 
@@ -512,7 +781,7 @@ export default function Home() {
                 Grow with authentic content the{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">algorithm loves</span>
               </h3>
-            </div>
+                        </div>
 
             {/* Benefits grid with custom layout */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -538,13 +807,13 @@ export default function Home() {
                             </linearGradient>
                           </defs>
                   </svg>
-                </div>
-                    </div>
-                  </div>
+                          </div>
+                          </div>
+                        </div>
                   <h3 className="text-xl font-semibold mb-3 text-foreground">No generic AI content</h3>
                   <p className="text-muted-foreground">Imagine working with an experienced Content Creator that knows you inside out and will guide you to your next perfect post.</p>
+                      </div>
                 </div>
-              </div>
 
               {/* Turn your thoughts into posts - 5 columns */}
               <div className="md:col-span-5 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/card">
@@ -564,9 +833,9 @@ export default function Home() {
                             <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd"></path>
                   </svg>
                           <div className="w-4 h-4 rounded-sm bg-purple-500 transition-opacity duration-300 absolute opacity-0" aria-label="Stop"></div>
-                </div>
-                      </div>
-                      
+              </div>
+            </div>
+
                       {/* Waveform visualization */}
                       <div className="absolute inset-0 flex items-center justify-center -mt-9">
                         <div className="w-[60%] mx-auto">
@@ -583,15 +852,15 @@ export default function Home() {
                               ></div>
                     ))}
                   </div>
+                  </div>
                 </div>
-              </div>
 
                       {/* Time display */}
                       <div className="font-medium text-purple-500 text-lg shrink-0 z-10">00:00</div>
-                </div>
+                  </div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
               {/* Personalized post ideas - 3 columns */}
               <div className="md:col-span-3 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
@@ -604,24 +873,24 @@ export default function Home() {
                     <div className="transition-all duration-300 opacity-100">
                       <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3">
                         <p className="text-sm text-foreground">built my first site out of pure frustration with my job</p>
-                </div>
+                  </div>
                       <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3">
                         <p className="text-sm text-foreground">most people overthink their first post</p>
-                      </div>
+                    </div>
                     </div>
                     
                     {/* Hidden alternate posts for hover effect */}
                     <div className="transition-all duration-300 opacity-0 absolute inset-0">
                       <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3 transform transition-all duration-300" style={{ transitionDelay: "0ms", transform: "translateY(10px) scale(0.95)", opacity: 0 }}>
                         <p className="text-sm text-foreground">how i landed 10+ clients with basically zero audience:</p>
-                      </div>
+                  </div>
                       <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3 transform transition-all duration-300" style={{ transitionDelay: "100ms", transform: "translateY(10px) scale(0.95)", opacity: 0 }}>
                         <p className="text-sm text-foreground">nobody cares if you mess up. literally no one</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+            </div>
 
               {/* Grow faster with proven post formats - 6 columns */}
               <div className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
@@ -634,10 +903,10 @@ export default function Home() {
                     <div className="flex flex-row text-xl font-medium">
                       <p>+</p>
                       <p>97</p>
-                    </div>
+                </div>
                     <p className="text-muted-foreground text-sm">Followers</p>
-                  </div>
-                  
+              </div>
+
                   {/* Chart */}
                   <div className="h-32 w-full sm:h-40 mt-2 relative">
                     <svg className="h-full w-full" viewBox="0 0 596 256" preserveAspectRatio="none">
