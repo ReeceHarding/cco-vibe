@@ -13,16 +13,26 @@ Our UI aims for a **sleek, modern, and professional** aesthetic. Key principles 
 *   **Consistent Rounded Corners**: Apply consistent corner radii to buttons, cards, and containers for a soft, approachable, and modern appearance.
 *   **Meaningful Interactivity**: Provide subtle and smooth transitions for hover and focus states to give users clear feedback.
 *   **Clarity & Focus**: Design elements should guide the user naturally and keep the focus on content and core actions.
+*   **Playful Micro-Animations**: Add personality through careful use of animations like marquees, waveforms, and smooth transitions.
 
 ## 2. Color Palette
 
 ### Primary & Accent Colors
-*   **Primary Blue (Accent)**: Used for CTAs, links, icons, and key highlights.
+*   **Primary Purple (Main Accent)**: Used for key highlights, gradients, and brand elements.
+    *   Base: `text-primary` (CSS Variable: `--primary: 271 51% 53%`)
+    *   Gradient Start: `from-purple-600` (HEX: `#9333EA`)
+    *   Gradient End: `to-purple-400` (HEX: `#C084FC`)
+    *   Text Gradients: `bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent`
+    *   Borders: `border-primary/60`, `border-purple-200`, `border-purple-400/30`
+    *   Backgrounds: `bg-primary/30`, `bg-primary/10`, `bg-primary/5`
+    
+*   **Primary Blue (Secondary Accent)**: Still used for CTAs and certain UI elements.
     *   Base: `text-blue-600` (HEX: `#2563EB`)
     *   Gradient Start: `from-blue-600` (HEX: `#2563EB`)
     *   Gradient End: `to-blue-700` (HEX: `#1D4ED8`)
     *   Lighter shade for backgrounds/gradients: `stopColor="#60A5FA"` (HEX: `#60A5FA`)
     *   Darker shade for backgrounds/gradients: `stopColor="#1E40AF"` (HEX: `#1E40AF`)
+    
 *   **Text on Accent**: `text-white`
 
 ### Neutral Colors
@@ -51,13 +61,16 @@ Our UI aims for a **sleek, modern, and professional** aesthetic. Key principles 
 ### Font Weights & Styles
 *   **Normal**: `font-normal` (Main Headings)
 *   **Medium**: `font-medium` (Nav links, button text, trust badge, feature pills)
-*   **Semibold**: `font-semibold` (Highlight text within paragraphs, decorative editorial text)
+*   **Semibold**: `font-semibold` (Highlight text within paragraphs, decorative editorial text, section headings)
+*   **Bold**: `font-bold` (Uppercase labels like "FEATURES", "BENEFITS")
 *   **Extrabold**: `font-extrabold` (Key highlighted words like "authentic" in main heading)
 *   **Italic**: `italic` (Used with `font-editorial` for decorative text)
 
 ### Font Sizes & Line Heights
 *   **Main Heading (H1)**: `text-4xl md:text-5xl lg:text-6xl xl:text-[68px]`, `leading-[1.05]`, `tracking-tight`
-*   **Section Heading (H2 - Testimonials)**: `text-3xl md:text-4xl lg:text-5xl`, `tracking-tight`
+*   **Section Heading (H2)**: `text-3xl sm:text-4xl md:text-5xl`, `tracking-tight`
+*   **Section Labels**: `text-sm uppercase tracking-wider` (e.g., "FEATURES", "BENEFITS")
+*   **Card Headings**: `text-xl font-semibold`
 *   **Navigation Links**: `text-[14px]`, `tracking-tight`
 *   **Button Text (Dashboard Nav)**: `text-[14px]`, `tracking-tight`
 *   **Button Text (Main CTA)**: `text-[16px]` (Desktop), `text-[15px]` (Mobile), `tracking-tight`
@@ -146,6 +159,37 @@ Our UI aims for a **sleek, modern, and professional** aesthetic. Key principles 
 *   **Tailwind**: `w-[340px] bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm border border-gray-100`
 *   **Hover**: `hover:shadow-md transition-all duration-300` (No `hover:scale` to adhere to "no animation below fold" principle, but subtle shadow change implies interactivity).
 
+#### Feature Tabs
+*   **Container**: `hidden md:flex flex-wrap justify-center gap-8 mb-24`
+*   **Tab Button**: `flex flex-1 flex-col items-center transition-colors pb-6 border-b-2`
+*   **Active State**: `border-primary` with icon `text-primary` and `bg-primary/10`
+*   **Inactive State**: `border-transparent` with icon `text-muted-foreground` and `bg-muted`
+*   **Icon Container**: `w-20 h-20 mb-4 rounded-full`
+*   **Content**: `text-center` with `font-semibold text-lg` title and `text-sm text-muted-foreground` description
+
+#### Benefits Grid Cards
+*   **Grid Layout**: `grid grid-cols-1 md:grid-cols-12 gap-6`
+*   **Base Card**: `rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg`
+*   **Column Spans**: Various sizes using `md:col-span-4`, `md:col-span-5`, `md:col-span-3`, `md:col-span-6`
+*   **Interactive Elements**:
+     - Audio waveform with `group-hover/card:animate-pulse`
+     - YouTube thumbnails with image swap on hover
+     - Chart visualizations with SVG
+
+#### Marquee Carousel
+*   **Container**: `group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:60s]`
+*   **Animation**: `animate-marquee` with `group-hover:[animation-play-state:paused]`
+*   **Reverse Direction**: `[animation-direction:reverse]` for alternating rows
+*   **Post Cards**: `mx-4 bg-white rounded-2xl overflow-hidden p-2` with `boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)"`
+*   **Gradient Overlays**: `w-1/4 bg-gradient-to-r from-background` and `bg-gradient-to-l from-background`
+
+#### Testimonial Cards (Updated)
+*   **Desktop**: `w-[450px] h-[280px]` with `border border-primary/60 dark:border-primary/20`
+*   **Mobile**: `w-72 h-[380px]` with snap scrolling
+*   **Profile Images**: Using `unavatar.io` service with purple border `border-[3px] border-purple-200`
+*   **Highlighted Text**: `bg-primary/30 p-1 py-0.5 font-semibold`
+*   **Hover**: `hover:scale-[1.02] hover:shadow-lg`
+
 ### 6.4. Interactive Elements
 
 #### Video Player Preview
@@ -162,14 +206,28 @@ Our UI aims for a **sleek, modern, and professional** aesthetic. Key principles 
 *   **Button Shadow**: `shadow-[0_2px_8px_rgba(59,130,246,0.25)]` (Nav CTA), `shadow-[0_4px_14px_rgba(59,130,246,0.2)]` (Main CTA). Blue-tinted for primary CTAs to add emphasis.
 *   **Hover Shadows**: Slightly larger or more diffused shadows on hover, e.g., `hover:shadow-[0_4px_12px_rgba(59,130,246,0.3)]`.
 
+### Animations
+*   **Marquee**: Custom CSS animation with `--duration` variable for speed control
+    ```css
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-100% - var(--gap))); }
+    }
+    ```
+*   **Waveform Pulse**: `animate-pulse` with staggered `animationDelay` for audio visualization
+*   **Image Swap**: Opacity transition from `opacity-100` to `opacity-0` on hover with underlying image revealed
+*   **Tab Transitions**: `transition-colors` for smooth active state changes
+*   **Card Scale**: `hover:scale-[1.02]` for subtle lift effect on interactive cards
+
 ### Blurs
 *   **Backdrop Blur**: `backdrop-blur-xl` (Nav, Feature Pills), `backdrop-blur-md` (Trust Badge), `backdrop-blur-lg` (Decor Box). Used on semi-transparent backgrounds.
 *   **Background SVG Blur**: `stdDeviation="100"` for a very soft, atmospheric effect in the main layout background.
 
 ### Borders
 *   **Subtle Borders**: `border border-gray-200/20 dark:border-gray-800/20` for containers like Nav, Feature Pills, Decor Boxes.
-*   **Card Borders**: `border border-gray-100` for testimonial cards.
-*   **Opacity**: Often used with low opacity (e.g., `/20`) to make them less stark.
+*   **Card Borders**: `border border-gray-100` for basic cards.
+*   **Purple Borders**: `border-primary/60`, `border-purple-200`, `border-purple-400/30` for testimonials and accent elements.
+*   **Opacity**: Often used with low opacity (e.g., `/20`, `/30`, `/60`) to make them less stark.
 
 ### Rounded Corners
 *   **Standard**: `rounded-xl` (12px) or `rounded-2xl` (16px) for most containers, buttons.
@@ -183,9 +241,33 @@ Our UI aims for a **sleek, modern, and professional** aesthetic. Key principles 
     *   **Color Change**: `hover:text-blue-600` for links, `hover:bg-gray-100` for ghost buttons.
     *   **Gradient Shift**: `hover:from-blue-700 hover:to-blue-800` for primary buttons.
     *   **Shadow Elevation**: Shadows become slightly more prominent.
-    *   **Scale**: `hover:scale-105` for images or specific interactive elements. `group-hover:scale-110` for nested elements like play button.
-    *   **Opacity Change**: `hover:opacity-80` for logo.
+    *   **Scale**: `hover:scale-105` for images or specific interactive elements. `hover:scale-[1.02]` for cards. `group-hover:scale-110` for nested elements like play button.
+    *   **Opacity Change**: `hover:opacity-80` for logo, `group-hover:opacity-100` for hidden elements.
     *   **Transform (Translate)**: `hover:-translate-y-0.5` for main CTA button for a subtle lift.
+    *   **Animation Control**: `group-hover:[animation-play-state:paused]` for marquee animations.
+    *   **Border Changes**: `hover:border-primary/30` for interactive feature buttons.
 *   **Focus States**: While not explicitly detailed in the provided code for brevity, ensure focus states are visually distinct and accessible, typically by adding rings or changing background/border colors (e.g., `focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`).
+
+## 9. Special Components
+
+### Audio Waveform Visualization
+*   **Container**: `relative flex h-16 flex-row items-center justify-between rounded-full bg-white px-4 py-3`
+*   **Play Button**: `w-10 h-10 rounded-full border border-purple-500`
+*   **Waveform Bars**: Individual `div` elements with:
+    - Base: `w-[2px] rounded-full bg-gray-400/70`
+    - Hover: `group-hover/card:bg-purple-400 group-hover/card:animate-pulse`
+    - Staggered animation delays for wave effect
+
+### Interactive Feature Buttons
+*   **Selected State**: `border-primary bg-primary/5`
+*   **Default State**: `border-border/40 hover:border-primary/30 bg-white/50`
+*   **Icon Container**: `w-10 h-10 rounded-full bg-primary/10`
+*   **Mobile Accordion**: Hidden description with `ChevronDown` icon
+
+### Chart Visualizations
+*   **SVG-based**: Using viewBox for responsive scaling
+*   **Gradients**: Linear gradients with IDs for fill areas
+*   **Grid Lines**: `stroke-divider stroke-1` for subtle backgrounds
+*   **Area Charts**: Multiple layers with different opacity gradients
 
 This style guide should provide a solid foundation for maintaining a cohesive, sleek, and modern UI across the Postify application. 
