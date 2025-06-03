@@ -270,4 +270,26 @@ Our UI aims for a **sleek, modern, and professional** aesthetic. Key principles 
 *   **Grid Lines**: `stroke-divider stroke-1` for subtle backgrounds
 *   **Area Charts**: Multiple layers with different opacity gradients
 
+### Twitter/X UI Components
+*   **Feed Container**: `max-w-2xl mx-auto bg-white rounded-xl shadow-sm border border-gray-200`
+*   **Tweet Article**: `px-4 py-3 hover:bg-gray-50/50 transition-colors cursor-pointer`
+*   **Tweet Layout**: `flex gap-3` with avatar on left and content on right
+*   **Avatar**: `w-12 h-12 rounded-full` using unavatar.io service
+*   **Header**: `flex items-center gap-1 flex-wrap` with:
+    - Name: `font-bold text-gray-900 hover:underline`
+    - Verified Badge: `w-4 h-4 text-purple-500` (Lucide Verified icon)
+    - Handle: `text-gray-500`
+    - Timestamp: `text-gray-500 hover:underline`
+    - More Button: `p-2 hover:bg-gray-100 rounded-full`
+*   **Tweet Body**: `text-gray-900 text-[15px] leading-normal`
+*   **Video Attachment**: `mt-3 rounded-2xl overflow-hidden border border-gray-200`
+*   **Engagement Buttons**: `flex items-center justify-between mt-3 -ml-2` with:
+    - Button Base: `p-2 rounded-full transition-colors group`
+    - Comment: `hover:bg-purple-50` with `group-hover:text-purple-600`
+    - Retweet: `hover:bg-green-50` with `group-hover:text-green-600`
+    - Like: `hover:bg-red-50` with `group-hover:text-red-600`
+    - Share/Bookmark: `hover:bg-blue-50` with `group-hover:text-blue-600`
+    - Counts: `text-sm text-gray-500` inheriting group hover colors
+*   **Dividers**: `divide-y divide-gray-200` between tweet articles
+
 This style guide should provide a solid foundation for maintaining a cohesive, sleek, and modern UI across the Postify application. 
