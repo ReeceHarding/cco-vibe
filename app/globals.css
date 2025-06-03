@@ -488,34 +488,3 @@ button:focus {
   scroll-margin-top: 3rem;
   scroll-margin-bottom: 3rem;
 }
-
-/* Gradient animation */
-@keyframes gradient {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.animate-gradient {
-  animation: gradient 3s ease infinite;
-}
-
-/* Drawing animation for underline */
-@keyframes draw {
-  from {
-    stroke-dashoffset: 1000;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.animate-draw {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: draw 1.5s ease-out forwards;
-  animation-delay: 0.5s;
-}
