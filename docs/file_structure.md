@@ -36,6 +36,9 @@ CCO-Vibe/
 ├── docs/                        # Documentation
 │   ├── component-style-guide.md # Comprehensive style guide
 │   ├── component-quick-reference.md # Quick reference
+│   ├── code-examples.md         # Real code examples
+│   ├── homepage-design-practices.md # Homepage design guide
+│   ├── homepage-component-specs.md # Component specifications
 │   └── file_structure.md        # This file
 │
 ├── Configuration Files
@@ -67,6 +70,14 @@ CCO-Vibe/
 ## Styling Files
 - **globals.css**: Contains all global styles, animations, and CSS variables
 - **tailwind.config.js**: Custom theme extensions and color scheme
+
+## Documentation Files (`docs/`)
+- **component-style-guide.md**: Complete component development guide (424 lines)
+- **component-quick-reference.md**: Quick reference with templates (138 lines)
+- **code-examples.md**: Real code patterns from project (351 lines)
+- **homepage-design-practices.md**: Comprehensive homepage design guide (541 lines)
+- **homepage-component-specs.md**: Exact component specifications (441 lines)
+- **file_structure.md**: Project file registry (this file)
 
 ## Key Features Already Implemented
 
