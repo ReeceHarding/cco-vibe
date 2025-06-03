@@ -316,15 +316,6 @@ html {
   box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
 }
 
-/* Chevron animation */
-.chevron-rotate {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.chevron-rotate-open {
-  transform: rotate(180deg);
-}
-
 /* Modern blur and shadow effects */
 .backdrop-blur-xl {
   backdrop-filter: blur(16px);

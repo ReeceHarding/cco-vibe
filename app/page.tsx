@@ -1653,60 +1653,73 @@ export default function Home() {
         </section>
 
         {/* Avatar Stack Section */}
-        <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50/50">
+        <section className="py-24 px-4 bg-gradient-to-b from-background to-background/50">
           <div className="max-w-7xl mx-auto text-center">
-            <p className="text-gray-600 mb-8 text-[17px]">
+            <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider mb-4">Trusted By</h2>
+            <p className="text-muted-foreground mb-12 text-lg">
               Used by Freelancers, Creators and Founders to grow their personal brands
             </p>
-            <div className="flex justify-center items-center -space-x-5">
+            <div className="flex justify-center items-center -space-x-4">
               {[
-                { bg: "from-blue-500 to-blue-600", initial: "A" },
-                { bg: "from-green-500 to-green-600", initial: "B" },
-                { bg: "from-purple-500 to-purple-600", initial: "C" },
-                { bg: "from-orange-500 to-orange-600", initial: "D" },
-                { bg: "from-pink-500 to-pink-600", initial: "E" },
-                { bg: "from-indigo-500 to-indigo-600", initial: "F" },
-                { bg: "from-yellow-500 to-yellow-600", initial: "G" },
-                { bg: "from-red-500 to-red-600", initial: "H" },
-                { bg: "from-teal-500 to-teal-600", initial: "I" },
-                { bg: "from-gray-500 to-gray-600", initial: "+" },
+                { bg: "from-purple-500 to-purple-600", initial: "A" },
+                { bg: "from-purple-400 to-purple-500", initial: "B" },
+                { bg: "from-indigo-500 to-purple-600", initial: "C" },
+                { bg: "from-purple-600 to-pink-600", initial: "D" },
+                { bg: "from-pink-500 to-purple-600", initial: "E" },
+                { bg: "from-purple-500 to-indigo-600", initial: "F" },
+                { bg: "from-indigo-400 to-purple-600", initial: "G" },
+                { bg: "from-purple-600 to-purple-700", initial: "H" },
+                { bg: "from-purple-400 to-indigo-600", initial: "I" },
+                { bg: "from-purple-700 to-purple-800", initial: "+" },
               ].map((avatar, index) => (
                 <div
                   key={index}
-                  className={`relative w-14 h-14 bg-gradient-to-br ${avatar.bg} rounded-full flex items-center justify-center text-white font-semibold shadow-xl border-3 border-white avatar-stack-item cursor-pointer text-lg`}
+                  className={`relative w-16 h-16 bg-gradient-to-br ${avatar.bg} rounded-full flex items-center justify-center text-white font-semibold shadow-lg border-4 border-white hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer text-lg`}
                   style={{ zIndex: 10 - index }}
                 >
                   {avatar.initial}
                 </div>
               ))}
             </div>
+            <div className="mt-8 flex items-center justify-center gap-8 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                <span>800+ Active Users</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                <span>50K+ Posts Created</span>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Pricing Section */}
-        <section id="pricing" className="relative py-32 px-4 bg-white">
+        <section id="pricing" className="relative py-32 px-4 bg-gradient-to-b from-background/50 to-background">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-6 tracking-tight">
-                Pricing
-              </h2>
-              <p className="text-gray-600 text-[17px] mb-10">
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider mb-4">Pricing</h2>
+              <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl mb-6">
+                Choose the plan that{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">fits your needs</span>
+              </h3>
+              <p className="text-muted-foreground text-lg mb-10">
                 The yearly plan includes a growth strategy call with the founders
               </p>
-              <div className="inline-flex items-center justify-center bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 px-6 py-3 rounded-full text-[15px] font-medium border border-purple-200/50">
+              <div className="inline-flex items-center justify-center bg-gradient-to-r from-purple-50 to-purple-100/50 text-purple-700 px-6 py-3 rounded-full text-[15px] font-medium border border-purple-200/50 shadow-sm">
                 💜 50% off with code: EARLY100
               </div>
             </div>
 
             {/* Billing toggle */}
             <div className="flex justify-center mb-16">
-              <div className="bg-gray-100/50 rounded-2xl p-1.5 shadow-inner">
+              <div className="bg-muted/50 rounded-2xl p-1.5 shadow-inner border border-border/20">
                 <button
                   onClick={() => setBillingPeriod("monthly")}
                   className={`px-8 py-3 rounded-xl text-[15px] font-medium transition-all duration-200 ${
                     billingPeriod === "monthly"
-                      ? "bg-white text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
-                      : "text-gray-600 hover:text-gray-900"
+                      ? "bg-white text-foreground shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   Monthly
@@ -1715,8 +1728,8 @@ export default function Home() {
                   onClick={() => setBillingPeriod("yearly")}
                   className={`px-8 py-3 rounded-xl text-[15px] font-medium transition-all duration-200 ${
                     billingPeriod === "yearly"
-                      ? "bg-white text-gray-900 shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
-                      : "text-gray-600 hover:text-gray-900"
+                      ? "bg-white text-foreground shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   Yearly
@@ -1729,33 +1742,33 @@ export default function Home() {
               {pricingPlans.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`relative bg-white rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border transition-all duration-300 ${
+                  className={`relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border transition-all duration-300 ${
                     plan.recommended
-                      ? "border-blue-500 scale-105 shadow-[0_8px_30px_rgba(59,130,246,0.12)]"
-                      : "border-gray-200/60"
+                      ? "border-primary scale-105 shadow-[0_8px_30px_rgba(168,85,247,0.12)]"
+                      : "border-border/40 hover:border-primary/30"
                   }`}
                 >
                   {plan.recommended && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2 rounded-full text-[13px] font-semibold shadow-lg">
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-purple-400 text-white px-5 py-2 rounded-full text-[13px] font-semibold shadow-lg">
                       RECOMMENDED
                     </div>
                   )}
                   <div className="p-10">
-                    <h3 className="font-semibold text-2xl text-gray-900 mb-3">
+                    <h3 className="font-semibold text-2xl text-foreground mb-3">
                       {plan.name}
                     </h3>
-                    <p className="text-gray-600 text-[15px] mb-8">
+                    <p className="text-muted-foreground text-[15px] mb-8">
                       {plan.description}
                     </p>
                     <div className="mb-10">
-                      <span className="text-5xl font-bold text-gray-900">
+                      <span className="text-5xl font-bold text-foreground">
                         ${billingPeriod === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
                       </span>
-                      <span className="text-gray-600 text-[15px] ml-2">
+                      <span className="text-muted-foreground text-[15px] ml-2">
                         /month
                       </span>
                       {billingPeriod === "yearly" && (
-                        <div className="text-gray-500 text-[14px] line-through mt-2">
+                        <div className="text-muted-foreground/70 text-[14px] line-through mt-2">
                           ${plan.monthlyPrice}/month
                         </div>
                       )}
@@ -1763,8 +1776,8 @@ export default function Home() {
                     <ul className="space-y-4 mb-10">
                       {plan.features.map((feature, index) => (
                         <li key={index} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 text-[15px]">{feature}</span>
+                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground text-[15px]">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -1772,8 +1785,8 @@ export default function Home() {
                       onClick={handleSignIn}
                       className={`w-full rounded-2xl py-4 font-medium text-[16px] transition-all duration-200 ${
                         plan.recommended
-                          ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)]"
-                          : "bg-gray-900 hover:bg-gray-800 text-white"
+                          ? "bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-700 hover:to-purple-500 text-white shadow-[0_4px_20px_rgba(168,85,247,0.15)] hover:shadow-[0_6px_30px_rgba(168,85,247,0.25)]"
+                          : "bg-foreground hover:bg-foreground/90 text-white"
                       }`}
                     >
                       Get started
@@ -1786,42 +1799,41 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className="relative py-32 px-4 bg-gradient-to-b from-white to-gray-50/50">
+        <section id="faq" className="relative py-32 px-4 bg-gradient-to-b from-background to-muted/30">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-20">
-              <div className="mb-6">
-                <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
-                  FAQ
-                </span>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 tracking-tight">
-                Frequently asked questions
-              </h2>
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider mb-4">FAQ</h2>
+              <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">Everything</span>{" "}
+                you need to know
+              </h3>
             </div>
 
             <div className="space-y-4">
               {faqItems.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white rounded-2xl border border-gray-200/60 overflow-hidden transition-all duration-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+                  className="bg-white/60 backdrop-blur-sm rounded-2xl border border-border/40 overflow-hidden transition-all duration-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:border-primary/30"
                 >
                   <button
                     onClick={() => setOpenFaqItem(openFaqItem === item.id ? null : item.id)}
-                    className="w-full px-8 py-6 text-left flex items-center justify-between gap-4"
+                    className="w-full px-8 py-6 text-left flex items-center justify-between gap-4 group"
                   >
-                    <h3 className="font-medium text-gray-900 text-[17px]">{item.question}</h3>
+                    <h3 className="font-medium text-foreground text-[17px] group-hover:text-primary transition-colors duration-200">{item.question}</h3>
                     <ChevronDown
-                      className={`w-5 h-5 text-gray-500 flex-shrink-0 chevron-rotate ${
-                        openFaqItem === item.id ? "chevron-rotate-open" : ""
+                      className={`w-5 h-5 text-primary flex-shrink-0 transition-all duration-300 ${
+                        openFaqItem === item.id ? "rotate-180" : ""
                       }`}
                     />
                   </button>
                   <div
-                    className={`px-8 pb-6 transition-all duration-200 ${
-                      openFaqItem === item.id ? "block" : "hidden"
+                    className={`grid transition-all duration-300 ${
+                      openFaqItem === item.id ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                     }`}
                   >
-                    <p className="text-gray-600 text-[15px] leading-[1.8]">{item.answer}</p>
+                    <div className="overflow-hidden">
+                      <p className="px-8 pb-6 text-muted-foreground text-[15px] leading-[1.8]">{item.answer}</p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -1830,16 +1842,16 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-32 px-4 bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
+        <section className="relative py-32 px-4 bg-gradient-to-br from-purple-50 via-background to-purple-50 overflow-hidden">
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <div className="mb-6">
-              <span className="inline-block px-5 py-2.5 bg-blue-50 text-blue-700 text-[13px] font-semibold rounded-full uppercase tracking-[0.08em]">
+              <span className="inline-block px-5 py-2.5 bg-primary/10 text-primary text-[13px] font-bold rounded-full uppercase tracking-wider">
                 CONTENT CREATION
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-normal text-gray-900 mb-10 tracking-tight">
+            <h2 className="mx-auto mt-4 max-w-4xl font-semibold text-3xl sm:text-4xl md:text-5xl mb-10">
               Finally unlock your{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">
+              <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
                 content creation
               </span>
               <br />
@@ -1848,28 +1860,28 @@ export default function Home() {
             
             <div className="flex flex-wrap justify-center gap-8 mb-12">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Check className="w-5 h-5 text-blue-600" />
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group transition-all duration-300 hover:bg-primary/20">
+                  <Check className="w-5 h-5 text-primary" />
                 </div>
-                <span className="text-gray-700 text-[16px]">No Expertise Required</span>
+                <span className="text-muted-foreground text-[16px]">No Expertise Required</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Check className="w-5 h-5 text-blue-600" />
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group transition-all duration-300 hover:bg-primary/20">
+                  <Check className="w-5 h-5 text-primary" />
                 </div>
-                <span className="text-gray-700 text-[16px]">Authentic Posts In Seconds</span>
+                <span className="text-muted-foreground text-[16px]">Authentic Posts In Seconds</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Check className="w-5 h-5 text-blue-600" />
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group transition-all duration-300 hover:bg-primary/20">
+                  <Check className="w-5 h-5 text-primary" />
                 </div>
-                <span className="text-gray-700 text-[16px]">No Generic AI Fluff</span>
+                <span className="text-muted-foreground text-[16px]">No Generic AI Fluff</span>
               </div>
             </div>
 
             <Button
               onClick={handleSignIn}
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl px-10 py-5 font-medium text-[17px] shadow-[0_4px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_6px_30px_rgba(59,130,246,0.25)] transform hover:-translate-y-0.5 transition-all duration-200"
+              className="bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-700 hover:to-purple-500 text-white rounded-2xl px-10 py-5 font-medium text-[17px] shadow-[0_4px_20px_rgba(168,85,247,0.15)] hover:shadow-[0_6px_30px_rgba(168,85,247,0.25)] transform hover:-translate-y-0.5 transition-all duration-200"
             >
               Start For Free →
             </Button>
@@ -1877,41 +1889,42 @@ export default function Home() {
 
           {/* Background decoration */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-20 left-10 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
-            <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-indigo-100/30 rounded-full blur-3xl" />
+            <div className="absolute top-20 left-10 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-purple-300/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="bg-white border-t border-gray-200/60 py-16 px-4">
+        <footer className="bg-white/50 backdrop-blur-sm border-t border-border/40 py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
               {/* Logo column */}
               <div className="col-span-1">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
                     </svg>
                   </div>
-                  <span className="font-semibold text-xl text-gray-900">Postify</span>
+                  <span className="font-semibold text-xl text-foreground">Postify</span>
                 </div>
-                <p className="text-gray-600 text-[15px]">
+                <p className="text-muted-foreground text-[15px]">
                   © 2025 Postify. All rights reserved.
                 </p>
               </div>
 
-              {/* Blog column */}
+              {/* Community column */}
               <div>
-                <h4 className="font-medium text-gray-900 mb-5 text-[16px]">Community</h4>
+                <h4 className="font-medium text-foreground mb-5 text-[16px]">Community</h4>
                 <ul className="space-y-3">
                   <li>
-                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
+                    <a href="#" className="text-muted-foreground text-[15px] hover:text-primary transition-colors inline-flex items-center gap-2">
                       Join our Discord
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
+                    <a href="#" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
                       Twitter
                     </a>
                   </li>
@@ -1920,15 +1933,15 @@ export default function Home() {
 
               {/* Legal column */}
               <div>
-                <h4 className="font-medium text-gray-900 mb-5 text-[16px]">Legal</h4>
+                <h4 className="font-medium text-foreground mb-5 text-[16px]">Legal</h4>
                 <ul className="space-y-3">
                   <li>
-                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
+                    <a href="#" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
                       Privacy policy
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
+                    <a href="#" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
                       Terms and conditions
                     </a>
                   </li>
@@ -1937,19 +1950,47 @@ export default function Home() {
 
               {/* Resources column */}
               <div>
-                <h4 className="font-medium text-gray-900 mb-5 text-[16px]">Resources</h4>
+                <h4 className="font-medium text-foreground mb-5 text-[16px]">Resources</h4>
                 <ul className="space-y-3">
                   <li>
-                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
+                    <a href="#" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
                       Blog
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 text-[15px] hover:text-blue-600 transition-colors">
+                    <a href="#" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
                       Support
                     </a>
                   </li>
                 </ul>
+              </div>
+            </div>
+
+            {/* Bottom section */}
+            <div className="pt-8 border-t border-border/20">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span>Built with</span>
+                  <span className="text-primary">💜</span>
+                  <span>by creators, for creators</span>
+                </div>
+                <div className="flex items-center gap-6">
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                  </a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.994a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
