@@ -35,30 +35,30 @@ export function Navigation() {
 
   return (
     <nav 
-      className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1100px] h-[60px] px-5 sm:px-7 py-2 backdrop-blur-2xl backdrop-saturate-150 rounded-2xl transition-all duration-300 ${
+      className={`fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1050px] h-[58px] px-3 sm:px-4 py-1.5 backdrop-blur-[10px] rounded-full transition-all duration-200 ${
         scrolled 
-          ? "bg-white/50 dark:bg-gray-900/50 border-gray-200/10 dark:border-gray-800/10 shadow-[0_2px_20px_rgba(0,0,0,0.02)]" 
-          : "bg-white/70 dark:bg-gray-900/70 border-gray-200/20 dark:border-gray-800/20 shadow-[0_2px_20px_rgba(0,0,0,0.04)]"
+          ? "bg-[rgba(255,255,255,0.5)] dark:bg-[rgba(20,20,20,0.5)] border-[rgba(147,51,234,0.2)] shadow-[inset_0px_2px_8px_rgba(255,255,255,0.6),0px_4px_20px_rgba(0,0,0,0.05)]" 
+          : "bg-[rgba(255,255,255,0.75)] dark:bg-[rgba(20,20,20,0.75)] border-[rgba(147,51,234,0.3)] shadow-[inset_0px_2px_12px_rgba(255,255,255,0.8),0px_8px_32px_rgba(147,51,234,0.08)]"
       } border`}
       data-test="navigation"
     >
-      <div className="w-[120px] sm:w-[140px] h-[40px]">
-        <Link href="/" className="block hover:no-underline active:no-underline hover:opacity-80 transition-opacity duration-200">
-          <PostelLogo className="h-[40px] w-auto max-w-full" />
+      <div className="w-[120px] sm:w-[140px] h-[44px] flex items-center">
+        <Link href="/" className="block hover:no-underline active:no-underline hover:opacity-90 transition-opacity duration-200">
+          <PostelLogo className="h-[36px] w-auto max-w-full" />
         </Link>
       </div>
 
       {/* Desktop Navigation Links */}
-      <div className="hidden md:flex items-center gap-8">
-        <Link href="/#pricing" className="font-geist text-[14px] font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200 tracking-tight">Pricing</Link>
-        <Link href="/#faq" className="font-geist text-[14px] font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200 tracking-tight">FAQ</Link>
-        <Link href="/blog" className="font-geist text-[14px] font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200 tracking-tight">Blog</Link>
-        <Link href="/contact" className="font-geist text-[14px] font-medium text-gray-700 hover:text-purple-600 transition-colors duration-200 tracking-tight">Contact</Link>
-        <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-gray-700 hover:text-purple-600 transition-all duration-200" aria-label="Join our Discord">
+      <div className="hidden md:flex items-center gap-7">
+        <Link href="/#pricing" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">Pricing</Link>
+        <Link href="/#faq" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">FAQ</Link>
+        <Link href="/blog" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">Blog</Link>
+        <Link href="/contact" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">Contact</Link>
+        <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-purple-700/80 hover:text-purple-700 transition-all duration-200" aria-label="Join our Discord">
           <DiscordIcon />
         </a>
-        <Link href="/app" className="group relative flex items-center justify-center h-9 px-5 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white font-medium text-[14px] rounded-xl shadow-[0_2px_8px_rgba(147,51,234,0.25)] hover:shadow-[0_4px_12px_rgba(147,51,234,0.3)] transition-all duration-200 tracking-tight">
-          <span className="relative z-10">Dashboard</span>
+        <Link href="/app" className="flex items-center justify-center h-9 px-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium text-[14px] rounded-full shadow-[inset_0_0.5px_2px_rgba(255,255,255,0.2),0_2px_8px_rgba(0,0,0,0.15)] hover:shadow-[inset_0_0.5px_2px_rgba(255,255,255,0.3),0_4px_12px_rgba(0,0,0,0.2)] hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-200">
+          <span className="font-geist">Dashboard</span>
         </Link>
       </div>
 
@@ -66,10 +66,10 @@ export function Navigation() {
       <Button 
         variant="ghost"
         size="icon"
-        className="flex items-center justify-center md:hidden w-9 h-9 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+        className="flex items-center justify-center md:hidden w-9 h-9 rounded-xl bg-purple-50/50 dark:bg-purple-900/20 hover:bg-purple-100/50 dark:hover:bg-purple-900/30 border border-purple-200/30 dark:border-purple-700/30 transition-all duration-200"
         aria-label="Menu"
       >
-        <Menu className="w-4 h-4 text-gray-700 dark:text-gray-300" />
+        <Menu className="w-4 h-4 text-purple-700 dark:text-purple-300" />
       </Button>
 
       {/* Mobile Menu (Actual implementation would require state and conditional rendering) */}
