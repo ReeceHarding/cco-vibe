@@ -340,8 +340,8 @@ export default function Home() {
             </h3>
             <p className="text-muted-foreground text-lg mt-4">
               Authentic testimonials from our community
-            </p>
-          </div>
+              </p>
+            </div>
 
           {/* Twitter-like feed container */}
           <div className="max-w-2xl mx-auto px-4">
@@ -357,7 +357,7 @@ export default function Home() {
                       alt="Caleb Smith" 
                       className="w-12 h-12 rounded-full"
                     />
-                  </div>
+                        </div>
                   
                   {/* Tweet content */}
                   <div className="flex-1 min-w-0">
@@ -372,13 +372,13 @@ export default function Home() {
                         <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                           <MoreHorizontal className="w-5 h-5 text-gray-500" />
                         </button>
-                      </div>
-                    </div>
+                          </div>
+                          </div>
                     
                     {/* Tweet text */}
                     <div className="mt-1 text-gray-900 text-[15px] leading-normal">
                       If you want to understand what makes a good tweet, this is the tool. Great for generating new and original content.
-                    </div>
+                        </div>
                     
                     {/* Video attachment */}
                     <div className="mt-3 rounded-2xl overflow-hidden border border-gray-200 relative">
@@ -391,8 +391,8 @@ export default function Home() {
                         <source src="/videos/testimonials/testimonial-1.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
-                    </div>
-                    
+                      </div>
+
                     {/* Engagement buttons */}
                     <div className="flex items-center justify-between mt-3 -ml-2">
                       <button className="flex items-center gap-2 p-2 hover:bg-purple-50 rounded-full transition-colors group">
@@ -413,9 +413,9 @@ export default function Home() {
                       <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
                         <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
                       </button>
-                    </div>
-                  </div>
-                </div>
+                        </div>
+                          </div>
+                          </div>
               </article>
 
               {/* Tweet 2 - Zaid Al Kazemi */}
@@ -428,8 +428,8 @@ export default function Home() {
                       alt="Zaid Al Kazemi" 
                       className="w-12 h-12 rounded-full"
                     />
-                  </div>
-                  
+                      </div>
+
                   {/* Tweet content */}
                   <div className="flex-1 min-w-0">
                     {/* Header */}
@@ -442,13 +442,13 @@ export default function Home() {
                         <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                           <MoreHorizontal className="w-5 h-5 text-gray-500" />
                         </button>
-                      </div>
-                    </div>
+                        </div>
+                          </div>
                     
                     {/* Tweet text */}
                     <div className="mt-1 text-gray-900 text-[15px] leading-normal">
                       Postel gives you ideas for bangers using your own content or any YT video (can be yours or not). It's the shortcut. Repurposing just one banger can save you time and a headache every day.
-                    </div>
+                          </div>
                     
                     {/* Video attachment */}
                     <div className="mt-3 rounded-2xl overflow-hidden border border-gray-200 relative">
@@ -461,7 +461,7 @@ export default function Home() {
                         <source src="/videos/testimonials/testimonial-2.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
-                    </div>
+                        </div>
                     
                     {/* Engagement buttons */}
                     <div className="flex items-center justify-between mt-3 -ml-2">
@@ -483,9 +483,9 @@ export default function Home() {
                       <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
                         <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
                       </button>
-                    </div>
-                  </div>
+                      </div>
                 </div>
+              </div>
               </article>
 
               {/* Tweet 3 - Julia */}
@@ -498,7 +498,7 @@ export default function Home() {
                       alt="Julia" 
                       className="w-12 h-12 rounded-full"
                     />
-                  </div>
+                        </div>
                   
                   {/* Tweet content */}
                   <div className="flex-1 min-w-0">
@@ -512,13 +512,13 @@ export default function Home() {
                         <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                           <MoreHorizontal className="w-5 h-5 text-gray-500" />
                         </button>
-                      </div>
-                    </div>
+                          </div>
+                          </div>
                     
                     {/* Tweet text */}
                     <div className="mt-1 text-gray-900 text-[15px] leading-normal">
                       Almost +100 followers in 2 days. The team's actually there to help. The tool is solid, especially for those that don't know where to start.
-                    </div>
+                        </div>
                     
                     {/* Video attachment */}
                     <div className="mt-3 rounded-2xl overflow-hidden border border-gray-200 relative">
@@ -531,8 +531,8 @@ export default function Home() {
                         <source src="/videos/testimonials/testimonial-3.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
-                    </div>
-                    
+                      </div>
+
                     {/* Engagement buttons */}
                     <div className="flex items-center justify-between mt-3 -ml-2">
                       <button className="flex items-center gap-2 p-2 hover:bg-purple-50 rounded-full transition-colors group">
@@ -553,9 +553,9 @@ export default function Home() {
                       <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
                         <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
                       </button>
-                    </div>
-                  </div>
-                </div>
+                        </div>
+                          </div>
+                          </div>
               </article>
 
               {/* Tweet 4 - Grant Singleton */}
@@ -568,8 +568,8 @@ export default function Home() {
                       alt="Grant Singleton" 
                       className="w-12 h-12 rounded-full"
                     />
-                  </div>
-                  
+                      </div>
+
                   {/* Tweet content */}
                   <div className="flex-1 min-w-0">
                     {/* Header */}
@@ -582,13 +582,13 @@ export default function Home() {
                         <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                           <MoreHorizontal className="w-5 h-5 text-gray-500" />
                         </button>
-                      </div>
-                    </div>
+                        </div>
+                          </div>
                     
                     {/* Tweet text */}
                     <div className="mt-1 text-gray-900 text-[15px] leading-normal">
                       The post ideas were better than anything I've used before. And I've tried them all. This actually understands context and what makes content work.
-                    </div>
+                          </div>
                     
                     {/* Video attachment */}
                     <div className="mt-3 rounded-2xl overflow-hidden border border-gray-200 relative">
@@ -601,7 +601,7 @@ export default function Home() {
                         <source src="/videos/testimonials/testimonial-4.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
-                    </div>
+                        </div>
                     
                     {/* Engagement buttons */}
                     <div className="flex items-center justify-between mt-3 -ml-2">
@@ -623,9 +623,9 @@ export default function Home() {
                       <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
                         <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
                       </button>
-                    </div>
-                  </div>
+                      </div>
                 </div>
+              </div>
               </article>
 
               {/* Tweet 5 - Omar */}
@@ -638,8 +638,8 @@ export default function Home() {
                       alt="Omar" 
                       className="w-12 h-12 rounded-full"
                     />
-                  </div>
-                  
+            </div>
+
                   {/* Tweet content */}
                   <div className="flex-1 min-w-0">
                     {/* Header */}
@@ -653,7 +653,7 @@ export default function Home() {
                         <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                           <MoreHorizontal className="w-5 h-5 text-gray-500" />
                         </button>
-                      </div>
+                  </div>
                     </div>
                     
                     {/* Tweet text */}
@@ -672,8 +672,8 @@ export default function Home() {
                         <source src="/videos/testimonials/testimonial-5.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
-                    </div>
-                    
+                </div>
+
                     {/* Engagement buttons */}
                     <div className="flex items-center justify-between mt-3 -ml-2">
                       <button className="flex items-center gap-2 p-2 hover:bg-purple-50 rounded-full transition-colors group">
@@ -694,9 +694,9 @@ export default function Home() {
                       <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
                         <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
                       </button>
-                    </div>
                   </div>
-                </div>
+                    </div>
+                    </div>
               </article>
 
               {/* Tweet 6 - Nemo */}
@@ -709,8 +709,8 @@ export default function Home() {
                       alt="Nemo" 
                       className="w-12 h-12 rounded-full"
                     />
-                  </div>
-                  
+                </div>
+
                   {/* Tweet content */}
                   <div className="flex-1 min-w-0">
                     {/* Header */}
@@ -723,7 +723,7 @@ export default function Home() {
                         <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                           <MoreHorizontal className="w-5 h-5 text-gray-500" />
                         </button>
-                      </div>
+                  </div>
                     </div>
                     
                     {/* Tweet text */}
@@ -742,7 +742,7 @@ export default function Home() {
                         <source src="/videos/testimonials/testimonial-6.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
-                    </div>
+                  </div>
                     
                     {/* Engagement buttons */}
                     <div className="flex items-center justify-between mt-3 -ml-2">
@@ -764,8 +764,8 @@ export default function Home() {
                       <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group">
                         <Bookmark className="w-5 h-5 text-gray-500 group-hover:text-blue-600" />
                       </button>
-                    </div>
-                  </div>
+                </div>
+              </div>
                 </div>
               </article>
             </div>
@@ -781,7 +781,7 @@ export default function Home() {
                 Grow with authentic content the{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">algorithm loves</span>
               </h3>
-                        </div>
+            </div>
 
             {/* Benefits grid with custom layout */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -807,13 +807,13 @@ export default function Home() {
                             </linearGradient>
                           </defs>
                   </svg>
-                          </div>
+                </div>
                           </div>
                         </div>
                   <h3 className="text-xl font-semibold mb-3 text-foreground">No generic AI content</h3>
                   <p className="text-muted-foreground">Imagine working with an experienced Content Creator that knows you inside out and will guide you to your next perfect post.</p>
                       </div>
-                </div>
+              </div>
 
               {/* Turn your thoughts into posts - 5 columns */}
               <div className="md:col-span-5 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/card">
@@ -833,7 +833,7 @@ export default function Home() {
                             <path fillRule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clipRule="evenodd"></path>
                   </svg>
                           <div className="w-4 h-4 rounded-sm bg-purple-500 transition-opacity duration-300 absolute opacity-0" aria-label="Stop"></div>
-              </div>
+                </div>
             </div>
 
                       {/* Waveform visualization */}
@@ -852,15 +852,15 @@ export default function Home() {
                               ></div>
                     ))}
                   </div>
-                  </div>
                 </div>
+              </div>
 
                       {/* Time display */}
                       <div className="font-medium text-purple-500 text-lg shrink-0 z-10">00:00</div>
-                  </div>
-                    </div>
-                  </div>
                 </div>
+                    </div>
+                </div>
+              </div>
 
               {/* Personalized post ideas - 3 columns */}
               <div className="md:col-span-3 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg">
@@ -873,7 +873,7 @@ export default function Home() {
                     <div className="transition-all duration-300 opacity-100">
                       <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3">
                         <p className="text-sm text-foreground">built my first site out of pure frustration with my job</p>
-                  </div>
+                </div>
                       <div className="rounded-md bg-primary/10 px-3 py-2 border border-primary/20 mb-3">
                         <p className="text-sm text-foreground">most people overthink their first post</p>
                     </div>
@@ -1184,191 +1184,279 @@ export default function Home() {
               <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:60s]">
                 <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
                   {/* First set of posts */}
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 1" 
                         src="/images/posts/story1.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
               </div>
                   </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 2" 
                         src="/images/posts/story2.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                     </div>
                   </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 3" 
                         src="/images/posts/story3.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                     </div>
                   </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 4" 
                         src="/images/posts/story4.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                     </div>
             </div>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
+                      <Image 
+                        alt="Post example 5" 
+                        src="/images/posts/story5.png"
+                        fill
+                        className="w-full h-full object-cover"
+                        sizes="320px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
+                      <Image 
+                        alt="Post example 6" 
+                        src="/images/posts/story6.png"
+                        fill
+                        className="w-full h-full object-cover"
+                        sizes="320px"
+                      />
+                    </div>
+                  </div>
           </div>
 
                 {/* Duplicate sets for seamless scrolling */}
                 <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 1" 
                         src="/images/posts/story1.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                         </div>
                         </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 2" 
                         src="/images/posts/story2.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                       </div>
                       </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 3" 
                         src="/images/posts/story3.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                         </div>
                   </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 4" 
                         src="/images/posts/story4.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                       </div>
                     </div>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
+                      <Image 
+                        alt="Post example 5" 
+                        src="/images/posts/story5.png"
+                        fill
+                        className="w-full h-full object-cover"
+                        sizes="320px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
+                      <Image 
+                        alt="Post example 6" 
+                        src="/images/posts/story6.png"
+                        fill
+                        className="w-full h-full object-cover"
+                        sizes="320px"
+                      />
+                    </div>
+                  </div>
                   </div>
 
                 {/* Third duplicate for extra smooth scrolling */}
                 <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 1" 
                         src="/images/posts/story1.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                         </div>
                         </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 2" 
                         src="/images/posts/story2.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                       </div>
                       </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 3" 
                         src="/images/posts/story3.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                         </div>
                   </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 4" 
                         src="/images/posts/story4.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                       </div>
                     </div>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
+                      <Image 
+                        alt="Post example 5" 
+                        src="/images/posts/story5.png"
+                        fill
+                        className="w-full h-full object-cover"
+                        sizes="320px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
+                      <Image 
+                        alt="Post example 6" 
+                        src="/images/posts/story6.png"
+                        fill
+                        className="w-full h-full object-cover"
+                        sizes="320px"
+                      />
+                    </div>
+                  </div>
                   </div>
 
                 {/* Fourth duplicate for smooth continuous scrolling */}
                 <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 1" 
                         src="/images/posts/story1.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                         </div>
                         </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 2" 
                         src="/images/posts/story2.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                       </div>
                       </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 3" 
                         src="/images/posts/story3.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                         </div>
                       </div>
-                  <div className="mx-4 bg-white rounded-2xl overflow-hidden p-2" style={{ width: "400px", height: "auto", boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)" }}>
-                    <div className="relative w-full" style={{ height: "700px" }}>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
                       <Image 
                         alt="Post example 4" 
                         src="/images/posts/story4.png"
                         fill
-                        className="w-full h-full object-contain"
-                        sizes="400px"
+                        className="w-full h-full object-cover"
+                        sizes="320px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
+                      <Image 
+                        alt="Post example 5" 
+                        src="/images/posts/story5.png"
+                        fill
+                        className="w-full h-full object-cover"
+                        sizes="320px"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ width: "320px", height: "auto" }}>
+                    <div className="relative w-full" style={{ height: "560px" }}>
+                      <Image 
+                        alt="Post example 6" 
+                        src="/images/posts/story6.png"
+                        fill
+                        className="w-full h-full object-cover"
+                        sizes="320px"
                       />
                     </div>
                   </div>
