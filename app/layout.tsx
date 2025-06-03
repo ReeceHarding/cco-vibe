@@ -15,15 +15,47 @@ const geist = GeistSans;
 
 // Metadata configuration
 export const metadata: Metadata = {
-  title: "Postify - AI-Powered Content Creation for X/Twitter",
-  description: "AI-powered tool to create authentic X/Twitter posts that sound like you. Trusted by 800+ users. 7-day free trial with no questions asked money back guarantee.",
-  keywords: ["AI", "Twitter", "X", "social media", "content creation", "posts"],
+  title: "AI Dev Agency - Build Custom Apps 10x Faster",
+  description: "Replace expensive SaaS with custom solutions. We build in 2 weeks what others deliver in 4 months. Don't pay until you're 100% satisfied.",
+  keywords: "custom software development, AI development, MVP development, internal tools, SaaS replacement, rapid development",
   authors: [{ name: "Postel" }],
   openGraph: {
-    title: "Postel - Write authentic X posts in 9 seconds",
-    description: "AI-powered tool to create authentic X/Twitter posts that sound like you.",
+    title: "AI Dev Agency - Build Custom Apps 10x Faster",
+    description: "Replace expensive SaaS with custom solutions. We build in 2 weeks what others deliver in 4 months. Don't pay until you're 100% satisfied.",
     type: "website",
+    locale: "en_US",
+    url: "https://aidevagency.com",
+    siteName: "AI Dev Agency",
+    images: [
+      {
+        url: "https://aidevagency.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AI Dev Agency - Custom Software Development"
+      }
+    ]
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Dev Agency - Build Custom Apps 10x Faster",
+    description: "Replace expensive SaaS with custom solutions. We build in 2 weeks what others deliver in 4 months.",
+    images: ["https://aidevagency.com/twitter-image.png"],
+    creator: "@aidevagency"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://aidevagency.com"
+  }
 };
 
 export default function RootLayout({
