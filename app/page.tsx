@@ -299,9 +299,10 @@ export default function Home() {
               className={`relative rounded-2xl overflow-hidden shadow-2xl border border-purple-200/20 transition-all duration-700 ${
                 mounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
-              style={{ transitionDelay: "600ms" }}
+              style={{ transitionDelay: "600ms", boxShadow: "0 20px 50px rgba(147, 51, 234, 0.15)" }}
           >
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-purple-900/10 to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent z-10 pointer-events-none" />
               <button
                 onClick={handleVideoClick}
                 className="relative w-full group"
@@ -317,8 +318,8 @@ export default function Home() {
                   priority
                 />
                 <div className="absolute inset-0 flex items-center justify-center z-20">
-                  <div className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
-                    <PlayIcon className="w-8 h-8 text-purple-600 ml-1" />
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-purple-500 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:shadow-[0_15px_40px_rgba(147,51,234,0.4)] transition-all duration-300">
+                    <PlayIcon className="w-8 h-8 text-white ml-1" />
                   </div>
                 </div>
               </button>
