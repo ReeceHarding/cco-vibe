@@ -53,7 +53,7 @@ const FollowerGrowthCard = () => {
   useEffect(() => {
     if (isHovered) {
       const timer = setTimeout(() => {
-        setFollowerCount(342)
+        setFollowerCount(842)
       }, 300)
       return () => clearTimeout(timer)
     } else {
@@ -75,7 +75,7 @@ const FollowerGrowthCard = () => {
         <div className="flex flex-col mb-2">
           <div className="flex flex-row text-xl font-medium items-baseline gap-2">
             <p>+</p>
-            <p className="transition-all duration-500 transform" style={{ fontSize: isHovered ? '28px' : '20px' }}>
+            <p className="transition-all duration-500 transform" style={{ fontSize: isHovered ? '32px' : '20px' }}>
               {followerCount}
             </p>
             {isHovered && (
@@ -127,7 +127,7 @@ const FollowerGrowthCard = () => {
                   stroke="none" 
                   fillOpacity="0.6" 
                   d={isHovered 
-                    ? "M0,120C39.733,118,79.467,115,119.2,110C158.933,105,198.667,95,238.4,85C278.133,75,317.867,65,357.6,55C397.333,45,437.067,35,476.8,30C516.533,25,556.267,20,596,15L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"
+                    ? "M0,200C39.733,200,79.467,202,119.2,203C158.933,204,198.667,205,238.4,204C278.133,203,317.867,201,357.6,200C397.333,199,437.067,198,476.8,196C516.533,194,556.267,192,596,190L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"
                     : "M0,173.2C39.733,173.2,79.467,173.2,119.2,173.2C158.933,173.2,198.667,167.738,238.4,159.4C278.133,151.063,317.867,126.625,357.6,123.175C397.333,119.725,437.067,121.45,476.8,118C516.533,114.55,556.267,81.775,596,49L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"
                   }
                 ></path>
@@ -139,7 +139,7 @@ const FollowerGrowthCard = () => {
                   strokeLinejoin="round" 
                   strokeLinecap="round" 
                   d={isHovered 
-                    ? "M0,120C39.733,118,79.467,115,119.2,110C158.933,105,198.667,95,238.4,85C278.133,75,317.867,65,357.6,55C397.333,45,437.067,35,476.8,30C516.533,25,556.267,20,596,15"
+                    ? "M0,200C39.733,200,79.467,202,119.2,203C158.933,204,198.667,205,238.4,204C278.133,203,317.867,201,357.6,200C397.333,199,437.067,198,476.8,196C516.533,194,556.267,192,596,190"
                     : "M0,173.2C39.733,173.2,79.467,173.2,119.2,173.2C158.933,173.2,198.667,167.738,238.4,159.4C278.133,151.063,317.867,126.625,357.6,123.175C397.333,119.725,437.067,121.45,476.8,118C516.533,114.55,556.267,81.775,596,49"
                   }
                 ></path>
@@ -153,7 +153,7 @@ const FollowerGrowthCard = () => {
                   stroke="none" 
                   fillOpacity="0.6" 
                   d={isHovered
-                    ? "M0,140C39.733,135,79.467,130,119.2,125C158.933,120,198.667,110,238.4,100C278.133,90,317.867,80,357.6,70C397.333,60,437.067,50,476.8,40C516.533,30,556.267,25,596,20L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"
+                    ? "M0,180C39.733,170,79.467,155,119.2,135C158.933,115,198.667,90,238.4,65C278.133,40,317.867,25,357.6,15C397.333,5,437.067,0,476.8,-2C516.533,-4,556.267,-5,596,-5L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"
                     : "M0,166.3C39.733,166.3,79.467,166.3,119.2,166.3C158.933,166.3,198.667,158.825,238.4,155.95C278.133,153.075,317.867,153.075,357.6,149.05C397.333,145.025,437.067,142.725,476.8,131.8C516.533,120.875,556.267,102.188,596,83.5L596,256C556.267,256,516.533,256,476.8,256C437.067,256,397.333,256,357.6,256C317.867,256,278.133,256,238.4,256C198.667,256,158.933,256,119.2,256C79.467,256,39.733,256,0,256Z"
                   }
                 ></path>
@@ -165,7 +165,7 @@ const FollowerGrowthCard = () => {
                   strokeLinejoin="round" 
                   strokeLinecap="round" 
                   d={isHovered
-                    ? "M0,140C39.733,135,79.467,130,119.2,125C158.933,120,198.667,110,238.4,100C278.133,90,317.867,80,357.6,70C397.333,60,437.067,50,476.8,40C516.533,30,556.267,25,596,20"
+                    ? "M0,180C39.733,170,79.467,155,119.2,135C158.933,115,198.667,90,238.4,65C278.133,40,317.867,25,357.6,15C397.333,5,437.067,0,476.8,-2C516.533,-4,556.267,-5,596,-5"
                     : "M0,166.3C39.733,166.3,79.467,166.3,119.2,166.3C158.933,166.3,198.667,158.825,238.4,155.95C278.133,153.075,317.867,153.075,357.6,149.05C397.333,145.025,437.067,142.725,476.8,131.8C516.533,120.875,556.267,102.188,596,83.5"
                   }
                 ></path>
@@ -175,8 +175,8 @@ const FollowerGrowthCard = () => {
             {/* Comparison labels */}
             {isHovered && (
               <>
-                <text x="100" y="180" fill="#9ca3af" fontSize="12" className="animate-fadeIn">Without Postify</text>
-                <text x="400" y="40" fill="#a855f7" fontSize="12" fontWeight="600" className="animate-fadeIn">With Postify</text>
+                <text x="300" y="210" fill="#9ca3af" fontSize="12" className="animate-fadeIn">Without Postify</text>
+                <text x="400" y="25" fill="#a855f7" fontSize="12" fontWeight="600" className="animate-fadeIn">With Postify</text>
               </>
             )}
           </svg>
@@ -2031,25 +2031,41 @@ export default function Home() {
             </p>
             <div className="flex justify-center items-center -space-x-4">
               {[
-                { bg: "from-purple-500 to-purple-600", initial: "A" },
-                { bg: "from-purple-400 to-purple-500", initial: "B" },
-                { bg: "from-indigo-500 to-purple-600", initial: "C" },
-                { bg: "from-purple-600 to-pink-600", initial: "D" },
-                { bg: "from-pink-500 to-purple-600", initial: "E" },
-                { bg: "from-purple-500 to-indigo-600", initial: "F" },
-                { bg: "from-indigo-400 to-purple-600", initial: "G" },
-                { bg: "from-purple-600 to-purple-700", initial: "H" },
-                { bg: "from-purple-400 to-indigo-600", initial: "I" },
-                { bg: "from-purple-700 to-purple-800", initial: "+" },
+                { src: "https://unavatar.io/twitter/dannypostmaa", name: "Danny Postma" },
+                { src: "https://unavatar.io/twitter/levelsio", name: "Pieter Levels" },
+                { src: "https://unavatar.io/twitter/marc_louvion", name: "Marc Lou" },
+                { src: "https://unavatar.io/twitter/tdinh_me", name: "Tony Dinh" },
+                { src: "https://unavatar.io/twitter/yongfook", name: "Jon Yongfook" },
+                { src: "https://unavatar.io/twitter/jakobgreenfeld", name: "Jakob Greenfeld" },
+                { src: "https://unavatar.io/twitter/arvidkahl", name: "Arvid Kahl" },
+                { src: "https://unavatar.io/twitter/dvassallo", name: "Daniel Vassallo" },
+                { src: "https://unavatar.io/twitter/stephsmithio", name: "Steph Smith" },
               ].map((avatar, index) => (
                 <div
                   key={index}
-                  className={`relative w-16 h-16 bg-gradient-to-br ${avatar.bg} rounded-full flex items-center justify-center text-white font-semibold shadow-lg border-4 border-white hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer text-lg`}
+                  className="relative group"
                   style={{ zIndex: 10 - index }}
                 >
-                  {avatar.initial}
+                  <img
+                    src={avatar.src}
+                    alt={avatar.name}
+                    className="w-16 h-16 rounded-full shadow-lg border-4 border-white hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer"
+                  />
+                  {/* Tooltip on hover */}
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                    <div className="bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                      {avatar.name}
+                    </div>
+                  </div>
                 </div>
               ))}
+              {/* Plus more indicator */}
+              <div
+                className="relative w-16 h-16 bg-gradient-to-br from-purple-700 to-purple-800 rounded-full flex items-center justify-center text-white font-semibold shadow-lg border-4 border-white hover:scale-110 hover:z-20 transition-all duration-300 cursor-pointer text-lg"
+                style={{ zIndex: 1 }}
+              >
+                +
+              </div>
             </div>
             <div className="mt-8 flex items-center justify-center gap-8 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
