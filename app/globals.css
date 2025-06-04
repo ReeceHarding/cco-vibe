@@ -525,3 +525,121 @@ button:focus {
   scroll-margin-top: 3rem;
   scroll-margin-bottom: 3rem;
 }
+
+/* Interactive graph animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Ping animation for milestone markers */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Scale in animation for milestone markers */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+/* Bounce animation for savings indicator */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Chart bar transition improvements */
+.transition-height {
+  transition-property: height;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+/* Tooltip shadow improvements */
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Interactive hover states for graph elements */
+.milestone-group {
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.milestone-group:hover circle {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Progress line animation */
+@keyframes progressDraw {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.progress-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: progressDraw 2s ease-out forwards;
+}
+
+/* Bar chart hover effects */
+.bar-segment {
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.bar-segment:hover {
+  filter: brightness(1.1);
+  transform: scaleX(1.02);
+}
+
+/* Phase card hover effect */
+.phase-card {
+  transition: all 0.2s ease-out;
+}
+
+.phase-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
