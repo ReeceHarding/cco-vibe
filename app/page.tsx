@@ -1080,38 +1080,129 @@ export default function Home() {
             {/* Comparison table */}
             <div className="mt-20 max-w-4xl mx-auto">
               <h4 className="text-center text-xl font-semibold mb-8">How we compare</h4>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b">
-                      <th className="text-left py-4 px-4"></th>
-                      <th className="text-center py-4 px-4 font-semibold">Us</th>
-                      <th className="text-center py-4 px-4 text-muted-foreground">Traditional Agency</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b">
-                      <td className="py-4 px-4">Delivery Time</td>
-                      <td className="text-center py-4 px-4 font-semibold text-green-600">2 weeks</td>
-                      <td className="text-center py-4 px-4 text-muted-foreground">3-4 months</td>
-                    </tr>
-                    <tr className="border-b">
-                      <td className="py-4 px-4">Cost</td>
-                      <td className="text-center py-4 px-4 font-semibold text-green-600">$10-40k</td>
-                      <td className="text-center py-4 px-4 text-muted-foreground">$80-100k</td>
-                    </tr>
-                    <tr className="border-b">
-                      <td className="py-4 px-4">AI Features</td>
-                      <td className="text-center py-4 px-4 font-semibold text-green-600">✓ Included</td>
-                      <td className="text-center py-4 px-4 text-muted-foreground">Extra cost</td>
-                    </tr>
-                    <tr className="border-b">
-                      <td className="py-4 px-4">Satisfaction Guarantee</td>
-                      <td className="text-center py-4 px-4 font-semibold text-green-600">100%</td>
-                      <td className="text-center py-4 px-4 text-muted-foreground">None</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-3xl p-2 border border-purple-100/20 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(147,51,234,0.08)] transition-all duration-300">
+                <div className="p-6 md:p-8">
+                  {/* Comparison items */}
+                  <div className="space-y-6">
+                    {/* Delivery Time */}
+                    <div className="group">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center p-4 rounded-2xl hover:bg-purple-50/50 dark:hover:bg-purple-900/10 transition-all duration-200">
+                        <div className="flex items-center gap-3">
+                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                            <Clock className="w-5 h-5 text-primary" />
+                          </div>
+                          <span className="font-medium text-[16px] text-foreground">Delivery Time</span>
+                        </div>
+                        <div className="text-center">
+                          <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full">
+                            <Check className="w-4 h-4 text-green-600" />
+                            <span className="font-semibold text-green-600">2 weeks</span>
+                          </div>
+                        </div>
+                        <div className="text-center">
+                          <div className="inline-flex items-center gap-2 px-4 py-2">
+                            <X className="w-4 h-4 text-muted-foreground/50" />
+                            <span className="text-muted-foreground">3-4 months</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Cost */}
+                    <div className="group">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center p-4 rounded-2xl hover:bg-purple-50/50 dark:hover:bg-purple-900/10 transition-all duration-200">
+                        <div className="flex items-center gap-3">
+                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                            <DollarSign className="w-5 h-5 text-primary" />
+                          </div>
+                          <span className="font-medium text-[16px] text-foreground">Cost</span>
+                        </div>
+                        <div className="text-center">
+                          <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full">
+                            <Check className="w-4 h-4 text-green-600" />
+                            <span className="font-semibold text-green-600">$10-40k</span>
+                          </div>
+                        </div>
+                        <div className="text-center">
+                          <div className="inline-flex items-center gap-2 px-4 py-2">
+                            <X className="w-4 h-4 text-muted-foreground/50" />
+                            <span className="text-muted-foreground">$80-100k</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* AI Features */}
+                    <div className="group">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center p-4 rounded-2xl hover:bg-purple-50/50 dark:hover:bg-purple-900/10 transition-all duration-200">
+                        <div className="flex items-center gap-3">
+                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                            <Sparkles className="w-5 h-5 text-primary" />
+                          </div>
+                          <span className="font-medium text-[16px] text-foreground">AI Features</span>
+                        </div>
+                        <div className="text-center">
+                          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+                            <Check className="w-4 h-4 text-purple-600" />
+                            <span className="font-semibold text-purple-600">Included</span>
+                          </div>
+                        </div>
+                        <div className="text-center">
+                          <div className="inline-flex items-center gap-2 px-4 py-2">
+                            <DollarSign className="w-4 h-4 text-muted-foreground/50" />
+                            <span className="text-muted-foreground">Extra cost</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Satisfaction Guarantee */}
+                    <div className="group">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center p-4 rounded-2xl hover:bg-purple-50/50 dark:hover:bg-purple-900/10 transition-all duration-200">
+                        <div className="flex items-center gap-3">
+                          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                            <Shield className="w-5 h-5 text-primary" />
+                          </div>
+                          <span className="font-medium text-[16px] text-foreground">Satisfaction Guarantee</span>
+                        </div>
+                        <div className="text-center">
+                          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+                            <Check className="w-4 h-4 text-purple-600" />
+                            <span className="font-semibold text-purple-600">100% Guaranteed</span>
+                          </div>
+                        </div>
+                        <div className="text-center">
+                          <div className="inline-flex items-center gap-2 px-4 py-2">
+                            <X className="w-4 h-4 text-red-500" />
+                            <span className="text-muted-foreground">No guarantee</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Column headers - mobile */}
+                  <div className="md:hidden mt-8 grid grid-cols-2 gap-4 text-center pb-4 border-t border-border/20 pt-6">
+                    <div className="font-semibold text-primary">Us</div>
+                    <div className="text-muted-foreground">Traditional Agency</div>
+                  </div>
+
+                  {/* Column headers - desktop (positioned absolutely) */}
+                  <div className="hidden md:block">
+                    <div className="absolute top-6 right-8 grid grid-cols-2 gap-8 text-center">
+                      <div className="w-32">
+                        <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-50 to-purple-100/50 text-purple-700 rounded-full text-[14px] font-semibold border border-purple-200/50 shadow-sm">
+                          Us
+                        </div>
+                      </div>
+                      <div className="w-32">
+                        <div className="inline-flex items-center justify-center px-4 py-2 text-muted-foreground text-[14px] font-medium">
+                          Traditional Agency
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
