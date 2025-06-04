@@ -10,49 +10,44 @@ import { PostelLogo } from "@/components/logo"
 // Cost Savings Card Component  
 const CostSavingsCard = () => {
   const [isHovered, setIsHovered] = useState(false)
-  const [savingsAmount, setSavingsAmount] = useState(20)
-  
-  useEffect(() => {
-    if (isHovered) {
-      const timer = setTimeout(() => {
-        setSavingsAmount(240)
-      }, 300)
-      return () => clearTimeout(timer)
-    } else {
-      setSavingsAmount(20)
-    }
-  }, [isHovered])
   
   return (
     <div 
-      className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group"
+      className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="flex flex-col h-full">
-        <h3 className="text-xl font-semibold mb-3 text-foreground">Save thousands on software costs</h3>
-        <p className="text-muted-foreground mb-8">Replace expensive SaaS subscriptions with custom-built tools that you own forever. No more monthly fees.</p>
+        <h3 className="text-xl font-semibold mb-3 text-foreground">Save millions on software costs</h3>
+        <p className="text-muted-foreground mb-8">Replace expensive SaaS subscriptions with custom built tools that you own forever. No more monthly fees.</p>
         
-        {/* Savings amount */}
-        <div className="flex flex-col mb-2">
-          <div className="flex flex-row text-xl font-medium items-baseline gap-2">
-            <p>$</p>
-            <p className="transition-all duration-500 transform" style={{ fontSize: isHovered ? '32px' : '20px' }}>
-              {savingsAmount}k
-            </p>
-            {isHovered && (
-              <span className="text-sm text-purple-600 font-medium animate-fadeIn">
-                saved annually
-              </span>
-            )}
+        {/* Cost comparison */}
+        <div className="flex flex-col gap-4 mb-6">
+          {/* Annual SaaS costs */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-baseline gap-1">
+              <span className="text-muted-foreground text-sm">From</span>
+              <span className="text-2xl font-bold text-muted-foreground/70 line-through">$240k</span>
+              <span className="text-sm text-muted-foreground">/year</span>
+            </div>
           </div>
-          <p className="text-muted-foreground text-sm">
-            {isHovered ? 'Average client savings per year' : 'Potential savings'}
-          </p>
+          
+          {/* One-time cost */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-baseline gap-1">
+              <span className="text-green-600 text-sm font-medium">To</span>
+              <span className={`font-bold text-green-600 transition-all duration-500 ${
+                isHovered ? 'text-4xl' : 'text-3xl'
+              }`}>
+                $20k
+              </span>
+              <span className="text-sm text-green-600 font-medium">one time</span>
+            </div>
+          </div>
         </div>
 
-        {/* Chart */}
-        <div className="h-32 w-full sm:h-40 mt-2 relative">
+        {/* Chart - pushed to bottom with mt-auto */}
+        <div className="h-32 w-full sm:h-40 mt-auto relative">
           <svg className="h-full w-full" viewBox="0 0 596 256" preserveAspectRatio="none">
             <title>Cost Savings Chart</title>
             <desc>Annual savings chart showing dramatic cost reduction</desc>
@@ -137,8 +132,8 @@ const CostSavingsCard = () => {
             {/* Comparison labels */}
             {isHovered && (
               <>
-                <text x="280" y="65" fill="#9ca3af" fontSize="12" className="animate-fadeIn">SaaS Subscriptions</text>
-                <text x="380" y="235" fill="#a855f7" fontSize="12" fontWeight="600" className="animate-fadeIn">Custom Solution</text>
+                <text x="80" y="65" fill="#9ca3af" fontSize="12" className="animate-fadeIn">Annual SaaS Costs</text>
+                <text x="400" y="235" fill="#a855f7" fontSize="12" fontWeight="600" className="animate-fadeIn">One Time Build</text>
               </>
             )}
           </svg>
@@ -191,14 +186,14 @@ export default function Home() {
     {
       id: "internal-tools",
       title: "Custom Internal Tools",
-      description: "Replace expensive SaaS with custom-built solutions. Save $20k+ annually on tools like Slack, Notion, or Jira.",
+      description: "Replace expensive SaaS with custom built solutions. Save $20k+ annually on tools like Slack, Notion, or Jira.",
       icon: Code2,
       video: "/images/feature_videos/internal-tools-demo.mp4"
     },
     {
       id: "ai-features",
-      title: "AI-Powered Features",
-      description: "Integrate cutting-edge AI into your workflows. We're graduates of the world's best AI bootcamp.",
+      title: "AI Powered Features",
+      description: "Integrate cutting edge AI into your workflows. We're graduates of the world's best AI bootcamp.",
       icon: Sparkles,
       video: "/images/feature_videos/ai-features-demo.mp4"
     },
@@ -367,7 +362,7 @@ export default function Home() {
               </span>{" "}
               10x faster
               <br />
-              <span className="text-muted-foreground">with AI-powered development</span>
+              <span className="text-muted-foreground">with AI powered development</span>
             </h1>
 
             {/* Subheading - Updated content */}
@@ -720,7 +715,7 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h4 className="font-semibold text-lg mb-2">AI-Powered Analytics Platform</h4>
+                <h4 className="font-semibold text-lg mb-2">AI Powered Analytics Platform</h4>
                 <p className="text-sm text-muted-foreground mb-4">
                   Custom analytics with AI insights. Replaced $100k/year enterprise solution with better performance.
                 </p>
@@ -780,8 +775,8 @@ export default function Home() {
             {/* Benefits grid with custom layout */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
               {/* 10x Faster Development - 4 columns */}
-              <div className="md:col-span-4 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group">
-                <div className="flex flex-col items-center text-center">
+              <div className="md:col-span-4 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group h-full">
+                <div className="flex flex-col items-center text-center h-full">
                   <div className="mb-6 w-32 h-32 relative">
                     <div className="absolute inset-0 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center overflow-hidden transition-all duration-300">
                       <div className="w-24 h-24 rounded-full bg-white/80 flex items-center justify-center relative z-10">
@@ -791,15 +786,15 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-foreground">10x Faster Development</h3>
                   <p className="text-muted-foreground">
-                    We leverage cutting-edge AI to write code 10x faster. What takes others months, we deliver in weeks.
+                    We leverage cutting edge AI to write code 10x faster. What takes others months, we deliver in weeks.
                   </p>
                 </div>
               </div>
 
               {/* American Team, Perfect Communication - 5 columns */}
-              <div className="md:col-span-5 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/card">
-                <div className="flex flex-col">
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">All-American Team</h3>
+              <div className="md:col-span-5 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/card h-full">
+                <div className="flex flex-col h-full">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">All American Team</h3>
                   <p className="text-muted-foreground mb-6">Perfect English, same time zones, exceptional taste in design. We're graduates of the world's best AI bootcamp with years of experience building production software.</p>
                   
                   {/* Team showcase */}
@@ -820,10 +815,12 @@ export default function Home() {
               </div>
 
               {/* 100% Satisfaction Guarantee - 3 columns */}
-              <div className="md:col-span-3 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/ideas">
-                <div className="flex flex-col h-full text-center">
-                  <Shield className="w-16 h-16 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">100% Risk-Free</h3>
+              <div className="md:col-span-3 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/ideas h-full">
+                <div className="flex flex-col h-full text-center justify-between">
+                  <div>
+                    <Shield className="w-16 h-16 text-primary mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold mb-3 text-foreground">100% Risk Free</h3>
+                  </div>
                   <p className="text-muted-foreground">
                     Don't pay until you're completely satisfied. We'll refine until it's perfect.
                   </p>
@@ -834,7 +831,7 @@ export default function Home() {
               <CostSavingsCard />
 
               {/* Daily Updates - 6 columns */}
-              <div className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group">
+              <div className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group h-full">
                 <div className="flex flex-col h-full">
                   <h3 className="text-xl font-semibold mb-3 text-foreground">Daily Progress Updates</h3>
                   <p className="text-muted-foreground mb-6">Never wonder what's happening with your project. Get daily updates showing exactly what we built, with screenshots and videos.</p>
@@ -1081,7 +1078,22 @@ export default function Home() {
             <div className="mt-20 max-w-4xl mx-auto">
               <h4 className="text-center text-xl font-semibold mb-8">How we compare</h4>
               <div className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-3xl p-2 border border-purple-100/20 shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(147,51,234,0.08)] transition-all duration-300">
-                <div className="p-6 md:p-8">
+                <div className="p-6 md:p-8 relative">
+                  {/* Column headers - desktop */}
+                  <div className="hidden md:grid md:grid-cols-3 gap-4 mb-8">
+                    <div></div> {/* Empty space for labels column */}
+                    <div className="text-center">
+                      <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-50 to-purple-100/50 text-purple-700 rounded-full text-[14px] font-semibold border border-purple-200/50 shadow-sm">
+                        Us
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <div className="inline-flex items-center justify-center px-4 py-2 text-muted-foreground text-[14px] font-medium">
+                        Traditional Agency
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Comparison items */}
                   <div className="space-y-6">
                     {/* Delivery Time */}
@@ -1102,7 +1114,7 @@ export default function Home() {
                         <div className="text-center">
                           <div className="inline-flex items-center gap-2 px-4 py-2">
                             <X className="w-4 h-4 text-muted-foreground/50" />
-                            <span className="text-muted-foreground">3-4 months</span>
+                            <span className="text-muted-foreground">3 to 4 months</span>
                           </div>
                         </div>
                       </div>
@@ -1120,13 +1132,13 @@ export default function Home() {
                         <div className="text-center">
                           <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full">
                             <Check className="w-4 h-4 text-green-600" />
-                            <span className="font-semibold text-green-600">$10-40k</span>
+                            <span className="font-semibold text-green-600">$10 to 40k</span>
                           </div>
                         </div>
                         <div className="text-center">
                           <div className="inline-flex items-center gap-2 px-4 py-2">
                             <X className="w-4 h-4 text-muted-foreground/50" />
-                            <span className="text-muted-foreground">$80-100k</span>
+                            <span className="text-muted-foreground">$80 to 100k</span>
                           </div>
                         </div>
                       </div>
@@ -1185,22 +1197,6 @@ export default function Home() {
                   <div className="md:hidden mt-8 grid grid-cols-2 gap-4 text-center pb-4 border-t border-border/20 pt-6">
                     <div className="font-semibold text-primary">Us</div>
                     <div className="text-muted-foreground">Traditional Agency</div>
-                  </div>
-
-                  {/* Column headers - desktop (positioned absolutely) */}
-                  <div className="hidden md:block">
-                    <div className="absolute top-6 right-8 grid grid-cols-2 gap-8 text-center">
-                      <div className="w-32">
-                        <div className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-50 to-purple-100/50 text-purple-700 rounded-full text-[14px] font-semibold border border-purple-200/50 shadow-sm">
-                          Us
-                        </div>
-                      </div>
-                      <div className="w-32">
-                        <div className="inline-flex items-center justify-center px-4 py-2 text-muted-foreground text-[14px] font-medium">
-                          Traditional Agency
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
