@@ -13,7 +13,11 @@ const DiscordIcon = () => (
   </svg>
 )
 
-export function Navigation() {
+interface NavigationProps {
+  showNavigation?: boolean
+}
+
+export function Navigation({ showNavigation = true }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -35,11 +39,13 @@ export function Navigation() {
 
   return (
     <nav 
-      className={`fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1050px] h-[58px] px-3 sm:px-4 py-1.5 backdrop-blur-[10px] rounded-full transition-all duration-200 ${
+      className={`fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95%] max-w-[1050px] h-[58px] px-3 sm:px-4 py-1.5 backdrop-blur-[10px] rounded-full transition-all duration-500 ${
         scrolled 
           ? "bg-[rgba(255,255,255,0.5)] dark:bg-[rgba(20,20,20,0.5)] border-[rgba(147,51,234,0.2)] shadow-[inset_0px_2px_8px_rgba(255,255,255,0.6),0px_4px_20px_rgba(0,0,0,0.05)]" 
           : "bg-[rgba(255,255,255,0.75)] dark:bg-[rgba(20,20,20,0.75)] border-[rgba(147,51,234,0.3)] shadow-[inset_0px_2px_12px_rgba(255,255,255,0.8),0px_8px_32px_rgba(147,51,234,0.08)]"
-      } border`}
+      } border ${
+        showNavigation ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+      }`}
       data-test="navigation"
     >
       <div className="w-[120px] sm:w-[140px] h-[44px] flex items-center">

@@ -154,10 +154,20 @@ export default function Home() {
   const [activeFeatureTab, setActiveFeatureTab] = useState("internal-tools")
   const [billingPeriod, setBillingPeriod] = useState<"with-testimonial" | "without-testimonial">("with-testimonial")
   const [openFaqItem, setOpenFaqItem] = useState<string | null>(null)
+  const [showNavigation, setShowNavigation] = useState(false)
 
   useEffect(() => {
     setMounted(true)
     console.log("Page mounted - animations starting")
+    
+    // Add scroll listener for navigation
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      setShowNavigation(scrollY > 100)
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const handleVideoClick = () => {
@@ -273,13 +283,45 @@ export default function Home() {
       ]
     }
   ]
+  
+  // Testimonials data array for reuse
+  const testimonials = [
+    {
+      id: 1,
+      name: "Sarah Chen",
+      role: "CEO @TechStartup",
+      avatar: "https://unavatar.io/twitter/elonmusk",
+      verified: true,
+      time: "2d",
+      text: "They built our entire internal communication platform in 12 days. We're saving $50k/year compared to Slack. The AI features they added are incredible. Best decision we've made.",
+      video: "/videos/testimonials/testimonial-1.mp4",
+      poster: "/images/testimonials/testimonial-1-poster.jpg",
+      comments: 24,
+      retweets: 136,
+      likes: 892
+    },
+    {
+      id: 2,
+      name: "Michael Rodriguez",
+      role: "CTO @Enterprise",
+      avatar: "https://unavatar.io/twitter/sama",
+      verified: false,
+      time: "1w",
+      text: "Replaced our $30k/year project management tool with a custom solution. It's faster, has better UX, and includes AI features we couldn't get anywhere else. Delivered in just 2 weeks!",
+      video: "/videos/testimonials/testimonial-2.mp4",
+      poster: "/images/testimonials/testimonial-2-poster.jpg",
+      comments: 18,
+      retweets: 97,
+      likes: 523
+    }
+  ]
 
   return (
     <>
-      <Navigation />
+      <Navigation showNavigation={showNavigation} />
       <main className="relative min-h-screen overflow-hidden">
-        {/* Hero Section - Keeping exact same structure */}
-        <div className="container relative z-10 pt-32 md:pt-40 pb-20 md:pb-32">
+        {/* Hero Section - Adjusted padding since nav is hidden initially */}
+        <div className="container relative z-10 pt-20 md:pt-28 pb-20 md:pb-32">
           {/* Simplified decorative elements */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse" />
@@ -477,149 +519,147 @@ export default function Home() {
             <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:80s]">
               <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
                 {/* First set of testimonials */}
-                
-                {/* Testimonial 1 - Tech Startup CEO */}
-                <article className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.02] transition-all" style={{ width: "320px", height: "560px" }}>
-                  <div className="p-4 h-full flex flex-col">
-                    {/* Header */}
-                    <div className="flex items-start gap-3 mb-3">
-                      <img 
-                        src="https://unavatar.io/twitter/elonmusk" 
-                        alt="Sarah Chen" 
-                        className="w-10 h-10 rounded-full flex-shrink-0"
-                      />
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-1">
-                          <span className="font-bold text-gray-900 text-sm">Sarah Chen</span>
-                          <Verified className="w-3.5 h-3.5 text-purple-500 flex-shrink-0" />
+                {testimonials.map((testimonial) => (
+                  <article key={testimonial.id} className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.02] transition-all" style={{ width: "320px", height: "560px" }}>
+                    <div className="p-4 h-full flex flex-col">
+                      {/* Header */}
+                      <div className="flex items-start gap-3 mb-3">
+                        <img 
+                          src={testimonial.avatar} 
+                          alt={testimonial.name} 
+                          className="w-10 h-10 rounded-full flex-shrink-0"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-1">
+                            <span className="font-bold text-gray-900 text-sm">{testimonial.name}</span>
+                            {testimonial.verified && <Verified className="w-3.5 h-3.5 text-purple-500 flex-shrink-0" />}
+                          </div>
+                          <div className="flex items-center gap-1 text-xs">
+                            <span className="text-gray-500">{testimonial.role}</span>
+                            <span className="text-gray-500">·</span>
+                            <span className="text-gray-500">{testimonial.time}</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1 text-xs">
-                          <span className="text-gray-500">CEO @TechStartup</span>
-                          <span className="text-gray-500">·</span>
-                          <span className="text-gray-500">2d</span>
-                        </div>
+                        <button className="p-1.5 hover:bg-gray-100 rounded-full transition-colors">
+                          <MoreHorizontal className="w-4 h-4 text-gray-500" />
+                        </button>
                       </div>
-                      <button className="p-1.5 hover:bg-gray-100 rounded-full transition-colors">
-                        <MoreHorizontal className="w-4 h-4 text-gray-500" />
-                      </button>
-                    </div>
-                    
-                    {/* Testimonial text */}
-                    <div className="text-gray-900 text-sm leading-normal mb-3">
-                      They built our entire internal communication platform in 12 days. We're saving $50k/year compared to Slack. The AI features they added are incredible. Best decision we've made.
-                    </div>
-                    
-                    {/* Video attachment */}
-                    <div className="rounded-xl overflow-hidden border border-gray-200 relative flex-1 mb-3">
-                      <video 
-                        className="w-full h-full object-cover"
-                        poster="/images/testimonials/testimonial-1-poster.jpg"
-                        controls
-                        preload="metadata"
-                      >
-                        <source src="/videos/testimonials/testimonial-1.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-
-                    {/* Engagement buttons */}
-                    <div className="flex items-center justify-between -mx-2">
-                      <button className="flex items-center gap-1 p-2 hover:bg-purple-50 rounded-full transition-colors group/btn">
-                        <MessageCircle className="w-4 h-4 text-gray-500 group-hover/btn:text-purple-600" />
-                        <span className="text-xs text-gray-500 group-hover/btn:text-purple-600">24</span>
-                      </button>
-                      <button className="flex items-center gap-1 p-2 hover:bg-green-50 rounded-full transition-colors group/btn">
-                        <Repeat2 className="w-4 h-4 text-gray-500 group-hover/btn:text-green-600" />
-                        <span className="text-xs text-gray-500 group-hover/btn:text-green-600">136</span>
-                      </button>
-                      <button className="flex items-center gap-1 p-2 hover:bg-red-50 rounded-full transition-colors group/btn">
-                        <Heart className="w-4 h-4 text-gray-500 group-hover/btn:text-red-600" />
-                        <span className="text-xs text-gray-500 group-hover/btn:text-red-600">892</span>
-                      </button>
-                      <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group/btn">
-                        <Share className="w-4 h-4 text-gray-500 group-hover/btn:text-blue-600" />
-                      </button>
-                      <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group/btn">
-                        <Bookmark className="w-4 h-4 text-gray-500 group-hover/btn:text-blue-600" />
-                      </button>
-                    </div>
-                  </div>
-                </article>
-
-                {/* Testimonial 2 - Enterprise CTO */}
-                <article className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.02] transition-all" style={{ width: "320px", height: "560px" }}>
-                  <div className="p-4 h-full flex flex-col">
-                    {/* Header */}
-                    <div className="flex items-start gap-3 mb-3">
-                      <img 
-                        src="https://unavatar.io/twitter/sama" 
-                        alt="Michael Rodriguez" 
-                        className="w-10 h-10 rounded-full flex-shrink-0"
-                      />
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-1">
-                          <span className="font-bold text-gray-900 text-sm">Michael Rodriguez</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-xs">
-                          <span className="text-gray-500">CTO @Enterprise</span>
-                          <span className="text-gray-500">·</span>
-                          <span className="text-gray-500">1w</span>
-                        </div>
+                      
+                      {/* Testimonial text */}
+                      <div className="text-gray-900 text-sm leading-normal mb-3">
+                        {testimonial.text}
                       </div>
-                      <button className="p-1.5 hover:bg-gray-100 rounded-full transition-colors">
-                        <MoreHorizontal className="w-4 h-4 text-gray-500" />
-                      </button>
-                    </div>
-                    
-                    {/* Testimonial text */}
-                    <div className="text-gray-900 text-sm leading-normal mb-3">
-                      Replaced our $30k/year project management tool with a custom solution. It's faster, has better UX, and includes AI features we couldn't get anywhere else. Delivered in just 2 weeks!
-                    </div>
-                    
-                    {/* Video attachment */}
-                    <div className="rounded-xl overflow-hidden border border-gray-200 relative flex-1 mb-3">
-                      <video 
-                        className="w-full h-full object-cover"
-                        poster="/images/testimonials/testimonial-2-poster.jpg"
-                        controls
-                        preload="metadata"
-                      >
-                        <source src="/videos/testimonials/testimonial-2.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                    
-                    {/* Engagement buttons */}
-                    <div className="flex items-center justify-between -mx-2">
-                      <button className="flex items-center gap-1 p-2 hover:bg-purple-50 rounded-full transition-colors group/btn">
-                        <MessageCircle className="w-4 h-4 text-gray-500 group-hover/btn:text-purple-600" />
-                        <span className="text-xs text-gray-500 group-hover/btn:text-purple-600">18</span>
-                      </button>
-                      <button className="flex items-center gap-1 p-2 hover:bg-green-50 rounded-full transition-colors group/btn">
-                        <Repeat2 className="w-4 h-4 text-gray-500 group-hover/btn:text-green-600" />
-                        <span className="text-xs text-gray-500 group-hover/btn:text-green-600">97</span>
-                      </button>
-                      <button className="flex items-center gap-1 p-2 hover:bg-red-50 rounded-full transition-colors group/btn">
-                        <Heart className="w-4 h-4 text-gray-500 group-hover/btn:text-red-600" />
-                        <span className="text-xs text-gray-500 group-hover/btn:text-red-600">523</span>
-                      </button>
-                      <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group/btn">
-                        <Share className="w-4 h-4 text-gray-500 group-hover/btn:text-blue-600" />
-                      </button>
-                      <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group/btn">
-                        <Bookmark className="w-4 h-4 text-gray-500 group-hover/btn:text-blue-600" />
-                      </button>
-                    </div>
-                  </div>
-                </article>
+                      
+                      {/* Video attachment */}
+                      <div className="rounded-xl overflow-hidden border border-gray-200 relative flex-1 mb-3">
+                        <video 
+                          className="w-full h-full object-cover"
+                          poster={testimonial.poster}
+                          controls
+                          preload="metadata"
+                        >
+                          <source src={testimonial.video} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
 
-                {/* Add more testimonials here - I'll add 3 more for brevity but you mentioned 20 */}
-                
+                      {/* Engagement buttons */}
+                      <div className="flex items-center justify-between -mx-2">
+                        <button className="flex items-center gap-1 p-2 hover:bg-purple-50 rounded-full transition-colors group/btn">
+                          <MessageCircle className="w-4 h-4 text-gray-500 group-hover/btn:text-purple-600" />
+                          <span className="text-xs text-gray-500 group-hover/btn:text-purple-600">{testimonial.comments}</span>
+                        </button>
+                        <button className="flex items-center gap-1 p-2 hover:bg-green-50 rounded-full transition-colors group/btn">
+                          <Repeat2 className="w-4 h-4 text-gray-500 group-hover/btn:text-green-600" />
+                          <span className="text-xs text-gray-500 group-hover/btn:text-green-600">{testimonial.retweets}</span>
+                        </button>
+                        <button className="flex items-center gap-1 p-2 hover:bg-red-50 rounded-full transition-colors group/btn">
+                          <Heart className="w-4 h-4 text-gray-500 group-hover/btn:text-red-600" />
+                          <span className="text-xs text-gray-500 group-hover/btn:text-red-600">{testimonial.likes}</span>
+                        </button>
+                        <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group/btn">
+                          <Share className="w-4 h-4 text-gray-500 group-hover/btn:text-blue-600" />
+                        </button>
+                        <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group/btn">
+                          <Bookmark className="w-4 h-4 text-gray-500 group-hover/btn:text-blue-600" />
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                ))}
               </div>
 
-              {/* Duplicate sets for seamless scrolling */}
-              <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+              {/* Duplicate set for seamless scrolling */}
+              <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]" aria-hidden="true">
                 {/* Duplicate testimonials for smooth scrolling */}
+                {testimonials.map((testimonial) => (
+                  <article key={`dup-${testimonial.id}`} className="mx-2 bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:scale-[1.02] transition-all" style={{ width: "320px", height: "560px" }}>
+                    <div className="p-4 h-full flex flex-col">
+                      {/* Header */}
+                      <div className="flex items-start gap-3 mb-3">
+                        <img 
+                          src={testimonial.avatar} 
+                          alt={testimonial.name} 
+                          className="w-10 h-10 rounded-full flex-shrink-0"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-1">
+                            <span className="font-bold text-gray-900 text-sm">{testimonial.name}</span>
+                            {testimonial.verified && <Verified className="w-3.5 h-3.5 text-purple-500 flex-shrink-0" />}
+                          </div>
+                          <div className="flex items-center gap-1 text-xs">
+                            <span className="text-gray-500">{testimonial.role}</span>
+                            <span className="text-gray-500">·</span>
+                            <span className="text-gray-500">{testimonial.time}</span>
+                          </div>
+                        </div>
+                        <button className="p-1.5 hover:bg-gray-100 rounded-full transition-colors">
+                          <MoreHorizontal className="w-4 h-4 text-gray-500" />
+                        </button>
+                      </div>
+                      
+                      {/* Testimonial text */}
+                      <div className="text-gray-900 text-sm leading-normal mb-3">
+                        {testimonial.text}
+                      </div>
+                      
+                      {/* Video attachment */}
+                      <div className="rounded-xl overflow-hidden border border-gray-200 relative flex-1 mb-3">
+                        <video 
+                          className="w-full h-full object-cover"
+                          poster={testimonial.poster}
+                          controls
+                          preload="metadata"
+                        >
+                          <source src={testimonial.video} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+
+                      {/* Engagement buttons */}
+                      <div className="flex items-center justify-between -mx-2">
+                        <button className="flex items-center gap-1 p-2 hover:bg-purple-50 rounded-full transition-colors group/btn">
+                          <MessageCircle className="w-4 h-4 text-gray-500 group-hover/btn:text-purple-600" />
+                          <span className="text-xs text-gray-500 group-hover/btn:text-purple-600">{testimonial.comments}</span>
+                        </button>
+                        <button className="flex items-center gap-1 p-2 hover:bg-green-50 rounded-full transition-colors group/btn">
+                          <Repeat2 className="w-4 h-4 text-gray-500 group-hover/btn:text-green-600" />
+                          <span className="text-xs text-gray-500 group-hover/btn:text-green-600">{testimonial.retweets}</span>
+                        </button>
+                        <button className="flex items-center gap-1 p-2 hover:bg-red-50 rounded-full transition-colors group/btn">
+                          <Heart className="w-4 h-4 text-gray-500 group-hover/btn:text-red-600" />
+                          <span className="text-xs text-gray-500 group-hover/btn:text-red-600">{testimonial.likes}</span>
+                        </button>
+                        <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group/btn">
+                          <Share className="w-4 h-4 text-gray-500 group-hover/btn:text-blue-600" />
+                        </button>
+                        <button className="p-2 hover:bg-blue-50 rounded-full transition-colors group/btn">
+                          <Bookmark className="w-4 h-4 text-gray-500 group-hover/btn:text-blue-600" />
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
 
