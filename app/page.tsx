@@ -384,7 +384,7 @@ export default function Home() {
             >
               <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                 <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">100% money-back guarantee</span>
+                <span className="text-sm font-medium text-purple-900">100% money back guarantee</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                 <Check className="w-4 h-4 text-purple-600" />
@@ -1275,7 +1275,7 @@ export default function Home() {
                 <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group transition-all duration-300 hover:bg-primary/20">
                   <Check className="w-5 h-5 text-primary" />
                 </div>
-                <span className="text-muted-foreground text-[16px]">100% Risk-Free</span>
+                <span className="text-muted-foreground text-[16px]">100% Risk Free</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group transition-all duration-300 hover:bg-primary/20">
