@@ -32,7 +32,7 @@ const CostSavingsCard = () => {
             </div>
           </div>
           
-          {/* One-time cost */}
+          {/* One time cost */}
           <div className="flex items-center gap-4">
             <div className="flex items-baseline gap-1">
               <span className="text-green-600 text-sm font-medium">To</span>
