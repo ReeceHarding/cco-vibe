@@ -13,41 +13,41 @@ const CostSavingsCard = () => {
   
   return (
     <div 
-      className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group h-full"
+      className="md:col-span-6 rounded-xl bg-muted/80 p-6 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="flex flex-col h-full">
-        <h3 className="text-xl font-semibold mb-3 text-foreground">Save millions on software costs</h3>
-        <p className="text-muted-foreground mb-8">Replace expensive SaaS subscriptions with custom built tools that you own forever. No more monthly fees.</p>
+        <h3 className="text-lg font-semibold mb-2 text-foreground">Save millions on software costs</h3>
+        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">Replace expensive SaaS subscriptions with custom built tools that you own forever. No more monthly fees.</p>
         
         {/* Cost comparison */}
-        <div className="flex flex-col gap-4 mb-6">
+        <div className="flex flex-col gap-3 mb-4">
           {/* Annual SaaS costs */}
           <div className="flex items-center gap-4">
             <div className="flex items-baseline gap-1">
-              <span className="text-muted-foreground text-sm">From</span>
-              <span className="text-2xl font-bold text-muted-foreground/70 line-through">$240k</span>
-              <span className="text-sm text-muted-foreground">/year</span>
+              <span className="text-muted-foreground text-xs">From</span>
+              <span className="text-xl font-bold text-muted-foreground/70 line-through">$240k</span>
+              <span className="text-xs text-muted-foreground">/year</span>
             </div>
           </div>
           
           {/* One time cost */}
           <div className="flex items-center gap-4">
             <div className="flex items-baseline gap-1">
-              <span className="text-green-600 text-sm font-medium">To</span>
+              <span className="text-green-600 text-xs font-medium">To</span>
               <span className={`font-bold text-green-600 transition-all duration-500 ${
-                isHovered ? 'text-4xl' : 'text-3xl'
+                isHovered ? 'text-3xl' : 'text-2xl'
               }`}>
                 $20k
               </span>
-              <span className="text-sm text-green-600 font-medium">one time</span>
+              <span className="text-xs text-green-600 font-medium">one time</span>
             </div>
           </div>
         </div>
 
         {/* Chart - pushed to bottom with mt-auto */}
-        <div className="h-32 w-full sm:h-40 mt-auto relative">
+        <div className="h-20 w-full sm:h-24 mt-auto relative">
           <svg className="h-full w-full" viewBox="0 0 596 256" preserveAspectRatio="none">
             <title>Cost Savings Chart</title>
             <desc>Annual savings chart showing dramatic cost reduction</desc>
@@ -262,19 +262,19 @@ export default function Home() {
       ]
     },
     {
-      name: "Standard", 
-      description: "Without testimonial",
+      name: "Rush Package", 
+      description: "Need it yesterday?",
       price: "30-40k",
       industryPrice: "80-100k",
       savings: "60%",
       features: [
         "Full custom application",
-        "2 week delivery",
-        "Progress updates every 2 days",
+        "1 week or less delivery",
+        "Twice daily updates",
         "100% satisfaction guarantee", 
         "Source code ownership",
         "14 days of free revisions",
-        "Standard support"
+        "24/7 emergency support"
       ]
     }
   ]
@@ -308,6 +308,62 @@ export default function Home() {
       comments: 18,
       retweets: 97,
       likes: 523
+    },
+    {
+      id: 3,
+      name: "Emily Watson",
+      role: "Founder @FinTech",
+      avatar: "https://unavatar.io/twitter/naval",
+      verified: true,
+      time: "3d",
+      text: "Built our MVP in 14 days. We went from idea to live product with real users. The AI powered analytics they included helped us find product market fit immediately. Worth every penny!",
+      video: "/videos/testimonials/testimonial-3.mp4",
+      poster: "/images/testimonials/testimonial-3-poster.jpg",
+      comments: 42,
+      retweets: 218,
+      likes: 1243
+    },
+    {
+      id: 4,
+      name: "David Park",
+      role: "Head of Ops @Logistics",
+      avatar: "https://unavatar.io/twitter/balajis",
+      verified: true,
+      time: "5d",
+      text: "Automated our entire inventory management system. What used to take 3 full time employees now runs automatically. ROI in less than 2 months. These guys are wizards!",
+      video: "/videos/testimonials/testimonial-4.mp4",
+      poster: "/images/testimonials/testimonial-4-poster.jpg",
+      comments: 31,
+      retweets: 156,
+      likes: 789
+    },
+    {
+      id: 5,
+      name: "Jessica Liu",
+      role: "VP Product @SaaS",
+      avatar: "https://unavatar.io/twitter/esthercrawford",
+      verified: false,
+      time: "1w",
+      text: "They rebuilt our customer portal from scratch with AI support features. Customer satisfaction up 40%, support tickets down 60%. Delivered ahead of schedule too!",
+      video: "/videos/testimonials/testimonial-5.mp4",
+      poster: "/images/testimonials/testimonial-5-poster.jpg",
+      comments: 27,
+      retweets: 89,
+      likes: 456
+    },
+    {
+      id: 6,
+      name: "Robert Thompson",
+      role: "CEO @Manufacturing",
+      avatar: "https://unavatar.io/twitter/jason",
+      verified: true,
+      time: "2w",
+      text: "Custom ERP system that replaced 5 different tools we were using. Saves us $200k/year in licensing fees. The AI predictions for demand forecasting are game changing.",
+      video: "/videos/testimonials/testimonial-6.mp4",
+      poster: "/images/testimonials/testimonial-6-poster.jpg",
+      comments: 38,
+      retweets: 124,
+      likes: 678
     }
   ]
 
@@ -316,7 +372,7 @@ export default function Home() {
       <Navigation showNavigation={showNavigation} />
       <main className="relative min-h-screen overflow-hidden">
         {/* Hero Section - Adjusted padding since nav is hidden initially */}
-        <div className="container relative z-10 pt-20 md:pt-28 pb-20 md:pb-32">
+        <div className="container relative z-10 pt-24 md:pt-32 pb-20 md:pb-32">
           {/* Simplified decorative elements */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse" />
@@ -764,7 +820,7 @@ export default function Home() {
         {/* Benefits Grid Section */}
         <section className="py-12 md:py-24 bg-background">
           <div className="container max-w-7xl">
-            <div className="text-center mx-auto mb-20">
+            <div className="text-center mx-auto mb-12">
               <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Why Choose Us</h2>
               <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
                 Build faster, cheaper, better with{" "}
@@ -773,40 +829,36 @@ export default function Home() {
             </div>
 
             {/* Benefits grid with custom layout */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
               {/* 10x Faster Development - 4 columns */}
-              <div className="md:col-span-4 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group h-full">
-                <div className="flex flex-col items-center text-center h-full">
-                  <div className="mb-6 w-32 h-32 relative">
-                    <div className="absolute inset-0 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center overflow-hidden transition-all duration-300">
-                      <div className="w-24 h-24 rounded-full bg-white/80 flex items-center justify-center relative z-10">
-                        <Gauge className="w-12 h-12 text-primary" />
-                      </div>
-                    </div>
+              <div className="md:col-span-4 rounded-xl bg-muted/80 p-6 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group">
+                <div className="flex flex-col h-full">
+                  <div className="mb-3 w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
+                    <Gauge className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">10x Faster Development</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">10x Faster Development</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     We leverage cutting edge AI to write code 10x faster. What takes others months, we deliver in weeks.
                   </p>
                 </div>
               </div>
 
               {/* American Team, Perfect Communication - 5 columns */}
-              <div className="md:col-span-5 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/card h-full">
+              <div className="md:col-span-5 rounded-xl bg-muted/80 p-6 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/card">
                 <div className="flex flex-col h-full">
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">All American Team</h3>
-                  <p className="text-muted-foreground mb-6">Perfect English, same time zones, exceptional taste in design. We're graduates of the world's best AI bootcamp with years of experience building production software.</p>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">All American Team</h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed flex-1">Perfect English, same time zones, exceptional taste in design. We're graduates of the world's best AI bootcamp with years of experience building production software.</p>
                   
                   {/* Team showcase */}
-                  <div className="mt-auto flex items-center gap-4">
+                  <div className="flex items-center gap-3">
                     <div className="flex -space-x-2">
                       {["1", "2", "3", "4"].map((i) => (
-                        <div key={i} className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center text-white font-semibold border-2 border-white">
+                        <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center text-white font-semibold border-2 border-white text-sm">
                           {i}
                         </div>
                       ))}
                     </div>
-                    <div className="text-sm">
+                    <div className="text-xs">
                       <p className="font-semibold text-foreground">20+ years combined experience</p>
                       <p className="text-muted-foreground">Senior developers only</p>
                     </div>
@@ -815,45 +867,155 @@ export default function Home() {
               </div>
 
               {/* 100% Satisfaction Guarantee - 3 columns */}
-              <div className="md:col-span-3 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/ideas h-full">
-                <div className="flex flex-col h-full text-center justify-between">
-                  <div>
-                    <Shield className="w-16 h-16 text-primary mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">100% Risk Free</h3>
+              <div className="md:col-span-3 rounded-xl bg-muted/80 p-6 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group/ideas">
+                <div className="flex flex-col h-full">
+                  <div className="mb-3 w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-primary" />
                   </div>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">100% Risk Free</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Don't pay until you're completely satisfied. We'll refine until it's perfect.
                   </p>
                 </div>
               </div>
 
-              {/* Save Money Immediately - 6 columns */}
+              {/* Save Money Immediately - 6 columns - Update the component too */}
               <CostSavingsCard />
 
               {/* Daily Updates - 6 columns */}
-              <div className="md:col-span-6 rounded-xl bg-muted/80 p-8 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group h-full">
+              <div className="md:col-span-6 rounded-xl bg-muted/80 p-6 shadow-md border border-border/40 relative overflow-hidden transition-all hover:scale-[1.02] hover:shadow-lg group">
                 <div className="flex flex-col h-full">
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Daily Progress Updates</h3>
-                  <p className="text-muted-foreground mb-6">Never wonder what's happening with your project. Get daily updates showing exactly what we built, with screenshots and videos.</p>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">Daily Progress Updates</h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    Never wonder what's happening with your project. Get daily updates showing exactly what we built, with screenshots and videos.
+                  </p>
                   
-                  {/* Progress visualization */}
-                  <div className="mt-auto space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm text-muted-foreground">Day 1: Database schema & authentication</span>
+                  {/* Progress stages */}
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-start gap-3 group/stage">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-500/10 border border-green-500/20 flex-shrink-0 group-hover/stage:scale-110 transition-transform">
+                        <span className="text-xs font-bold text-green-600">1</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-foreground">Day 1-3: Foundation</p>
+                        <p className="text-xs text-muted-foreground">Database schema, authentication & core setup</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: "0.3s" }}></div>
-                      <span className="text-sm text-muted-foreground">Day 3: Core features implemented</span>
+                    
+                    <div className="flex items-start gap-3 group/stage">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex-shrink-0 group-hover/stage:scale-110 transition-transform">
+                        <span className="text-xs font-bold text-blue-600">2</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-foreground">Day 4-7: Core Features</p>
+                        <p className="text-xs text-muted-foreground">Main functionality, UI components & workflows</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: "0.6s" }}></div>
-                      <span className="text-sm text-muted-foreground">Day 7: AI features integrated</span>
+                    
+                    <div className="flex items-start gap-3 group/stage">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/20 flex-shrink-0 group-hover/stage:scale-110 transition-transform">
+                        <span className="text-xs font-bold text-purple-600">3</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-foreground">Day 8-12: AI Integration</p>
+                        <p className="text-xs text-muted-foreground">Smart features, automation & AI capabilities</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full animate-pulse" style={{ animationDelay: "0.9s" }}></div>
-                      <span className="text-sm text-muted-foreground">Day 14: Final delivery & handoff</span>
+                    
+                    <div className="flex items-start gap-3 group/stage">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-600/20 to-purple-400/20 border border-purple-500/30 flex-shrink-0 group-hover/stage:scale-110 transition-transform">
+                        <span className="text-xs font-bold text-transparent bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text">4</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-foreground">Day 13-14: Polish & Delivery</p>
+                        <p className="text-xs text-muted-foreground">Testing, optimization & final handoff</p>
+                      </div>
                     </div>
+                  </div>
+                  
+                  {/* Interactive progress graph */}
+                  <div className="h-20 w-full sm:h-24 mt-auto relative">
+                    <svg className="h-full w-full" viewBox="0 0 596 96" preserveAspectRatio="none">
+                      <title>Development Progress Timeline</title>
+                      <desc>14-day development timeline showing progress milestones</desc>
+                      
+                      {/* Grid lines */}
+                      <g className="recharts-cartesian-grid">
+                        <g className="recharts-cartesian-grid-horizontal">
+                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="24" x2="596" y2="24"></line>
+                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="48" x2="596" y2="48"></line>
+                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="72" x2="596" y2="72"></line>
+                          <line className="stroke-divider stroke-1" stroke="#e5e7eb" fill="none" x1="0" y1="96" x2="596" y2="96"></line>
+                        </g>
+                      </g>
+                      
+                      <defs>
+                        <linearGradient id="progressFill" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#22c55e" stopOpacity="0.4"></stop>
+                          <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.3"></stop>
+                          <stop offset="95%" stopColor="#a855f7" stopOpacity="0"></stop>
+                        </linearGradient>
+                        <linearGradient id="progressLine" x1="0" y1="0" x2="1" y2="0">
+                          <stop offset="0%" stopColor="#22c55e" stopOpacity="0.8"></stop>
+                          <stop offset="33%" stopColor="#3b82f6" stopOpacity="0.8"></stop>
+                          <stop offset="66%" stopColor="#a855f7" stopOpacity="0.8"></stop>
+                          <stop offset="100%" stopColor="#9333ea" stopOpacity="1"></stop>
+                        </linearGradient>
+                      </defs>
+                      
+                      {/* Progress area */}
+                      <g className="recharts-layer recharts-area">
+                        <g className="recharts-layer">
+                          <path 
+                            className="recharts-curve recharts-area-area transition-all duration-700"
+                            fill="url(#progressFill)"
+                            stroke="none"
+                            fillOpacity="0.6"
+                            d="M0,72 C42.5,72 42.5,72 85,64 C127.5,56 170,48 212.5,40 C255,32 297.5,24 340,20 C382.5,16 425,14 467.5,12 C510,10 552.5,8 596,8 L596,96 L0,96 Z"
+                          />
+                          <path 
+                            className="recharts-curve recharts-area-curve transition-all duration-700"
+                            stroke="url(#progressLine)"
+                            fill="none"
+                            strokeWidth="2"
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            d="M0,72 C42.5,72 42.5,72 85,64 C127.5,56 170,48 212.5,40 C255,32 297.5,24 340,20 C382.5,16 425,14 467.5,12 C510,10 552.5,8 596,8"
+                          />
+                        </g>
+                      </g>
+                      
+                      {/* Milestone markers */}
+                      <g className="milestone-markers">
+                        {/* Day 1 - Foundation Start */}
+                        <g className="milestone-group">
+                          <circle cx="0" cy="72" r="4" fill="#22c55e" className="animate-scale-in" style={{animationDelay: '0s'}} />
+                          <circle cx="0" cy="72" r="8" fill="#22c55e" opacity="0.3" className="animate-ping" />
+                        </g>
+                        
+                        {/* Day 3 - Foundation Complete */}
+                        <g className="milestone-group">
+                          <circle cx="127.5" cy="56" r="4" fill="#22c55e" className="animate-scale-in" style={{animationDelay: '0.3s'}} />
+                        </g>
+                        
+                        {/* Day 7 - Core Features Complete */}
+                        <g className="milestone-group">
+                          <circle cx="297.5" cy="24" r="4" fill="#3b82f6" className="animate-scale-in" style={{animationDelay: '0.6s'}} />
+                          <circle cx="297.5" cy="24" r="8" fill="#3b82f6" opacity="0.3" className="animate-ping" style={{animationDelay: '0.6s'}} />
+                        </g>
+                        
+                        {/* Day 12 - AI Integration Complete */}
+                        <g className="milestone-group">
+                          <circle cx="510" cy="10" r="4" fill="#a855f7" className="animate-scale-in" style={{animationDelay: '0.9s'}} />
+                        </g>
+                        
+                        {/* Day 14 - Final Delivery */}
+                        <g className="milestone-group">
+                          <circle cx="596" cy="8" r="5" fill="#9333ea" className="animate-scale-in" style={{animationDelay: '1.2s'}} />
+                          <circle cx="596" cy="8" r="10" fill="#9333ea" opacity="0.3" className="animate-ping" style={{animationDelay: '1.2s'}} />
+                        </g>
+                      </g>
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -1313,7 +1475,7 @@ export default function Home() {
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg">
                     <Code2 className="w-6 h-6 text-white" />
                   </div>
-                  <span className="font-semibold text-xl text-foreground">AI Dev Agency</span>
+                  <span className="font-semibold text-2xl text-foreground">AI Dev Agency</span>
                 </div>
                 <p className="text-muted-foreground text-[15px]">
                   © 2025 AI Dev Agency. All rights reserved.
