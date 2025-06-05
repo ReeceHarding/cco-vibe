@@ -312,20 +312,6 @@ export const InteractiveCostSavingsCard = () => {
             )}
           </svg>
           
-          {/* Legend - positioned in bottom left to avoid overlap */}
-          <div className="absolute bottom-2 left-2 bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-border/20">
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-0.5 bg-purple-700"></div>
-                <span className="text-xs text-muted-foreground">SaaS (recurring)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-0.5 bg-purple-500"></div>
-                <span className="text-xs text-muted-foreground">Custom (one-time)</span>
-              </div>
-            </div>
-          </div>
-          
           {/* Summary statistics - simplified and more elegant */}
           {isCardHovered && (
             <div className="absolute top-2 right-2 animate-fadeIn">

@@ -30,7 +30,7 @@ export const InteractiveProgressTimeline = () => {
       icon: MessageSquare,
       color: "#e9d5ff", // purple-200
       bgColor: "#f3e8ff", // purple-100
-      position: { x: 40, y: 200 }
+      position: { x: 40, y: 250 }
     },
     {
       day: 3,
@@ -41,7 +41,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Palette,
       color: "#d8b4fe", // purple-300
       bgColor: "#e9d5ff", // purple-200
-      position: { x: 140, y: 180 }
+      position: { x: 140, y: 220 }
     },
     {
       day: 5,
@@ -52,7 +52,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Database,
       color: "#c084fc", // purple-400
       bgColor: "#d8b4fe", // purple-300
-      position: { x: 240, y: 160 }
+      position: { x: 240, y: 190 }
     },
     {
       day: 7,
@@ -63,7 +63,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Code,
       color: "#a855f7", // purple-500
       bgColor: "#c084fc", // purple-400
-      position: { x: 340, y: 140 }
+      position: { x: 340, y: 160 }
     },
     {
       day: 10,
@@ -74,7 +74,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Cpu,
       color: "#9333ea", // purple-600
       bgColor: "#a855f7", // purple-500
-      position: { x: 480, y: 120 }
+      position: { x: 480, y: 130 }
     },
     {
       day: 12,
@@ -96,7 +96,7 @@ export const InteractiveProgressTimeline = () => {
       icon: CheckCircle,
       color: "#6b21a8", // purple-800
       bgColor: "#7c3aed", // purple-700
-      position: { x: 680, y: 105 }
+      position: { x: 680, y: 100 }
     }
   ]
   
@@ -186,8 +186,8 @@ export const InteractiveProgressTimeline = () => {
         </div>
         
         {/* Timeline visualization - increased height and padding */}
-        <div className="h-48 w-full mt-auto relative pt-20">
-          <svg className="h-full w-full" viewBox="0 0 720 240" preserveAspectRatio="xMidYMid meet">
+        <div className="h-64 w-full mt-auto relative">
+          <svg className="h-full w-full" viewBox="0 0 720 300" preserveAspectRatio="xMidYMid meet">
             <title>Development Progress Timeline</title>
             <desc>14-day development timeline with interactive milestones</desc>
             
@@ -231,7 +231,7 @@ export const InteractiveProgressTimeline = () => {
             
             {/* Grid lines - adjusted for new viewBox */}
             <g className="grid">
-              {[120, 160, 200].map((y) => (
+              {[150, 200, 250].map((y) => (
                 <line
                   key={y}
                   x1="20"
@@ -244,18 +244,18 @@ export const InteractiveProgressTimeline = () => {
                   opacity="0.3"
                 />
               ))}
-              <line x1="20" y1="220" x2="700" y2="220" stroke="#e5e7eb" strokeWidth="1" opacity="0.5" />
+              <line x1="20" y1="280" x2="700" y2="280" stroke="#e5e7eb" strokeWidth="1" opacity="0.5" />
             </g>
             
             {/* X-axis labels - adjusted position */}
             <g className="text-xs fill-muted-foreground">
-              <text x={milestones[0].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 1</text>
-              <text x={milestones[1].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 3</text>
-              <text x={milestones[2].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 5</text>
-              <text x={milestones[3].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 7</text>
-              <text x={milestones[4].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 10</text>
-              <text x={milestones[5].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 12</text>
-              <text x={milestones[6].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 14</text>
+              <text x={milestones[0].position.x} y="295" textAnchor="middle" className="text-[10px]">Day 1</text>
+              <text x={milestones[1].position.x} y="295" textAnchor="middle" className="text-[10px]">Day 3</text>
+              <text x={milestones[2].position.x} y="295" textAnchor="middle" className="text-[10px]">Day 5</text>
+              <text x={milestones[3].position.x} y="295" textAnchor="middle" className="text-[10px]">Day 7</text>
+              <text x={milestones[4].position.x} y="295" textAnchor="middle" className="text-[10px]">Day 10</text>
+              <text x={milestones[5].position.x} y="295" textAnchor="middle" className="text-[10px]">Day 12</text>
+              <text x={milestones[6].position.x} y="295" textAnchor="middle" className="text-[10px]">Day 14</text>
             </g>
             
             {/* Update milestone positions for better spacing */}
@@ -265,7 +265,7 @@ export const InteractiveProgressTimeline = () => {
                 className="transition-all duration-700"
                 fill="url(#progressFill)"
                 stroke="none"
-                d={`${generatePath()} L${milestones[milestones.length - 1].position.x},220 L${milestones[0].position.x},220 Z`}
+                d={`${generatePath()} L${milestones[milestones.length - 1].position.x},280 L${milestones[0].position.x},280 Z`}
               />
               
               {/* Line */}

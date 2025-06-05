@@ -1206,10 +1206,10 @@ export default function Home() {
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-400 rounded-xl flex items-center justify-center shadow-lg">
                     <Code2 className="w-6 h-6 text-white" />
                   </div>
-                  <span className="font-semibold text-2xl text-foreground">AI Dev Agency</span>
+                  <span className="font-semibold text-2xl text-foreground">CCO Vibe</span>
                 </div>
                 <p className="text-muted-foreground text-[15px]">
-                  © 2025 AI Dev Agency. All rights reserved.
+                  © 2025 CCO Vibe. All rights reserved.
                 </p>
               </div>
 
@@ -1225,7 +1225,7 @@ export default function Home() {
                   </li>
                   <li>
                     <a href="#" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
-                      hello@aidevagency.com
+                      hello@ccovibe.com
                     </a>
                   </li>
                 </ul>

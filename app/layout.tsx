@@ -15,32 +15,33 @@ const geist = GeistSans;
 
 // Metadata configuration
 export const metadata: Metadata = {
-  title: "AI Dev Agency - Build Custom Apps 10x Faster",
-  description: "Replace expensive SaaS with custom solutions. We build in 2 weeks what others deliver in 4 months. Don't pay until you're 100% satisfied.",
-  keywords: "custom software development, AI development, MVP development, internal tools, SaaS replacement, rapid development",
-  authors: [{ name: "Postel" }],
+  title: "CCO Vibe - Build Custom Apps 10x Faster",
+  description: "Custom AI-powered software development. Build internal tools, MVPs, and automation in 2 weeks instead of 4 months. 100% satisfaction guaranteed.",
+  keywords: ["custom software development", "AI development", "MVP development", "internal tools", "automation", "SaaS replacement"],
+  authors: [{ name: "CCO Vibe Team" }],
+  creator: "CCO Vibe",
   openGraph: {
-    title: "AI Dev Agency - Build Custom Apps 10x Faster",
-    description: "Replace expensive SaaS with custom solutions. We build in 2 weeks what others deliver in 4 months. Don't pay until you're 100% satisfied.",
+    title: "CCO Vibe - Build Custom Apps 10x Faster",
+    description: "Replace expensive SaaS with custom solutions. We build in 2 weeks what others deliver in 4 months. 100% satisfaction guaranteed.",
+    url: "https://ccovibe.com",
     type: "website",
     locale: "en_US",
-    url: "https://aidevagency.com",
-    siteName: "AI Dev Agency",
+    siteName: "CCO Vibe",
     images: [
       {
-        url: "https://aidevagency.com/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "AI Dev Agency - Custom Software Development"
+        alt: "CCO Vibe - Custom Software Development"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Dev Agency - Build Custom Apps 10x Faster",
+    title: "CCO Vibe - Build Custom Apps 10x Faster",
     description: "Replace expensive SaaS with custom solutions. We build in 2 weeks what others deliver in 4 months.",
-    images: ["https://aidevagency.com/twitter-image.png"],
-    creator: "@aidevagency"
+    images: ["/og-image.png"],
+    creator: "@ccovibe"
   },
   robots: {
     index: true,
@@ -53,8 +54,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  category: "technology",
   alternates: {
-    canonical: "https://aidevagency.com"
+    canonical: "https://ccovibe.com"
   }
 };
 
