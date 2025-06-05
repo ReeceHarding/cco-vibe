@@ -30,7 +30,7 @@ export const InteractiveProgressTimeline = () => {
       icon: MessageSquare,
       color: "#e9d5ff", // purple-200
       bgColor: "#f3e8ff", // purple-100
-      position: { x: 40, y: 120 }
+      position: { x: 40, y: 200 }
     },
     {
       day: 3,
@@ -41,7 +41,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Palette,
       color: "#d8b4fe", // purple-300
       bgColor: "#e9d5ff", // purple-200
-      position: { x: 140, y: 100 }
+      position: { x: 140, y: 180 }
     },
     {
       day: 5,
@@ -52,7 +52,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Database,
       color: "#c084fc", // purple-400
       bgColor: "#d8b4fe", // purple-300
-      position: { x: 240, y: 80 }
+      position: { x: 240, y: 160 }
     },
     {
       day: 7,
@@ -63,7 +63,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Code,
       color: "#a855f7", // purple-500
       bgColor: "#c084fc", // purple-400
-      position: { x: 340, y: 60 }
+      position: { x: 340, y: 140 }
     },
     {
       day: 10,
@@ -74,7 +74,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Cpu,
       color: "#9333ea", // purple-600
       bgColor: "#a855f7", // purple-500
-      position: { x: 480, y: 40 }
+      position: { x: 480, y: 120 }
     },
     {
       day: 12,
@@ -85,7 +85,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Zap,
       color: "#7c3aed", // purple-700
       bgColor: "#9333ea", // purple-600
-      position: { x: 580, y: 30 }
+      position: { x: 580, y: 110 }
     },
     {
       day: 14,
@@ -96,7 +96,7 @@ export const InteractiveProgressTimeline = () => {
       icon: CheckCircle,
       color: "#6b21a8", // purple-800
       bgColor: "#7c3aed", // purple-700
-      position: { x: 680, y: 25 }
+      position: { x: 680, y: 105 }
     }
   ]
   
@@ -155,7 +155,7 @@ export const InteractiveProgressTimeline = () => {
       <div className="flex flex-col h-full">
         <h3 className="text-lg font-semibold mb-2 text-foreground">Daily Progress Updates</h3>
         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-          Track your project's progress with daily updates. Hover over milestones to see what you'll receive at each stage.
+          We'll update you daily on your project's progress. Hover over milestones to see what you'll receive at each stage.
         </p>
         
         {/* Phase indicators */}
@@ -185,9 +185,9 @@ export const InteractiveProgressTimeline = () => {
           ))}
         </div>
         
-        {/* Timeline visualization */}
-        <div className="h-40 w-full mt-auto relative">
-          <svg className="h-full w-full" viewBox="0 0 720 160" preserveAspectRatio="xMidYMid meet">
+        {/* Timeline visualization - increased height and padding */}
+        <div className="h-48 w-full mt-auto relative pt-20">
+          <svg className="h-full w-full" viewBox="0 0 720 240" preserveAspectRatio="xMidYMid meet">
             <title>Development Progress Timeline</title>
             <desc>14-day development timeline with interactive milestones</desc>
             
@@ -229,9 +229,9 @@ export const InteractiveProgressTimeline = () => {
               </filter>
             </defs>
             
-            {/* Grid lines */}
+            {/* Grid lines - adjusted for new viewBox */}
             <g className="grid">
-              {[40, 80, 120].map((y) => (
+              {[120, 160, 200].map((y) => (
                 <line
                   key={y}
                   x1="20"
@@ -244,28 +244,28 @@ export const InteractiveProgressTimeline = () => {
                   opacity="0.3"
                 />
               ))}
-              <line x1="20" y1="140" x2="700" y2="140" stroke="#e5e7eb" strokeWidth="1" opacity="0.5" />
+              <line x1="20" y1="220" x2="700" y2="220" stroke="#e5e7eb" strokeWidth="1" opacity="0.5" />
             </g>
             
-            {/* X-axis labels */}
+            {/* X-axis labels - adjusted position */}
             <g className="text-xs fill-muted-foreground">
-              <text x={milestones[0].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 1</text>
-              <text x={milestones[1].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 3</text>
-              <text x={milestones[2].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 5</text>
-              <text x={milestones[3].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 7</text>
-              <text x={milestones[4].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 10</text>
-              <text x={milestones[5].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 12</text>
-              <text x={milestones[6].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 14</text>
+              <text x={milestones[0].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 1</text>
+              <text x={milestones[1].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 3</text>
+              <text x={milestones[2].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 5</text>
+              <text x={milestones[3].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 7</text>
+              <text x={milestones[4].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 10</text>
+              <text x={milestones[5].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 12</text>
+              <text x={milestones[6].position.x} y="235" textAnchor="middle" className="text-[10px]">Day 14</text>
             </g>
             
-            {/* Progress curve */}
+            {/* Update milestone positions for better spacing */}
             <g className="progress-curve">
               {/* Area fill */}
               <path
                 className="transition-all duration-700"
                 fill="url(#progressFill)"
                 stroke="none"
-                d={`${generatePath()} L${milestones[milestones.length - 1].position.x},140 L${milestones[0].position.x},140 Z`}
+                d={`${generatePath()} L${milestones[milestones.length - 1].position.x},220 L${milestones[0].position.x},220 Z`}
               />
               
               {/* Line */}
@@ -323,7 +323,7 @@ export const InteractiveProgressTimeline = () => {
                       <g className="animate-fadeIn">
                         <rect
                           x={milestone.position.x - 90}
-                          y={milestone.position.y - 85}
+                          y={milestone.position.y - 95}
                           width="180"
                           height="65"
                           rx="8"
@@ -334,7 +334,7 @@ export const InteractiveProgressTimeline = () => {
                         />
                         <text
                           x={milestone.position.x}
-                          y={milestone.position.y - 65}
+                          y={milestone.position.y - 75}
                           textAnchor="middle"
                           className="text-sm font-semibold fill-foreground"
                         >
@@ -342,7 +342,7 @@ export const InteractiveProgressTimeline = () => {
                         </text>
                         <text
                           x={milestone.position.x}
-                          y={milestone.position.y - 48}
+                          y={milestone.position.y - 58}
                           textAnchor="middle"
                           className="text-xs fill-muted-foreground"
                         >
@@ -350,7 +350,7 @@ export const InteractiveProgressTimeline = () => {
                         </text>
                         <text
                           x={milestone.position.x}
-                          y={milestone.position.y - 32}
+                          y={milestone.position.y - 42}
                           textAnchor="middle"
                           className="text-[11px] fill-purple-600 font-medium"
                         >
