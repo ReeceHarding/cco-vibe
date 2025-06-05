@@ -291,7 +291,7 @@ export default function Home() {
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              Replace expensive SaaS with custom internal tools. Built by American developers using AI to code 10x faster, saving you 75% on development costs. And the best part? You don't pay until you're completely happy with the results.
+              You won't pay a single dollar until you're completely happy with what we build.
             </p>
 
             {/* Feature pills - Updated benefits */}
