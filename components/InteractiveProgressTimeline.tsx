@@ -30,7 +30,7 @@ export const InteractiveProgressTimeline = () => {
       icon: MessageSquare,
       color: "#e9d5ff", // purple-200
       bgColor: "#f3e8ff", // purple-100
-      position: { x: 0, y: 72 }
+      position: { x: 40, y: 120 }
     },
     {
       day: 3,
@@ -41,7 +41,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Palette,
       color: "#d8b4fe", // purple-300
       bgColor: "#e9d5ff", // purple-200
-      position: { x: 127.5, y: 56 }
+      position: { x: 140, y: 100 }
     },
     {
       day: 5,
@@ -52,7 +52,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Database,
       color: "#c084fc", // purple-400
       bgColor: "#d8b4fe", // purple-300
-      position: { x: 212.5, y: 40 }
+      position: { x: 240, y: 80 }
     },
     {
       day: 7,
@@ -63,7 +63,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Code,
       color: "#a855f7", // purple-500
       bgColor: "#c084fc", // purple-400
-      position: { x: 297.5, y: 24 }
+      position: { x: 340, y: 60 }
     },
     {
       day: 10,
@@ -74,7 +74,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Cpu,
       color: "#9333ea", // purple-600
       bgColor: "#a855f7", // purple-500
-      position: { x: 425, y: 14 }
+      position: { x: 480, y: 40 }
     },
     {
       day: 12,
@@ -85,7 +85,7 @@ export const InteractiveProgressTimeline = () => {
       icon: Zap,
       color: "#7c3aed", // purple-700
       bgColor: "#9333ea", // purple-600
-      position: { x: 510, y: 10 }
+      position: { x: 580, y: 30 }
     },
     {
       day: 14,
@@ -96,22 +96,58 @@ export const InteractiveProgressTimeline = () => {
       icon: CheckCircle,
       color: "#6b21a8", // purple-800
       bgColor: "#7c3aed", // purple-700
-      position: { x: 596, y: 8 }
+      position: { x: 680, y: 25 }
     }
   ]
   
-  // Group milestones by phase
+  // Group milestones by phase with proper color classes
   const phases = [
-    { name: "Planning", days: "Days 1-3", color: "purple-400", milestones: milestones.slice(0, 2) },
-    { name: "Core Development", days: "Days 4-7", color: "purple-500", milestones: milestones.slice(2, 4) },
-    { name: "AI Integration", days: "Days 8-12", color: "purple-600", milestones: milestones.slice(4, 6) },
-    { name: "Polish & Delivery", days: "Days 13-14", color: "purple-700", milestones: milestones.slice(6, 7) }
+    { 
+      name: "Planning", 
+      days: "Days 1-3", 
+      colorClass: "text-purple-400",
+      bgClass: "bg-purple-400/10 border-purple-400",
+      milestones: milestones.slice(0, 2) 
+    },
+    { 
+      name: "Core Development", 
+      days: "Days 4-7", 
+      colorClass: "text-purple-500",
+      bgClass: "bg-purple-500/10 border-purple-500",
+      milestones: milestones.slice(2, 4) 
+    },
+    { 
+      name: "AI Integration", 
+      days: "Days 8-12", 
+      colorClass: "text-purple-600",
+      bgClass: "bg-purple-600/10 border-purple-600",
+      milestones: milestones.slice(4, 6) 
+    },
+    { 
+      name: "Polish & Delivery", 
+      days: "Days 13-14", 
+      colorClass: "text-purple-700",
+      bgClass: "bg-purple-700/10 border-purple-700",
+      milestones: milestones.slice(6, 7) 
+    }
   ]
   
   // Generate smooth curve path
   const generatePath = () => {
-    const points = milestones.map(m => `${m.position.x},${m.position.y}`)
-    return `M${points[0]} C${points[0]} ${points[1]} ${points[1]} C${points[1]} ${points[2]} ${points[2]} C${points[2]} ${points[3]} ${points[3]} C${points[3]} ${points[4]} ${points[4]} C${points[4]} ${points[5]} ${points[5]} C${points[5]} ${points[6]} ${points[6]}`
+    let path = `M${milestones[0].position.x},${milestones[0].position.y}`
+    
+    for (let i = 1; i < milestones.length; i++) {
+      const prev = milestones[i - 1]
+      const curr = milestones[i]
+      const cp1x = prev.position.x + (curr.position.x - prev.position.x) * 0.5
+      const cp1y = prev.position.y
+      const cp2x = prev.position.x + (curr.position.x - prev.position.x) * 0.5
+      const cp2y = curr.position.y
+      
+      path += ` C${cp1x},${cp1y} ${cp2x},${cp2y} ${curr.position.x},${curr.position.y}`
+    }
+    
+    return path
   }
   
   return (
@@ -129,14 +165,14 @@ export const InteractiveProgressTimeline = () => {
               key={phase.name}
               className={`p-3 rounded-lg border cursor-pointer transition-all duration-200 ${
                 selectedPhase === phase.name 
-                  ? `bg-${phase.color}/10 border-${phase.color}` 
+                  ? phase.bgClass
                   : 'hover:bg-muted/50'
               }`}
               onMouseEnter={() => setSelectedPhase(phase.name)}
               onMouseLeave={() => setSelectedPhase(null)}
             >
               <div className="flex items-center justify-between mb-1">
-                <p className={`text-sm font-medium text-${phase.color}`}>{phase.name}</p>
+                <p className={`text-sm font-medium ${phase.colorClass}`}>{phase.name}</p>
                 <p className="text-xs text-muted-foreground">{phase.days}</p>
               </div>
               <p className="text-xs text-muted-foreground">
@@ -150,8 +186,8 @@ export const InteractiveProgressTimeline = () => {
         </div>
         
         {/* Timeline visualization */}
-        <div className="h-32 w-full sm:h-40 mt-auto relative">
-          <svg className="h-full w-full" viewBox="0 0 596 96" preserveAspectRatio="none">
+        <div className="h-40 w-full mt-auto relative">
+          <svg className="h-full w-full" viewBox="0 0 720 160" preserveAspectRatio="xMidYMid meet">
             <title>Development Progress Timeline</title>
             <desc>14-day development timeline with interactive milestones</desc>
             
@@ -159,22 +195,33 @@ export const InteractiveProgressTimeline = () => {
             <defs>
               {/* Purple gradient for fill */}
               <linearGradient id="progressFill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#a855f7" stopOpacity="0.3"></stop>
-                <stop offset="50%" stopColor="#9333ea" stopOpacity="0.2"></stop>
-                <stop offset="95%" stopColor="#7c3aed" stopOpacity="0.1"></stop>
+                <stop offset="0%" stopColor="#a855f7" stopOpacity="0.2"></stop>
+                <stop offset="100%" stopColor="#a855f7" stopOpacity="0.05"></stop>
               </linearGradient>
               
               {/* Purple gradient for line */}
               <linearGradient id="progressLine" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#c084fc" stopOpacity="0.8"></stop>
-                <stop offset="33%" stopColor="#a855f7" stopOpacity="0.9"></stop>
-                <stop offset="66%" stopColor="#9333ea" stopOpacity="0.9"></stop>
-                <stop offset="100%" stopColor="#7c3aed" stopOpacity="1"></stop>
+                <stop offset="0%" stopColor="#c084fc"></stop>
+                <stop offset="50%" stopColor="#9333ea"></stop>
+                <stop offset="100%" stopColor="#7c3aed"></stop>
               </linearGradient>
+              
+              {/* Drop shadow filter */}
+              <filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                <feOffset dx="0" dy="1" result="offsetblur"/>
+                <feComponentTransfer>
+                  <feFuncA type="linear" slope="0.3"/>
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
               
               {/* Glow filter */}
               <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
                 <feMerge>
                   <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="SourceGraphic"/>
@@ -184,12 +231,12 @@ export const InteractiveProgressTimeline = () => {
             
             {/* Grid lines */}
             <g className="grid">
-              {[24, 48, 72].map((y) => (
+              {[40, 80, 120].map((y) => (
                 <line
                   key={y}
-                  x1="0"
+                  x1="20"
                   y1={y}
-                  x2="596"
+                  x2="700"
                   y2={y}
                   stroke="#e5e7eb"
                   strokeWidth="1"
@@ -197,18 +244,18 @@ export const InteractiveProgressTimeline = () => {
                   opacity="0.3"
                 />
               ))}
-              <line x1="0" y1="96" x2="596" y2="96" stroke="#e5e7eb" strokeWidth="1" opacity="0.5" />
+              <line x1="20" y1="140" x2="700" y2="140" stroke="#e5e7eb" strokeWidth="1" opacity="0.5" />
             </g>
             
             {/* X-axis labels */}
             <g className="text-xs fill-muted-foreground">
-              <text x="0" y="92" textAnchor="start" className="text-[10px]">Day 1</text>
-              <text x="127.5" y="92" textAnchor="middle" className="text-[10px]">Day 3</text>
-              <text x="212.5" y="92" textAnchor="middle" className="text-[10px]">Day 5</text>
-              <text x="297.5" y="92" textAnchor="middle" className="text-[10px]">Day 7</text>
-              <text x="425" y="92" textAnchor="middle" className="text-[10px]">Day 10</text>
-              <text x="510" y="92" textAnchor="middle" className="text-[10px]">Day 12</text>
-              <text x="596" y="92" textAnchor="end" className="text-[10px]">Day 14</text>
+              <text x={milestones[0].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 1</text>
+              <text x={milestones[1].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 3</text>
+              <text x={milestones[2].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 5</text>
+              <text x={milestones[3].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 7</text>
+              <text x={milestones[4].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 10</text>
+              <text x={milestones[5].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 12</text>
+              <text x={milestones[6].position.x} y="155" textAnchor="middle" className="text-[10px]">Day 14</text>
             </g>
             
             {/* Progress curve */}
@@ -218,8 +265,7 @@ export const InteractiveProgressTimeline = () => {
                 className="transition-all duration-700"
                 fill="url(#progressFill)"
                 stroke="none"
-                fillOpacity="0.6"
-                d={`${generatePath()} L596,96 L0,96 Z`}
+                d={`${generatePath()} L${milestones[milestones.length - 1].position.x},140 L${milestones[0].position.x},140 Z`}
               />
               
               {/* Line */}
@@ -227,7 +273,7 @@ export const InteractiveProgressTimeline = () => {
                 className="transition-all duration-700"
                 stroke="url(#progressLine)"
                 fill="none"
-                strokeWidth="2.5"
+                strokeWidth="3"
                 strokeLinejoin="round"
                 strokeLinecap="round"
                 d={generatePath()}
@@ -253,7 +299,7 @@ export const InteractiveProgressTimeline = () => {
                       <circle
                         cx={milestone.position.x}
                         cy={milestone.position.y}
-                        r="12"
+                        r="15"
                         fill={milestone.color}
                         opacity="0.2"
                         className={isHovered ? "animate-ping" : ""}
@@ -264,7 +310,7 @@ export const InteractiveProgressTimeline = () => {
                     <circle
                       cx={milestone.position.x}
                       cy={milestone.position.y}
-                      r={isHovered ? "7" : "5"}
+                      r={isHovered ? "8" : "6"}
                       fill={milestone.color}
                       className="transition-all duration-200"
                       opacity={isHovered || isPhaseSelected ? "1" : "0.8"}
@@ -276,11 +322,11 @@ export const InteractiveProgressTimeline = () => {
                     {isHovered && (
                       <g className="animate-fadeIn">
                         <rect
-                          x={milestone.position.x - 100}
-                          y={milestone.position.y - 80}
-                          width="200"
-                          height="70"
-                          rx="6"
+                          x={milestone.position.x - 90}
+                          y={milestone.position.y - 85}
+                          width="180"
+                          height="65"
+                          rx="8"
                           fill="white"
                           stroke="#e5e7eb"
                           strokeWidth="1"
@@ -288,7 +334,7 @@ export const InteractiveProgressTimeline = () => {
                         />
                         <text
                           x={milestone.position.x}
-                          y={milestone.position.y - 60}
+                          y={milestone.position.y - 65}
                           textAnchor="middle"
                           className="text-sm font-semibold fill-foreground"
                         >
@@ -296,7 +342,7 @@ export const InteractiveProgressTimeline = () => {
                         </text>
                         <text
                           x={milestone.position.x}
-                          y={milestone.position.y - 44}
+                          y={milestone.position.y - 48}
                           textAnchor="middle"
                           className="text-xs fill-muted-foreground"
                         >
@@ -304,9 +350,9 @@ export const InteractiveProgressTimeline = () => {
                         </text>
                         <text
                           x={milestone.position.x}
-                          y={milestone.position.y - 28}
+                          y={milestone.position.y - 32}
                           textAnchor="middle"
-                          className="text-[10px] fill-purple-600 font-medium"
+                          className="text-[11px] fill-purple-600 font-medium"
                         >
                           Day {milestone.day}
                         </text>
@@ -319,7 +365,7 @@ export const InteractiveProgressTimeline = () => {
           </svg>
           
           {/* Info badge */}
-          <div className="absolute top-0 right-0 flex items-center gap-1 text-xs text-muted-foreground">
+          <div className="absolute top-0 right-0 flex items-center gap-1 text-xs text-muted-foreground bg-white/80 backdrop-blur-sm rounded-lg px-2 py-1">
             <Calendar className="w-3 h-3" />
             <span>Daily updates via Slack/Email</span>
           </div>
