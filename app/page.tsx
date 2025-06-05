@@ -13,7 +13,6 @@ export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [showVideo, setShowVideo] = useState(false)
   const [activeFeatureTab, setActiveFeatureTab] = useState("internal-tools")
-  const [billingPeriod, setBillingPeriod] = useState<"with-testimonial" | "without-testimonial">("with-testimonial")
   const [openFaqItem, setOpenFaqItem] = useState<string | null>(null)
   const [showNavigation, setShowNavigation] = useState(false)
 
@@ -99,7 +98,7 @@ export default function Home() {
     {
       id: "pricing-works",
       question: "How does pricing work?",
-      answer: "While we're building our testimonial base, we're offering special pricing: $10-20k if you provide a video testimonial (vs our normal $40-50k). This is 75% less than the industry standard of $80-100k for similar projects. You get a fully functional, production-ready application for a fraction of the cost."
+      answer: "We offer two licensing models: Non-exclusive license ($10-20k) where we retain rights to reuse the code for other clients, making it very affordable. Exclusive license ($40-50k) gives you complete IP ownership and guarantees your code is never reused. Both options are 40-80% less than the industry standard of $80-100k for similar projects. You get a fully functional, production-ready application for a fraction of the cost."
     },
     {
       id: "who-are-you",
@@ -111,36 +110,39 @@ export default function Home() {
   // Pricing plans
   const pricingPlans = [
     {
-      name: "Early Adopter",
-      description: "With video testimonial",
+      name: "Non-Exclusive License",
+      description: "Reusable package for your business",
       price: "10-20k",
       industryPrice: "80-100k",
-      savings: "75%",
+      savings: "75-80%",
       recommended: true,
       features: [
         "Full custom application",
+        "We retain rights to reuse code",
         "2 week delivery",
         "Daily progress updates", 
         "100% satisfaction guarantee",
-        "Source code ownership",
+        "Source code ownership for your use",
         "30 days of free revisions",
         "Priority support"
       ]
     },
     {
-      name: "Rush Package", 
-      description: "Need it yesterday?",
-      price: "30-40k",
+      name: "Exclusive License", 
+      description: "Your code, your IP, exclusively",
+      price: "40-50k",
       industryPrice: "80-100k",
-      savings: "60%",
+      savings: "40-50%",
       features: [
         "Full custom application",
-        "1 week or less delivery",
-        "Twice daily updates",
+        "Complete IP ownership",
+        "Code never reused elsewhere",
+        "2 week delivery",
+        "Daily progress updates",
         "100% satisfaction guarantee", 
-        "Source code ownership",
-        "14 days of free revisions",
-        "24/7 emergency support"
+        "Full source code ownership",
+        "60 days of free revisions",
+        "White glove support"
       ]
     }
   ]
@@ -868,40 +870,14 @@ export default function Home() {
             <div className="text-center mb-20">
               <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider mb-4">Pricing</h2>
               <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl mb-6">
-                Special pricing while we{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">build our portfolio</span>
+                Choose your{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">licensing model</span>
               </h3>
               <p className="text-muted-foreground text-lg mb-10">
-                75% off industry rates for early clients
+                Save 40-80% compared to traditional agencies
               </p>
               <div className="inline-flex items-center justify-center bg-gradient-to-r from-purple-50 to-purple-100/50 text-purple-700 px-6 py-3 rounded-full text-[15px] font-medium border border-purple-200/50 shadow-sm">
-                💜 Limited time offer
-              </div>
-            </div>
-
-            {/* Pricing toggle */}
-            <div className="flex justify-center mb-16">
-              <div className="bg-muted/50 rounded-2xl p-1.5 shadow-inner border border-border/20">
-                <button
-                  onClick={() => setBillingPeriod("with-testimonial")}
-                  className={`px-8 py-3 rounded-xl text-[15px] font-medium transition-all duration-200 ${
-                    billingPeriod === "with-testimonial"
-                      ? "bg-white text-foreground shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  With Testimonial
-                </button>
-                <button
-                  onClick={() => setBillingPeriod("without-testimonial")}
-                  className={`px-8 py-3 rounded-xl text-[15px] font-medium transition-all duration-200 ${
-                    billingPeriod === "without-testimonial"
-                      ? "bg-white text-foreground shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  Without Testimonial
-                </button>
+                💜 100% satisfaction guarantee
               </div>
             </div>
 
