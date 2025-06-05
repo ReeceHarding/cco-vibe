@@ -254,7 +254,7 @@ export default function Home() {
               <div className="flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-full border border-purple-200/30">
                 <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full animate-pulse" />
                 <span className="text-sm font-medium text-muted-foreground">
-                  World's best AI developers • 100% satisfaction rate
+                  Gauntlet AI graduates • 100% satisfaction guarantee
                 </span>
               </div>
             </div>
@@ -266,10 +266,10 @@ export default function Home() {
               }`}
               style={{ transitionDelay: "100ms" }}
             >
-              Build{" "}
+              We'll build you{" "}
               <span className="relative">
                 <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-                  custom apps
+                  any app
                 </span>
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" stroke="url(#paint0_linear)" strokeWidth="4" strokeLinecap="round"/>
@@ -281,9 +281,9 @@ export default function Home() {
                   </defs>
                 </svg>
               </span>{" "}
-              10x faster
+              in 2 weeks
               <br />
-              <span className="text-muted-foreground">with AI powered development</span>
+              <span className="text-muted-foreground">and you don't pay until you're happy</span>
             </h1>
 
             {/* Subheading - Updated content */}
@@ -293,7 +293,7 @@ export default function Home() {
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              Replace expensive SaaS with custom solutions. We build in 2 weeks what others deliver in 4 months. Don't pay until you're 100% satisfied.
+              Replace expensive SaaS with custom internal tools. Built by American developers using AI to code 10x faster, saving you 75% on development costs.
             </p>
 
             {/* Feature pills - Updated benefits */}
@@ -305,7 +305,7 @@ export default function Home() {
             >
               <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                 <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">100% money back guarantee</span>
+                <span className="text-sm font-medium text-purple-900">Pay after you're satisfied</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                 <Check className="w-4 h-4 text-purple-600" />
@@ -313,7 +313,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                 <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">75% cheaper than agencies</span>
+                <span className="text-sm font-medium text-purple-900">Save thousands annually</span>
               </div>
             </div>
 
@@ -329,14 +329,14 @@ export default function Home() {
                 className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group"
               >
                 <span className="flex items-center gap-3">
-                  Get your no-risk MVP
+                  Book a risk-free consultation
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
               </Button>
               <p className="text-sm text-muted-foreground mt-4">
-                Don't pay until you're 100% satisfied • Free consultation
+                No payment until you're 100% satisfied • Free consultation
               </p>
             </div>
               
@@ -416,6 +416,85 @@ export default function Home() {
           {/* Fade to next section */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
         </div>
+
+        {/* About Our Agency Section */}
+        <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/30">
+          <div className="container max-w-7xl">
+            <div className="text-center mx-auto mb-16">
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">About Us</h2>
+              <h3 className="mx-auto mt-4 max-w-3xl font-semibold text-3xl sm:text-4xl md:text-5xl">
+                We're{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+                  Gauntlet AI graduates
+                </span>{" "}
+                building the future 10x faster
+              </h3>
+              <p className="text-muted-foreground text-lg mt-6 max-w-3xl mx-auto">
+                As graduates of the world's best AI bootcamp, we leverage cutting-edge tools like Cursor, Claude, GPT, Gemini, and Grok to build production-ready applications in record time.
+              </p>
+            </div>
+
+            {/* Why we're different */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Sparkles className="w-8 h-8 text-purple-600" />
+                </div>
+                <h4 className="font-semibold text-lg mb-2">AI-Powered Development</h4>
+                <p className="text-muted-foreground text-sm">
+                  We code 10x faster using AI, which means we can charge 75% less than traditional agencies while delivering superior results.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8 text-purple-600" />
+                </div>
+                <h4 className="font-semibold text-lg mb-2">American Based</h4>
+                <p className="text-muted-foreground text-sm">
+                  Perfect English communication, same time zones, and exceptional taste in design. We understand your business needs intimately.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Code2 className="w-8 h-8 text-purple-600" />
+                </div>
+                <h4 className="font-semibold text-lg mb-2">Production Ready</h4>
+                <p className="text-muted-foreground text-sm">
+                  Years of experience building secure, scalable applications. We handle deployment, security, and all the complexities.
+                </p>
+              </div>
+            </div>
+
+            {/* Our focus */}
+            <div className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-purple-100/20 max-w-4xl mx-auto text-center">
+              <h4 className="font-semibold text-2xl mb-4">
+                We specialize in building{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+                  internal tools
+                </span>{" "}
+                that replace expensive SaaS
+              </h4>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                Why pay $50k+ annually for Slack, Notion, or Jira when we can build you a custom solution that fits your exact needs? 
+                Our clients save thousands every year by replacing bloated SaaS products with lean, custom-built tools.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                <div className="flex items-center justify-center gap-2">
+                  <DollarSign className="w-5 h-5 text-green-600" />
+                  <span className="font-medium">Save $20k-100k annually</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <Zap className="w-5 h-5 text-purple-600" />
+                  <span className="font-medium">Built in 2 weeks</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <Users className="w-5 h-5 text-purple-600" />
+                  <span className="font-medium">Tailored to your team</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Video Testimonials Section */}
         <section className="pt-12 lg:py-24" id="testimonials">
