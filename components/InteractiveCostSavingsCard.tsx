@@ -1,43 +1,57 @@
 "use client"
 
 import React, { useState } from "react"
-import { Check } from "lucide-react"
-
-interface SaaSCost {
-  name: string
-  monthlyCost: number
-  yearlyTotal: number
-  category: string
-  color: string
-}
+import { Check, TrendingUp, DollarSign } from "lucide-react"
 
 export const InteractiveCostSavingsCard = () => {
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+  const [hoveredYear, setHoveredYear] = useState<number | null>(null)
   const [isCardHovered, setIsCardHovered] = useState(false)
   
-  // Common SaaS tools that businesses typically use
-  const saasTools: SaaSCost[] = [
-    { name: "Slack", monthlyCost: 1250, yearlyTotal: 15000, category: "Communication", color: "#4A154B" },
-    { name: "Salesforce", monthlyCost: 3750, yearlyTotal: 45000, category: "CRM", color: "#00A1E0" },
-    { name: "Jira", monthlyCost: 875, yearlyTotal: 10500, category: "Project Management", color: "#0052CC" },
-    { name: "Zendesk", monthlyCost: 2500, yearlyTotal: 30000, category: "Support", color: "#03363D" },
-    { name: "Intercom", monthlyCost: 2000, yearlyTotal: 24000, category: "Customer Engagement", color: "#0071F0" },
-    { name: "HubSpot", monthlyCost: 3333, yearlyTotal: 40000, category: "Marketing", color: "#FF7A59" },
-    { name: "Monday.com", monthlyCost: 1667, yearlyTotal: 20000, category: "Work Management", color: "#6161FF" },
-    { name: "Figma", monthlyCost: 625, yearlyTotal: 7500, category: "Design", color: "#F24E1E" },
-    { name: "Notion", monthlyCost: 833, yearlyTotal: 10000, category: "Documentation", color: "#000000" },
-    { name: "Others", monthlyCost: 3166, yearlyTotal: 38000, category: "Various", color: "#9CA3AF" }
-  ]
+  // Cost calculations
+  const saasAnnualCost = 24000 // $24k per year
+  const customSolutionCost = 20000 // $20k one-time
+  const years = 10
   
-  const totalYearlyCost = saasTools.reduce((sum, tool) => sum + tool.yearlyTotal, 0)
-  const customSolutionCost = 20000
-  const yearlySavings = totalYearlyCost - customSolutionCost
-  const savingsPercentage = Math.round((yearlySavings / totalYearlyCost) * 100)
+  // Generate data points for the chart
+  const generateDataPoints = () => {
+    const points = []
+    for (let year = 0; year <= years; year++) {
+      points.push({
+        year,
+        saasCumulative: year * saasAnnualCost,
+        customCumulative: year === 0 ? 0 : customSolutionCost, // Custom cost kicks in at year 1
+        savings: year === 0 ? 0 : (year * saasAnnualCost) - customSolutionCost
+      })
+    }
+    return points
+  }
   
-  // Calculate bar heights for visualization
-  const maxHeight = 200
-  const saasBarHeight = maxHeight
-  const customBarHeight = (customSolutionCost / totalYearlyCost) * maxHeight
+  const dataPoints = generateDataPoints()
+  const maxCost = dataPoints[dataPoints.length - 1].saasCumulative
+  
+  // Chart dimensions
+  const chartWidth = 596
+  const chartHeight = 256
+  const padding = { top: 20, right: 20, bottom: 40, left: 60 }
+  const graphWidth = chartWidth - padding.left - padding.right
+  const graphHeight = chartHeight - padding.top - padding.bottom
+  
+  // Scale functions
+  const xScale = (year: number) => (year / years) * graphWidth + padding.left
+  const yScale = (cost: number) => chartHeight - padding.bottom - (cost / maxCost) * graphHeight
+  
+  // Generate path strings
+  const saasPath = dataPoints
+    .map((point, i) => `${i === 0 ? 'M' : 'L'} ${xScale(point.year)} ${yScale(point.saasCumulative)}`)
+    .join(' ')
+  
+  const customPath = dataPoints
+    .map((point, i) => `${i === 0 ? 'M' : 'L'} ${xScale(point.year)} ${yScale(point.customCumulative)}`)
+    .join(' ')
+  
+  // Area paths (for gradient fill)
+  const saasAreaPath = `${saasPath} L ${xScale(years)} ${chartHeight - padding.bottom} L ${xScale(0)} ${chartHeight - padding.bottom} Z`
+  const customAreaPath = `${customPath} L ${xScale(years)} ${chartHeight - padding.bottom} L ${xScale(0)} ${chartHeight - padding.bottom} Z`
   
   return (
     <div 
@@ -51,158 +65,276 @@ export const InteractiveCostSavingsCard = () => {
           Replace expensive SaaS subscriptions with custom built tools that you own forever. No more monthly fees.
         </p>
         
-        {/* Interactive bar chart comparison */}
-        <div className="flex-1 min-h-[300px] relative">
-          <div className="absolute inset-0 flex items-end justify-center gap-8 pb-8">
-            {/* SaaS Stack Bar */}
-            <div className="relative group/bar">
-              <div 
-                className="w-24 md:w-32 relative rounded-t-lg overflow-hidden transition-all duration-500 cursor-pointer"
-                style={{ height: `${saasBarHeight}px` }}
-                onMouseEnter={() => setHoveredItem('saas')}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
-                {/* Stacked bars for each SaaS tool */}
-                {saasTools.map((tool, index) => {
-                  const height = (tool.yearlyTotal / totalYearlyCost) * saasBarHeight
-                  const yOffset = saasTools.slice(0, index).reduce((sum, t) => sum + (t.yearlyTotal / totalYearlyCost) * saasBarHeight, 0)
-                  
-                  return (
-                    <div
-                      key={tool.name}
-                      className="absolute left-0 right-0 transition-all duration-300 hover:scale-105"
-                      style={{
-                        bottom: `${yOffset}px`,
-                        height: `${height}px`,
-                        backgroundColor: tool.color,
-                        opacity: hoveredItem === 'saas' || hoveredItem === tool.name ? 1 : 0.8
-                      }}
-                      onMouseEnter={(e) => {
-                        e.stopPropagation()
-                        setHoveredItem(tool.name)
-                      }}
-                    >
-                      {hoveredItem === tool.name && (
-                        <div className="absolute -right-2 top-1/2 -translate-y-1/2 translate-x-full bg-background/95 backdrop-blur-sm border rounded-lg p-3 shadow-lg z-10 whitespace-nowrap">
-                          <p className="font-semibold text-sm">{tool.name}</p>
-                          <p className="text-xs text-muted-foreground">{tool.category}</p>
-                          <p className="text-xs font-medium mt-1">${tool.monthlyCost}/mo</p>
-                          <p className="text-xs font-bold text-foreground">${tool.yearlyTotal.toLocaleString()}/year</p>
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-              </div>
-              
-              {/* Label below bar */}
-              <div className="text-center mt-3">
-                <p className="text-xs text-muted-foreground">Annual SaaS Costs</p>
-                <p className="text-lg font-bold text-muted-foreground/70 line-through">
-                  ${(totalYearlyCost / 1000).toFixed(0)}k
-                </p>
-                <p className="text-xs text-muted-foreground">/year forever</p>
-              </div>
-              
-              {/* Hover tooltip for entire bar */}
-              {hoveredItem === 'saas' && (
-                <div className="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full bg-background/95 backdrop-blur-sm border rounded-lg p-3 shadow-lg z-10">
-                  <p className="font-semibold text-sm mb-2">Annual SaaS Stack</p>
-                  <div className="space-y-1 text-xs">
-                    {saasTools.slice(0, 5).map(tool => (
-                      <div key={tool.name} className="flex justify-between gap-4">
-                        <span>{tool.name}:</span>
-                        <span className="font-medium">${(tool.yearlyTotal / 1000).toFixed(1)}k</span>
-                      </div>
-                    ))}
-                    <div className="flex justify-between gap-4 pt-1 border-t">
-                      <span>+ 5 more tools</span>
-                      <span className="font-medium">...</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+        {/* Cost comparison display */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-baseline gap-2">
+            <span className="text-xs text-muted-foreground">SaaS costs:</span>
+            <span className="text-lg font-bold text-muted-foreground/70">${(saasAnnualCost / 1000).toFixed(0)}k</span>
+            <span className="text-xs text-muted-foreground">/year</span>
+          </div>
+          <div className="flex items-baseline gap-2">
+            <span className="text-xs text-green-600 font-medium">Our solution:</span>
+            <span className={`font-bold text-green-600 transition-all duration-500 ${
+              isCardHovered ? 'text-2xl' : 'text-lg'
+            }`}>
+              ${(customSolutionCost / 1000).toFixed(0)}k
+            </span>
+            <span className="text-xs text-green-600 font-medium">one time</span>
+          </div>
+        </div>
+        
+        {/* Interactive SVG Chart */}
+        <div className="flex-1 min-h-[280px] relative">
+          <svg 
+            className="w-full h-full cursor-crosshair" 
+            viewBox={`0 0 ${chartWidth} ${chartHeight}`} 
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <title>10-Year Cost Comparison</title>
+            <desc>Cumulative cost comparison over 10 years between SaaS and custom solution</desc>
             
-            {/* Custom Solution Bar */}
-            <div className="relative group/bar">
-              <div 
-                className="w-24 md:w-32 bg-gradient-to-t from-green-600 to-green-500 rounded-t-lg transition-all duration-500 cursor-pointer relative overflow-hidden"
-                style={{ 
-                  height: `${isCardHovered ? customBarHeight : 20}px`,
-                  transition: 'height 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
-                }}
-                onMouseEnter={() => setHoveredItem('custom')}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
-                {/* Animated checkmarks */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Check className={`w-8 h-8 text-white/20 absolute transition-all duration-500 ${
-                    isCardHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-                  }`} style={{ transform: isCardHovered ? 'rotate(0deg)' : 'rotate(-180deg)' }} />
-                </div>
-                
-                {/* Savings indicator */}
-                {isCardHovered && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 -translate-y-full">
-                    <div className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-bounce">
-                      Save {savingsPercentage}%
-                    </div>
-                  </div>
+            {/* Definitions */}
+            <defs>
+              {/* SaaS gradient - purple tones */}
+              <linearGradient id="saasGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#9333ea" stopOpacity="0.3"></stop>
+                <stop offset="100%" stopColor="#9333ea" stopOpacity="0.05"></stop>
+              </linearGradient>
+              
+              {/* Custom solution gradient - green tones */}
+              <linearGradient id="customGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#22c55e" stopOpacity="0.3"></stop>
+                <stop offset="100%" stopColor="#22c55e" stopOpacity="0.05"></stop>
+              </linearGradient>
+              
+              {/* Shadow filter */}
+              <filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                <feOffset dx="0" dy="2" result="offsetblur"/>
+                <feComponentTransfer>
+                  <feFuncA type="linear" slope="0.2"/>
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            
+            {/* Grid lines */}
+            <g className="grid">
+              {/* Horizontal grid lines */}
+              {[0, 50000, 100000, 150000, 200000, 240000].map((cost) => (
+                <line
+                  key={cost}
+                  x1={padding.left}
+                  y1={yScale(cost)}
+                  x2={chartWidth - padding.right}
+                  y2={yScale(cost)}
+                  stroke="#e5e7eb"
+                  strokeWidth="1"
+                  strokeDasharray={cost === 0 ? "0" : "2,2"}
+                />
+              ))}
+              
+              {/* Vertical grid lines for years */}
+              {dataPoints.map((point) => (
+                <line
+                  key={point.year}
+                  x1={xScale(point.year)}
+                  y1={padding.top}
+                  x2={xScale(point.year)}
+                  y2={chartHeight - padding.bottom}
+                  stroke="#e5e7eb"
+                  strokeWidth="1"
+                  strokeDasharray={point.year === 0 || point.year === years ? "0" : "2,2"}
+                />
+              ))}
+            </g>
+            
+            {/* Area fills */}
+            <g className="areas">
+              {/* SaaS area */}
+              <path
+                d={saasAreaPath}
+                fill="url(#saasGradient)"
+                className="transition-all duration-700"
+                opacity={hoveredYear !== null ? 0.3 : 0.6}
+              />
+              
+              {/* Custom solution area */}
+              <path
+                d={customAreaPath}
+                fill="url(#customGradient)"
+                className="transition-all duration-700"
+                opacity={hoveredYear !== null ? 0.3 : 0.6}
+              />
+            </g>
+            
+            {/* Lines */}
+            <g className="lines">
+              {/* SaaS line */}
+              <path
+                d={saasPath}
+                fill="none"
+                stroke="#9333ea"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="transition-all duration-300"
+                filter="url(#dropshadow)"
+              />
+              
+              {/* Custom solution line */}
+              <path
+                d={customPath}
+                fill="none"
+                stroke="#22c55e"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="transition-all duration-300"
+                filter="url(#dropshadow)"
+              />
+            </g>
+            
+            {/* Interactive hover areas and dots */}
+            <g className="interactive">
+              {dataPoints.map((point, index) => (
+                <g key={point.year}>
+                  {/* Invisible hover area */}
+                  <rect
+                    x={index === 0 ? 0 : xScale(point.year - 0.5)}
+                    y={0}
+                    width={graphWidth / years}
+                    height={chartHeight}
+                    fill="transparent"
+                    onMouseEnter={() => setHoveredYear(point.year)}
+                    onMouseLeave={() => setHoveredYear(null)}
+                    style={{ cursor: 'crosshair' }}
+                  />
+                  
+                  {/* Data points */}
+                  {hoveredYear === point.year && (
+                    <>
+                      {/* SaaS dot */}
+                      <circle
+                        cx={xScale(point.year)}
+                        cy={yScale(point.saasCumulative)}
+                        r="6"
+                        fill="#9333ea"
+                        stroke="white"
+                        strokeWidth="2"
+                        className="animate-scale-in"
+                      />
+                      
+                      {/* Custom solution dot */}
+                      <circle
+                        cx={xScale(point.year)}
+                        cy={yScale(point.customCumulative)}
+                        r="6"
+                        fill="#22c55e"
+                        stroke="white"
+                        strokeWidth="2"
+                        className="animate-scale-in"
+                      />
+                      
+                      {/* Vertical line */}
+                      <line
+                        x1={xScale(point.year)}
+                        y1={padding.top}
+                        x2={xScale(point.year)}
+                        y2={chartHeight - padding.bottom}
+                        stroke="#9333ea"
+                        strokeWidth="1"
+                        strokeDasharray="4,4"
+                        opacity="0.3"
+                      />
+                    </>
+                  )}
+                </g>
+              ))}
+            </g>
+            
+            {/* Axis labels */}
+            <g className="labels">
+              {/* Y-axis labels */}
+              <text x={padding.left - 10} y={yScale(0)} textAnchor="end" className="text-xs fill-muted-foreground">$0</text>
+              <text x={padding.left - 10} y={yScale(50000)} textAnchor="end" className="text-xs fill-muted-foreground">$50k</text>
+              <text x={padding.left - 10} y={yScale(100000)} textAnchor="end" className="text-xs fill-muted-foreground">$100k</text>
+              <text x={padding.left - 10} y={yScale(150000)} textAnchor="end" className="text-xs fill-muted-foreground">$150k</text>
+              <text x={padding.left - 10} y={yScale(200000)} textAnchor="end" className="text-xs fill-muted-foreground">$200k</text>
+              <text x={padding.left - 10} y={yScale(240000)} textAnchor="end" className="text-xs fill-muted-foreground">$240k</text>
+              
+              {/* X-axis labels */}
+              {[0, 2, 4, 6, 8, 10].map((year) => (
+                <text 
+                  key={year} 
+                  x={xScale(year)} 
+                  y={chartHeight - padding.bottom + 20} 
+                  textAnchor="middle" 
+                  className="text-xs fill-muted-foreground"
+                >
+                  {year === 0 ? 'Now' : `Year ${year}`}
+                </text>
+              ))}
+            </g>
+            
+            {/* Legend */}
+            <g className="legend" transform={`translate(${chartWidth - 140}, 30)`}>
+              <g className="legend-item">
+                <line x1="0" y1="0" x2="20" y2="0" stroke="#9333ea" strokeWidth="3" />
+                <text x="25" y="4" className="text-xs fill-muted-foreground">SaaS (recurring)</text>
+              </g>
+              <g className="legend-item" transform="translate(0, 20)">
+                <line x1="0" y1="0" x2="20" y2="0" stroke="#22c55e" strokeWidth="3" />
+                <text x="25" y="4" className="text-xs fill-muted-foreground">Custom (one-time)</text>
+              </g>
+            </g>
+            
+            {/* Hover tooltip */}
+            {hoveredYear !== null && (
+              <g className="tooltip animate-fadeIn">
+                <rect
+                  x={xScale(hoveredYear) - 90}
+                  y={10}
+                  width="180"
+                  height="80"
+                  rx="8"
+                  fill="white"
+                  stroke="#e5e7eb"
+                  strokeWidth="1"
+                  filter="url(#dropshadow)"
+                />
+                <text x={xScale(hoveredYear)} y={30} textAnchor="middle" className="text-sm font-semibold fill-foreground">
+                  {hoveredYear === 0 ? 'Starting Point' : `Year ${hoveredYear}`}
+                </text>
+                <text x={xScale(hoveredYear)} y={50} textAnchor="middle" className="text-xs fill-purple-600">
+                  SaaS Total: ${(dataPoints[hoveredYear].saasCumulative / 1000).toFixed(0)}k
+                </text>
+                <text x={xScale(hoveredYear)} y={68} textAnchor="middle" className="text-xs fill-green-600">
+                  Custom Total: ${(dataPoints[hoveredYear].customCumulative / 1000).toFixed(0)}k
+                </text>
+                {hoveredYear > 0 && (
+                  <text x={xScale(hoveredYear)} y={85} textAnchor="middle" className="text-xs font-semibold fill-foreground">
+                    Saved: ${(dataPoints[hoveredYear].savings / 1000).toFixed(0)}k
+                  </text>
                 )}
-              </div>
-              
-              {/* Label below bar */}
-              <div className="text-center mt-3">
-                <p className="text-xs text-green-600 font-medium">Custom Solution</p>
-                <p className={`font-bold text-green-600 transition-all duration-500 ${
-                  isCardHovered ? 'text-2xl' : 'text-lg'
-                }`}>
-                  ${customSolutionCost / 1000}k
-                </p>
-                <p className="text-xs text-green-600 font-medium">one time</p>
-              </div>
-              
-              {/* Hover tooltip */}
-              {hoveredItem === 'custom' && (
-                <div className="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full bg-background/95 backdrop-blur-sm border rounded-lg p-3 shadow-lg z-10 whitespace-nowrap">
-                  <p className="font-semibold text-sm mb-2">What You Get</p>
-                  <div className="space-y-1 text-xs">
-                    <div className="flex items-center gap-2">
-                      <Check className="w-3 h-3 text-green-600" />
-                      <span>All features combined</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Check className="w-3 h-3 text-green-600" />
-                      <span>Custom built for you</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Check className="w-3 h-3 text-green-600" />
-                      <span>Own it forever</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Check className="w-3 h-3 text-green-600" />
-                      <span>No monthly fees</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+              </g>
+            )}
+          </svg>
           
-          {/* Y-axis labels */}
-          <div className="absolute left-0 top-0 bottom-8 w-12 flex flex-col justify-between text-xs text-muted-foreground">
-            <span>${(totalYearlyCost / 1000).toFixed(0)}k</span>
-            <span>${(totalYearlyCost / 2000).toFixed(0)}k</span>
-            <span>$0</span>
-          </div>
-          
-          {/* Bottom summary */}
+          {/* Summary statistics */}
           {isCardHovered && (
-            <div className="absolute bottom-0 left-0 right-0 text-center">
-              <p className="text-sm font-medium text-green-600">
-                Save ${(yearlySavings / 1000).toFixed(0)}k in the first year alone
-              </p>
+            <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-8 text-sm animate-fadeIn">
+              <div className="flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-red-500" />
+                <span className="text-muted-foreground">10-year SaaS cost: <strong className="text-foreground">${(dataPoints[years].saasCumulative / 1000).toFixed(0)}k</strong></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <DollarSign className="w-4 h-4 text-green-600" />
+                <span className="text-muted-foreground">Total saved: <strong className="text-green-600">${(dataPoints[years].savings / 1000).toFixed(0)}k</strong></span>
+              </div>
             </div>
           )}
         </div>
