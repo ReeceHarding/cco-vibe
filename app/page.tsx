@@ -54,28 +54,28 @@ export default function Home() {
       title: "Custom Internal Tools",
       description: "Replace expensive SaaS with custom built solutions. Save $20k+ annually on tools like Slack, Notion, or Jira.",
       icon: Code2,
-      video: "/images/feature_videos/internal-tools-demo.mp4"
+      video: "/images/postel-screenshot.svg" // Using placeholder image
     },
     {
       id: "ai-features",
       title: "AI Powered Features",
       description: "Integrate cutting edge AI into your workflows. We're graduates of the world's best AI bootcamp.",
       icon: Sparkles,
-      video: "/images/feature_videos/ai-features-demo.mp4"
+      video: "/images/postel-dashboard.svg" // Using placeholder image
     },
     {
       id: "mvp-development",
       title: "MVP Development",
       description: "Launch your startup idea in 2 weeks, not 4 months. Start getting customer feedback immediately.",
       icon: Rocket,
-      video: "/images/feature_videos/mvp-demo.mp4"
+      video: "/images/agency-dashboard.svg" // Using placeholder image
     },
     {
       id: "automation",
       title: "Process Automation",
       description: "Automate repetitive tasks and workflows. Save hundreds of hours of manual work every month.",
       icon: Zap,
-      video: "/images/feature_videos/automation-demo.mp4"
+      video: "/images/postel-screenshot.webp" // Using placeholder image
     }
   ]
 
@@ -603,7 +603,7 @@ export default function Home() {
               <div className="group relative bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-purple-100/20 hover:border-purple-300/40 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(147,51,234,0.15)]">
                 <div className="aspect-video rounded-lg overflow-hidden mb-4">
                   <Image
-                    src="/images/projects/slack-clone.png"
+                    src="/images/postel-dashboard.svg"
                     alt="Slack Clone Project"
                     width={600}
                     height={400}
@@ -630,7 +630,7 @@ export default function Home() {
               <div className="group relative bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-purple-100/20 hover:border-purple-300/40 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(147,51,234,0.15)]">
                 <div className="aspect-video rounded-lg overflow-hidden mb-4">
                   <Image
-                    src="/images/projects/analytics-dashboard.png"
+                    src="/images/agency-dashboard.svg"
                     alt="AI Analytics Dashboard"
                     width={600}
                     height={400}
@@ -657,7 +657,7 @@ export default function Home() {
               <div className="group relative bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-purple-100/20 hover:border-purple-300/40 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(147,51,234,0.15)]">
                 <div className="aspect-video rounded-lg overflow-hidden mb-4">
                   <Image
-                    src="/images/projects/startup-mvp.png"
+                    src="/images/postel-screenshot.svg"
                     alt="Startup MVP"
                     width={600}
                     height={400}
@@ -819,13 +819,13 @@ export default function Home() {
                       : "opacity-0 pointer-events-none"
                   }`}
                 >
-                  <video
-                    className="w-full h-full object-cover"
+                  <Image
                     src={feature.video}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                    alt={feature.title}
+                    width={1920}
+                    height={1080}
+                    className="w-full h-full object-cover"
+                    quality={100}
                   />
                 </div>
               ))}
@@ -847,13 +847,13 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="relative rounded-xl overflow-hidden border shadow-lg aspect-video max-w-md mx-auto">
-                    <video
-                      className="w-full h-full object-cover"
+                    <Image
                       src={feature.video}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
+                      alt={feature.title}
+                      width={1920}
+                      height={1080}
+                      className="w-full h-full object-cover"
+                      quality={100}
                     />
                   </div>
                 </div>
