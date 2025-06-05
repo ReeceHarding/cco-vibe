@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState } from "react"
-import { TrendingUp, DollarSign } from "lucide-react"
 
 export const InteractiveCostSavingsCard = () => {
   const [hoveredYear, setHoveredYear] = useState<number | null>(null)
@@ -327,16 +326,11 @@ export const InteractiveCostSavingsCard = () => {
             </div>
           </div>
           
-          {/* Summary statistics */}
+          {/* Summary statistics - simplified and more elegant */}
           {isCardHovered && (
-            <div className="absolute top-2 right-2 bg-white/80 backdrop-blur-sm rounded-lg p-3 text-sm animate-fadeIn border border-border/20">
-              <div className="flex items-center gap-2 mb-1">
-                <TrendingUp className="w-4 h-4 text-purple-700" />
-                <span className="text-muted-foreground">10-year cost: <strong className="text-purple-700">${(dataPoints[years].saasCumulative / 1000).toFixed(0)}k</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <DollarSign className="w-4 h-4 text-purple-600" />
-                <span className="text-muted-foreground">You save: <strong className="text-purple-600">${(dataPoints[years].savings / 1000).toFixed(0)}k</strong></span>
+            <div className="absolute top-2 right-2 animate-fadeIn">
+              <div className="bg-purple-600 text-white rounded-lg px-4 py-2 shadow-lg">
+                <p className="text-sm font-semibold">Save ${(dataPoints[years].savings / 1000).toFixed(0)}k over 10 years</p>
               </div>
             </div>
           )}

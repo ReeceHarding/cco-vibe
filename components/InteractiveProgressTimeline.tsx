@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { Calendar, MessageSquare, Code, Palette, Cpu, CheckCircle, FileText, Database, Users, Zap } from "lucide-react"
+import { MessageSquare, Code, Palette, Cpu, CheckCircle, FileText, Database, Users, Zap } from "lucide-react"
 
 interface Milestone {
   day: number
@@ -363,12 +363,6 @@ export const InteractiveProgressTimeline = () => {
               })}
             </g>
           </svg>
-          
-          {/* Info badge */}
-          <div className="absolute top-0 right-0 flex items-center gap-1 text-xs text-muted-foreground bg-white/80 backdrop-blur-sm rounded-lg px-2 py-1">
-            <Calendar className="w-3 h-3" />
-            <span>Daily updates via Slack/Email</span>
-          </div>
         </div>
       </div>
     </div>
