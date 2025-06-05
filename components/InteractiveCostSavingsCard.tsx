@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { Check, TrendingUp, DollarSign } from "lucide-react"
+import { TrendingUp, DollarSign } from "lucide-react"
 
 export const InteractiveCostSavingsCard = () => {
   const [hoveredYear, setHoveredYear] = useState<number | null>(null)
@@ -29,10 +29,10 @@ export const InteractiveCostSavingsCard = () => {
   const dataPoints = generateDataPoints()
   const maxCost = dataPoints[dataPoints.length - 1].saasCumulative
   
-  // Chart dimensions
+  // Chart dimensions - more compact
   const chartWidth = 596
-  const chartHeight = 256
-  const padding = { top: 20, right: 20, bottom: 40, left: 60 }
+  const chartHeight = 200 // Reduced height for better proportions
+  const padding = { top: 30, right: 30, bottom: 40, left: 60 }
   const graphWidth = chartWidth - padding.left - padding.right
   const graphHeight = chartHeight - padding.top - padding.bottom
   
@@ -61,7 +61,7 @@ export const InteractiveCostSavingsCard = () => {
     >
       <div className="flex flex-col h-full">
         <h3 className="text-lg font-semibold mb-2 text-foreground">Save millions on software costs</h3>
-        <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
           Replace expensive SaaS subscriptions with custom built tools that you own forever. No more monthly fees.
         </p>
         
@@ -73,18 +73,18 @@ export const InteractiveCostSavingsCard = () => {
             <span className="text-xs text-muted-foreground">/year</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-xs text-green-600 font-medium">Our solution:</span>
-            <span className={`font-bold text-green-600 transition-all duration-500 ${
+            <span className="text-xs text-purple-600 font-medium">Our solution:</span>
+            <span className={`font-bold text-purple-600 transition-all duration-500 ${
               isCardHovered ? 'text-2xl' : 'text-lg'
             }`}>
               ${(customSolutionCost / 1000).toFixed(0)}k
             </span>
-            <span className="text-xs text-green-600 font-medium">one time</span>
+            <span className="text-xs text-purple-600 font-medium">one time</span>
           </div>
         </div>
         
         {/* Interactive SVG Chart */}
-        <div className="flex-1 min-h-[280px] relative">
+        <div className="flex-1 min-h-[240px] relative">
           <svg 
             className="w-full h-full cursor-crosshair" 
             viewBox={`0 0 ${chartWidth} ${chartHeight}`} 
@@ -95,22 +95,22 @@ export const InteractiveCostSavingsCard = () => {
             
             {/* Definitions */}
             <defs>
-              {/* SaaS gradient - purple tones */}
+              {/* SaaS gradient - darker purple for contrast */}
               <linearGradient id="saasGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#9333ea" stopOpacity="0.3"></stop>
-                <stop offset="100%" stopColor="#9333ea" stopOpacity="0.05"></stop>
+                <stop offset="0%" stopColor="#6b21a8" stopOpacity="0.3"></stop>
+                <stop offset="100%" stopColor="#6b21a8" stopOpacity="0.05"></stop>
               </linearGradient>
               
-              {/* Custom solution gradient - green tones */}
+              {/* Custom solution gradient - lighter purple */}
               <linearGradient id="customGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#22c55e" stopOpacity="0.3"></stop>
-                <stop offset="100%" stopColor="#22c55e" stopOpacity="0.05"></stop>
+                <stop offset="0%" stopColor="#a855f7" stopOpacity="0.3"></stop>
+                <stop offset="100%" stopColor="#a855f7" stopOpacity="0.05"></stop>
               </linearGradient>
               
               {/* Shadow filter */}
               <filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
-                <feOffset dx="0" dy="2" result="offsetblur"/>
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                <feOffset dx="0" dy="1" result="offsetblur"/>
                 <feComponentTransfer>
                   <feFuncA type="linear" slope="0.2"/>
                 </feComponentTransfer>
@@ -123,8 +123,8 @@ export const InteractiveCostSavingsCard = () => {
             
             {/* Grid lines */}
             <g className="grid">
-              {/* Horizontal grid lines */}
-              {[0, 50000, 100000, 150000, 200000, 240000].map((cost) => (
+              {/* Horizontal grid lines - fewer for cleaner look */}
+              {[0, 60000, 120000, 180000, 240000].map((cost) => (
                 <line
                   key={cost}
                   x1={padding.left}
@@ -134,20 +134,22 @@ export const InteractiveCostSavingsCard = () => {
                   stroke="#e5e7eb"
                   strokeWidth="1"
                   strokeDasharray={cost === 0 ? "0" : "2,2"}
+                  opacity="0.5"
                 />
               ))}
               
-              {/* Vertical grid lines for years */}
-              {dataPoints.map((point) => (
+              {/* Vertical grid lines for years - only show even years */}
+              {[0, 2, 4, 6, 8, 10].map((year) => (
                 <line
-                  key={point.year}
-                  x1={xScale(point.year)}
+                  key={year}
+                  x1={xScale(year)}
                   y1={padding.top}
-                  x2={xScale(point.year)}
+                  x2={xScale(year)}
                   y2={chartHeight - padding.bottom}
                   stroke="#e5e7eb"
                   strokeWidth="1"
-                  strokeDasharray={point.year === 0 || point.year === years ? "0" : "2,2"}
+                  strokeDasharray={year === 0 || year === 10 ? "0" : "2,2"}
+                  opacity="0.5"
                 />
               ))}
             </g>
@@ -177,8 +179,8 @@ export const InteractiveCostSavingsCard = () => {
               <path
                 d={saasPath}
                 fill="none"
-                stroke="#9333ea"
-                strokeWidth="3"
+                stroke="#6b21a8"
+                strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className="transition-all duration-300"
@@ -189,8 +191,8 @@ export const InteractiveCostSavingsCard = () => {
               <path
                 d={customPath}
                 fill="none"
-                stroke="#22c55e"
-                strokeWidth="3"
+                stroke="#a855f7"
+                strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className="transition-all duration-300"
@@ -221,8 +223,8 @@ export const InteractiveCostSavingsCard = () => {
                       <circle
                         cx={xScale(point.year)}
                         cy={yScale(point.saasCumulative)}
-                        r="6"
-                        fill="#9333ea"
+                        r="5"
+                        fill="#6b21a8"
                         stroke="white"
                         strokeWidth="2"
                         className="animate-scale-in"
@@ -232,8 +234,8 @@ export const InteractiveCostSavingsCard = () => {
                       <circle
                         cx={xScale(point.year)}
                         cy={yScale(point.customCumulative)}
-                        r="6"
-                        fill="#22c55e"
+                        r="5"
+                        fill="#a855f7"
                         stroke="white"
                         strokeWidth="2"
                         className="animate-scale-in"
@@ -245,7 +247,7 @@ export const InteractiveCostSavingsCard = () => {
                         y1={padding.top}
                         x2={xScale(point.year)}
                         y2={chartHeight - padding.bottom}
-                        stroke="#9333ea"
+                        stroke="#a855f7"
                         strokeWidth="1"
                         strokeDasharray="4,4"
                         opacity="0.3"
@@ -260,10 +262,9 @@ export const InteractiveCostSavingsCard = () => {
             <g className="labels">
               {/* Y-axis labels */}
               <text x={padding.left - 10} y={yScale(0)} textAnchor="end" className="text-xs fill-muted-foreground">$0</text>
-              <text x={padding.left - 10} y={yScale(50000)} textAnchor="end" className="text-xs fill-muted-foreground">$50k</text>
-              <text x={padding.left - 10} y={yScale(100000)} textAnchor="end" className="text-xs fill-muted-foreground">$100k</text>
-              <text x={padding.left - 10} y={yScale(150000)} textAnchor="end" className="text-xs fill-muted-foreground">$150k</text>
-              <text x={padding.left - 10} y={yScale(200000)} textAnchor="end" className="text-xs fill-muted-foreground">$200k</text>
+              <text x={padding.left - 10} y={yScale(60000)} textAnchor="end" className="text-xs fill-muted-foreground">$60k</text>
+              <text x={padding.left - 10} y={yScale(120000)} textAnchor="end" className="text-xs fill-muted-foreground">$120k</text>
+              <text x={padding.left - 10} y={yScale(180000)} textAnchor="end" className="text-xs fill-muted-foreground">$180k</text>
               <text x={padding.left - 10} y={yScale(240000)} textAnchor="end" className="text-xs fill-muted-foreground">$240k</text>
               
               {/* X-axis labels */}
@@ -280,43 +281,31 @@ export const InteractiveCostSavingsCard = () => {
               ))}
             </g>
             
-            {/* Legend */}
-            <g className="legend" transform={`translate(${chartWidth - 140}, 30)`}>
-              <g className="legend-item">
-                <line x1="0" y1="0" x2="20" y2="0" stroke="#9333ea" strokeWidth="3" />
-                <text x="25" y="4" className="text-xs fill-muted-foreground">SaaS (recurring)</text>
-              </g>
-              <g className="legend-item" transform="translate(0, 20)">
-                <line x1="0" y1="0" x2="20" y2="0" stroke="#22c55e" strokeWidth="3" />
-                <text x="25" y="4" className="text-xs fill-muted-foreground">Custom (one-time)</text>
-              </g>
-            </g>
-            
             {/* Hover tooltip */}
             {hoveredYear !== null && (
               <g className="tooltip animate-fadeIn">
                 <rect
-                  x={xScale(hoveredYear) - 90}
-                  y={10}
-                  width="180"
-                  height="80"
-                  rx="8"
+                  x={xScale(hoveredYear) - 80}
+                  y={padding.top - 10}
+                  width="160"
+                  height="75"
+                  rx="6"
                   fill="white"
                   stroke="#e5e7eb"
                   strokeWidth="1"
                   filter="url(#dropshadow)"
                 />
-                <text x={xScale(hoveredYear)} y={30} textAnchor="middle" className="text-sm font-semibold fill-foreground">
+                <text x={xScale(hoveredYear)} y={padding.top + 8} textAnchor="middle" className="text-sm font-semibold fill-foreground">
                   {hoveredYear === 0 ? 'Starting Point' : `Year ${hoveredYear}`}
                 </text>
-                <text x={xScale(hoveredYear)} y={50} textAnchor="middle" className="text-xs fill-purple-600">
+                <text x={xScale(hoveredYear)} y={padding.top + 26} textAnchor="middle" className="text-xs fill-purple-700">
                   SaaS Total: ${(dataPoints[hoveredYear].saasCumulative / 1000).toFixed(0)}k
                 </text>
-                <text x={xScale(hoveredYear)} y={68} textAnchor="middle" className="text-xs fill-green-600">
+                <text x={xScale(hoveredYear)} y={padding.top + 42} textAnchor="middle" className="text-xs fill-purple-600">
                   Custom Total: ${(dataPoints[hoveredYear].customCumulative / 1000).toFixed(0)}k
                 </text>
                 {hoveredYear > 0 && (
-                  <text x={xScale(hoveredYear)} y={85} textAnchor="middle" className="text-xs font-semibold fill-foreground">
+                  <text x={xScale(hoveredYear)} y={padding.top + 58} textAnchor="middle" className="text-xs font-semibold fill-purple-800">
                     Saved: ${(dataPoints[hoveredYear].savings / 1000).toFixed(0)}k
                   </text>
                 )}
@@ -324,16 +313,30 @@ export const InteractiveCostSavingsCard = () => {
             )}
           </svg>
           
-          {/* Summary statistics */}
-          {isCardHovered && (
-            <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-8 text-sm animate-fadeIn">
+          {/* Legend - positioned in bottom left to avoid overlap */}
+          <div className="absolute bottom-2 left-2 bg-white/80 backdrop-blur-sm rounded-lg p-3 border border-border/20">
+            <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-red-500" />
-                <span className="text-muted-foreground">10-year SaaS cost: <strong className="text-foreground">${(dataPoints[years].saasCumulative / 1000).toFixed(0)}k</strong></span>
+                <div className="w-4 h-0.5 bg-purple-700"></div>
+                <span className="text-xs text-muted-foreground">SaaS (recurring)</span>
               </div>
               <div className="flex items-center gap-2">
-                <DollarSign className="w-4 h-4 text-green-600" />
-                <span className="text-muted-foreground">Total saved: <strong className="text-green-600">${(dataPoints[years].savings / 1000).toFixed(0)}k</strong></span>
+                <div className="w-4 h-0.5 bg-purple-500"></div>
+                <span className="text-xs text-muted-foreground">Custom (one-time)</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Summary statistics */}
+          {isCardHovered && (
+            <div className="absolute top-2 right-2 bg-white/80 backdrop-blur-sm rounded-lg p-3 text-sm animate-fadeIn border border-border/20">
+              <div className="flex items-center gap-2 mb-1">
+                <TrendingUp className="w-4 h-4 text-purple-700" />
+                <span className="text-muted-foreground">10-year cost: <strong className="text-purple-700">${(dataPoints[years].saasCumulative / 1000).toFixed(0)}k</strong></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <DollarSign className="w-4 h-4 text-purple-600" />
+                <span className="text-muted-foreground">You save: <strong className="text-purple-600">${(dataPoints[years].savings / 1000).toFixed(0)}k</strong></span>
               </div>
             </div>
           )}
