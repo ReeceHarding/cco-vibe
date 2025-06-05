@@ -282,8 +282,6 @@ export default function Home() {
                 </svg>
               </span>{" "}
               in 2 weeks
-              <br />
-              <span className="text-muted-foreground">and you don't pay until you're happy</span>
             </h1>
 
             {/* Subheading - Updated content */}
@@ -293,7 +291,7 @@ export default function Home() {
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              Replace expensive SaaS with custom internal tools. Built by American developers using AI to code 10x faster, saving you 75% on development costs.
+              Replace expensive SaaS with custom internal tools. Built by American developers using AI to code 10x faster, saving you 75% on development costs. And the best part? You don't pay until you're completely happy with the results.
             </p>
 
             {/* Feature pills - Updated benefits */}
