@@ -291,7 +291,7 @@ export default function Home() {
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              You won't pay a single dollar until you're completely happy with what we build.
+              Just $1k to start. Then nothing more until you're completely happy with what we build.
             </p>
 
             {/* Feature pills - Updated benefits */}
@@ -303,7 +303,7 @@ export default function Home() {
             >
               <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                 <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Pay after you're satisfied</span>
+                <span className="text-sm font-medium text-purple-900">Only $1k to start</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                 <Check className="w-4 h-4 text-purple-600" />
@@ -334,7 +334,7 @@ export default function Home() {
                 </span>
               </Button>
               <p className="text-sm text-muted-foreground mt-4">
-                No payment until you're 100% satisfied • Free consultation
+                $1k deposit • Balance only when satisfied • Free consultation
               </p>
             </div>
               
