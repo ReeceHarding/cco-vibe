@@ -98,7 +98,7 @@ export default function Home() {
     {
       id: "pricing-works",
       question: "How does pricing work?",
-      answer: "We offer two licensing models: Non-exclusive license ($10-20k) where we retain rights to reuse the code for other clients, making it very affordable. Exclusive license ($40-50k) gives you complete IP ownership and guarantees your code is never reused. Both options are 40-80% less than the industry standard of $80-100k for similar projects. You get a fully functional, production-ready application for a fraction of the cost."
+      answer: "We offer two licensing options: Non-Exclusive License ($10-20k) where we can reuse similar solutions for other clients, and Exclusive License ($40-50k) where your code stays yours only. Both options are significantly cheaper than the industry standard of $80-100k. You get a fully functional, production-ready application with 2 week delivery and 100% satisfaction guarantee."
     },
     {
       id: "who-are-you",
@@ -111,38 +111,35 @@ export default function Home() {
   const pricingPlans = [
     {
       name: "Non-Exclusive License",
-      description: "Reusable package for your business",
+      description: "We can reuse similar solutions",
       price: "10-20k",
       industryPrice: "80-100k",
-      savings: "75-80%",
+      savings: "80%",
       recommended: true,
       features: [
         "Full custom application",
-        "We retain rights to reuse code",
         "2 week delivery",
         "Daily progress updates", 
         "100% satisfaction guarantee",
-        "Source code ownership for your use",
+        "Source code ownership",
         "30 days of free revisions",
-        "Priority support"
+        "We may reuse components for other clients"
       ]
     },
     {
       name: "Exclusive License", 
-      description: "Your code, your IP, exclusively",
+      description: "Your code stays yours only",
       price: "40-50k",
       industryPrice: "80-100k",
-      savings: "40-50%",
+      savings: "50%",
       features: [
         "Full custom application",
-        "Complete IP ownership",
-        "Code never reused elsewhere",
         "2 week delivery",
         "Daily progress updates",
         "100% satisfaction guarantee", 
-        "Full source code ownership",
+        "Complete source code ownership",
         "60 days of free revisions",
-        "White glove support"
+        "We won't reuse any of your code"
       ]
     }
   ]
@@ -871,15 +868,17 @@ export default function Home() {
               <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider mb-4">Pricing</h2>
               <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl mb-6">
                 Choose your{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">licensing model</span>
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">licensing option</span>
               </h3>
               <p className="text-muted-foreground text-lg mb-10">
-                Save 40-80% compared to traditional agencies
+                Up to 80% cheaper than traditional agencies
               </p>
               <div className="inline-flex items-center justify-center bg-gradient-to-r from-purple-50 to-purple-100/50 text-purple-700 px-6 py-3 rounded-full text-[15px] font-medium border border-purple-200/50 shadow-sm">
-                💜 100% satisfaction guarantee
+                💜 Flexible licensing options
               </div>
             </div>
+
+
 
             {/* Pricing cards */}
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -1001,7 +1000,7 @@ export default function Home() {
                         <div className="text-center">
                           <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full">
                             <Check className="w-4 h-4 text-green-600" />
-                            <span className="font-semibold text-green-600">$10 to 40k</span>
+                            <span className="font-semibold text-green-600">$10 to 50k</span>
                           </div>
                         </div>
                         <div className="text-center">
@@ -1121,7 +1120,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <div className="mb-6">
               <span className="inline-block px-5 py-2.5 bg-primary/10 text-primary text-[13px] font-bold rounded-full uppercase tracking-wider">
-                LIMITED TIME OFFER
+                GET STARTED TODAY
               </span>
             </div>
             <h2 className="mx-auto mt-4 max-w-4xl font-semibold text-3xl sm:text-4xl md:text-5xl mb-10">

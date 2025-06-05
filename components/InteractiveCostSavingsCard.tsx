@@ -30,8 +30,8 @@ export const InteractiveCostSavingsCard = () => {
   
   // Chart dimensions - more compact
   const chartWidth = 596
-  const chartHeight = 200 // Reduced height for better proportions
-  const padding = { top: 30, right: 30, bottom: 40, left: 60 }
+  const chartHeight = 180 // Reduced height for better proportions
+  const padding = { top: 20, right: 30, bottom: 35, left: 60 }
   const graphWidth = chartWidth - padding.left - padding.right
   const graphHeight = chartHeight - padding.top - padding.bottom
   
@@ -83,9 +83,9 @@ export const InteractiveCostSavingsCard = () => {
         </div>
         
         {/* Interactive SVG Chart */}
-        <div className="flex-1 min-h-[240px] relative flex items-end">
+        <div className="flex-1 relative flex items-end">
           <svg 
-            className="w-full h-full cursor-crosshair" 
+            className="w-full h-auto cursor-crosshair" 
             viewBox={`0 0 ${chartWidth} ${chartHeight}`} 
             preserveAspectRatio="xMidYMid meet"
           >
