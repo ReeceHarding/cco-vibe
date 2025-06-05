@@ -83,27 +83,27 @@ export default function Home() {
     {
       id: "what-we-do",
       question: "What exactly do you build?",
-      answer: "We build custom software solutions using AI to deliver 10x faster than traditional agencies. This includes internal tools (like Slack or Notion clones), MVPs for startups, process automation, and any custom application your business needs. Everything is built with production-ready code, beautiful UI, and enterprise-grade security."
+      answer: "We build the exact same software you're currently renting from SaaS companies, but you own it forever. Internal tools like Slack, project management like Notion, analytics dashboards, automation tools, MVPs. Anything you're paying monthly for, we can build custom for less than 3 months of fees."
     },
     {
       id: "how-fast",
-      question: "How can you build so fast?",
-      answer: "We're graduates of the world's best AI bootcamp and leverage cutting-edge AI tools to write code 10x faster than traditional methods. Combined with our 20+ years of collective software development experience, we know exactly what to build and how to build it efficiently. What takes others 3-4 months, we deliver in 2 weeks."
+      question: "How can you really build in 2 weeks?",
+      answer: "Traditional developers type code line by line like using a shovel. We use AI like an excavator. Our Gauntlet AI training taught us prompting techniques that 99% of developers don't know exist. We generate thousands of lines of perfect, tested code instantly. Same quality, 10x the speed."
     },
     {
       id: "satisfaction-guarantee",
-      question: "What's the satisfaction guarantee?",
-      answer: "Simple: You don't pay until you're 100% satisfied. We'll work with you to refine the product until it meets your exact specifications. We send updates every 1-2 days, so you're always in the loop. At the end, if you're not completely happy, you don't pay. It's that straightforward."
+      question: "What if I don't like what you build?",
+      answer: "You pay nothing. Period. We show you progress every single day. You give feedback. We refine. At the end of 2 weeks, if you don't absolutely love it, you don't pay a cent. We take all the risk, not you."
     },
     {
       id: "pricing-works",
-      question: "How does pricing work?",
-      answer: "We offer two licensing options: Non-Exclusive License ($10-20k) where we can reuse similar solutions for other clients, and Exclusive License ($40-50k) where your code stays yours only. Both options are significantly cheaper than the industry standard of $80-100k. You get a fully functional, production-ready application with 2 week delivery and 100% satisfaction guarantee."
+      question: "Why is it so much cheaper than agencies?",
+      answer: "Agencies have massive overhead: offices, account managers, designers who don't code, developers who code slowly. We're lean: just senior developers using AI. What takes them 500 hours takes us 50. Less time = less cost. You get the savings."
     },
     {
       id: "who-are-you",
-      question: "Who's on your team?",
-      answer: "We're an all-American team of senior developers, each with years of experience building production software. We're all graduates of the world's most prestigious AI bootcamp, making us experts in both traditional development and cutting-edge AI. We're in US time zones, speak perfect English, and pride ourselves on clear communication and exceptional taste in design."
+      question: "Why should I trust you?",
+      answer: "We're graduates of the most elite AI program in the world. Gauntlet AI accepts less than 1% of applicants. We're not random freelancers. We're American, in your timezone, speak perfect English, and have spent years mastering both traditional development and cutting edge AI. Plus, you literally pay nothing if you're not thrilled."
     }
   ]
 
@@ -254,7 +254,7 @@ export default function Home() {
               <div className="flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-full border border-purple-200/30">
                 <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full animate-pulse" />
                 <span className="text-sm font-medium text-muted-foreground">
-                  Gauntlet AI graduates • 100% satisfaction guarantee
+                  Gauntlet AI Graduates • The world's best AI bootcamp
                 </span>
               </div>
             </div>
@@ -266,22 +266,7 @@ export default function Home() {
               }`}
               style={{ transitionDelay: "100ms" }}
             >
-              We'll build you{" "}
-              <span className="relative">
-                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-                  any app
-                </span>
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" stroke="url(#paint0_linear)" strokeWidth="4" strokeLinecap="round"/>
-                  <defs>
-                    <linearGradient id="paint0_linear" x1="2" y1="9" x2="298" y2="9" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#9333EA"/>
-                      <stop offset="1" stopColor="#A855F7"/>
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </span>{" "}
-              in 2 weeks
+              Still renting software you could own?
             </h1>
 
             {/* Subheading - Updated content */}
@@ -291,7 +276,8 @@ export default function Home() {
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              Just $1k to start. Then nothing more until you're completely happy with what we build.
+              We're graduates of the world's most elite AI program. 
+              We build in 2 weeks what traditional developers deliver in 6 months.
             </p>
 
             {/* Feature pills - Updated benefits */}
@@ -303,15 +289,15 @@ export default function Home() {
             >
               <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                 <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Only $1k to start</span>
+                <span className="text-sm font-medium text-purple-900">Trained by the creators of AI development itself</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                 <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">2 week delivery</span>
+                <span className="text-sm font-medium text-purple-900">Using techniques 99% of developers don't know exist</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                 <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Save thousands annually</span>
+                <span className="text-sm font-medium text-purple-900">Pay nothing until you love it (100% risk free)</span>
               </div>
             </div>
 
@@ -327,14 +313,14 @@ export default function Home() {
                 className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group"
               >
                 <span className="flex items-center gap-3">
-                  Book a risk-free consultation
+                  See The AI Difference
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
               </Button>
               <p className="text-sm text-muted-foreground mt-4">
-                $1k deposit • Balance only when satisfied • Free consultation
+                Love it or pay nothing • See progress daily • Free consultation
               </p>
             </div>
               
@@ -421,14 +407,14 @@ export default function Home() {
             <div className="text-center mx-auto mb-16">
               <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">About Us</h2>
               <h3 className="mx-auto mt-4 max-w-3xl font-semibold text-3xl sm:text-4xl md:text-5xl">
-                We're{" "}
+                Graduates of the World's Most Elite{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-                  Gauntlet AI graduates
-                </span>{" "}
-                building the future 10x faster
+                  AI Program
+                </span>
               </h3>
               <p className="text-muted-foreground text-lg mt-6 max-w-3xl mx-auto">
-                As graduates of the world's best AI bootcamp, we leverage cutting-edge tools like Cursor, Claude, GPT, Gemini, and Grok to build production-ready applications in record time.
+                While traditional developers are still coding by hand, we learned directly from the pioneers of AI development. 
+                Gauntlet AI accepts less than 1% of applicants. We made it through.
               </p>
             </div>
 
@@ -438,27 +424,30 @@ export default function Home() {
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Sparkles className="w-8 h-8 text-purple-600" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2">AI-Powered Development</h4>
+                <h4 className="font-semibold text-lg mb-2">10x Faster = 10x Cheaper</h4>
                 <p className="text-muted-foreground text-sm">
-                  We code 10x faster using AI, which means we can charge 75% less than traditional agencies while delivering superior results.
+                  We code at AI speed. What takes agencies 6 months, we ship in 2 weeks. 
+                  Less time = less cost = your savings.
                 </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8 text-purple-600" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2">American Based</h4>
+                <h4 className="font-semibold text-lg mb-2">Built by Builders, Not Talkers</h4>
                 <p className="text-muted-foreground text-sm">
-                  Perfect English communication, same time zones, and exceptional taste in design. We understand your business needs intimately.
+                  Gauntlet AI graduates who've shipped to real users. We build, you own, 
+                  SaaS companies cry.
                 </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Code2 className="w-8 h-8 text-purple-600" />
                 </div>
-                <h4 className="font-semibold text-lg mb-2">Production Ready</h4>
+                <h4 className="font-semibold text-lg mb-2">Risk Free Guarantee</h4>
                 <p className="text-muted-foreground text-sm">
-                  Years of experience building secure, scalable applications. We handle deployment, security, and all the complexities.
+                  We work until you love it or it's free. No contracts, no deposits, no risk. 
+                  Pay only when you see it working.
                 </p>
               </div>
             </div>
@@ -466,20 +455,20 @@ export default function Home() {
             {/* Our focus */}
             <div className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-purple-100/20 max-w-4xl mx-auto text-center">
               <h4 className="font-semibold text-2xl mb-4">
-                We specialize in building{" "}
+                Paying monthly for software is like renting an apartment {" "}
                 <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-                  internal tools
-                </span>{" "}
-                that replace expensive SaaS
+                  you'll never own
+                </span>
               </h4>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Why pay $50k+ annually for Slack, Notion, or Jira when we can build you a custom solution that fits your exact needs? 
-                Our clients save thousands every year by replacing bloated SaaS products with lean, custom-built tools.
+                Every month you send money to Slack, Notion, Jira... and what do you have to show for it? 
+                Nothing. You're building their equity, not yours. We build you custom software that you own forever. 
+                One payment. No monthly fees. Ever.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
                 <div className="flex items-center justify-center gap-2">
                   <DollarSign className="w-5 h-5 text-green-600" />
-                  <span className="font-medium">Save $20k-100k annually</span>
+                  <span className="font-medium">Own it forever</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Zap className="w-5 h-5 text-purple-600" />
@@ -487,7 +476,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Users className="w-5 h-5 text-purple-600" />
-                  <span className="font-medium">Tailored to your team</span>
+                  <span className="font-medium">Exactly what you need</span>
                 </div>
               </div>
             </div>
@@ -497,13 +486,13 @@ export default function Home() {
         {/* Video Testimonials Section */}
         <section className="pt-12 lg:py-24" id="testimonials">
           <div className="text-center mb-12">
-            <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Client Success Stories</h2>
+            <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Live Case Studies</h2>
             <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
-              What our clients are{" "}
-              <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">saying about us</span>
+              Watch us build{" "}
+              <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">real software in real time</span>
             </h3>
             <p className="text-muted-foreground text-lg mt-4">
-              100% satisfaction rate from Fortune 500s to startups
+              See exactly how we use AI to build 10x faster
             </p>
           </div>
 
@@ -666,11 +655,15 @@ export default function Home() {
         <section id="projects" className="py-12 md:py-24 bg-gradient-to-b from-background to-background/50">
           <div className="container max-w-7xl">
             <div className="text-center mx-auto mb-20">
-              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Case Studies</h2>
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">The Mechanism</h2>
               <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
-                Projects that saved clients{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">millions of dollars</span>
+                Like using an excavator{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">instead of a shovel</span>
               </h3>
+              <p className="text-muted-foreground text-lg mt-4 max-w-3xl mx-auto">
+                Traditional developers code by hand. We use AI to generate thousands of lines of perfect code instantly. 
+                Same result, 10x faster, 90% cheaper.
+              </p>
             </div>
 
             {/* Project showcase grid */}
@@ -688,7 +681,7 @@ export default function Home() {
                 </div>
                 <h4 className="font-semibold text-lg mb-2">Internal Communication Platform</h4>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Replaced Slack for a 500-person company. Saved $60k/year with better features and on-premise security.
+                  Custom built alternative to Slack. Better features, owned forever, no monthly fees.
                 </p>
                 <div className="flex items-center gap-4 text-sm">
                   <div className="flex items-center gap-1">
@@ -697,7 +690,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-1">
                     <DollarSign className="w-4 h-4 text-green-600" />
-                    <span>$60k saved/year</span>
+                    <span>One time cost</span>
                   </div>
                 </div>
               </div>
@@ -715,7 +708,7 @@ export default function Home() {
                 </div>
                 <h4 className="font-semibold text-lg mb-2">AI Powered Analytics Platform</h4>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Custom analytics with AI insights. Replaced $100k/year enterprise solution with better performance.
+                  Custom analytics with AI insights. Stop paying monthly for features you don't need.
                 </p>
                 <div className="flex items-center gap-4 text-sm">
                   <div className="flex items-center gap-1">
@@ -724,7 +717,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-1">
                     <DollarSign className="w-4 h-4 text-green-600" />
-                    <span>$100k saved/year</span>
+                    <span>Own forever</span>
                   </div>
                 </div>
               </div>
@@ -742,7 +735,7 @@ export default function Home() {
                 </div>
                 <h4 className="font-semibold text-lg mb-2">FinTech Startup MVP</h4>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Full-featured MVP launched in 2 weeks. Secured $2M funding after launch. Now has 10k users.
+                  Full featured MVP launched in 2 weeks. Production ready from day one.
                 </p>
                 <div className="flex items-center gap-4 text-sm">
                   <div className="flex items-center gap-1">
@@ -751,7 +744,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-1">
                     <Rocket className="w-4 h-4 text-purple-600" />
-                    <span>$2M raised</span>
+                    <span>Live in 2 weeks</span>
                   </div>
                 </div>
               </div>
@@ -763,10 +756,10 @@ export default function Home() {
         <section className="py-12 md:py-24 bg-background">
           <div className="container max-w-7xl">
             <div className="text-center mx-auto mb-12">
-              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Why Choose Us</h2>
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">Dream Outcome</h2>
               <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
-                Build faster, cheaper, better with{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">AI-powered development</span>
+                Imagine if you{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">never paid for software again</span>
               </h3>
             </div>
 
@@ -834,10 +827,10 @@ export default function Home() {
         <section id="features" className="py-12 md:py-24 bg-background">
           <div className="container max-w-7xl">
             <div className="text-center mx-auto mb-20">
-              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">What We Build</h2>
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">What You Get</h2>
               <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl">
-                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">Custom solutions</span>{" "}
-                for every business need
+                Everything you need. Nothing you don't.{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">Built exactly for you.</span>
               </h3>
             </div>
 
@@ -942,16 +935,16 @@ export default function Home() {
         <section id="pricing" className="relative py-32 px-4 bg-gradient-to-b from-background/50 to-background">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider mb-4">Pricing</h2>
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider mb-4">Investment</h2>
               <h3 className="mx-auto mt-4 max-w-xs font-semibold text-3xl sm:max-w-none sm:text-4xl md:text-5xl mb-6">
-                Choose your{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">licensing option</span>
+                Own your software{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">forever</span>
               </h3>
               <p className="text-muted-foreground text-lg mb-10">
-                Up to 80% cheaper than traditional agencies
+                One payment. No subscriptions. No surprises.
               </p>
               <div className="inline-flex items-center justify-center bg-gradient-to-r from-purple-50 to-purple-100/50 text-purple-700 px-6 py-3 rounded-full text-[15px] font-medium border border-purple-200/50 shadow-sm">
-                💜 Flexible licensing options
+                💜 Pay nothing until you love it
               </div>
             </div>
 
@@ -1197,16 +1190,16 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <div className="mb-6">
               <span className="inline-block px-5 py-2.5 bg-primary/10 text-primary text-[13px] font-bold rounded-full uppercase tracking-wider">
-                GET STARTED TODAY
+                LIMITED SPOTS AVAILABLE
               </span>
             </div>
             <h2 className="mx-auto mt-4 max-w-4xl font-semibold text-3xl sm:text-4xl md:text-5xl mb-10">
-              Stop paying for expensive SaaS.{" "}
+              Every month you wait is money{" "}
               <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-                Own your software
+                thrown away
               </span>
               <br />
-              and save millions
+              on software you'll never own
             </h2>
             
             <div className="flex flex-wrap justify-center gap-8 mb-12">
@@ -1226,7 +1219,7 @@ export default function Home() {
                 <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group transition-all duration-300 hover:bg-primary/20">
                   <Check className="w-5 h-5 text-primary" />
                 </div>
-                <span className="text-muted-foreground text-[16px]">75% Cheaper</span>
+                <span className="text-muted-foreground text-[16px]">Pay After Delivery</span>
               </div>
             </div>
 
@@ -1234,10 +1227,10 @@ export default function Home() {
               onClick={handleScheduleCall}
               className="bg-gradient-to-r from-purple-600 to-purple-400 hover:from-purple-700 hover:to-purple-500 text-white rounded-2xl px-10 py-5 font-medium text-[17px] shadow-[0_4px_20px_rgba(168,85,247,0.15)] hover:shadow-[0_6px_30px_rgba(168,85,247,0.25)] transform hover:-translate-y-0.5 transition-all duration-200"
             >
-              Schedule Your Free Consultation →
+              Lock In Your Spot Now →
             </Button>
             <p className="text-sm text-muted-foreground mt-4">
-              No commitment required • 30-minute call
+              Free consultation • We can only take 3 new clients this month
             </p>
           </div>
 
