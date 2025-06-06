@@ -15,36 +15,26 @@ export default function Home() {
   const [showVideo, setShowVideo] = useState(false)
   const [activeFeatureTab, setActiveFeatureTab] = useState("internal-tools")
   const [openFaqItem, setOpenFaqItem] = useState<string | null>(null)
-  const [showNavigation, setShowNavigation] = useState(false)
+  const [showNavigation, setShowNavigation] = useState(true) // Always show nav
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
   const [isWordAnimating, setIsWordAnimating] = useState(false)
 
-  // Rotating words for hero section
+  // Rotating words for hero section - NEW
   const rotatingWords = [
-    { text: "Custom Software", color: "from-purple-600 to-purple-400" },
+    { text: "Internal Tools", color: "from-purple-600 to-purple-400" },
     { text: "AI Chatbots", color: "from-blue-600 to-blue-400" },
-    { text: "Internal Tools", color: "from-green-600 to-green-400" },
+    { text: "Custom SaaS", color: "from-green-600 to-green-400" },
     { text: "Data Platforms", color: "from-orange-600 to-orange-400" },
-    { text: "MVP Development", color: "from-pink-600 to-pink-400" },
-    { text: "Process Automation", color: "from-indigo-600 to-indigo-400" },
-    { text: "Real-time Systems", color: "from-teal-600 to-teal-400" }
+    { text: "MVPs", color: "from-pink-600 to-pink-400" },
+    { text: "AI Agents", color: "from-indigo-600 to-indigo-400" }
   ]
 
   useEffect(() => {
     setMounted(true)
     console.log("Page mounted - animations starting")
-    
-    // Add scroll listener for navigation
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      setShowNavigation(scrollY > 100)
-    }
-    
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Rotating words animation
+  // Rotating words animation - NEW
   useEffect(() => {
     if (!mounted) return
     
@@ -56,10 +46,10 @@ export default function Home() {
         setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length)
         setIsWordAnimating(false)
       }, 300)
-    }, 3000) // Change word every 3 seconds
+    }, 3000)
     
     return () => clearInterval(interval)
-  }, [mounted, currentWordIndex])
+  }, [mounted, currentWordIndex, rotatingWords.length])
 
   const handleVideoClick = () => {
     console.log("Video button clicked - opening project showcase video")
@@ -292,35 +282,28 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* Hero Heading with Underline - Following exact spec */}
+              {/* Hero Heading with Rotating Words - NEW */}
               <h1 
                 className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "100ms" }}
               >
-                Build{" "}
-                <span className="relative">
-                  <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-                    custom software
-                  </span>
-                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                    <path 
-                      d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" 
-                      stroke="url(#paint0_linear)" 
-                      strokeWidth="4" 
-                      strokeLinecap="round"
-                    />
-                    <defs>
-                      <linearGradient id="paint0_linear" x1="2" y1="9" x2="298" y2="9">
-                        <stop stopColor="#9333EA"/>
-                        <stop offset="1" stopColor="#A855F7"/>
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>{" "}
+                We'll build you
                 <br />
-                <span className="text-muted-foreground">you'll own forever</span>
+                <span 
+                  className={`relative inline-block h-[1.2em] transition-all duration-300 ${
+                    isWordAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+                  }`}
+                >
+                  <span className={`bg-gradient-to-r ${rotatingWords[currentWordIndex].color} bg-clip-text text-transparent`}>
+                    {rotatingWords[currentWordIndex].text}
+                  </span>
+                </span>
+                <br />
+                <span className="text-muted-foreground">
+                  - risk free
+                </span>
               </h1>
 
               {/* Subheading - Following layout pattern */}
@@ -351,7 +334,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
                   <Check className="w-4 h-4 text-purple-600" />
-                  <span className="text-sm font-medium text-purple-900">100% satisfaction guarantee</span>
+                  <span className="text-sm font-medium text-purple-900">Pay nothing until you love it</span>
                 </div>
               </div>
 
@@ -367,14 +350,14 @@ export default function Home() {
                   className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group"
                 >
                   <span className="flex items-center gap-3">
-                    Start building for free
+                    Start Your Risk-Free Build
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </span>
                 </Button>
                 <p className="text-sm text-muted-foreground mt-4">
-                  7-day free trial • No credit card required • Cancel anytime
+                  100% satisfaction guarantee • Daily progress updates
                 </p>
               </div>
 
