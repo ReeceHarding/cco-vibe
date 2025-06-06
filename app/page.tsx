@@ -21,12 +21,12 @@ export default function Home() {
 
   // Rotating words for hero section - NEW
   const rotatingWords = [
-    { text: "Internal Tools", color: "from-purple-600 to-purple-400" },
-    { text: "AI Chatbots", color: "from-blue-600 to-blue-400" },
-    { text: "Custom SaaS", color: "from-green-600 to-green-400" },
-    { text: "Data Platforms", color: "from-orange-600 to-orange-400" },
+    { text: "internal tools", color: "from-purple-600 to-purple-400" },
+    { text: "AI chatbots", color: "from-blue-600 to-blue-400" },
+    { text: "custom SaaS", color: "from-green-600 to-green-400" },
+    { text: "data platforms", color: "from-orange-600 to-orange-400" },
     { text: "MVPs", color: "from-pink-600 to-pink-400" },
-    { text: "AI Agents", color: "from-indigo-600 to-indigo-400" }
+    { text: "AI agents", color: "from-indigo-600 to-indigo-400" }
   ]
 
   useEffect(() => {
@@ -282,27 +282,41 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* Hero Heading with Rotating Words - NEW */}
+              {/* Hero Heading - Beautiful with Rotating Words */}
               <h1 
                 className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "100ms" }}
               >
-                We'll build you
-                <br />
-                <span 
-                  className={`relative inline-block h-[1.2em] transition-all duration-300 ${
-                    isWordAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
-                  }`}
-                >
-                  <span className={`bg-gradient-to-r ${rotatingWords[currentWordIndex].color} bg-clip-text text-transparent`}>
+                We'll build you{" "}
+                <span className="relative inline-block">
+                  <span 
+                    className={`bg-gradient-to-r ${rotatingWords[currentWordIndex].color} bg-clip-text text-transparent transition-all duration-300 ${
+                      isWordAnimating ? "opacity-0" : "opacity-100"
+                    }`}
+                  >
                     {rotatingWords[currentWordIndex].text}
                   </span>
+                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
+                    <path 
+                      d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" 
+                      stroke="url(#paint0_linear)" 
+                      strokeWidth="4" 
+                      strokeLinecap="round"
+                    />
+                    <defs>
+                      <linearGradient id="paint0_linear" x1="2" y1="9" x2="298" y2="9">
+                        <stop stopColor="#9333EA"/>
+                        <stop offset="1" stopColor="#A855F7"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
                 </span>
                 <br />
-                <span className="text-muted-foreground">
-                  - risk free
+                <span className="relative">
+                  <span>that you'll own forever</span>
+                  <span className="text-purple-600 font-normal"> - risk free</span>
                 </span>
               </h1>
 
