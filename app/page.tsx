@@ -2,8 +2,9 @@
 
 import React, { useEffect, useState, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Code2, PlayIcon, ChevronDown, Check, X, Sparkles, Shield, Clock, Rocket, Users, Zap, Heart, MessageCircle, Repeat2, Share, Bookmark, MoreHorizontal, Verified, DollarSign, Gauge } from "lucide-react"
+import { Code2, PlayIcon, ChevronDown, Check, X, Sparkles, Shield, Clock, Rocket, Users, Zap, Heart, MessageCircle, Repeat2, Share, Bookmark, MoreHorizontal, Verified, DollarSign, Gauge, Bot, Database, Terminal, Braces, GitBranch, Cpu } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { PostelLogo } from "@/components/logo"
 import { InteractiveCostSavingsCard } from "@/components/InteractiveCostSavingsCard"
@@ -15,6 +16,19 @@ export default function Home() {
   const [activeFeatureTab, setActiveFeatureTab] = useState("internal-tools")
   const [openFaqItem, setOpenFaqItem] = useState<string | null>(null)
   const [showNavigation, setShowNavigation] = useState(false)
+  const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  const [isWordAnimating, setIsWordAnimating] = useState(false)
+
+  // Rotating words for hero section
+  const rotatingWords = [
+    { text: "Custom Software", color: "from-purple-600 to-purple-400" },
+    { text: "AI Chatbots", color: "from-blue-600 to-blue-400" },
+    { text: "Internal Tools", color: "from-green-600 to-green-400" },
+    { text: "Data Platforms", color: "from-orange-600 to-orange-400" },
+    { text: "MVP Development", color: "from-pink-600 to-pink-400" },
+    { text: "Process Automation", color: "from-indigo-600 to-indigo-400" },
+    { text: "Real-time Systems", color: "from-teal-600 to-teal-400" }
+  ]
 
   useEffect(() => {
     setMounted(true)
@@ -29,6 +43,23 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Rotating words animation
+  useEffect(() => {
+    if (!mounted) return
+    
+    const interval = setInterval(() => {
+      setIsWordAnimating(true)
+      console.log(`Rotating to next word: ${rotatingWords[(currentWordIndex + 1) % rotatingWords.length].text}`)
+      
+      setTimeout(() => {
+        setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length)
+        setIsWordAnimating(false)
+      }, 300)
+    }, 3000) // Change word every 3 seconds
+    
+    return () => clearInterval(interval)
+  }, [mounted, currentWordIndex])
 
   const handleVideoClick = () => {
     console.log("Video button clicked - opening project showcase video")
@@ -236,12 +267,13 @@ export default function Home() {
     <>
       <Navigation showNavigation={showNavigation} />
       <main className="relative min-h-screen overflow-hidden">
-        {/* Hero Section - Adjusted padding since nav is hidden initially */}
+        {/* Hero Section - Modernized with rotating words */}
         <div className="container relative z-10 pt-24 md:pt-32 pb-20 md:pb-32">
-          {/* Simplified decorative elements */}
+          {/* Enhanced decorative elements for modern feel */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse" />
             <div className="absolute top-40 right-[15%] w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
+            <div className="absolute bottom-0 left-[50%] w-[500px] h-[500px] bg-gradient-to-r from-blue-200/10 to-purple-200/10 rounded-full blur-3xl" />
           </div>
 
           <div className="max-w-5xl mx-auto text-center px-4">
@@ -259,14 +291,41 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Main heading - Updated copy */}
+            {/* Rotating words section - NEW */}
+            <div 
+              className={`mb-4 transition-all duration-700 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "50ms" }}
+            >
+              <p className="text-lg md:text-xl text-muted-foreground mb-2">We build</p>
+              <div className="h-[60px] md:h-[80px] flex items-center justify-center">
+                <h2 
+                  className={`text-3xl md:text-5xl lg:text-6xl font-bold transition-all duration-300 ${
+                    isWordAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+                  }`}
+                >
+                  <span className={`bg-gradient-to-r ${rotatingWords[currentWordIndex].color} bg-clip-text text-transparent`}>
+                    {rotatingWords[currentWordIndex].text}
+                  </span>
+                </h2>
+              </div>
+            </div>
+
+            {/* Main heading - Updated with modern styling */}
             <h1 
               className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 transition-all duration-700 ${
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: "100ms" }}
             >
-              Still renting software you could own?
+              <span className="bg-gradient-to-br from-gray-900 to-gray-700 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
+                Still renting software
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+                you could own?
+              </span>
             </h1>
 
             {/* Subheading - Updated content */}
@@ -277,48 +336,59 @@ export default function Home() {
               style={{ transitionDelay: "200ms" }}
             >
               We're graduates of the world's most elite AI program. 
-              We build in 2 weeks what traditional developers deliver in 6 months.
+              We build in <span className="font-semibold text-purple-600">2 weeks</span> what traditional developers deliver in 6 months.
             </p>
 
-            {/* Feature pills - Updated benefits */}
+            {/* Feature pills - Enhanced with icons */}
             <div 
               className={`flex flex-wrap justify-center gap-4 mb-10 transition-all duration-700 ${
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: "300ms" }}
             >
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Trained by the creators of AI development itself</span>
+              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-50 to-purple-100/50 rounded-full border border-purple-200/50 shadow-sm">
+                <Bot className="w-4 h-4 text-purple-600" />
+                <span className="text-sm font-medium text-purple-900">AI-Powered Development</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Using techniques 99% of developers don't know exist</span>
+              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-50 to-green-100/50 rounded-full border border-green-200/50 shadow-sm">
+                <Rocket className="w-4 h-4 text-green-600" />
+                <span className="text-sm font-medium text-green-900">2-Week Delivery</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                <Check className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">Pay nothing until you love it (100% risk free)</span>
+              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100/50 rounded-full border border-blue-200/50 shadow-sm">
+                <Shield className="w-4 h-4 text-blue-600" />
+                <span className="text-sm font-medium text-blue-900">100% Risk Free</span>
               </div>
             </div>
 
-            {/* CTA Section - Updated */}
+            {/* CTA Section - Modernized */}
             <div 
               className={`transition-all duration-700 ${
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: "400ms" }}
             >
-              <Button
-                onClick={handleScheduleCall}
-                className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group"
-              >
-                <span className="flex items-center gap-3">
-                  See The AI Difference
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  onClick={handleScheduleCall}
+                  className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group"
+                >
+                  <span className="flex items-center gap-3">
+                    See The AI Difference
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+                </Button>
+                <Button
+                  onClick={() => document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-white hover:bg-gray-50 text-purple-600 border-2 border-purple-200 hover:border-purple-300 rounded-full px-8 py-6 text-lg font-medium shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <span className="flex items-center gap-3">
+                    Free Consultation
+                    <ChevronDown className="w-5 h-5" />
+                  </span>
+                </Button>
+              </div>
               <p className="text-sm text-muted-foreground mt-4">
                 Love it or pay nothing • See progress daily • Free consultation
               </p>
@@ -1241,6 +1311,201 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Free Consultation Form Section */}
+        <section id="consultation-form" className="relative py-24 px-4 bg-gradient-to-b from-background to-muted/30">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider mb-4">Apply to Work With Us</h2>
+              <h3 className="mx-auto mt-4 max-w-2xl font-semibold text-3xl sm:text-4xl md:text-5xl mb-6">
+                Get a{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+                  free consultation
+                </span>
+                {" "}or custom website
+              </h3>
+              <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+                Tell us about your project and we'll show you exactly how we can help. 
+                No sales pitch, just solutions.
+              </p>
+            </div>
+
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-border/40 p-8 md:p-10">
+              <form 
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  console.log("Form submitted - processing consultation request")
+                  const formData = new FormData(e.currentTarget)
+                  const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    company: formData.get('company'),
+                    revenue: formData.get('revenue'),
+                    budget: formData.get('budget'),
+                    project: formData.get('project'),
+                    timeline: formData.get('timeline')
+                  }
+                  console.log("Form data:", data)
+                  // In production, this would send to your API
+                  alert("Thank you! We'll reach out within 24 hours with a custom proposal.")
+                }}
+                className="space-y-6"
+              >
+                {/* Name and Email Row */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      Your Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-border/40 bg-white/50 focus:bg-white focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-border/40 bg-white/50 focus:bg-white focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                </div>
+
+                {/* Company and Revenue Row */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                      Company Name
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      className="w-full px-4 py-3 rounded-lg border border-border/40 bg-white/50 focus:bg-white focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                      placeholder="Acme Inc."
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="revenue" className="block text-sm font-medium text-foreground mb-2">
+                      Annual Revenue (Optional)
+                    </label>
+                    <select
+                      id="revenue"
+                      name="revenue"
+                      className="w-full px-4 py-3 rounded-lg border border-border/40 bg-white/50 focus:bg-white focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                    >
+                      <option value="">Select range</option>
+                      <option value="pre-revenue">Pre-revenue</option>
+                      <option value="0-100k">$0 - $100k</option>
+                      <option value="100k-500k">$100k - $500k</option>
+                      <option value="500k-1m">$500k - $1M</option>
+                      <option value="1m-5m">$1M - $5M</option>
+                      <option value="5m-10m">$5M - $10M</option>
+                      <option value="10m+">$10M+</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Budget and Timeline Row */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="budget" className="block text-sm font-medium text-foreground mb-2">
+                      Project Budget *
+                    </label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-border/40 bg-white/50 focus:bg-white focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                    >
+                      <option value="">Select budget</option>
+                      <option value="10k-20k">$10k - $20k</option>
+                      <option value="20k-30k">$20k - $30k</option>
+                      <option value="30k-50k">$30k - $50k</option>
+                      <option value="50k+">$50k+</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="timeline" className="block text-sm font-medium text-foreground mb-2">
+                      When do you need it? *
+                    </label>
+                    <select
+                      id="timeline"
+                      name="timeline"
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-border/40 bg-white/50 focus:bg-white focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                    >
+                      <option value="">Select timeline</option>
+                      <option value="asap">ASAP (2 weeks)</option>
+                      <option value="1month">Within 1 month</option>
+                      <option value="2months">Within 2 months</option>
+                      <option value="flexible">I'm flexible</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Project Description */}
+                <div>
+                  <label htmlFor="project" className="block text-sm font-medium text-foreground mb-2">
+                    What do you want to build? *
+                  </label>
+                  <textarea
+                    id="project"
+                    name="project"
+                    required
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-lg border border-border/40 bg-white/50 focus:bg-white focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-200 resize-none"
+                    placeholder="Describe your project... Are you looking to replace existing software? Build an MVP? Add AI features? The more details you share, the better we can help."
+                  />
+                </div>
+
+                {/* Value Props */}
+                <div className="bg-purple-50/50 rounded-2xl p-6 space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Sparkles className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-purple-900">
+                      <span className="font-semibold">AI-Powered Development:</span> We use cutting edge AI to build 10x faster
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Shield className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-purple-900">
+                      <span className="font-semibold">100% Risk Free:</span> Pay nothing until you love what we build
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-purple-900">
+                      <span className="font-semibold">2 Week Delivery:</span> Get your custom software in just 14 days
+                    </p>
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <Button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-xl py-4 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  Get Your Free Consultation →
+                </Button>
+
+                <p className="text-xs text-center text-muted-foreground mt-4">
+                  We'll respond within 24 hours with a custom proposal. No spam, ever.
+                </p>
+              </form>
+            </div>
+          </div>
+        </section>
+
         {/* Footer */}
         <footer className="bg-white/50 backdrop-blur-sm border-t border-border/40 py-16 px-4">
           <div className="max-w-7xl mx-auto">
@@ -1281,19 +1546,19 @@ export default function Home() {
                 <h4 className="font-medium text-foreground mb-5 text-[16px]">Services</h4>
                 <ul className="space-y-3">
                   <li>
-                    <a href="#" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
-                      Custom Internal Tools
-                    </a>
+                    <Link href="/services" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
+                      All Services
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
-                      MVP Development
-                    </a>
+                    <Link href="/services#case-studies" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
+                      Case Studies
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
-                      AI Integration
-                    </a>
+                    <Link href="/about" className="text-muted-foreground text-[15px] hover:text-primary transition-colors">
+                      About Us
+                    </Link>
                   </li>
                 </ul>
               </div>

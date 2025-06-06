@@ -56,6 +56,8 @@ export function Navigation({ showNavigation = true }: NavigationProps) {
 
       {/* Desktop Navigation Links */}
       <div className="hidden md:flex items-center gap-7">
+        <Link href="/about" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">About</Link>
+        <Link href="/services" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">Services</Link>
         <Link href="/#pricing" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">Pricing</Link>
         <Link href="/#faq" className="font-geist text-[15px] font-medium text-purple-700/80 hover:text-purple-700 transition-colors duration-200">FAQ</Link>
         <a href="https://discord.gg/vXUvyuPfBH" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center text-purple-700/80 hover:text-purple-700 transition-all duration-200" aria-label="Join our Discord">
