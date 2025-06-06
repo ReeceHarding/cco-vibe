@@ -19,14 +19,14 @@ export default function Home() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
   const [isWordAnimating, setIsWordAnimating] = useState(false)
 
-  // Rotating words for hero section - NEW
+  // Rotating words for hero section - Simplified
   const rotatingWords = [
-    { text: "internal tools", color: "from-purple-600 to-purple-400" },
-    { text: "AI chatbots", color: "from-blue-600 to-blue-400" },
-    { text: "custom SaaS", color: "from-green-600 to-green-400" },
-    { text: "data platforms", color: "from-orange-600 to-orange-400" },
-    { text: "MVPs", color: "from-pink-600 to-pink-400" },
-    { text: "AI agents", color: "from-indigo-600 to-indigo-400" }
+    "internal tools",
+    "AI chatbots", 
+    "custom SaaS",
+    "data platforms",
+    "MVPs",
+    "AI agents"
   ]
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function Home() {
     
     const interval = setInterval(() => {
       setIsWordAnimating(true)
-      console.log(`Rotating to next word: ${rotatingWords[(currentWordIndex + 1) % rotatingWords.length].text}`)
+      console.log(`Rotating to next word: ${rotatingWords[(currentWordIndex + 1) % rotatingWords.length]}`)
       
       setTimeout(() => {
         setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length)
@@ -269,147 +269,97 @@ export default function Home() {
           <div className="container relative z-10 pt-32 md:pt-40 pb-20 md:pb-32">
             <div className="max-w-5xl mx-auto text-center">
               
-              {/* Trust Signal Badge - Exact spec implementation */}
-              <div 
-                className={`inline-flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-full border border-purple-200/30 mb-8 transition-all duration-700 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: "0ms" }}
-              >
-                <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full animate-pulse" />
-                <span className="text-sm font-medium text-muted-foreground">
-                  Trusted by 100+ businesses saving millions
-                </span>
-              </div>
-
-              {/* Hero Heading - Beautiful with Rotating Words */}
+              {/* Hero Heading - Ultra Modern & Sophisticated */}
               <h1 
-                className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 transition-all duration-700 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                className={`transition-all duration-1000 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: "100ms" }}
               >
-                We'll build you{" "}
-                <span className="relative inline-block">
+                <span className="block text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-gray-900 dark:text-gray-100 mb-4">
+                  We'll build you
+                </span>
+                <span className="block relative">
                   <span 
-                    className={`bg-gradient-to-r ${rotatingWords[currentWordIndex].color} bg-clip-text text-transparent transition-all duration-300 ${
-                      isWordAnimating ? "opacity-0" : "opacity-100"
+                    className={`text-6xl md:text-7xl lg:text-8xl font-light bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent transition-all duration-500 ${
+                      isWordAnimating ? "opacity-0 blur-sm scale-95" : "opacity-100 blur-0 scale-100"
                     }`}
                   >
-                    {rotatingWords[currentWordIndex].text}
+                    {rotatingWords[currentWordIndex]}
                   </span>
-                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                    <path 
-                      d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" 
-                      stroke="url(#paint0_linear)" 
-                      strokeWidth="4" 
-                      strokeLinecap="round"
-                    />
-                    <defs>
-                      <linearGradient id="paint0_linear" x1="2" y1="9" x2="298" y2="9">
-                        <stop stopColor="#9333EA"/>
-                        <stop offset="1" stopColor="#A855F7"/>
-                      </linearGradient>
-                    </defs>
-                  </svg>
+                  <span className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-purple-600 to-transparent opacity-50"></span>
                 </span>
-                <br />
-                <span className="relative">
-                  <span>that you'll own forever</span>
-                  <span className="text-purple-600 font-normal"> - risk free</span>
+                <span className="block text-3xl md:text-4xl lg:text-5xl font-light text-gray-600 dark:text-gray-400 mt-6">
+                  you'll own forever—<span className="text-purple-600">risk free</span>
                 </span>
               </h1>
 
-              {/* Subheading - Following layout pattern */}
+              {/* Subheading - Refined Typography */}
               <p 
-                className={`text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10 transition-all duration-700 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                className={`text-lg md:text-xl text-gray-600 dark:text-gray-400 font-light leading-relaxed max-w-xl mx-auto mt-8 mb-12 transition-all duration-1000 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
-                Stop paying monthly for generic SaaS. We build exactly what you need in 
-                <span className="font-semibold text-foreground"> 2 weeks</span>, not 6 months.
+                Custom software delivered in weeks, not months.
+                <br />
+                <span className="text-purple-600">No monthly fees, ever.</span>
               </p>
 
-              {/* Feature Pills - Exact spec styling */}
+              {/* CTA - Elegant & Minimal */}
               <div 
-                className={`flex flex-wrap justify-center gap-3 mb-10 transition-all duration-700 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                className={`transition-all duration-1000 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: "300ms" }}
               >
-                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                  <Check className="w-4 h-4 text-purple-600" />
-                  <span className="text-sm font-medium text-purple-900">No monthly fees ever</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                  <Check className="w-4 h-4 text-purple-600" />
-                  <span className="text-sm font-medium text-purple-900">Built by AI experts</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                  <Check className="w-4 h-4 text-purple-600" />
-                  <span className="text-sm font-medium text-purple-900">Pay nothing until you love it</span>
+                <Button
+                  onClick={handleScheduleCall}
+                  className="group relative bg-purple-600 hover:bg-purple-700 text-white px-10 py-5 rounded-xl text-base font-medium transition-all duration-300 shadow-2xl shadow-purple-600/25 hover:shadow-purple-600/40 hover:-translate-y-1"
+                >
+                  <span className="relative z-10">
+                    Start Your Project
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </Button>
+                
+                <div className="mt-6 flex items-center justify-center gap-8 text-sm text-gray-500">
+                  <span className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                    100% Risk Free
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                    2 Week Delivery
+                  </span>
                 </div>
               </div>
 
-              {/* CTA Section - Following exact button spec */}
+              {/* Social Proof - Ultra Minimal */}
               <div 
-                className={`transition-all duration-700 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                className={`mt-24 transition-all duration-1000 ${
+                  mounted ? "opacity-100" : "opacity-0"
                 }`}
                 style={{ transitionDelay: "400ms" }}
               >
-                <Button
-                  onClick={handleScheduleCall}
-                  className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group"
-                >
-                  <span className="flex items-center gap-3">
-                    Start Your Risk-Free Build
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </span>
-                </Button>
-                <p className="text-sm text-muted-foreground mt-4">
-                  100% satisfaction guarantee • Daily progress updates
-                </p>
-              </div>
-
-              {/* Social Proof Avatars - Following exact spec */}
-              <div 
-                className={`flex items-center justify-center gap-6 mt-16 transition-all duration-700 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: "500ms" }}
-              >
-                <div className="flex -space-x-3">
-                  {[
-                    "https://unavatar.io/twitter/elonmusk",
-                    "https://unavatar.io/twitter/sama", 
-                    "https://unavatar.io/twitter/naval",
-                    "https://unavatar.io/twitter/paulg",
-                    "https://unavatar.io/twitter/patrickc"
-                  ].map((avatar, i) => (
-                    <img
-                      key={i}
-                      src={avatar}
-                      alt="User avatar"
-                      className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
-                    />
-                  ))}
-                </div>
-                <div className="text-left">
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
+                <div className="flex items-center justify-center">
+                  <div className="flex -space-x-3">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <div
+                        key={i}
+                        className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-100 to-purple-200 border-2 border-white shadow-lg flex items-center justify-center"
+                        style={{ zIndex: 5 - i }}
+                      >
+                        <span className="text-xs font-medium text-purple-700">
+                          {100 + i * 10}+
+                        </span>
+                      </div>
                     ))}
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    Loved by 100+ businesses
-                  </p>
                 </div>
+                <p className="text-center text-sm text-gray-500 mt-4">
+                  Trusted by over 100 businesses worldwide
+                </p>
               </div>
             </div>
           </div>
