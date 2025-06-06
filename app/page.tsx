@@ -267,171 +267,156 @@ export default function Home() {
     <>
       <Navigation showNavigation={showNavigation} />
       <main className="relative min-h-screen overflow-hidden">
-        {/* Hero Section - Modernized with rotating words */}
-        <div className="container relative z-10 pt-24 md:pt-32 pb-20 md:pb-32">
-          {/* Enhanced decorative elements for modern feel */}
-          <div className="absolute inset-0 -z-10">
+        {/* Hero Section - Complete Rewrite Following Exact Specs */}
+        <section className="relative">
+          {/* Background Decorations - Exact positioning from specs */}
+          <div className="absolute inset-0 -z-10 overflow-hidden">
             <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse" />
             <div className="absolute top-40 right-[15%] w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-            <div className="absolute bottom-0 left-[50%] w-[500px] h-[500px] bg-gradient-to-r from-blue-200/10 to-purple-200/10 rounded-full blur-3xl" />
           </div>
 
-          <div className="max-w-5xl mx-auto text-center px-4">
-            {/* Trust signal - updated content */}
-            <div 
-              className={`inline-flex items-center gap-2 mb-8 transition-all duration-500 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-full border border-purple-200/30">
+          {/* Hero Container - Following exact measurements */}
+          <div className="container relative z-10 pt-32 md:pt-40 pb-20 md:pb-32">
+            <div className="max-w-5xl mx-auto text-center">
+              
+              {/* Trust Signal Badge - Exact spec implementation */}
+              <div 
+                className={`inline-flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-full border border-purple-200/30 mb-8 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: "0ms" }}
+              >
                 <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full animate-pulse" />
                 <span className="text-sm font-medium text-muted-foreground">
-                  Gauntlet AI Graduates • The world's best AI bootcamp
+                  Trusted by 100+ businesses saving millions
                 </span>
               </div>
-            </div>
 
-            {/* Rotating words section - NEW */}
-            <div 
-              className={`mb-4 transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "50ms" }}
-            >
-              <p className="text-lg md:text-xl text-muted-foreground mb-2">We build</p>
-              <div className="h-[60px] md:h-[80px] flex items-center justify-center">
-                <h2 
-                  className={`text-3xl md:text-5xl lg:text-6xl font-bold transition-all duration-300 ${
-                    isWordAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
-                  }`}
-                >
-                  <span className={`bg-gradient-to-r ${rotatingWords[currentWordIndex].color} bg-clip-text text-transparent`}>
-                    {rotatingWords[currentWordIndex].text}
+              {/* Hero Heading with Underline - Following exact spec */}
+              <h1 
+                className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: "100ms" }}
+              >
+                Build{" "}
+                <span className="relative">
+                  <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+                    custom software
                   </span>
-                </h2>
-              </div>
-            </div>
+                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
+                    <path 
+                      d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" 
+                      stroke="url(#paint0_linear)" 
+                      strokeWidth="4" 
+                      strokeLinecap="round"
+                    />
+                    <defs>
+                      <linearGradient id="paint0_linear" x1="2" y1="9" x2="298" y2="9">
+                        <stop stopColor="#9333EA"/>
+                        <stop offset="1" stopColor="#A855F7"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </span>{" "}
+                <br />
+                <span className="text-muted-foreground">you'll own forever</span>
+              </h1>
 
-            {/* Main heading - Updated with modern styling */}
-            <h1 
-              className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "100ms" }}
-            >
-              <span className="bg-gradient-to-br from-gray-900 to-gray-700 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
-                Still renting software
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-                you could own?
-              </span>
-            </h1>
+              {/* Subheading - Following layout pattern */}
+              <p 
+                className={`text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: "200ms" }}
+              >
+                Stop paying monthly for generic SaaS. We build exactly what you need in 
+                <span className="font-semibold text-foreground"> 2 weeks</span>, not 6 months.
+              </p>
 
-            {/* Subheading - Updated content */}
-            <p 
-              className={`text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "200ms" }}
-            >
-              We're graduates of the world's most elite AI program. 
-              We build in <span className="font-semibold text-purple-600">2 weeks</span> what traditional developers deliver in 6 months.
-            </p>
+              {/* Feature Pills - Exact spec styling */}
+              <div 
+                className={`flex flex-wrap justify-center gap-3 mb-10 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: "300ms" }}
+              >
+                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+                  <Check className="w-4 h-4 text-purple-600" />
+                  <span className="text-sm font-medium text-purple-900">No monthly fees ever</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+                  <Check className="w-4 h-4 text-purple-600" />
+                  <span className="text-sm font-medium text-purple-900">Built by AI experts</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+                  <Check className="w-4 h-4 text-purple-600" />
+                  <span className="text-sm font-medium text-purple-900">100% satisfaction guarantee</span>
+                </div>
+              </div>
 
-            {/* Feature pills - Enhanced with icons */}
-            <div 
-              className={`flex flex-wrap justify-center gap-4 mb-10 transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "300ms" }}
-            >
-              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-50 to-purple-100/50 rounded-full border border-purple-200/50 shadow-sm">
-                <Bot className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-medium text-purple-900">AI-Powered Development</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-50 to-green-100/50 rounded-full border border-green-200/50 shadow-sm">
-                <Rocket className="w-4 h-4 text-green-600" />
-                <span className="text-sm font-medium text-green-900">2-Week Delivery</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100/50 rounded-full border border-blue-200/50 shadow-sm">
-                <Shield className="w-4 h-4 text-blue-600" />
-                <span className="text-sm font-medium text-blue-900">100% Risk Free</span>
-              </div>
-            </div>
-
-            {/* CTA Section - Modernized */}
-            <div 
-              className={`transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "400ms" }}
-            >
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              {/* CTA Section - Following exact button spec */}
+              <div 
+                className={`transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: "400ms" }}
+              >
                 <Button
                   onClick={handleScheduleCall}
                   className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group"
                 >
                   <span className="flex items-center gap-3">
-                    See The AI Difference
+                    Start building for free
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </span>
                 </Button>
-                <Button
-                  onClick={() => document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-white hover:bg-gray-50 text-purple-600 border-2 border-purple-200 hover:border-purple-300 rounded-full px-8 py-6 text-lg font-medium shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-200"
-                >
-                  <span className="flex items-center gap-3">
-                    Free Consultation
-                    <ChevronDown className="w-5 h-5" />
-                  </span>
-                </Button>
+                <p className="text-sm text-muted-foreground mt-4">
+                  7-day free trial • No credit card required • Cancel anytime
+                </p>
               </div>
-              <p className="text-sm text-muted-foreground mt-4">
-                Love it or pay nothing • See progress daily • Free consultation
-              </p>
-            </div>
-              
-            {/* Social proof avatars - Updated for clients */}
-            <div 
-              className={`flex items-center justify-center gap-6 mt-16 transition-all duration-700 ${
-                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "500ms" }}
-            >
-              <div className="flex -space-x-3">
-                {[
-                  "https://unavatar.io/twitter/elonmusk",
-                  "https://unavatar.io/twitter/sama",
-                  "https://unavatar.io/twitter/paulg",
-                  "https://unavatar.io/twitter/patrickc",
-                  "https://unavatar.io/twitter/brian_armstrong"
-                ].map((avatar, i) => (
-                  <img
-                    key={i}
-                    src={avatar}
-                    alt="Client avatar"
-                    className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
-                  />
-                ))}
-              </div>
-              <div className="text-left">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+
+              {/* Social Proof Avatars - Following exact spec */}
+              <div 
+                className={`flex items-center justify-center gap-6 mt-16 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: "500ms" }}
+              >
+                <div className="flex -space-x-3">
+                  {[
+                    "https://unavatar.io/twitter/elonmusk",
+                    "https://unavatar.io/twitter/sama", 
+                    "https://unavatar.io/twitter/naval",
+                    "https://unavatar.io/twitter/paulg",
+                    "https://unavatar.io/twitter/patrickc"
+                  ].map((avatar, i) => (
+                    <img
+                      key={i}
+                      src={avatar}
+                      alt="User avatar"
+                      className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
+                    />
                   ))}
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  100% client satisfaction
-                </p>
+                <div className="text-left">
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Loved by 100+ businesses
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Video section - Project showcase */}
         <div className="relative pb-32">
