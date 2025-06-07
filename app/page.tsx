@@ -261,27 +261,25 @@ export default function Home() {
     <>
       <Navigation showNavigation={showNavigation} />
       <main className="relative min-h-screen overflow-hidden">
-        {/* Hero Section - Redesigned with Improved Hierarchy */}
+        {/* Hero Section - Simplified and Cohesive */}
         <section className="relative">
-          {/* Clean gradient background */}
+          {/* Minimal background */}
           <div className="absolute inset-0 -z-10 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-50/50 via-transparent to-transparent" />
-            <div className="absolute top-20 left-[20%] w-64 h-64 bg-purple-200/30 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-[20%] w-96 h-96 bg-purple-100/30 rounded-full blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-b from-purple-50/30 to-transparent" />
           </div>
 
-          {/* Hero Container - Much tighter */}
-          <div className="container relative z-10 pt-20 md:pt-24 pb-12 md:pb-16">
-            <div className="max-w-4xl mx-auto text-center">
+          {/* Hero Container - Compact */}
+          <div className="container relative z-10 pt-16 md:pt-20 pb-12 md:pb-16">
+            <div className="max-w-3xl mx-auto text-center">
               
-              {/* Main Heading - Better proportions */}
+              {/* Single-line heading */}
               <h1 
-                className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 transition-all duration-700 ${
+                className={`text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "0ms" }}
               >
-                We'll build you{" "}
+                We'll build your{" "}
                 <span className="relative inline-block">
                   {rotatingWords.map((word, index) => (
                     <span
@@ -289,9 +287,7 @@ export default function Home() {
                       className={`absolute left-0 transition-all duration-500 ${
                         index === currentWordIndex
                           ? "opacity-100 translate-y-0"
-                          : index === (currentWordIndex - 1 + rotatingWords.length) % rotatingWords.length
-                          ? "opacity-0 -translate-y-8"
-                          : "opacity-0 translate-y-8"
+                          : "opacity-0"
                       }`}
                     >
                       <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent whitespace-nowrap">
@@ -301,41 +297,17 @@ export default function Home() {
                   ))}
                   <span className="invisible">{rotatingWords[0]}</span>
                 </span>
-                <br />
-                <span className="text-3xl md:text-4xl lg:text-5xl">risk free</span>
+                {" "}in 2 weeks
               </h1>
 
-              {/* Value props - Clean and simple */}
-              <div 
-                className={`flex flex-wrap items-center justify-center gap-4 md:gap-6 text-lg md:text-xl text-muted-foreground mb-8 transition-all duration-700 ${
+              {/* Simple subheading */}
+              <p 
+                className={`text-xl md:text-2xl text-muted-foreground mb-8 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "100ms" }}
               >
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-purple-600" />
-                  <span>Built in <strong className="text-purple-600 font-semibold">2 weeks</strong></span>
-                </div>
-                <span className="text-muted-foreground/40">•</span>
-                <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-purple-600" />
-                  <span>Own it forever</span>
-                </div>
-                <span className="text-muted-foreground/40">•</span>
-                <div className="flex items-center gap-2">
-                  <DollarSign className="w-5 h-5 text-purple-600" />
-                  <span>No monthly fees</span>
-                </div>
-              </div>
-
-              {/* Subheading */}
-              <p 
-                className={`text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 transition-all duration-700 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: "200ms" }}
-              >
-                Stop renting software. We build exactly what you need - and you own it forever.
+                Risk free. You own it forever. No monthly fees.
               </p>
 
               {/* CTA */}
@@ -343,38 +315,19 @@ export default function Home() {
                 className={`transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
-                style={{ transitionDelay: "300ms" }}
+                style={{ transitionDelay: "200ms" }}
               >
                 <Button
                   onClick={handleScheduleCall}
-                  className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+                  className="bg-purple-600 hover:bg-purple-700 text-white rounded-lg px-8 py-4 text-lg font-medium shadow-sm hover:shadow-md transition-all duration-200"
                 >
-                  Start building for free
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
+                  Get Started →
                 </Button>
                 
-                {/* Trust signal */}
-                <div className="mt-6 flex items-center justify-center gap-6">
-                  <div className="flex -space-x-2">
-                    {[
-                      "https://unavatar.io/twitter/elonmusk",
-                      "https://unavatar.io/twitter/sama", 
-                      "https://unavatar.io/twitter/naval"
-                    ].map((avatar, i) => (
-                      <img
-                        key={i}
-                        src={avatar}
-                        alt="User avatar"
-                        className="w-8 h-8 rounded-full border-2 border-white shadow-sm"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    <span className="font-semibold text-foreground">100+ businesses</span> trust us
-                  </p>
-                </div>
+                {/* Simple trust */}
+                <p className="mt-6 text-sm text-muted-foreground">
+                  Trusted by 100+ businesses • Free consultation
+                </p>
               </div>
             </div>
           </div>
