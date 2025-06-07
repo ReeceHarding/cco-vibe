@@ -263,90 +263,82 @@ export default function Home() {
       <main className="relative min-h-screen overflow-hidden">
         {/* Hero Section - Redesigned with Improved Hierarchy */}
         <section className="relative">
-          {/* Enhanced Background with Pattern */}
+          {/* Clean gradient background */}
           <div className="absolute inset-0 -z-10 overflow-hidden">
-            <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute top-40 right-[15%] w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-            {/* Subtle grid pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-50/5 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-purple-50/50 via-transparent to-transparent" />
+            <div className="absolute top-20 left-[20%] w-64 h-64 bg-purple-200/30 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-[20%] w-96 h-96 bg-purple-100/30 rounded-full blur-3xl" />
           </div>
 
-          {/* Hero Container - Tighter spacing */}
-          <div className="container relative z-10 pt-24 md:pt-32 pb-16 md:pb-20">
-            <div className="max-w-5xl mx-auto text-center">
+          {/* Hero Container - Much tighter */}
+          <div className="container relative z-10 pt-20 md:pt-24 pb-12 md:pb-16">
+            <div className="max-w-4xl mx-auto text-center">
               
-              {/* Hero Heading with Rotating Words - Improved Hierarchy */}
+              {/* Main Heading - Better proportions */}
               <h1 
-                className={`transition-all duration-700 ${
+                className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "0ms" }}
               >
-                <span className="block text-2xl md:text-3xl lg:text-4xl font-medium text-muted-foreground mb-2">
-                  We'll build you a
-                </span>
-                <span className="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.9] mb-3">
-                  <span className="text-foreground">risk free</span>
-                  <br />
-                  <span className="relative inline-block mt-2 h-[1.2em]">
-                    {rotatingWords.map((word, index) => (
-                      <span
-                        key={word}
-                        className={`absolute left-0 w-full transition-all duration-500 ${
-                          index === currentWordIndex
-                            ? "opacity-100 translate-y-0"
-                            : index === (currentWordIndex - 1 + rotatingWords.length) % rotatingWords.length
-                            ? "opacity-0 -translate-y-12"
-                            : "opacity-0 translate-y-12"
-                        }`}
-                      >
-                        <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-                          {word}
-                        </span>
+                We'll build you{" "}
+                <span className="relative inline-block">
+                  {rotatingWords.map((word, index) => (
+                    <span
+                      key={word}
+                      className={`absolute left-0 transition-all duration-500 ${
+                        index === currentWordIndex
+                          ? "opacity-100 translate-y-0"
+                          : index === (currentWordIndex - 1 + rotatingWords.length) % rotatingWords.length
+                          ? "opacity-0 -translate-y-8"
+                          : "opacity-0 translate-y-8"
+                      }`}
+                    >
+                      <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent whitespace-nowrap">
+                        {word}
                       </span>
-                    ))}
-                  </span>
+                    </span>
+                  ))}
+                  <span className="invisible">{rotatingWords[0]}</span>
                 </span>
+                <br />
+                <span className="text-3xl md:text-4xl lg:text-5xl">risk free</span>
               </h1>
 
-              {/* Key Value Prop - Made Prominent */}
+              {/* Value props - Clean and simple */}
               <div 
-                className={`flex flex-wrap items-center justify-center gap-3 md:gap-6 mt-6 mb-8 transition-all duration-700 ${
+                className={`flex flex-wrap items-center justify-center gap-4 md:gap-6 text-lg md:text-xl text-muted-foreground mb-8 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "100ms" }}
               >
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-purple-600" />
-                  <span className="text-lg md:text-xl font-medium">
-                    Built in <span className="text-3xl md:text-4xl font-bold text-purple-600">2 weeks</span>
-                  </span>
+                  <span>Built in <strong className="text-purple-600 font-semibold">2 weeks</strong></span>
                 </div>
-                <div className="text-muted-foreground/40 text-2xl">•</div>
+                <span className="text-muted-foreground/40">•</span>
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-purple-600" />
-                  <span className="text-lg md:text-xl font-medium">Own it forever</span>
+                  <span>Own it forever</span>
                 </div>
-                <div className="text-muted-foreground/40 text-2xl">•</div>
+                <span className="text-muted-foreground/40">•</span>
                 <div className="flex items-center gap-2">
                   <DollarSign className="w-5 h-5 text-purple-600" />
-                  <span className="text-lg md:text-xl font-medium">No monthly fees</span>
+                  <span>No monthly fees</span>
                 </div>
               </div>
 
-              {/* Subheading - Simplified */}
+              {/* Subheading */}
               <p 
-                className={`text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 transition-all duration-700 ${
+                className={`text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
-                Stop renting software. We build exactly what you need.
+                Stop renting software. We build exactly what you need - and you own it forever.
               </p>
 
-              {/* CTA Section with Trust Badge */}
+              {/* CTA */}
               <div 
                 className={`transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -355,49 +347,33 @@ export default function Home() {
               >
                 <Button
                   onClick={handleScheduleCall}
-                  className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group mb-4"
+                  className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <span className="flex items-center gap-3">
-                    Start building for free
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </span>
+                  Start building for free
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                 </Button>
                 
-                {/* Trust Elements Combined */}
-                <div className="flex flex-col items-center gap-3">
-                  <p className="text-sm text-muted-foreground">
-                    7-day free trial • No credit card required
-                  </p>
-                  
-                  {/* Social Proof Integrated */}
-                  <div className="flex items-center gap-3">
-                    <div className="flex -space-x-2">
-                      {[
-                        "https://unavatar.io/twitter/elonmusk",
-                        "https://unavatar.io/twitter/sama", 
-                        "https://unavatar.io/twitter/naval"
-                      ].map((avatar, i) => (
-                        <img
-                          key={i}
-                          src={avatar}
-                          alt="User avatar"
-                          className="w-8 h-8 rounded-full border-2 border-white shadow-sm"
-                        />
-                      ))}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="w-3 h-3 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                    <span className="text-sm text-muted-foreground">
-                      Trusted by 100+ businesses
-                    </span>
+                {/* Trust signal */}
+                <div className="mt-6 flex items-center justify-center gap-6">
+                  <div className="flex -space-x-2">
+                    {[
+                      "https://unavatar.io/twitter/elonmusk",
+                      "https://unavatar.io/twitter/sama", 
+                      "https://unavatar.io/twitter/naval"
+                    ].map((avatar, i) => (
+                      <img
+                        key={i}
+                        src={avatar}
+                        alt="User avatar"
+                        className="w-8 h-8 rounded-full border-2 border-white shadow-sm"
+                      />
+                    ))}
                   </div>
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-semibold text-foreground">100+ businesses</span> trust us
+                  </p>
                 </div>
               </div>
             </div>
