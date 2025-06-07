@@ -643,3 +643,20 @@ button:focus {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
+/* Avatar Stack Hover Effect */
+.avatar-stack {
+  position: relative;
+}
+
+/* Underline Drawing Animation - Airbnb Style */
+@keyframes draw-underline {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-underline {
+  animation: draw-underline 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}

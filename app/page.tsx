@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Code2, PlayIcon, ChevronDown, Check, X, Sparkles, Shield, Clock, Rocket, Users, Zap, Heart, MessageCircle, Repeat2, Share, Bookmark, MoreHorizontal, Verified, DollarSign, Gauge } from "lucide-react"
+import { Code2, PlayIcon, ChevronDown, Check, X, Sparkles, Shield, Clock, Rocket, Users, Zap, Heart, MessageCircle, Repeat2, Share, Bookmark, MoreHorizontal, Verified, DollarSign, Gauge, Bot, Database, Terminal, Braces, GitBranch, Cpu } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { PostelLogo } from "@/components/logo"
 import { InteractiveCostSavingsCard } from "@/components/InteractiveCostSavingsCard"
@@ -15,41 +15,45 @@ export default function Home() {
   const [showVideo, setShowVideo] = useState(false)
   const [activeFeatureTab, setActiveFeatureTab] = useState("internal-tools")
   const [openFaqItem, setOpenFaqItem] = useState<string | null>(null)
-  const [showNavigation, setShowNavigation] = useState(true) // Always show nav
+  const [showNavigation, setShowNavigation] = useState(false)
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
-  const [isWordAnimating, setIsWordAnimating] = useState(false)
 
-  // Rotating words for hero section - Simplified
+  // Rotating words for hero section - Airbnb style
   const rotatingWords = [
-    "internal tools",
-    "AI chatbots", 
-    "custom SaaS",
+    "custom software",
+    "internal tools", 
+    "a chatbot",
+    "an AI agent",
     "data platforms",
-    "MVPs",
-    "AI agents"
+    "your MVP",
+    "automation"
   ]
 
   useEffect(() => {
     setMounted(true)
     console.log("Page mounted - animations starting")
+    
+    // Add scroll listener for navigation
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      setShowNavigation(scrollY > 100)
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Rotating words animation - Simplified
+  // Rotating words animation - Airbnb style smooth transitions
   useEffect(() => {
     if (!mounted) return
     
     const interval = setInterval(() => {
-      setIsWordAnimating(true)
       console.log(`Rotating to next word: ${rotatingWords[(currentWordIndex + 1) % rotatingWords.length]}`)
-      
-      setTimeout(() => {
-        setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length)
-        setIsWordAnimating(false)
-      }, 200)
-    }, 2500)
+      setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length)
+    }, 2500) // Slightly faster for better engagement
     
     return () => clearInterval(interval)
-  }, [mounted, currentWordIndex, rotatingWords.length])
+  }, [mounted, currentWordIndex])
 
   const handleVideoClick = () => {
     console.log("Video button clicked - opening project showcase video")
@@ -257,139 +261,169 @@ export default function Home() {
     <>
       <Navigation showNavigation={showNavigation} />
       <main className="relative min-h-screen overflow-hidden">
-        {/* Hero Section - Airbnb Style */}
+        {/* Hero Section - Complete Rewrite Following Exact Specs */}
         <section className="relative">
-          {/* Simplified Background - More Subtle */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute top-1/4 left-0 right-0 h-96 bg-gradient-to-b from-purple-50/50 to-transparent" />
+          {/* Background Decorations - Exact positioning from specs */}
+          <div className="absolute inset-0 -z-10 overflow-hidden">
+            <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute top-40 right-[15%] w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
           </div>
 
-          {/* Hero Container - Cleaner Spacing */}
-          <div className="container relative z-10 pt-32 md:pt-40 pb-24 md:pb-32">
-            <div className="max-w-4xl mx-auto">
+          {/* Hero Container - Following exact measurements */}
+          <div className="container relative z-10 pt-32 md:pt-40 pb-20 md:pb-32">
+            <div className="max-w-5xl mx-auto text-center">
               
-              {/* Simplified Trust Badge */}
+              {/* Trust Signal Badge - Exact spec implementation */}
               <div 
-                className={`flex items-center justify-center mb-12 transition-all duration-700 ${
+                className={`inline-flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-full border border-purple-200/30 mb-8 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "0ms" }}
               >
-                <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-purple-50 rounded-full">
-                  <div className="w-1.5 h-1.5 bg-purple-600 rounded-full" />
-                  <span className="text-sm font-medium text-purple-900">
-                    Trusted by 100+ companies
-                  </span>
-                </div>
+                <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full animate-pulse" />
+                <span className="text-sm font-medium text-muted-foreground">
+                  Trusted by 100+ businesses saving millions
+                </span>
               </div>
 
-              {/* Modern Hero Heading */}
+              {/* Hero Heading with Rotating Words - Airbnb Style */}
               <h1 
-                className={`text-center text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-gray-900 transition-all duration-700 ${
+                className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "100ms" }}
               >
-                <span className="block mb-2">We'll build your</span>
-                <span className="relative inline-block h-[1.1em] mb-2">
-                  <span 
-                    className={`absolute inset-0 flex items-center justify-center text-purple-600 transition-all duration-200 ${
-                      isWordAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-                    }`}
-                  >
-                    {rotatingWords[currentWordIndex]}
-                  </span>
+                <span className="block">We'll build you</span>
+                <span className="relative inline-block h-[1.2em] w-full">
+                  {rotatingWords.map((word, index) => (
+                    <span
+                      key={word}
+                      className={`absolute left-0 w-full transition-all duration-500 ${
+                        index === currentWordIndex
+                          ? "opacity-100 translate-y-0"
+                          : index === (currentWordIndex - 1 + rotatingWords.length) % rotatingWords.length
+                          ? "opacity-0 -translate-y-8"
+                          : "opacity-0 translate-y-8"
+                      }`}
+                    >
+                      <span className="relative">
+                        <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+                          {word}
+                        </span>
+                        {index === currentWordIndex && (
+                          <svg className="absolute -bottom-2 left-0 w-full animate-draw-underline" viewBox="0 0 300 12" fill="none">
+                            <path 
+                              d="M2 9C2 9 75 3 150 3C225 3 298 9 298 9" 
+                              stroke="url(#paint0_linear)" 
+                              strokeWidth="4" 
+                              strokeLinecap="round"
+                              strokeDasharray="300"
+                              strokeDashoffset="300"
+                            />
+                            <defs>
+                              <linearGradient id="paint0_linear" x1="2" y1="9" x2="298" y2="9">
+                                <stop stopColor="#9333EA"/>
+                                <stop offset="1" stopColor="#A855F7"/>
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                        )}
+                      </span>
+                    </span>
+                  ))}
                 </span>
-                <span className="block text-gray-600 text-4xl md:text-5xl lg:text-6xl font-normal">
-                  in 2 weeks, risk-free
-                </span>
+                <span className="block text-muted-foreground">risk free</span>
               </h1>
 
-              {/* Clean Subheading */}
+              {/* Subheading - Following layout pattern */}
               <p 
-                className={`text-center text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto mt-8 mb-12 transition-all duration-700 ${
+                className={`text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
-                Stop paying monthly for software you'll never own. 
-                We build exactly what you need, and you own it forever.
+                Own it forever. Built in 
+                <span className="font-semibold text-foreground"> 2 weeks</span>.
+                <span className="block mt-1">No monthly fees, ever.</span>
               </p>
 
-              {/* Simplified Feature Pills */}
+              {/* Feature Pills - Exact spec styling */}
               <div 
-                className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-700 ${
+                className={`flex flex-wrap justify-center gap-3 mb-10 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "300ms" }}
               >
-                <div className="flex items-center gap-2.5 text-gray-700">
-                  <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-base">No monthly fees</span>
+                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+                  <Check className="w-4 h-4 text-purple-600" />
+                  <span className="text-sm font-medium text-purple-900">No monthly fees ever</span>
                 </div>
-                <div className="flex items-center gap-2.5 text-gray-700">
-                  <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-base">100% your code</span>
+                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+                  <Check className="w-4 h-4 text-purple-600" />
+                  <span className="text-sm font-medium text-purple-900">Built by AI experts</span>
                 </div>
-                <div className="flex items-center gap-2.5 text-gray-700">
-                  <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-base">Pay after delivery</span>
+                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+                  <Check className="w-4 h-4 text-purple-600" />
+                  <span className="text-sm font-medium text-purple-900">100% satisfaction guarantee</span>
                 </div>
               </div>
 
-              {/* Modern CTA Section */}
+              {/* CTA Section - Following exact button spec */}
               <div 
-                className={`flex justify-center transition-all duration-700 ${
+                className={`transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "400ms" }}
               >
                 <Button
                   onClick={handleScheduleCall}
-                  className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-10 py-7 rounded-xl font-medium shadow-lg shadow-purple-600/20 hover:shadow-xl hover:shadow-purple-600/30 transform hover:-translate-y-0.5 transition-all duration-200"
+                  className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group"
                 >
-                  Start your project
+                  <span className="flex items-center gap-3">
+                    Start building for free
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
                 </Button>
+                <p className="text-sm text-muted-foreground mt-4">
+                  7-day free trial • No credit card required • Cancel anytime
+                </p>
               </div>
 
-              {/* Simplified Social Proof */}
+              {/* Social Proof Avatars - Following exact spec */}
               <div 
-                className={`flex items-center justify-center gap-8 mt-16 transition-all duration-700 ${
+                className={`flex items-center justify-center gap-6 mt-16 transition-all duration-700 ${
                   mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "500ms" }}
               >
-                <div className="flex -space-x-2">
+                <div className="flex -space-x-3">
                   {[
                     "https://unavatar.io/twitter/elonmusk",
                     "https://unavatar.io/twitter/sama", 
                     "https://unavatar.io/twitter/naval",
-                    "https://unavatar.io/twitter/paulg"
+                    "https://unavatar.io/twitter/paulg",
+                    "https://unavatar.io/twitter/patrickc"
                   ].map((avatar, i) => (
                     <img
                       key={i}
                       src={avatar}
-                      alt="Customer"
-                      className="w-12 h-12 rounded-full border-2 border-white shadow-sm"
+                      alt="User avatar"
+                      className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
                     />
                   ))}
                 </div>
-                <div>
-                  <div className="flex items-center gap-1 mb-1">
+                <div className="text-left">
+                  <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-purple-600 fill-current" viewBox="0 0 20 20">
+                      <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
                   </div>
-                  <p className="text-sm text-gray-600">
-                    100+ happy customers
+                  <p className="text-sm text-muted-foreground">
+                    Loved by 100+ businesses
                   </p>
                 </div>
               </div>
