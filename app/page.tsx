@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Code2, PlayIcon, ChevronDown, Check, X, Sparkles, Shield, Clock, Rocket, Users, Zap, Heart, MessageCircle, Repeat2, Share, Bookmark, MoreHorizontal, Verified, DollarSign, Gauge, Bot, Database, Terminal, Braces, GitBranch, Cpu } from "lucide-react"
+import { Code2, PlayIcon, ChevronDown, Check, X, Sparkles, Shield, Clock, Rocket, Users, Zap, Heart, MessageCircle, Repeat2, Share, Bookmark, MoreHorizontal, Verified, DollarSign, Gauge } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { PostelLogo } from "@/components/logo"
 import { InteractiveCostSavingsCard } from "@/components/InteractiveCostSavingsCard"
@@ -34,7 +34,7 @@ export default function Home() {
     console.log("Page mounted - animations starting")
   }, [])
 
-  // Rotating words animation - NEW
+  // Rotating words animation - Simplified
   useEffect(() => {
     if (!mounted) return
     
@@ -45,8 +45,8 @@ export default function Home() {
       setTimeout(() => {
         setCurrentWordIndex((prev) => (prev + 1) % rotatingWords.length)
         setIsWordAnimating(false)
-      }, 300)
-    }, 3000)
+      }, 200)
+    }, 2500)
     
     return () => clearInterval(interval)
   }, [mounted, currentWordIndex, rotatingWords.length])
@@ -257,109 +257,141 @@ export default function Home() {
     <>
       <Navigation showNavigation={showNavigation} />
       <main className="relative min-h-screen overflow-hidden">
-        {/* Hero Section - Complete Rewrite Following Exact Specs */}
+        {/* Hero Section - Airbnb Style */}
         <section className="relative">
-          {/* Background Decorations - Exact positioning from specs */}
-          <div className="absolute inset-0 -z-10 overflow-hidden">
-            <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute top-40 right-[15%] w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
+          {/* Simplified Background - More Subtle */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute top-1/4 left-0 right-0 h-96 bg-gradient-to-b from-purple-50/50 to-transparent" />
           </div>
 
-          {/* Hero Container - Following exact measurements */}
-          <div className="container relative z-10 pt-32 md:pt-40 pb-20 md:pb-32">
-            <div className="max-w-5xl mx-auto text-center">
+          {/* Hero Container - Cleaner Spacing */}
+          <div className="container relative z-10 pt-32 md:pt-40 pb-24 md:pb-32">
+            <div className="max-w-4xl mx-auto">
               
-              {/* Hero Heading - Ultra Modern & Sophisticated */}
-              <h1 
-                className={`transition-all duration-1000 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-                style={{ transitionDelay: "100ms" }}
-              >
-                <span className="block text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-gray-900 dark:text-gray-100 mb-4">
-                  We'll build you
-                </span>
-                <span className="block relative">
-                  <span 
-                    className={`text-6xl md:text-7xl lg:text-8xl font-light bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent transition-all duration-500 ${
-                      isWordAnimating ? "opacity-0 blur-sm scale-95" : "opacity-100 blur-0 scale-100"
-                    }`}
-                  >
-                    {rotatingWords[currentWordIndex]}
-                  </span>
-                  <span className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-purple-600 to-transparent opacity-50"></span>
-                </span>
-                <span className="block text-3xl md:text-4xl lg:text-5xl font-light text-gray-600 dark:text-gray-400 mt-6">
-                  you'll own forever—<span className="text-purple-600">risk free</span>
-                </span>
-              </h1>
-
-              {/* Subheading - Refined Typography */}
-              <p 
-                className={`text-lg md:text-xl text-gray-600 dark:text-gray-400 font-light leading-relaxed max-w-xl mx-auto mt-8 mb-12 transition-all duration-1000 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-                style={{ transitionDelay: "200ms" }}
-              >
-                Custom software delivered in weeks, not months.
-                <br />
-                <span className="text-purple-600">No monthly fees, ever.</span>
-              </p>
-
-              {/* CTA - Elegant & Minimal */}
+              {/* Simplified Trust Badge */}
               <div 
-                className={`transition-all duration-1000 ${
-                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                className={`flex items-center justify-center mb-12 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
-                style={{ transitionDelay: "300ms" }}
+                style={{ transitionDelay: "0ms" }}
               >
-                <Button
-                  onClick={handleScheduleCall}
-                  className="group relative bg-purple-600 hover:bg-purple-700 text-white px-10 py-5 rounded-xl text-base font-medium transition-all duration-300 shadow-2xl shadow-purple-600/25 hover:shadow-purple-600/40 hover:-translate-y-1"
-                >
-                  <span className="relative z-10">
-                    Start Your Project
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </Button>
-                
-                <div className="mt-6 flex items-center justify-center gap-8 text-sm text-gray-500">
-                  <span className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                    100% Risk Free
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                    2 Week Delivery
+                <div className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-purple-50 rounded-full">
+                  <div className="w-1.5 h-1.5 bg-purple-600 rounded-full" />
+                  <span className="text-sm font-medium text-purple-900">
+                    Trusted by 100+ companies
                   </span>
                 </div>
               </div>
 
-              {/* Social Proof - Ultra Minimal */}
+              {/* Modern Hero Heading */}
+              <h1 
+                className={`text-center text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-gray-900 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: "100ms" }}
+              >
+                <span className="block mb-2">We'll build your</span>
+                <span className="relative inline-block h-[1.1em] mb-2">
+                  <span 
+                    className={`absolute inset-0 flex items-center justify-center text-purple-600 transition-all duration-200 ${
+                      isWordAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {rotatingWords[currentWordIndex]}
+                  </span>
+                </span>
+                <span className="block text-gray-600 text-4xl md:text-5xl lg:text-6xl font-normal">
+                  in 2 weeks, risk-free
+                </span>
+              </h1>
+
+              {/* Clean Subheading */}
+              <p 
+                className={`text-center text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto mt-8 mb-12 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: "200ms" }}
+              >
+                Stop paying monthly for software you'll never own. 
+                We build exactly what you need, and you own it forever.
+              </p>
+
+              {/* Simplified Feature Pills */}
               <div 
-                className={`mt-24 transition-all duration-1000 ${
-                  mounted ? "opacity-100" : "opacity-0"
+                className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: "300ms" }}
+              >
+                <div className="flex items-center gap-2.5 text-gray-700">
+                  <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base">No monthly fees</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-gray-700">
+                  <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base">100% your code</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-gray-700">
+                  <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base">Pay after delivery</span>
+                </div>
+              </div>
+
+              {/* Modern CTA Section */}
+              <div 
+                className={`flex justify-center transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: "400ms" }}
               >
-                <div className="flex items-center justify-center">
-                  <div className="flex -space-x-3">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <div
-                        key={i}
-                        className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-100 to-purple-200 border-2 border-white shadow-lg flex items-center justify-center"
-                        style={{ zIndex: 5 - i }}
-                      >
-                        <span className="text-xs font-medium text-purple-700">
-                          {100 + i * 10}+
-                        </span>
-                      </div>
+                <Button
+                  onClick={handleScheduleCall}
+                  className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-10 py-7 rounded-xl font-medium shadow-lg shadow-purple-600/20 hover:shadow-xl hover:shadow-purple-600/30 transform hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  Start your project
+                </Button>
+              </div>
+
+              {/* Simplified Social Proof */}
+              <div 
+                className={`flex items-center justify-center gap-8 mt-16 transition-all duration-700 ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: "500ms" }}
+              >
+                <div className="flex -space-x-2">
+                  {[
+                    "https://unavatar.io/twitter/elonmusk",
+                    "https://unavatar.io/twitter/sama", 
+                    "https://unavatar.io/twitter/naval",
+                    "https://unavatar.io/twitter/paulg"
+                  ].map((avatar, i) => (
+                    <img
+                      key={i}
+                      src={avatar}
+                      alt="Customer"
+                      className="w-12 h-12 rounded-full border-2 border-white shadow-sm"
+                    />
+                  ))}
+                </div>
+                <div>
+                  <div className="flex items-center gap-1 mb-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 text-purple-600 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
                     ))}
                   </div>
+                  <p className="text-sm text-gray-600">
+                    100+ happy customers
+                  </p>
                 </div>
-                <p className="text-center text-sm text-gray-500 mt-4">
-                  Trusted by over 100 businesses worldwide
-                </p>
               </div>
             </div>
           </div>
