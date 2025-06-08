@@ -1,0 +1,583 @@
+# Frontend Style Guide
+
+A comprehensive design system and component guide for building beautiful, consistent interfaces throughout the CCO Vibe application.
+
+## Table of Contents
+1. [Core Design Principles](#core-design-principles)
+2. [Color System](#color-system)
+3. [Typography](#typography)
+4. [Spacing & Layout](#spacing--layout)
+5. [Component Library](#component-library)
+6. [Interactive States](#interactive-states)
+7. [Animations & Transitions](#animations--transitions)
+8. [Shadow System](#shadow-system)
+9. [Responsive Design](#responsive-design)
+10. [Best Practices](#best-practices)
+
+## Core Design Principles
+
+### 1. **Clean & Modern**
+- Use plenty of whitespace
+- Prefer subtle gradients over solid colors
+- Glassmorphism effects with `backdrop-blur-sm`
+- Rounded corners (never sharp edges)
+
+### 2. **Purple-Centric Brand**
+- Purple is our primary color (purple-600)
+- Use purple gradients for emphasis
+- Purple tints for hover states
+- Purple shadows for depth
+
+### 3. **Hierarchy Through Size**
+- Clear visual hierarchy with font sizes
+- Prominent CTAs with larger padding
+- Important numbers (like "2 weeks") should be bigger
+
+### 4. **Subtle Depth**
+- Layer elements with shadows
+- Use z-index thoughtfully
+- Background blur effects for overlays
+
+## Color System
+
+### Primary Colors
+```css
+/* Purple Gradient */
+bg-gradient-to-r from-purple-600 to-purple-400
+
+/* Purple Scale */
+purple-50   /* Lightest - backgrounds */
+purple-100  /* Light backgrounds */
+purple-200  /* Borders, decorative */
+purple-300  /* Hover borders */
+purple-400  /* Gradient end */
+purple-500  /* Secondary actions */
+purple-600  /* Primary brand color */
+purple-700  /* Hover states */
+purple-800  /* Dark variants */
+```
+
+### Semantic Colors
+```css
+/* Text */
+text-foreground        /* Primary text */
+text-muted-foreground  /* Secondary text */
+
+/* Backgrounds */
+bg-background     /* Main background */
+bg-muted         /* Muted sections */
+bg-white/50      /* Glassmorphism */
+bg-white/80      /* Semi-transparent cards */
+
+/* Borders */
+border-border       /* Default borders */
+border-border/40    /* Subtle borders */
+border-primary/30   /* Hover borders */
+```
+
+### Usage Examples
+```typescript
+// Primary button
+className="bg-purple-600 hover:bg-purple-700"
+
+// Gradient button
+className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600"
+
+// Ghost element
+className="bg-purple-50 text-purple-900 border-purple-200/50"
+
+// Glassmorphism card
+className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm"
+```
+
+## Typography
+
+### Font Sizes
+```css
+text-xs    /* 12px - Tiny labels */
+text-sm    /* 14px - Secondary text */
+text-[15px] /* 15px - Body text */
+text-base  /* 16px - Default */
+text-[17px] /* 17px - Emphasized body */
+text-lg    /* 18px - Large body */
+text-xl    /* 20px - Small headings */
+text-2xl   /* 24px - Section headings */
+text-3xl   /* 30px - Major headings */
+text-4xl   /* 36px - Hero headings */
+text-5xl   /* 48px - Display text */
+text-6xl   /* 60px - Large display */
+text-7xl   /* 72px - Extra large */
+```
+
+### Font Weights
+```css
+font-normal   /* 400 - Body text */
+font-medium   /* 500 - Emphasized text */
+font-semibold /* 600 - Subheadings */
+font-bold     /* 700 - Headings */
+```
+
+### Line Heights
+```css
+leading-none      /* 1 */
+leading-tight     /* 1.25 */
+leading-snug      /* 1.375 */
+leading-normal    /* 1.5 - Default */
+leading-relaxed   /* 1.625 - Readable body text */
+leading-[1.8]     /* 1.8 - Extra spacious */
+leading-[1.1]     /* 1.1 - Tight headings */
+```
+
+### Text Patterns
+```typescript
+// Hero heading
+<h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
+
+// Section label
+<h2 className="font-bold font-mono text-primary text-sm uppercase tracking-wider">
+
+// Section heading
+<h3 className="font-semibold text-3xl sm:text-4xl md:text-5xl">
+
+// Body text
+<p className="text-muted-foreground text-lg leading-relaxed">
+
+// Small text
+<p className="text-sm text-muted-foreground">
+```
+
+## Spacing & Layout
+
+### Container System
+```typescript
+// Standard container with padding
+<div className="container">
+
+// With max width variants
+<div className="container max-w-3xl"> /* Narrow - 48rem */
+<div className="container max-w-4xl"> /* Medium - 56rem */
+<div className="container max-w-5xl"> /* Wide - 64rem */
+<div className="container max-w-6xl"> /* Extra wide - 72rem */
+<div className="container max-w-7xl"> /* Full width - 80rem */
+```
+
+### Spacing Scale
+```css
+/* Use multiples of 4px */
+gap-2   /* 8px */
+gap-3   /* 12px */
+gap-4   /* 16px */
+gap-6   /* 24px */
+gap-8   /* 32px */
+gap-12  /* 48px */
+gap-16  /* 64px */
+
+/* Padding/Margin */
+p-2  m-2   /* 8px */
+p-4  m-4   /* 16px */
+p-6  m-6   /* 24px */
+p-8  m-8   /* 32px */
+p-10 m-10  /* 40px */
+p-12 m-12  /* 48px */
+p-16 m-16  /* 64px */
+```
+
+### Section Patterns
+```typescript
+// Standard section
+<section className="py-16 md:py-24">
+  <div className="container max-w-7xl">
+    {/* Content */}
+  </div>
+</section>
+
+// With background gradient
+<section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/30">
+
+// Hero section
+<section className="pt-32 md:pt-40 pb-20 md:pb-32">
+```
+
+## Component Library
+
+### Buttons
+
+#### Primary Button
+```typescript
+<Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
+  Click me
+</Button>
+```
+
+#### Gradient Button
+```typescript
+<Button className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-full px-8 py-6 text-lg font-medium shadow-[0_10px_40px_rgba(147,51,234,0.3)] hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)] transform hover:-translate-y-0.5 transition-all duration-200 group">
+  <span className="flex items-center gap-3">
+    Get Started
+    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </span>
+</Button>
+```
+
+#### Ghost Button
+```typescript
+<Button className="bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200/50 rounded-full px-6 py-3 text-sm font-medium transition-all duration-200">
+  Secondary action
+</Button>
+```
+
+### Cards
+
+#### Basic Card
+```typescript
+<div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-border/40 hover:border-primary/30 transition-all duration-300 p-8">
+  {/* Content */}
+</div>
+```
+
+#### Glassmorphism Card
+```typescript
+<div className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-purple-100/20 hover:border-purple-300/40 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(147,51,234,0.15)]">
+  {/* Content */}
+</div>
+```
+
+#### Feature Card
+```typescript
+<div className="group relative">
+  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+  <div className="relative bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-purple-100/20">
+    <div className="flex items-start gap-4">
+      <div className="flex-shrink-0">
+        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
+          <Icon className="h-5 w-5 text-primary" />
+        </div>
+      </div>
+      <div className="flex-1">
+        <h3 className="font-semibold mb-2">Title</h3>
+        <p className="text-sm text-muted-foreground">Description</p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+### Badges & Pills
+
+#### Trust Badge
+```typescript
+<div className="inline-flex items-center gap-2 px-4 py-2 bg-white/50 backdrop-blur-sm rounded-full border border-purple-200/30">
+  <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full animate-pulse" />
+  <span className="text-sm font-medium text-muted-foreground">
+    Trusted by 100+ businesses
+  </span>
+</div>
+```
+
+#### Feature Pill
+```typescript
+<div className="flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+  <Check className="w-4 h-4 text-purple-600" />
+  <span className="text-sm font-medium text-purple-900">Built in 2 weeks</span>
+</div>
+```
+
+#### Notification Badge
+```typescript
+<div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-purple-400 text-white px-5 py-2 rounded-full text-[13px] font-semibold shadow-lg">
+  RECOMMENDED
+</div>
+```
+
+### Form Elements
+
+#### Input Field
+```typescript
+<input
+  type="text"
+  className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-border/40 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600/20 focus:border-purple-600 transition-all duration-200"
+  placeholder="Enter text..."
+/>
+```
+
+#### Select Dropdown
+```typescript
+<select className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-border/40 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600/20 focus:border-purple-600 transition-all duration-200 cursor-pointer">
+  <option>Option 1</option>
+  <option>Option 2</option>
+</select>
+```
+
+#### Toggle Switch
+```typescript
+<button
+  onClick={() => setEnabled(!enabled)}
+  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 ${
+    enabled ? "bg-purple-600" : "bg-gray-200"
+  }`}
+>
+  <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ${
+    enabled ? "translate-x-6" : "translate-x-1"
+  }`} />
+</button>
+```
+
+## Interactive States
+
+### Hover Effects
+```css
+/* Scale */
+hover:scale-[1.02]  /* Subtle lift */
+hover:scale-105     /* Noticeable lift */
+hover:scale-110     /* Prominent lift */
+
+/* Shadows */
+hover:shadow-lg
+hover:shadow-xl
+hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+hover:shadow-[0_15px_50px_rgba(147,51,234,0.4)]
+
+/* Colors */
+hover:bg-purple-700  /* Darker shade */
+hover:border-primary/30  /* Tinted border */
+hover:text-primary  /* Colored text */
+
+/* Transforms */
+hover:-translate-y-0.5  /* Slight lift */
+hover:translate-x-1     /* Slide right */
+```
+
+### Focus States
+```css
+focus:outline-none
+focus:ring-2 
+focus:ring-purple-600/20 
+focus:border-purple-600
+```
+
+### Active States
+```css
+active:scale-95  /* Press effect */
+active:bg-purple-800  /* Darker on press */
+```
+
+## Animations & Transitions
+
+### Standard Durations
+```css
+duration-200  /* Quick feedback - hovers, clicks */
+duration-300  /* Standard transitions */
+duration-500  /* Smooth transitions */
+duration-700  /* Page mount animations */
+```
+
+### Mount Animations
+```typescript
+// Staggered fade-in
+const [mounted, setMounted] = useState(false)
+useEffect(() => setMounted(true), [])
+
+<div className={`transition-all duration-700 ${
+  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+}`} style={{ transitionDelay: `${index * 100}ms` }}>
+```
+
+### Hover Animations
+```css
+/* Group hover for child elements */
+group-hover:translate-x-1
+group-hover:scale-110
+group-hover:opacity-100
+
+/* Continuous animations */
+animate-pulse
+animate-bounce
+animate-spin
+```
+
+### Custom Animations
+```css
+/* Marquee scroll */
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - var(--gap))); }
+}
+
+/* Draw underline */
+.animate-draw-underline {
+  animation: draw 0.5s ease-out forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+```
+
+## Shadow System
+
+### Shadow Scale
+```css
+/* Subtle */
+shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05)
+shadow-[0_2px_10px_rgba(0,0,0,0.08)]
+shadow-[0_2px_20px_rgba(0,0,0,0.04)]
+
+/* Medium */
+shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1)
+shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1)
+shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+
+/* Strong */
+shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1)
+shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25)
+
+/* Purple tinted */
+shadow-[0_10px_40px_rgba(147,51,234,0.3)]
+shadow-[0_15px_50px_rgba(147,51,234,0.4)]
+shadow-[0_8px_30px_rgba(168,85,247,0.12)]
+```
+
+### Usage Guidelines
+- Use subtle shadows for cards and containers
+- Use medium shadows for hover states
+- Use strong shadows for modals and overlays
+- Use purple-tinted shadows for primary actions
+
+## Responsive Design
+
+### Breakpoint System
+```css
+sm: 640px   /* Mobile landscape */
+md: 768px   /* Tablet */
+lg: 1024px  /* Desktop */
+xl: 1280px  /* Large desktop */
+2xl: 1536px /* Extra large */
+```
+
+### Mobile-First Patterns
+```typescript
+// Text sizing
+className="text-3xl md:text-4xl lg:text-5xl"
+
+// Spacing
+className="p-4 md:p-6 lg:p-8"
+
+// Grid layouts
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+
+// Flex direction
+className="flex flex-col md:flex-row"
+
+// Hide/Show
+className="hidden md:block"  // Hide on mobile
+className="block md:hidden"  // Show only on mobile
+```
+
+### Container Queries
+```typescript
+// Responsive containers
+<div className="w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto">
+```
+
+## Best Practices
+
+### 1. **Consistency**
+- Always use the design tokens (colors, spacing, etc.)
+- Follow established patterns
+- Use semantic HTML elements
+
+### 2. **Performance**
+- Prefer CSS transitions over JavaScript animations
+- Use `transform` and `opacity` for animations
+- Lazy load images and videos
+- Use `loading="lazy"` for images below the fold
+
+### 3. **Accessibility**
+- Always include hover and focus states
+- Use proper color contrast ratios
+- Include ARIA labels where needed
+- Make interactive elements at least 44x44px
+
+### 4. **Code Organization**
+```typescript
+// Order classes logically
+className={`
+  // Layout
+  flex items-center justify-center
+  // Spacing
+  p-4 m-2
+  // Typography
+  text-lg font-medium
+  // Colors
+  bg-purple-600 text-white
+  // Borders
+  rounded-xl border border-purple-200
+  // Effects
+  shadow-lg backdrop-blur-sm
+  // Transitions
+  transition-all duration-200
+  // Hover states
+  hover:bg-purple-700 hover:shadow-xl
+`}
+```
+
+### 5. **Component Composition**
+- Build small, reusable components
+- Use composition over configuration
+- Keep components focused on a single responsibility
+
+### 6. **Dark Mode Support**
+```typescript
+// Always consider dark mode
+className="bg-white dark:bg-gray-900"
+className="text-gray-900 dark:text-white"
+className="border-gray-200 dark:border-gray-700"
+```
+
+## Quick Reference
+
+### Must-Have Imports
+```typescript
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+```
+
+### Common Patterns
+```typescript
+// Conditional classes
+className={cn(
+  "base-classes",
+  condition && "conditional-classes",
+  {
+    "active": isActive,
+    "disabled": isDisabled
+  }
+)}
+
+// Gradient text
+<span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+
+// Icon in button
+<Button>
+  <Icon className="w-5 h-5 mr-2" />
+  Text
+</Button>
+
+// Loading state
+<Button disabled className="opacity-50 cursor-not-allowed">
+  <Loader className="w-4 h-4 mr-2 animate-spin" />
+  Loading...
+</Button>
+```
+
+---
+
+Remember: The goal is to create interfaces that are beautiful, functional, and consistent. When in doubt, refer back to the homepage implementation as the gold standard. 
